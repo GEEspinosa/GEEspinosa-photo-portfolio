@@ -5,28 +5,23 @@ import {Link} from 'react-router-dom';
 const Title = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    
-    
+    justify-content: space-between;   
 `
-
 
 const Navbar = styled.nav`
     display: flex;
-    justify-content: flex-end;
-      
+    justify-content: flex-end;     
 `
-const Links = styled.ul`
-    
+const Links = styled.ul` 
     list-style-type: none;
     margin: 2px;
     padding: 12px;
-    display: flex;
-    
+    display: flex;   
 `
-const List = styled.li`
+const StyledLink = styled(Link)`
     display: inline;
     text-decoration: none;
+    color: inherit;
     padding: 30px;
 `
 
@@ -38,27 +33,16 @@ return (
             GABRIEL EDUARDO ESPINOSA 
             <br/>
             Photography
-        </Title>
-                
-        <Navbar>
-                
-            <Links>
-                
-                <List>
-                    <Link to='/' style={{textDecoration: 'none', color: "inherit"}}>Home</Link>
-                </List> 
-                <List>
-                    <Link to ='/portfolio' style={{textDecoration: 'none', color: "inherit"}}>Portfolio</Link>
-                </List>
-                <List>
-                    <Link to ='/about' style={{textDecoration: 'none', color: "inherit"}}>About</Link>
-                </List>
+        </Title>           
+        <Navbar>      
+            <Links>              
+                <StyledLink to='/' >Home</StyledLink>
+                <StyledLink to ='/portfolio'>Portfolio</StyledLink>         
+                <StyledLink to ='/about'>About</StyledLink>              
             </Links>
         </Navbar>
     </> 
 )
-
-
 } 
 
 export default Header;

@@ -4,17 +4,7 @@ import './styles/App.css';
 import Header from './components/common/header';
 import Landing from './components/pages/landing';
 import Portfolio from './components/pages/portfolio'
-
-
-
-
-
-
-function About() {
-  return (
-    <h1>About</h1>
-  )
-}
+import About from './components/pages/about'
 
 
 function App() {
