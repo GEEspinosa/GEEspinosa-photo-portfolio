@@ -3,15 +3,12 @@ import {Routes, Route} from 'react-router-dom';
 import './styles/App.css';
 import Header from './components/common/header';
 import Landing from './components/pages/landing';
+import Portfolio from './components/pages/portfolio'
 
 
 
 
-function Portfolio() {
-  return (
-    <h1>Portfolio</h1>
-  )
-}
+
 
 function About() {
   return (
