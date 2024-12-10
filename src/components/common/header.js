@@ -2,6 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import {Link} from 'react-router-dom';
 
+const Title = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+`
+
 
 const Navbar = styled.nav`
     display: flex;
@@ -26,8 +34,16 @@ function Header () {
 
 return (
     <>   
+        <Title>
+            GABRIEL EDUARDO ESPINOSA 
+            <br/>
+            Photography
+        </Title>
+                
         <Navbar>
+                
             <Links>
+                
                 <List>
                     <Link to='/' style={{textDecoration: 'none', color: "inherit"}}>Home</Link>
                 </List> 
