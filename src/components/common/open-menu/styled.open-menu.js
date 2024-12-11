@@ -2,10 +2,7 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 
 const StyledOpenMenu = styled.nav`
-   
 
-   
-    
         display: flex;
         flex-direction: column;
         justify-content; center;
@@ -19,18 +16,12 @@ const StyledOpenMenu = styled.nav`
         right: 0;
         transition: transform 0.3s ease-in-out;
         transform: ${({open}) => open ? 'translateX(0)' : 'translateX(100%)'};
-        
-   
-    
 
 `;
 
 const StyledOpenMenuLink  = styled (Link)`
-    
    
-    
     font-size: 1.5rem;
-    
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: bold;
@@ -43,11 +34,8 @@ const StyledOpenMenuLink  = styled (Link)`
 
     &:hover {
         color: red;
-    }
-
-
- 
-    
+    }    
+        
 `;
 
 export {StyledOpenMenu, StyledOpenMenuLink};
