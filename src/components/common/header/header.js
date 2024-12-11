@@ -28,12 +28,12 @@ function Header({open, setOpen}) {
           <StyledLink to="/portfolio" className='navbar-link'>Portfolio</StyledLink>
           <StyledLink to="/about" className='navbar-link'>About</StyledLink>
           
-          <MenuIcon 
-            className = 'testers'
-            open = {open}
-            setOpen = {setOpen}
-          />
-          <OpenMenu  open = {open}/>
+          <MenuIcon open = {open} setOpen = {setOpen}/>
+          <OpenMenu open = {open}/>
+          
+          
+          
+          
            
 
           
