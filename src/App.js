@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { useState } from 'react';
 import {Routes, Route} from 'react-router-dom';
 import './styles/App.css';
 import Header from './components/common/header/header';
@@ -7,10 +7,18 @@ import Portfolio from './components/pages/portfolio'
 import About from './components/pages/about'
 
 
+
+
+
+
 function App() {
+  const [open, setOpen] = useState(false)
   return (
     <>  
-        <Header />
+        <Header 
+          open = {open}
+          setOpen = {setOpen}
+        />
         <Routes>
           <Route path="/" element={<Landing />}/>
           <Route path="/portfolio" element={<Portfolio />}/>

@@ -1,14 +1,20 @@
 import React from "react";
+//import styled from "styled-components";
+//import {Link} from 'react-router-dom';
 import {Head, Navbar, Title, StyledLink} from './styled.header';
-import {MenuIcon} from '../../../assets/menu-icon/menu-icon';
-
-function Header() {
-
-  function navOverlay(){
-    console.log('touchy')
-  }
+import {MenuIcon} from '../menu-icon/menu-icon';
+import {OpenMenu} from '../open-menu/open-menu';
 
 
+
+
+
+
+
+
+function Header({open, setOpen}) {
+
+  
   return (
     <>
       <Head>
@@ -22,9 +28,15 @@ function Header() {
           <StyledLink to="/portfolio" className='navbar-link'>Portfolio</StyledLink>
           <StyledLink to="/about" className='navbar-link'>About</StyledLink>
           
-          <MenuIcon className = 'testers'>
-            
-          </MenuIcon>
+          <MenuIcon 
+            className = 'testers'
+            open = {open}
+            setOpen = {setOpen}
+          />
+          <OpenMenu  open = {open}/>
+           
+
+          
          
           
             
