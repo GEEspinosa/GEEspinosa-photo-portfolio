@@ -7,7 +7,6 @@ const MenuIconStyled = styled.div`
     position: absolute;
     z-index: 1;
     
-
         div {  
             display: none;
             width: 35px;

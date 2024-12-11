@@ -5,16 +5,7 @@ import {Head, Navbar, Title, StyledLink} from './styled.header';
 import {MenuIcon} from '../menu-icon/menu-icon';
 import {OpenMenu} from '../open-menu/open-menu';
 
-
-
-
-
-
-
-
-function Header({open, setOpen}) {
-
-  
+function Header({open, setOpen}) {  
   return (
     <>
       <Head>
@@ -30,20 +21,7 @@ function Header({open, setOpen}) {
           
           <MenuIcon open = {open} setOpen = {setOpen}/>
           <OpenMenu open = {open}/>
-          
-          
-          
-          
-           
-
-          
-         
-          
-            
-          
-        </Navbar>
-        
-        
+        </Navbar>       
       </Head>
     </>
   );
