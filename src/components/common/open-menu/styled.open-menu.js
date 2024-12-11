@@ -9,23 +9,24 @@ const StyledOpenMenu = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content; center;
-    background: #0D0C1D;
+    background: gray;
     height: 100vh;
     text-align: left;
-    padding: 2rem;
+    //padding: 8rem;
+    width: 70%;
     position: absolute;
     top: 0;
     right: 0;
-    //width: 100%;
     transition: transform 0.3s ease-in-out;
     transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
+    //opacity: 100%;
 
 
     
 
-    &:hover {
-        color: #0D0A4D
-    }
+        &:hover {
+            color: #343078
+        }
     }
     
 

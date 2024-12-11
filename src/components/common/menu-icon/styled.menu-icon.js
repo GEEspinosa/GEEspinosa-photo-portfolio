@@ -5,13 +5,14 @@ const MenuIconStyled = styled.div`
     flex-direction: column;
     padding-top: 14px;
     position: absolute;
+    z-index: 1;
     
 
         div {  
             display: none;
             width: 35px;
             height: 5px;
-            background-color: ${({open}) => open ? 'red' : 'black'};
+            background-color: ${({open}) => open ? 'white' : 'black'};
             margin: 3px 0;
 
 
