@@ -2,7 +2,13 @@ import React from 'react';
 
 function Portfolio() {
     return (
-      <h1>Portfolio</h1>
+      <>
+        <h1>Portfolio</h1>
+        <p>
+          asd;fkljsad;fljdsa;fjdsafjsa;lfkadjs;lfkadjs
+        </p>
+      </>
+      
     )
   }
 
