@@ -1,7 +1,14 @@
 import React from "react";
-import {Head, Navbar, Title, StyledLink} from './styled.header'
+import {Head, Navbar, Title, StyledLink} from './styled.header';
+import {MenuIcon} from '../../../assets/menu-icon/menu-icon';
 
 function Header() {
+
+  function navOverlay(){
+    console.log('touchy')
+  }
+
+
   return (
     <>
       <Head>
@@ -10,10 +17,21 @@ function Header() {
             G A B R I E L &nbsp; E S P I N O S A
             <br />P h o t o g r a p h y
           </Title>
-          <StyledLink to="/">Home</StyledLink>
-          <StyledLink to="/portfolio">Portfolio</StyledLink>
-          <StyledLink to="/about">About</StyledLink>
+          
+          <StyledLink to="/" className='navbar-link'>Home</StyledLink>
+          <StyledLink to="/portfolio" className='navbar-link'>Portfolio</StyledLink>
+          <StyledLink to="/about" className='navbar-link'>About</StyledLink>
+          
+          <MenuIcon className = 'testers'>
+            
+          </MenuIcon>
+         
+          
+            
+          
         </Navbar>
+        
+        
       </Head>
     </>
   );

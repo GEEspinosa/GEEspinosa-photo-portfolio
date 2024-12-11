@@ -5,6 +5,10 @@ import styled from 'styled-components';
 const Head = styled.header`
   text-align: center;
   padding: 20px;
+
+    @media (max-width: 710px ){
+      padding: 10px
+    }
 `;
 
 const Navbar = styled.nav`
@@ -12,16 +16,24 @@ const Navbar = styled.nav`
   justify-content: flex-end;
   font-size: 20px;
   padding: 20px;
+
+    @media (max-width: 710px ){
+      .navbar-link {display: none}
+    }
 `;
 
 const Title = styled.div`
   display: flex;
   flex: 1;
-  text-align: left;
-  //font-size: 25px;
+  text-align: left;  
   justify-content: start;
   padding-top: 7px;
   padding-left: 20px;
+
+    @media (max-width: 710px ){
+      font-size: 18px;
+      padding-left: 0px;
+    }  
 `;
 
 const StyledLink = styled(Link)`
@@ -35,5 +47,5 @@ export {
     Head,
     Navbar,
     Title,
-    StyledLink
+    StyledLink,
 }
