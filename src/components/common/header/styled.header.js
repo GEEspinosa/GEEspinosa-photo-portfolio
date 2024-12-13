@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const Head = styled.header`
   text-align: center;
   padding: 20px;
+  
 
     @media (max-width: 710px ){
       padding: 10px
