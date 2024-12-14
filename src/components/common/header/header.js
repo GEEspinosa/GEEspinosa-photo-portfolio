@@ -20,7 +20,7 @@ function Header({open, setOpen}) {
           <StyledLink to="/about" className='navbar-link'>About</StyledLink>
           
           <MenuIcon open = {open} setOpen = {setOpen}/>
-          <OpenMenu open = {open}/>
+          <OpenMenu open = {open} setOpen = {setOpen}/>
         </Navbar>       
       </Head>
     </>
