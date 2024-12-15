@@ -37,10 +37,6 @@ import yaquinaHeadLighthouse from './images/yaquina_head_lighthouse.png';
 import zoranPatSwim from './images/zoran_pat_swim.png';
 import zoranPolaroid from './images/zoran_polaroid.jpg';
 
-
-
-
-
 const imageData = [
     {
         image: alexTasting,
