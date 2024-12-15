@@ -1,8 +1,41 @@
 import React from "react";
+import styled from "styled-components";
+import selfInstaxBryan from '../../assets/images/gabi_instax_bryan2.png'
+
+const AboutContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  
+`;
+
+const BioText = styled.div`
+  border: solid;
+`;
+
+
+const Selfie = styled.img`
+  max-height: 30vh;
+  padding: 20px;
+  margin: 20px;
+  border: solid;
+`;
+
 
 function About() {
   return (
-    <h1>about</h1>
+    <>
+      <AboutContainer>
+        <Selfie alt='doggie' src={selfInstaxBryan}/>
+        <BioText>
+          <h2>About Me</h2>
+          <p>asdf;lkjsdf asd;fklj fdkdfj a;sdakldf v;lkdsjf ad;lfkdsfa<br/>
+            sadf;kljdas;lfkjdas ads;lkfadjs asdfadsfklj saddf;lkjd sasd<br/>
+            dsaf;lkdjsafkl asdf;lkjsd asd;flkj fddsa;lkjdsf asd;lkfj<br/>
+          </p>
+        </BioText>
+      </AboutContainer> 
+      
+    </>
     
   );
 }

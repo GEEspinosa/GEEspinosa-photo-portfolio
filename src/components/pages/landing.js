@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import imageData from "../../assets/image-data";
 
-const Test = styled.div`
+const Gallery = styled.div`
   ul {
     display: flex;
     overflow-x: hidden;
@@ -30,7 +30,7 @@ const Test = styled.div`
 function Landing() {
   return (
     <>
-      <Test>
+      <Gallery>
         <ul>
           {imageData.map((img, key) => {
             console.log(img.image);
@@ -41,7 +41,7 @@ function Landing() {
             );
           })}
         </ul>
-      </Test>
+      </Gallery>
     </>
   );
 }
