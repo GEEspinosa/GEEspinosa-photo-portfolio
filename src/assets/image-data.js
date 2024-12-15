@@ -33,6 +33,7 @@ import seanCostume from './images/sean_costume.png';
 import seanGuitar from './images/sean_guitar.jpg';
 import swimBuddies from './images/swim_buddies.png';
 import tessaBeach from './images/tessa_beach.jpg';
+import tessaFlowers from './images/tessa_flowers.png';
 import yaquinaHeadLighthouse from './images/yaquina_head_lighthouse.png';
 import zoranPatSwim from './images/zoran_pat_swim.png';
 import zoranPolaroid from './images/zoran_polaroid.jpg';
@@ -175,6 +176,10 @@ const imageData = [
     },
     {
         image: tessaBeach,
+        text: 'Alex Tasting Cherry Blossoms',
+    },
+    {
+        image: tessaFlowers,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {

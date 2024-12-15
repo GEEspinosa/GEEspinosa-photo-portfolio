@@ -3,21 +3,28 @@ import styled from "styled-components";
 import selfInstaxBryan from '../../assets/images/gabi_instax_bryan2.png'
 
 const AboutContainer = styled.div`
+  
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  
   
 `;
 
 const BioText = styled.div`
-  border: solid;
+  padding: 20px;
+  
 `;
 
 
 const Selfie = styled.img`
   max-height: 30vh;
   padding: 20px;
-  margin: 20px;
-  border: solid;
+  
 `;
 
 

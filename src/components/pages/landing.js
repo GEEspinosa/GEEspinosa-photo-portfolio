@@ -3,13 +3,12 @@ import styled from "styled-components";
 import imageData from "../../assets/image-data";
 
 const Gallery = styled.div`
-  ul {
-    display: flex;
-    overflow-x: hidden;
+box-sizing: border-box;  
 
+ul {
+    display: flex;
     margin-right: 38px;
     flex-wrap: wrap;
-
     justify-content: center;
     list-style: none;
   }
@@ -17,9 +16,15 @@ const Gallery = styled.div`
   li {
     height: 55vh;
     margin: 14px;
+    
+    @media (max-width: 1140px) {
+      height: 100%;
+      margin: 14px;
+    }
   }
 
   img {
+    width: 100%;
     max-height: 100%;
     min-width: 100%;
     object-fit: cover;
