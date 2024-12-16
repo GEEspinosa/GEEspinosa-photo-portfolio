@@ -32,7 +32,6 @@ const Title = styled.div`
   justify-content: start;
   padding-top: 7px;
   padding-left: 20px;
-  
 
   @media (max-width: 710px) {
     font-size: 18px;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/common/header/header";
-import Landing from "./components/pages/landing";
+import Landing from "./components/pages/landing/landing";
 import Portfolio from "./components/pages/portfolio";
 import About from "./components/pages/about";
 import ModalComponent from "./components/common/modal/modal";
