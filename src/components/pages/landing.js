@@ -17,7 +17,7 @@ ul {
     
     height: 32vh;
     margin: 4px;
-    
+
     :hover {
       cursor: pointer;
     }
@@ -50,7 +50,43 @@ ul {
   }
 `;
 
+const TopButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  button {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    font-size: 16px;
+    padding: 16px 32px;
+    margin: 4px 2px;
+  
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  :hover {
+    background-color: #555555;
+    color: white;
+  }
+`
+
 function Landing({imageClickHandler}) {
+
+
+  const scrollToTop = () => {
+    let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed
+    let scrollInterval = setInterval(() => {
+      if (window.scrollY === 0) {
+        clearInterval(scrollInterval);
+      } else {
+        window.scrollBy(0, scrollStep);
+      }
+    }, 30); // Adjust the interval time for smoothness
+  };
 
   return (
     <>     
@@ -69,7 +105,10 @@ function Landing({imageClickHandler}) {
             );
           })}
         </ul>
-      </Gallery>       
+      </Gallery>    
+      <TopButton onClick ={scrollToTop}>
+        <button>Scroll To Top</button>
+      </TopButton>   
     </>
   );
 }
