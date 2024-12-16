@@ -17,6 +17,10 @@ ul {
     
     height: 32vh;
     margin: 4px;
+    
+    :hover {
+      cursor: pointer;
+    }
 
     //dev note: bigger images
     // height: 55vh;
@@ -41,6 +45,8 @@ ul {
     min-width: 100%;
     object-fit: cover;
     vertical-align: bottom;
+
+    
   }
 `;
 

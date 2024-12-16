@@ -20,6 +20,12 @@ function App() {
       if(window.innerWidth > 710) {setOpen(false)}
     }
   )
+
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') {
+      setShowModal(false)
+    }
+  })
  
   return (
     <>  

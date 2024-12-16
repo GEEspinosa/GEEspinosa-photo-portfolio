@@ -9,6 +9,11 @@ right: 4%;
   display: flex;
   flex-direction: column;
   z-index: 1000;
+
+
+  :hover {
+    cursor: pointer;
+  }
   
   :first-child {
     transform: rotate(45deg);
@@ -48,7 +53,7 @@ const Modal = styled.div`
   }
 
   img {
-    max-height: 80%;
+    max-height: 75%;
     min-width: 90%;
     padding: 20px 40px;
     object-fit: contain;  
