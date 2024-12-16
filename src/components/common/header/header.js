@@ -23,10 +23,9 @@ function Header({ open, setOpen, showModal }) {
             About
           </StyledLink>
 
-          {!showModal &&
-            <MenuIcon open={open} setOpen={setOpen} showModal ={showModal}/>
-            
-          }
+          {!showModal && (
+            <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
+          )}
           <OpenMenu open={open} setOpen={setOpen} />
         </Navbar>
       </Head>
