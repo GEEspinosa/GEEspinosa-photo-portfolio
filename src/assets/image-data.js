@@ -38,159 +38,205 @@ import yaquinaHeadLighthouse from './images/yaquina_head_lighthouse.png';
 import zoranPatSwim from './images/zoran_pat_swim.png';
 import zoranPolaroid from './images/zoran_polaroid.jpg';
 
+let id = 0
+
+function addId () {
+    return id++
+}
+
+
 const imageData = [
     {
+        id: addId(),
         image: alexTasting,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: antonioLongbeach,
         text: 'Antonio Navigating Longbeach Chaos',},
     {
+        id: addId(),
         image: astoriaBridgeDocks,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: astoriaBridgeEmpty,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: astoriaBridgeRedBoat,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: bagdadTheater,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: blackButteTree,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: boats,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: bonsai,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: carlButoh,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: christian,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: dannyBassFeedback,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: eagleCrestSunset,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: eagleCrestSunset2,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: entrainLunch,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: estellaBrotherRollei,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: fadedGraffiti,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: fadedMural,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: greyTrunk,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: kaycie,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: longbeachKid,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: momAntonioBeach,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: nikkiSynth,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: notnotsEric,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: otdHalloween1,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: otdHalloween2,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: parkingLot,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: porterPoint,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: proposalRock,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: ripleyGuitar,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: schnitzer,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: seanCostume,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: seanGuitar,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: swimBuddies,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: tessaBeach,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: tessaFlowers,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: yaquinaHeadLighthouse,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: zoranPatSwim,
         text: 'Alex Tasting Cherry Blossoms',
     },
     {
+        id: addId(),
         image: zoranPolaroid,
         text: 'Alex Tasting Cherry Blossoms',
     },

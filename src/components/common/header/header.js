@@ -3,7 +3,7 @@ import { Head, Navbar, Title, StyledLink } from "./styled.header";
 import { MenuIcon } from "../menu-icon/menu-icon";
 import { OpenMenu } from "../open-menu/open-menu";
 
-function Header({ open, setOpen }) {
+function Header({ open, setOpen, showModal }) {
   return (
     <>
       <Head>
@@ -23,7 +23,10 @@ function Header({ open, setOpen }) {
             About
           </StyledLink>
 
-          <MenuIcon open={open} setOpen={setOpen} />
+          {!showModal &&
+            <MenuIcon open={open} setOpen={setOpen} showModal ={showModal}/>
+            
+          }
           <OpenMenu open={open} setOpen={setOpen} />
         </Navbar>
       </Head>

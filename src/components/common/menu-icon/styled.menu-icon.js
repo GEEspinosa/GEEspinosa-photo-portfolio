@@ -6,7 +6,7 @@ const MenuIconStyled = styled.div`
 
   padding-top: 14px;
   position: absolute;
-  z-index: 1;
+  z-index: 1000;
 
   :first-child {
     transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};

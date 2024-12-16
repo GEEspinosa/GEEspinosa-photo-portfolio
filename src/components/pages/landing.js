@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import imageData from "../../assets/image-data";
 
@@ -44,20 +44,35 @@ ul {
   }
 `;
 
-function Landing() {
+
+
+function Landing({imageClickHandler}) {
+
   return (
     <>
+        
       <Gallery>
+      
         <ul>
-          {imageData.map((img, key) => {
+          {imageData.map((img) => {
+            
             return (
+              
               <li>
-                <img alt={img.text} src={img.image} key={key} loading="lazy" />
+                <img 
+                  alt={img.text} 
+                  src={img.image} 
+                  key={img.id} 
+                  onClick={() => imageClickHandler(img.id)}
+                  loading="lazy" />
               </li>
             );
           })}
         </ul>
       </Gallery>
+       
+          
+        
     </>
   );
 }
