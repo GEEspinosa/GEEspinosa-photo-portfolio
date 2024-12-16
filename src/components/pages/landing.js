@@ -14,17 +14,29 @@ ul {
   }
 
   li {
-    height: 55vh;
-    margin: 14px;
     
-    @media (max-width: 1140px) {
+    height: 32vh;
+    margin: 4px;
+
+    //dev note: bigger images
+    // height: 55vh;
+    // margin: 14px;
+    // border: solid;
+    
+    @media (max-width: 768px) {
+      
+      //dev note: adding width will look good with .rows
+      //width: 40%;
       height: 100%;
-      margin: 14px;
+
+      //margin: 14px;
+      margin: 6px;
     }
   }
 
   img {
     width: 100%;
+    height: 100%;
     max-height: 100%;
     min-width: 100%;
     object-fit: cover;
@@ -38,7 +50,6 @@ function Landing() {
       <Gallery>
         <ul>
           {imageData.map((img, key) => {
-            console.log(img.image);
             return (
               <li>
                 <img alt={img.text} src={img.image} key={key} loading="lazy" />
