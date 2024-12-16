@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import styled from "styled-components";
 import imageData from "../../assets/image-data";
 
@@ -44,20 +44,14 @@ ul {
   }
 `;
 
-
-
 function Landing({imageClickHandler}) {
 
   return (
-    <>
-        
+    <>     
       <Gallery>
-      
         <ul>
-          {imageData.map((img) => {
-            
-            return (
-              
+          {imageData.map((img) => {     
+            return (  
               <li>
                 <img 
                   alt={img.text} 
@@ -69,10 +63,7 @@ function Landing({imageClickHandler}) {
             );
           })}
         </ul>
-      </Gallery>
-       
-          
-        
+      </Gallery>       
     </>
   );
 }

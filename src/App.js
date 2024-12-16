@@ -29,7 +29,7 @@ function App() {
           modalSelect={modalSelect}
           />
         }
-    
+
         <Header 
           open = {open}
           setOpen = {setOpen}
