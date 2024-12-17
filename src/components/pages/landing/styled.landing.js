@@ -44,6 +44,30 @@ const Gallery = styled.div`
   }
 `;
 
+const GallerySmall = styled.div`
+  box-sizing: border-box;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+
+    justify-content: space-evenly;
+  }
+
+  .column {
+    flex: 25%;
+    max-width: 40%;
+
+    padding: 10px;
+  }
+
+  .column img {
+    margin-top: 14px;
+    vertical-align: middle;
+  }
+`;
+
 const TopButton = styled.div`
   display: flex;
   justify-content: center;
@@ -59,15 +83,17 @@ const TopButton = styled.div`
 
     transition-duration: 0.4s;
     cursor: pointer;
+
+    // @media (max-width: 802){
+    //   font-size: 10px;
+    // }
   }
 
   :hover {
     background-color: #555555;
     color: white;
   }
+
 `;
 
-export {
-    Gallery,
-    TopButton
-}
+export { Gallery, GallerySmall, TopButton };

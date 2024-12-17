@@ -11,6 +11,7 @@ function App() {
   const [open, setOpen] = useState(false);
   const [modalSelect, setModalSelect] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [smallLandingLayout, setSmallLandingLayout] = useState(false);
 
   function imageClickHandler(id) {
     setModalSelect(id);
@@ -54,6 +55,14 @@ function App() {
     return () => document.removeEventListener("keydown", keyDownHandler);
   });
 
+  useEffect(() => {
+    if (window.innerWidth <= 802) {
+      setSmallLandingLayout(true);
+    } else {
+      setSmallLandingLayout(false);
+    }
+  }, []);
+
   return (
     <>
       {showModal && (
@@ -64,7 +73,13 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Landing imageClickHandler={imageClickHandler} />}
+          element={
+            <Landing
+              imageClickHandler={imageClickHandler}
+              smallLandingLayout={smallLandingLayout}
+              setSmallLandingLayout={setSmallLandingLayout}
+            />
+          }
         />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/about" element={<About />} />
