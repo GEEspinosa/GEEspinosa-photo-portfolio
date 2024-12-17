@@ -2,6 +2,31 @@ import React from "react";
 import imageData from "../../../assets/image-data";
 import { Gallery, GallerySmall, TopButton } from "./styled.landing";
 
+
+// dev notes: logic to sort through imageData and make three arrays for 
+// smallGallery columns
+
+let count = 0;
+let smallGalleryArray1 = [];
+let smallGalleryArray2 = [];
+let smallGalleryArray3 = [];
+
+for (let i = 0; i < imageData.length; i++) {
+
+  if (count === 0) {
+    smallGalleryArray1.push(imageData[i]);
+    count++;
+  }
+  else if (count === 1) {
+    smallGalleryArray2.push(imageData[i])
+    count++;
+  }
+  else if (count === 2) {
+    smallGalleryArray3.push(imageData[i]);
+    count = 0
+  }
+}
+
 function Landing({
   imageClickHandler,
   smallLandingLayout,
@@ -32,57 +57,59 @@ function Landing({
         <GallerySmall>
           <div className="row">
             <div className="column">
-              <img
-                alt="test"
-                src={imageData[3].image}
-                style={{ width: "100%" }}
-              ></img>
-              <img
-                alt="test"
-                src={imageData[4].image}
-                style={{ width: "100%" }}
-              ></img>
-              <img
-                alt="test"
-                src={imageData[10].image}
-                style={{ width: "100%" }}
-              ></img>
+
+              {
+                smallGalleryArray1.map((img) => {
+                  return (
+                    <img 
+                      key={img.id}
+                      alt={img.text}
+                      src={img.image}
+                      onClick={() => imageClickHandler(img.id)}
+                      style={{ width: "100%", cursor: "pointer" }}
+                      loading="lazy" 
+                    /> 
+                  )
+                })
+              }
+  
             </div>
 
             <div className="column">
-              <img
-                alt="test"
-                src={imageData[2].image}
-                style={{ width: "100%" }}
-              ></img>
-              <img
-                alt="test"
-                src={imageData[9].image}
-                style={{ width: "100%" }}
-              ></img>
-              <img
-                alt="test"
-                src={imageData[20].image}
-                style={{ width: "100%" }}
-              ></img>
+
+            {
+                smallGalleryArray2.map((img) => {
+                  return (
+                    <img 
+                      key={img.id}
+                      alt={img.text}
+                      src={img.image}
+                      onClick={() => imageClickHandler(img.id)}
+                      style={{ width: "100%", cursor: "pointer" }}
+                      loading="lazy" 
+                    /> 
+                  )
+                })
+              }
+              
             </div>
 
             <div className="column">
-              <img
-                alt="test"
-                src={imageData[1].image}
-                style={{ width: "100%" }}
-              ></img>
-              <img
-                alt="test"
-                src={imageData[19].image}
-                style={{ width: "100%" }}
-              ></img>
-              <img
-                alt="test"
-                src={imageData[13].image}
-                style={{ width: "100%" }}
-              ></img>
+            {
+                smallGalleryArray3.map((img) => {
+                  return (
+                    <img 
+                      key={img.id}
+                      alt={img.text}
+                      src={img.image}
+                      onClick={() => imageClickHandler(img.id)}
+                      style={{ width: "100%", cursor: "pointer"}}
+                      loading="lazy" 
+                    /> 
+                  )
+                })
+              }
+
             </div>
           </div>
         </GallerySmall>
@@ -105,7 +132,7 @@ function Landing({
         </Gallery>
       )}
 
-      <TopButton onClick={scrollToTop}>
+      <TopButton onClick={scrollToTop} >
         <button>Scroll To Top</button>
       </TopButton>
     </>

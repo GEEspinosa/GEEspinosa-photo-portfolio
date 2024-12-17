@@ -51,7 +51,6 @@ const GallerySmall = styled.div`
     display: flex;
     flex-wrap: wrap;
     padding: 0 4px;
-
     justify-content: space-evenly;
   }
 
@@ -65,7 +64,12 @@ const GallerySmall = styled.div`
   .column img {
     margin-top: 14px;
     vertical-align: middle;
+    
+      
   }
+  
+  
+
 `;
 
 const TopButton = styled.div`
@@ -84,9 +88,12 @@ const TopButton = styled.div`
     transition-duration: 0.4s;
     cursor: pointer;
 
-    // @media (max-width: 802){
-    //   font-size: 10px;
-    // }
+    @media (max-width: 802){
+      position: absolute
+      font-size: 16px;
+      padding: 10% 20%;
+      margin: 4px 2px;
+    }
   }
 
   :hover {
