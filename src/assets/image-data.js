@@ -49,16 +49,34 @@ const imageData = [
     id: addId(),
     image: alexTasting,
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: antonioLongbeach,
     text: "Antonio Navigating Longbeach Chaos",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: astoriaBridgeDocks,
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),

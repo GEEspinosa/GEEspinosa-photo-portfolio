@@ -5,7 +5,9 @@ const LeftArrowButtonIcon = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 1000; 
-  padding: 10px;
+  //border: solid;
+  padding: 25px;
+  margin: 25px;
   cursor: pointer;
 
     :first-child {
@@ -16,6 +18,10 @@ const LeftArrowButtonIcon = styled.div`
       transform: rotate(45deg);
     }
 
+  @media (max-width: 1149px) {
+    padding: 10px
+    //margin: 0px
+  }
 
   .leftArrowIcon {
     width: 30px;

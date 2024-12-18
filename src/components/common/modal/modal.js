@@ -17,7 +17,18 @@ function ModalComponent({ setShowModal, modalSelect, arrowButtonHandler }) {
         </ModalIcon>
          
         <LeftArrowButton arrowButtonHandler={arrowButtonHandler}/> 
-        <img alt="test" src={imageData[modalSelect].image}></img>
+        <img alt="test" src={imageData[modalSelect].image} />
+        <p >
+        
+          {imageData[modalSelect].description.location} <br/><br/>
+          {imageData[modalSelect].description.date} <br/><br/>
+          {imageData[modalSelect].description.camera} <br/><br/>
+          {imageData[modalSelect].description.film} 
+          
+        </p>
+       
+          
+        
         <RightArrowButton arrowButtonHandler={arrowButtonHandler}/>
         
       </div>

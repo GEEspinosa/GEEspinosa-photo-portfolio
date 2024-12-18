@@ -41,28 +41,40 @@ const Modal = styled.div`
   width: 100%;
   height: 100%;
   background-color: white;
-  
   position: fixed;
   z-index: 1000;
-  
-
+   
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid;
     width: 100%;
     height: 100%;
+
+    
   }
 
   img {
+    
     max-height: 75%;
-    min-width: 75%;
+    min-width: 25%; dev note: is this worth it? 75%?
     padding: 20px 40px;
     object-fit: contain;
 
+
+   
     @media (max-width: 699px) {
         min-width: 90%;
+    }
+  }
+
+  p {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 100px 40px 40px;
+
+    @media (max-width: 1149px){
+      display: none;
     }
   }
 `;
