@@ -9,16 +9,6 @@ const RightArrowButtonIcon = styled.div`
     padding: 25px;
     margin: 25px;
     cursor: pointer;
-    //border: solid;
-    
-
-    // :first-child {
-    //   transform: rotate(-135deg);
-    // }
-
-    // :nth-child(2) {
-    //   transform: rotate(135deg);
-    // }
 
     :first-child {
       transform: scaleY(-1) rotate(-45deg) ;
@@ -28,10 +18,14 @@ const RightArrowButtonIcon = styled.div`
       transform: scaleY(-1) rotate(45deg);
     }
 
+    @media (max-width: 1400px) {
+        margin-bottom: 290px;
+    } 
+
+
     @media (max-width: 1149px) {
-    padding: 10px
-    //margin: 0px
-  }
+        padding: 10px
+    }
 
   .RightArrowIcon {
     width: 30px;

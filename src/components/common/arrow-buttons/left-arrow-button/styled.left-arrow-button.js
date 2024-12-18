@@ -4,10 +4,10 @@ const LeftArrowButtonIcon = styled.div`
  
   display: flex;
   flex-direction: column;
-  z-index: 1000; 
-  //border: solid;
+  z-index: 1000;
   padding: 25px;
   margin: 25px;
+ 
   cursor: pointer;
 
     :first-child {
@@ -18,9 +18,12 @@ const LeftArrowButtonIcon = styled.div`
       transform: rotate(45deg);
     }
 
+  @media (max-width: 1400px) {
+     margin-bottom: 290px;
+  }
+
   @media (max-width: 1149px) {
     padding: 10px
-    //margin: 0px
   }
 
   .leftArrowIcon {
@@ -30,6 +33,10 @@ const LeftArrowButtonIcon = styled.div`
     margin: 3px;
     transform-origin: 9px;
 
+    @media (max-width: 1400px){
+      
+      
+    }
     @media (max-width: 699px) {
         display: none;
     }

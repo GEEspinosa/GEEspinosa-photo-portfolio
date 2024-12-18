@@ -48,6 +48,7 @@ const imageData = [
   {
     id: addId(),
     image: alexTasting,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
     description: {
       location: 'Cathedral Park',
@@ -59,6 +60,7 @@ const imageData = [
   {
     id: addId(),
     image: antonioLongbeach,
+    orientation: 'horizontal',
     text: "Antonio Navigating Longbeach Chaos",
     description: {
       location: 'Cathedral Park',
@@ -70,6 +72,7 @@ const imageData = [
   {
     id: addId(),
     image: astoriaBridgeDocks,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
     description: {
       location: 'Cathedral Park',
@@ -81,182 +84,434 @@ const imageData = [
   {
     id: addId(),
     image: astoriaBridgeEmpty,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: astoriaBridgeRedBoat,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: bagdadTheater,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: blackButteTree,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: boats,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: bonsai,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: carlButoh,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: christian,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: dannyBassFeedback,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: eagleCrestSunset,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: eagleCrestSunset2,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: entrainLunch,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: estellaBrotherRollei,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: fadedGraffiti,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: fadedMural,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: greyTrunk,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: kaycie,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: longbeachKid,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: momAntonioBeach,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: nikkiSynth,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: notnotsEric,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: otdHalloween1,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: otdHalloween2,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: parkingLot,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: porterPoint,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: proposalRock,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: ripleyGuitar,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: schnitzer,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: seanCostume,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: seanGuitar,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: swimBuddies,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: tessaBeach,
+    orientation: 'vertical',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: tessaFlowers,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: yaquinaHeadLighthouse,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: zoranPatSwim,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
   {
     id: addId(),
     image: zoranPolaroid,
+    orientation: 'horizontal',
     text: "Alex Tasting Cherry Blossoms",
+    description: {
+      location: 'Cathedral Park',
+      date: '11-11-11',
+      camera: 'Fujica Ax3',
+      film: '35mm HP5+'
+    },
   },
 ];
 
