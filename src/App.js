@@ -46,9 +46,29 @@ function App() {
     }
   }
 
+  const arrowButtonHandler = (direction) => {
+    if (direction === "Left" && showModal) {
+      let left = modalSelect - 1;
+      if (left >= 0) {
+        setModalSelect(left);
+      } else {
+        setModalSelect(0);
+      }
+    }
+    if (direction === "Right" && showModal) {
+      let right = modalSelect + 1;
+      if (right < imageData.length - 1) {
+        setModalSelect(right);
+      } else {
+        setModalSelect(imageData.length - 1);
+      }
+    }
+  }
+
   //dev note: because of react re-renders,
   //eventlisteners must be added and removed with useEffect hook!!!
   //the eventlistener calls the above declared keyDownHandler
+  // innerWidth either 802px or 956px?
 
   useEffect(() => {
     document.addEventListener("keydown", keyDownHandler);
@@ -56,7 +76,7 @@ function App() {
   });
 
   useEffect(() => {
-    if (window.innerWidth <= 802) {
+    if (window.innerWidth <= 956) {
       setSmallLandingLayout(true);
     } else {
       setSmallLandingLayout(false);
@@ -66,7 +86,7 @@ function App() {
   return (
     <>
       {showModal && (
-        <ModalComponent setShowModal={setShowModal} modalSelect={modalSelect} />
+        <ModalComponent setShowModal={setShowModal} modalSelect={modalSelect} arrowButtonHandler={arrowButtonHandler} />
       )}
 
       <Header open={open} setOpen={setOpen} showModal={showModal} />

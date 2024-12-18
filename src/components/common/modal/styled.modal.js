@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const ModalIcon = styled.div`
   position: fixed;
+  
   top: 44px;
   right: 4%;
 
@@ -40,23 +41,30 @@ const Modal = styled.div`
   width: 100%;
   height: 100%;
   background-color: white;
+  
   position: fixed;
   z-index: 1000;
+  
 
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: solid;
     width: 100%;
     height: 100%;
   }
 
   img {
     max-height: 75%;
-    min-width: 90%;
+    min-width: 75%;
     padding: 20px 40px;
     object-fit: contain;
+
+    @media (max-width: 699px) {
+        min-width: 90%;
+    }
   }
 `;
 
-export { Modal, ModalIcon };
+export {Modal, ModalIcon};

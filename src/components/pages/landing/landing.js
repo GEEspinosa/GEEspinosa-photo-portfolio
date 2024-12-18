@@ -3,6 +3,7 @@ import imageData from "../../../assets/image-data";
 import { Gallery, GallerySmall, TopButton } from "./styled.landing";
 
 
+
 // dev notes: logic to sort through imageData and make three arrays for 
 // smallGallery columns
 
@@ -43,8 +44,12 @@ function Landing({
     }, 30); // Adjust the interval time for smoothness
   };
 
+
+  //dev notes: checking resizing window to change from larger to smaller gallery layout
+  // can't tell if innerwidth 802 or 956?
+
   window.addEventListener("resize", () => {
-    if (window.innerWidth <= 802) {
+    if (window.innerWidth <= 956) {
       setSmallLandingLayout(true);
     } else {
       setSmallLandingLayout(false);
@@ -57,7 +62,6 @@ function Landing({
         <GallerySmall>
           <div className="row">
             <div className="column">
-
               {
                 smallGalleryArray1.map((img) => {
                   return (
@@ -133,7 +137,7 @@ function Landing({
       )}
 
       <TopButton onClick={scrollToTop} >
-        <button>Scroll To Top</button>
+        <button >Scroll To Top</button>
       </TopButton>
     </>
   );
