@@ -19,11 +19,7 @@ const LeftArrowButtonIcon = styled.div`
     }
 
   @media (max-width: 1400px) {
-     margin-bottom: 290px;
-  }
-
-  @media (max-width: 1149px) {
-    padding: 10px
+     margin-bottom: 210px;
   }
 
   .leftArrowIcon {
@@ -33,10 +29,6 @@ const LeftArrowButtonIcon = styled.div`
     margin: 3px;
     transform-origin: 9px;
 
-    @media (max-width: 1400px){
-      
-      
-    }
     @media (max-width: 699px) {
         display: none;
     }

@@ -4,11 +4,13 @@ import { LeftArrowButtonIcon } from "./styled.left-arrow-button";
 
 function LeftArrowButton ({arrowButtonHandler}) {
     return (
-        <LeftArrowButtonIcon onClick={() => arrowButtonHandler("Left")}>
-            <div className="leftArrowIcon" />
-            
-            <div className="leftArrowIcon" />
-        </LeftArrowButtonIcon>
+        <>
+            <LeftArrowButtonIcon onClick={() => arrowButtonHandler("Left")}>
+                <div className="leftArrowIcon" />    
+                <div className="leftArrowIcon" />
+            </LeftArrowButtonIcon>
+        </>
+        
     )
 };
 

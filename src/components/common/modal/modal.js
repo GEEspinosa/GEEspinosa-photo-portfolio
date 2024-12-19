@@ -22,16 +22,12 @@ function ModalComponent({ setShowModal, modalSelect, arrowButtonHandler }) {
           <div className="middleColumn">
             <img alt="test" src={imageData[modalSelect].image} className={imageData[modalSelect].orientation} />
             <p >
-            {imageData[modalSelect].description.location} <br/><br/>
-            {imageData[modalSelect].description.date} <br/><br/>
-            {imageData[modalSelect].description.camera} <br/><br/>
-            {imageData[modalSelect].description.film} 
-          </p>
-            {/* <h1>sdfljkasd;fkjdas</h1> */}
-          </div>
-          
-          
-          
+              {imageData[modalSelect].description.location} <br/>
+              {imageData[modalSelect].description.date} <br/>
+              {imageData[modalSelect].description.camera} <br/>
+              {imageData[modalSelect].description.film} 
+            </p>
+          </div>  
           <RightArrowButton arrowButtonHandler={arrowButtonHandler}/> 
           
         </div>

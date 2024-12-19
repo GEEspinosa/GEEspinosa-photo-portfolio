@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const ModalIcon = styled.div`
   position: fixed;
-  
   top: 44px;
   right: 4%;
 
@@ -34,7 +33,7 @@ const ModalIcon = styled.div`
     background-color: gray;
     margin: 3px;
     transform-origin: 4px;
-  }
+  } 
 `;
 
 const Modal = styled.div`
@@ -55,23 +54,27 @@ const Modal = styled.div`
   .middleColumn {
     display: flex;
     justify-content: center;
+    //border: solid;
     align-items: center;
     width: 100%;
     height: 100%;
   
     @media (max-width: 1400px) {
-
       width: 100%;
       height: 100%;
       flex-direction: column; 
- 
     }
+
+    // @media (max-width: 699px) {
+      
+    //   // padding: 10px;
+    //   // margin: 10px;
+    // }
 
     .horizontal {
       width: 62%;
       max-height: 70%;
       min-width: 25%; 
-      border: solid;
       padding: 20px 20px;
       object-fit: contain; 
 
@@ -80,27 +83,28 @@ const Modal = styled.div`
       }
       
       @media (max-width: 699px) {
-        width: 100%;
-        height: 100%;
+        width: 135%;
         position: relative;
-        bottom: 40%;
+      }
+
+      @media (max-width: 420px) {
+        width: 180%;
       }
     }
 
     .vertical {
-      //width: 100%;
-      //height: 100%
       max-height: 70%;
       min-width: 25%; 
-      border: solid;
       padding: 20px 20px;
       object-fit: contain; 
       
       @media (max-width: 699px) {
-        width: 100%;
-        height: 100%;
+        width: 140%;
         position: relative;
-        bottom: 40%;
+      }
+
+      @media (max-width: 420px) {
+        width: 125%;
       }
     }
 
@@ -108,7 +112,6 @@ const Modal = styled.div`
       font-size: 1.1em;
       color: gray;
       display: block;
-      //border: solid;
       margin: 10px 0px 10px 10px;
       padding: 30px 80px 30px 30px;
       
@@ -117,36 +120,19 @@ const Modal = styled.div`
         }
 
         @media (max-width: 699px) {
-          position: fixed;
-          top: 50%;       
-        }
+         font-size: 18px;
+         //width: 100%;
+         //border: solid;
+         //text-align: center;
+         padding: 30px 30px 30px 30px;
+         margin: 0px 0px 0px 0px;
+
+        }  
+         
     }
   }
   
-
-
-    
-  
-
-
-  // p {
-  //   font-size: 1.1em;
-  //   color: gray;
-  //   display: block;
-  //   margin: 10px 0px 10px 10px;
-  //   padding: 30px 80px 30px 30px;
-  //   @media (max-width: 1149px){
-  //     display: none;
-  // }
-
-
-   
-
-
- 
-  
 `;
-
 
 
 const smallWindowPlacard = styled.div`
