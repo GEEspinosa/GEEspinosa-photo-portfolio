@@ -108,12 +108,25 @@ const Modal = styled.div`
       }
     }
 
+    h2 {
+      font-size: 26px;
+      
+      color: gray;
+      display: block;
+      margin: 10px 10px 10px 10px;
+      padding: 0px 30px 0px 30px;
+      line-height: 1.5;
+      //border: solid;
+    }
+
     p {
       font-size: 1.1em;
       color: gray;
       display: block;
       margin: 10px 0px 10px 10px;
-      padding: 30px 80px 30px 30px;
+      padding: 0px 80px 30px 30px;
+      line-height: 1.5;
+      //border: solid;
       
         @media (max-width: 1149px){
           display: flex;
@@ -126,19 +139,11 @@ const Modal = styled.div`
          //text-align: center;
          padding: 30px 30px 30px 30px;
          margin: 0px 0px 0px 0px;
-
         }  
-         
     }
   }
   
 `;
 
 
-const smallWindowPlacard = styled.div`
-
-  display: flex;
-  background-color: black;
-`;
-
-export {Modal, ModalIcon, smallWindowPlacard};
+export {Modal, ModalIcon};
