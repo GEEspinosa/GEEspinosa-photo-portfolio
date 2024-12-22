@@ -121,16 +121,21 @@ function Landing({
         <Gallery>
           <ul>
             {imageData.map((img) => {
-              return (
-                <li key={img.id}>
-                  <img
-                    alt={img.text}
-                    src={img.image}
-                    onClick={() => imageClickHandler(img.id)}
-                    loading="lazy"
-                  />
-                </li>
-              );
+              if ('album' in img){
+                if ('landing' in img.album){return (
+                  <li key={img.id}>
+                    <img
+                      alt={img.text}
+                      src={img.image}
+                      onClick={() => imageClickHandler(img.id)}
+                      loading="lazy"
+                    />
+                  </li>
+                )};
+              }
+                
+                
+                
             })}
           </ul>
         </Gallery>
