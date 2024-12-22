@@ -8,10 +8,17 @@ import ModalComponent from "./components/common/modal/modal";
 import imageData from "./assets/image-data";
 
 function App() {
+
   const [open, setOpen] = useState(false);
   const [modalSelect, setModalSelect] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [smallLandingLayout, setSmallLandingLayout] = useState(false);
+  const [album, setAlbum] = useState('cover')
+  const [portfolio, setPortfolio] = useState([])
+  const [slide, setSlide] = useState(null)
+
+
+  
 
   function imageClickHandler(id) {
     setModalSelect(id);
@@ -62,7 +69,14 @@ function App() {
       } else {
         setModalSelect(imageData.length - 1);
       }
+    } 
+     if ((direction === "Left") && (slide > 0) ) {
+      setSlide(slide - 1)
     }
+     if ((direction === "Right") && (slide < portfolio.length - 1) ) {
+      setSlide(slide + 1)
+    }
+    
   }
 
   //dev note: because of react re-renders,
@@ -101,7 +115,17 @@ function App() {
             />
           }
         />
-        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio" element={
+          <Portfolio 
+            album = {album} 
+            setAlbum = {setAlbum}
+            portfolio = {portfolio}
+            setPortfolio = {setPortfolio}
+            slide = {slide}
+            setSlide = {setSlide}
+            arrowButtonHandler={arrowButtonHandler}
+          />
+        } />
         <Route path="/about" element={<About />} />
       </Routes>
     </>
