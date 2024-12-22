@@ -51,19 +51,36 @@ const ImageBox = styled.div`
 `;  
 
 const ScrollGallery = styled.div`
-  border: solid;
+  //border: solid;
   display: flex;
   align-items; stretch;
   width: 100%;
+  
   padding: 5px;
-  object-fit: contain;
+  
+  
+  .scrollGalleryBorders{
+  display: flex;
+  justify-content: center;
+  width: 15vh;
+  height: 15vh;
+  border: solid;
+  margin: 5px;
+  
+  }
+
+
   img {  
-    max-width: 15%;
-    min-width: 10%;
+    
+    max-width: 95%;
+    
+    min-height: 30%;
+    
+
     margin: 5px;
     flex-grow: 1;
-    background-position: center;
-    background-size: cover;
+    object-fit: contain;
+   
   }
 `;
 
@@ -83,7 +100,6 @@ function Portfolio() {
         if ('album' in entry ) {
           if (album in entry.album) {
             p.push(entry.image)
-            console.log(portfolio)
           }
         }
       })
@@ -99,8 +115,9 @@ function Portfolio() {
         <SideNav>
           <ul>
             <li onClick={() => setAlbum('longbeach')}>Longbeach</li>
-            <li onClick={() => setAlbum('tessa')}>Tessa</li>
-            <li onClick={() => setAlbum('live')}>Live Performances</li>
+            <li onClick={() => setAlbum('test1')}>Tessa</li>
+            <li onClick={() => setAlbum('test2')}>Live Performances</li>
+            <li onClick={() => setAlbum('test3')}>Test3</li>
           </ul>
         </SideNav>
         <Gallery>
@@ -111,7 +128,10 @@ function Portfolio() {
           {
             portfolio.map(i => {
               return (
-                <img alt='test' src={i}/>
+                <div className='scrollGalleryBorders'>
+                  <img alt='test' src={i}/>
+                </div>
+                
               )
             })
           }

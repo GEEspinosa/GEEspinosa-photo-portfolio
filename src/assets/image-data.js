@@ -167,7 +167,9 @@ const imageData = [
       film: 'Fuji Superia Xtra 400 35mm',
       shot: 'Box',
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test3: 1
+    },
   },
   {
     id: addId(),
@@ -197,7 +199,9 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '800 / +1'
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test2: 1
+    },
   },
   {
     id: addId(),
@@ -242,7 +246,9 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: 'Box',
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test2: 1
+    },
   },
   {
     id: addId(),
@@ -257,7 +263,9 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: 'Box', 
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test3: 1
+    },
   },
   {
     id: addId(),
@@ -287,7 +295,9 @@ const imageData = [
       film: 'Kodak Portra 400 35mm',
       shot: 'Box',
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test2: 1
+    },
   },
   {
     id: addId(),
@@ -317,7 +327,9 @@ const imageData = [
       film: 'Expired Kroger 400 35mm (UltraMax)',
       shot: '400 / +2',
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test3: 1
+    },
   },
   {
     id: addId(),
@@ -347,7 +359,9 @@ const imageData = [
       film: 'Expired Kodak TriX 35mm',
       shot: 'Box',
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test2: 1
+    },
   },
   {
     id: addId(),
@@ -380,7 +394,9 @@ const imageData = [
       film: 'Fomapan 400 35mm',
       shot: 'Box',
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test2: 1
+    },
   },
   {
     id: addId(),
@@ -410,7 +426,9 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '800 / +1',
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test3: 1
+    },
   },
   {
     id: addId(),
@@ -425,7 +443,9 @@ const imageData = [
       film: 'Expired TriX 35mm',
       shot: '3200 / +3'
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test1: 1
+    },
   },
   {
     id: addId(),
@@ -485,7 +505,9 @@ const imageData = [
       film: 'Fomapan 400 35mm',
       shot: 'Box',
     },
-    album: {landing: 1},
+    album: {landing: 1, 
+      test1: 1,
+    },
   },
   {
     id: addId(),
@@ -590,7 +612,10 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
     },
-    album: {landing: 1},
+    album: {
+      landing: 1,
+      test1: 1
+    },
   },
   {
     id: addId(),
@@ -620,7 +645,10 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: {landing: 1},
+    album: {
+      landing: 1,
+      test1: 1
+    },
   },
   {
     id: addId(),
@@ -635,7 +663,9 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: 'Box'
     },
-    album: {landing: 1},
+    album: {landing: 1,
+      test1: 1,
+    },
   },
 ];
 
