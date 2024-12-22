@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import imageData from "../../assets/image-data";
 import {LeftArrowButton} from '../common/arrow-buttons/left-arrow-button/left-arrow-button';
@@ -12,7 +12,6 @@ const PortfolioContainer = styled.div`
 `;
 
 const SideNav = styled.div`
-  //border: solid;
   padding: 40px 0px;
   width: 30vh;
   min-width: 30vh;
@@ -33,7 +32,8 @@ const SideNav = styled.div`
 `;
 
 const Gallery = styled.div`
-  border: solid;
+  //border: solid;
+  background-color: gainsboro;
   //display: flex;
   flex-direction: row;
   //position: relative;
@@ -73,10 +73,11 @@ const ScrollGallery = styled.div`
   
   .scrollGalleryBorders {
     display: flex;
+    background-color: white;
     justify-content: center;
     width: 15vh;
     height: 15vh;
-    border: solid;
+   // border: solid;
     margin: 5px;
     cursor: pointer;
   }
@@ -92,25 +93,31 @@ const ScrollGallery = styled.div`
 
 const NavButtons = styled.div`
   cursor: pointer;
-  border: solid;
   margin: auto;
-  
   bottom: 40%;
 
+  :hover {
+    background-color: gainsboro;
+  }
 `;
 
 const Slideshow = styled.div`
   display: flex;
   width: 80%;
   height: 100%;
-  //justify-content: center;
   align-items: center;
 `;
 
-
-function Portfolio({album, setAlbum, portfolio, setPortfolio, slide, setSlide, arrowButtonHandler}) {
+function Portfolio({
+  album, 
+  setAlbum, 
+  portfolio, 
+  setPortfolio, 
+  slide, 
+  setSlide, 
+  arrowButtonHandler
+}) {
   
-
   useEffect (() => {
     let p = [];
       imageData.map((entry) => {
@@ -139,7 +146,7 @@ function Portfolio({album, setAlbum, portfolio, setPortfolio, slide, setSlide, a
 
         {/* <Slideshow> */}
         <NavButtons>
-            <LeftArrowButton arrowButtonHandler={arrowButtonHandler}/>
+            <LeftArrowButton className='test' arrowButtonHandler={arrowButtonHandler}/>
           </NavButtons>
         <Gallery>
           

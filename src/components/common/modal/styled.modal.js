@@ -4,7 +4,7 @@ const ModalIcon = styled.div`
   position: fixed;
   top: 44px;
   right: 4%;
-
+  
   .modalIconContainer {
     display: flex;
     flex-direction: column;
@@ -116,7 +116,7 @@ const Modal = styled.div`
       margin: 10px 10px 10px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.5;
-      //border: solid;
+ 
     }
 
     p {
@@ -126,7 +126,7 @@ const Modal = styled.div`
       margin: 10px 0px 10px 10px;
       padding: 0px 80px 30px 30px;
       line-height: 1.5;
-      //border: solid;
+    
       
         @media (max-width: 1149px){
           display: flex;

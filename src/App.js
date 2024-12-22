@@ -17,9 +17,6 @@ function App() {
   const [portfolio, setPortfolio] = useState([])
   const [slide, setSlide] = useState(null)
 
-
-  
-
   function imageClickHandler(id) {
     setModalSelect(id);
     setShowModal(true);
@@ -50,6 +47,12 @@ function App() {
       } else {
         setModalSelect(imageData.length - 1);
       }
+    }
+    if (e.key === "ArrowLeft" && (slide > 0)){
+      setSlide(slide - 1)
+    }
+    if (e.key === "ArrowRight" && (slide < portfolio.length - 1)){
+      setSlide(slide + 1)
     }
   }
 

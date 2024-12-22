@@ -63,13 +63,8 @@ const GallerySmall = styled.div`
 
   .column img {
     margin-top: 14px;
-    vertical-align: middle;
-    
-      
+    vertical-align: middle;    
   }
-  
-  
-
 `;
 
 const TopButton = styled.div`

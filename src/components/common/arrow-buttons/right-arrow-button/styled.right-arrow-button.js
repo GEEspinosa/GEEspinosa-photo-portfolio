@@ -9,9 +9,15 @@ const RightArrowButtonIcon = styled.div`
     padding: 25px;
     margin: 25px;
     cursor: pointer;
+    border: solid silver;
+
+    :hover {
+      background-color: red;
+    }
+    
 
     :first-child {
-      transform: scaleY(-1) rotate(-45deg) ;
+      transform: scaleY(-1) rotate(-45deg);
     }
 
     :nth-child(2) {
@@ -26,9 +32,10 @@ const RightArrowButtonIcon = styled.div`
     width: 30px;
     height: 4px;
     background-color: gray;
+    pointer-events: none;
     margin: 3px;
     transform-origin: 21px;
-    
+
     @media (max-width: 699px) {
         display: none;
     }

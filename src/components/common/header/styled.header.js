@@ -16,7 +16,10 @@ const Navbar = styled.nav`
   justify-content: flex-end;
   font-size: 20px;
   padding: 20px;
-  //border: solid;
+  
+  :hover{
+    color: red;
+  }
 
   @media (max-width: 710px) {
     .navbar-link {

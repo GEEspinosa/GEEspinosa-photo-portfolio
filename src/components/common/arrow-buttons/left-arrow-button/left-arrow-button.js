@@ -9,8 +9,7 @@ function LeftArrowButton ({arrowButtonHandler}) {
                 <div className="leftArrowIcon" />    
                 <div className="leftArrowIcon" />
             </LeftArrowButtonIcon>
-        </>
-        
+        </> 
     )
 };
 
