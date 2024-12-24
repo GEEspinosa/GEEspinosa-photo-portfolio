@@ -37,6 +37,14 @@ import tessaFlowers from "./images/tessa_flowers.png";
 import yaquinaHeadLighthouse from "./images/yaquina_head_lighthouse.png";
 import zoranPatSwim from "./images/zoran_pat_swim.png";
 import zoranPolaroid from "./images/zoran_polaroid.jpg";
+import longbeachDistantHouse from "./images/longbeach_distanthouse.png";
+import longbeachDistantWalker from "./images/longbeach_distantwalker.png";
+import longbeachNoHorizon from "./images/longbeach_nohorizon.jpg";
+import longbeachOrcas from "./images/longbeach_orcas.png";
+import longbeachOrcasOverhead from "./images/longbeach_orcaoverhead.jpg";
+import longbeachRestArea from "./images/longbeach_restarea.png";
+import longbeachTireMarks from "./images/longbeach_tiremarks.jpg";
+import longbeachWetTireMarks from "./images/longbeach_wetsandtiremarks.png";
 
 let id = 0;
 
@@ -665,6 +673,142 @@ const imageData = [
     },
     album: {landing: 1,
       test1: 1,
+    },
+  },
+  {
+    id: addId(),
+    image: longbeachDistantHouse,
+    orientation: 'horizontal',
+    text: "Distant House",
+    description: {
+      title: 'Distant House',
+      location: 'Longbeach, WA',
+      date: 'Oct. 18, 2024',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: '800 / +1',
+    },
+    album: {
+      longbeach: 1,
+    },
+  },
+  {
+    id: addId(),
+    image: longbeachDistantWalker,
+    orientation: 'horizontal',
+    text: "Walker",
+    description: {
+      title: 'Walker',
+      location: 'Longbeach, WA',
+      date: 'Oct. 10, 2022',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Expired Kodak TriX 35mm',
+      shot: '200 / -1',
+    },
+    album: {
+      longbeach: 1,
+    },
+  },
+  {
+    id: addId(),
+    image: longbeachNoHorizon,
+    orientation: 'horizontal',
+    text: "No Horizon",
+    description: {
+      title: 'No Horizon',
+      location: 'Longbeach, WA',
+      date: 'Oct. 10, 2022',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Expired Kodak TriX 35mm',
+      shot: '200 / -1',
+    },
+    album: {
+      longbeach: 1,
+    },
+  },
+  {
+    id: addId(),
+    image: longbeachRestArea,
+    orientation: 'horizontal',
+    text: "Rest Area",
+    description: {
+      title: 'Rest Area',
+      location: 'Longbeach, WA',
+      date: 'Oct. 10, 2022',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Expired Kodak TriX 35mm',
+      shot: '200 / -1',
+    },
+    album: {
+      longbeach: 1,
+    },
+  },
+  {
+    id: addId(),
+    image: longbeachOrcas,
+    orientation: 'horizontal',
+    text: "Orcas",
+    description: {
+      title: 'Orcas',
+      location: 'Longbeach, WA',
+      date: 'Oct. 7, 2023',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford SFX 200 35mm',
+      shot: 'Red Filter/ 200 / Box',
+    },
+    album: {
+      longbeach: 1,
+    },
+  },
+  {
+    id: addId(),
+    image: longbeachOrcasOverhead,
+    orientation: 'horizontal',
+    text: "Overhead",
+    description: {
+      title: 'Overhead',
+      location: 'Longbeach, WA',
+      date: 'Oct. 7, 2023',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford SFX 200 35mm',
+      shot: 'Red Filter/ 200 / Box',
+    },
+    album: {
+      longbeach: 1,
+    },
+  },
+  {
+    id: addId(),
+    image: longbeachTireMarks,
+    orientation: 'horizontal',
+    text: "Tire Marks",
+    description: {
+      title: 'Tire Marks',
+      location: 'Longbeach, WA',
+      date: 'Oct. 18, 2024',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: '800 / +1',
+    },
+    album: {
+      longbeach: 1,
+    },
+  },
+  {
+    id: addId(),
+    image: longbeachWetTireMarks,
+    orientation: 'horizontal',
+    text: "Wet Sand",
+    description: {
+      title: 'Wet Sand',
+      location: 'Longbeach, WA',
+      date: 'Oct. 10, 2022',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Expired Kodak TriX 35mm',
+      shot: '200 / -1',
+    },
+    album: {
+      longbeach: 1,
     },
   },
 ];

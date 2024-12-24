@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import imageData from "../../assets/image-data";
 import {LeftArrowButton} from '../common/arrow-buttons/left-arrow-button/left-arrow-button';
@@ -32,7 +32,6 @@ const SideNav = styled.div`
 `;
 
 const Gallery = styled.div`
-  //border: solid;
   background-color: gainsboro;
   //display: flex;
   flex-direction: row;
@@ -64,16 +63,18 @@ const ImageBox = styled.div`
 `;  
 
 const ScrollGallery = styled.div`
-  //border: solid;
+  border: solid;
   display: flex;
   justify-content: center;
   align-items; stretch;
+  overflow-x: auto;
+  white-space: nowrap;
   width: 100%; 
   padding: 5px;
   
   .scrollGalleryBorders {
     display: flex;
-    background-color: white;
+    background-color: #28282B;
     justify-content: center;
     width: 15vh;
     height: 15vh;
@@ -118,6 +119,15 @@ function Portfolio({
   arrowButtonHandler
 }) {
   
+  const [windowIndexes, setWindowIndexes] = useState({
+    begIndex: 0,
+    lastIndex: 5,
+  })
+  const [windowArray, setWindowArray] = useState([])
+  
+
+  
+
   useEffect (() => {
     let p = [];
       imageData.map((entry) => {
@@ -127,10 +137,27 @@ function Portfolio({
           }
         } 
       });
-      console.log(portfolio)
       setPortfolio(p)
-      setSlide(0)  
+      setSlide(0) 
+      testSliding(p)
+      
   }, [album])
+
+  useEffect(() => {
+    testSliding(portfolio)
+  }, [windowIndexes])
+
+  function testSliding (p) {
+    let slidingWindow = p.filter((i, key) => (key >= windowIndexes.begIndex ) && (key < windowIndexes.lastIndex))
+    console.log(slidingWindow, windowIndexes.begIndex)
+    setWindowArray(slidingWindow)
+  }
+    
+    
+
+  
+
+ 
 
   return (
     <>
@@ -145,7 +172,10 @@ function Portfolio({
         </SideNav>
 
         {/* <Slideshow> */}
-        <NavButtons>
+        <NavButtons onClick={() => setWindowIndexes(windowIndexes.begIndex !== 0 ? {begIndex: windowIndexes.begIndex - 1, lastIndex: windowIndexes.lastIndex - 1} : {
+    begIndex: 0,
+    lastIndex: 5,
+  })}>
             <LeftArrowButton className='test' arrowButtonHandler={arrowButtonHandler}/>
           </NavButtons>
         <Gallery>
@@ -157,8 +187,12 @@ function Portfolio({
           </ImageBox>
           
           <ScrollGallery>
+            <button onClick={() => setWindowIndexes(windowIndexes.begIndex !== 0 ? {begIndex: windowIndexes.begIndex - 1, lastIndex: windowIndexes.lastIndex - 1} : {
+    begIndex: 0,
+    lastIndex: 5,
+  })}>left</button>
           {
-            portfolio.map((i, key) => {
+            windowArray.map((i, key) => {
               return (
                 <div className='scrollGalleryBorders' onClick={() => setSlide(key)}>
                   <img alt='test' src={i}/>
@@ -166,9 +200,22 @@ function Portfolio({
               )
             })
           }
+
+<button onClick={() => setWindowIndexes(windowIndexes.lastIndex !== portfolio.length ? {begIndex: windowIndexes.begIndex + 1, lastIndex: windowIndexes.lastIndex + 1} : 
+
+{
+  begIndex: portfolio.length - 5,
+  lastIndex: portfolio.length,
+}
+)}>right</button>
           </ScrollGallery>
         </Gallery>
-        <NavButtons>
+        <NavButtons onClick={() => setWindowIndexes(windowIndexes.lastIndex !== portfolio.length ? {begIndex: windowIndexes.begIndex + 1, lastIndex: windowIndexes.lastIndex + 1} : 
+
+{
+  begIndex: portfolio.length - 5,
+  lastIndex: portfolio.length,
+})}>
             <RightArrowButton arrowButtonHandler={arrowButtonHandler}/>
           </NavButtons>
           {/* </Slideshow> */}
