@@ -120,8 +120,6 @@ function Portfolio({
 }) {
   
   const [windowIndexes, setWindowIndexes] = useState({
-    begIndex: 0,
-    lastIndex: 5,
   })
   const [windowArray, setWindowArray] = useState([])
   
@@ -140,6 +138,10 @@ function Portfolio({
       setPortfolio(p)
       setSlide(0) 
       testSliding(p)
+      setWindowIndexes({
+        begIndex: 0,
+        lastIndex: 5,
+      })
       
   }, [album])
 
