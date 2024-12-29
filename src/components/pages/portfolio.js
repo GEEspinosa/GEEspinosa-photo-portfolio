@@ -123,9 +123,6 @@ function Portfolio({
   })
   const [windowArray, setWindowArray] = useState([])
   
-
-  
-
   useEffect (() => {
     let p = [];
       imageData.map((entry) => {
@@ -155,12 +152,6 @@ function Portfolio({
     setWindowArray(slidingWindow)
   }
     
-    
-
-  
-
- 
-
   return (
     <>
       <PortfolioContainer>
@@ -174,7 +165,7 @@ function Portfolio({
         </SideNav>
 
         {/* <Slideshow> */}
-        <NavButtons onClick={() => setWindowIndexes(windowIndexes.begIndex !== 0 ? {begIndex: windowIndexes.begIndex - 1, lastIndex: windowIndexes.lastIndex - 1} : {
+        <NavButtons onClick={() => setWindowIndexes((windowIndexes.begIndex !== 0) && (portfolio.length >= 5) ? {begIndex: windowIndexes.begIndex - 1, lastIndex: windowIndexes.lastIndex - 1} : {
     begIndex: 0,
     lastIndex: 5,
   })}>
@@ -189,7 +180,7 @@ function Portfolio({
           </ImageBox>
           
           <ScrollGallery>
-            <button onClick={() => setWindowIndexes(windowIndexes.begIndex !== 0 ? {begIndex: windowIndexes.begIndex - 1, lastIndex: windowIndexes.lastIndex - 1} : {
+            <button onClick={() => setWindowIndexes((windowIndexes.begIndex !== 0) && (portfolio.length >= 5) ? {begIndex: windowIndexes.begIndex - 1, lastIndex: windowIndexes.lastIndex - 1} : {
     begIndex: 0,
     lastIndex: 5,
   })}>left</button>
@@ -203,7 +194,7 @@ function Portfolio({
             })
           }
 
-<button onClick={() => setWindowIndexes(windowIndexes.lastIndex !== portfolio.length ? {begIndex: windowIndexes.begIndex + 1, lastIndex: windowIndexes.lastIndex + 1} : 
+<button onClick={() => setWindowIndexes((windowIndexes.lastIndex !== portfolio.length) && (portfolio.length >= 5) ? {begIndex: windowIndexes.begIndex + 1, lastIndex: windowIndexes.lastIndex + 1} : 
 
 {
   begIndex: portfolio.length - 5,
@@ -212,7 +203,7 @@ function Portfolio({
 )}>right</button>
           </ScrollGallery>
         </Gallery>
-        <NavButtons onClick={() => setWindowIndexes(windowIndexes.lastIndex !== portfolio.length ? {begIndex: windowIndexes.begIndex + 1, lastIndex: windowIndexes.lastIndex + 1} : 
+        <NavButtons onClick={() => setWindowIndexes((windowIndexes.lastIndex !== portfolio.length) && (portfolio.length >= 5) ? {begIndex: windowIndexes.begIndex + 1, lastIndex: windowIndexes.lastIndex + 1} : 
 
 {
   begIndex: portfolio.length - 5,
