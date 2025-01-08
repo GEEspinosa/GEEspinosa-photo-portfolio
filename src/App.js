@@ -103,7 +103,7 @@ function App() {
   return (
     <>
       {showModal && (
-        <ModalComponent setShowModal={setShowModal} modalSelect={modalSelect} arrowButtonHandler={arrowButtonHandler} />
+        <ModalComponent showModal={showModal} setShowModal={setShowModal} modalSelect={modalSelect} arrowButtonHandler={arrowButtonHandler} />
       )}
 
       <Header open={open} setOpen={setOpen} showModal={showModal} />

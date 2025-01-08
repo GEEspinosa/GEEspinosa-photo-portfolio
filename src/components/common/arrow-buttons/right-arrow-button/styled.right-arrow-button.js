@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const RightArrowButtonIcon = styled.div`
- visibility: ${({rightButton}) => rightButton === true ? 'visible' : 'hidden'};
+ visibility: ${({showModal, rightButton}) => showModal === true || rightButton === true ? 'visible' : 'hidden'};
     display: flex;
     flex-direction: column;
     position: fixed
@@ -9,7 +9,7 @@ const RightArrowButtonIcon = styled.div`
     padding: 25px;
     margin: 25px;
     cursor: pointer;
-    margin-bottom: 210px;
+    margin-bottom: ${({rightButton}) =>  rightButton === true ? '210px' : '0px'};
     //border: solid silver;
 
     :hover {
@@ -26,8 +26,12 @@ const RightArrowButtonIcon = styled.div`
     }
 
     @media (max-width: 1400px) {
-        margin-bottom: 210px;
-    } 
+     margin-bottom: ${({showModal}) =>  showModal === true ? '310px' : '210px'};
+  }
+
+  @media (max-width: 1149px) {
+    margin-bottom: 190px;
+  }
 
   .RightArrowIcon {
     

@@ -49,7 +49,7 @@ function Landing({
   // can't tell if innerwidth 802 or 956?
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth <= 956) {
+    if (window.innerWidth <= 1293) {
       setSmallLandingLayout(true);
     } else {
       setSmallLandingLayout(false);

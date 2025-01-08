@@ -52,6 +52,7 @@ const Modal = styled.div`
   }
  
   .middleColumn {
+
     display: flex;
     justify-content: center;
     //border: solid;
@@ -63,6 +64,8 @@ const Modal = styled.div`
       width: 100%;
       height: 100%;
       flex-direction: column; 
+     
+      
     }
 
     // @media (max-width: 699px) {
@@ -72,6 +75,8 @@ const Modal = styled.div`
     // }
 
     .horizontal {
+    
+      //border: solid;
       width: 62%;
       max-height: 70%;
       min-width: 25%; 
@@ -93,6 +98,7 @@ const Modal = styled.div`
     }
 
     .vertical {
+     // border: solid;
       max-height: 70%;
       min-width: 25%; 
       padding: 20px 20px;
@@ -101,6 +107,7 @@ const Modal = styled.div`
       @media (max-width: 699px) {
         width: 140%;
         position: relative;
+        
       }
 
       @media (max-width: 420px) {
@@ -109,17 +116,37 @@ const Modal = styled.div`
     }
 
     h2 {
+      //border: solid;
       font-size: 26px;
+      max-width: 300px;
+      min-width: 300px;
       
       color: gray;
       display: block;
       margin: 10px 10px 10px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.5;
+      //margin-right: 100px;
  
+      @media (max-width: 1149px) {
+        
+        font-size: 20px;
+        margin: 0px;
+        padding: 0px;
+        
+      }
+
+      @media (max-width: 375px ) {
+          font-size: 18px;
+          line-height: 1.2
+          padding: 0px 0px 0px 0px;
+        }
     }
 
     p {
+     // border: solid;
+      max-width: 300px;
+      min-width: 300px;
       font-size: 1.1em;
       color: gray;
       display: block;
@@ -130,16 +157,24 @@ const Modal = styled.div`
       
         @media (max-width: 1149px){
           display: flex;
+          font-size: 16px;
+          margin: 0px;
+          padding: 0px;
         }
 
         @media (max-width: 699px) {
-         font-size: 18px;
+         font-size: 14px;
          //width: 100%;
          //border: solid;
          //text-align: center;
-         padding: 30px 30px 30px 30px;
+         padding: 30px 0px 0px 0px;
          margin: 0px 0px 0px 0px;
         }  
+
+        @media (max-width: 375px ) {
+          padding: 20px 0px 0px 0px;
+          line-height: 1.2;
+        }
     }
   }
   

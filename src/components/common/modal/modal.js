@@ -4,7 +4,7 @@ import {LeftArrowButton} from "../arrow-buttons/left-arrow-button/left-arrow-but
 import {RightArrowButton} from "../arrow-buttons/right-arrow-button/right-arrow-button";
 import {ModalIcon, Modal} from "./styled.modal";
 
-function ModalComponent({ setShowModal, modalSelect, arrowButtonHandler }) {
+function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandler }) {
   return (
     <> 
       <Modal>
@@ -16,7 +16,7 @@ function ModalComponent({ setShowModal, modalSelect, arrowButtonHandler }) {
               <div className="xIcon" />
             </div>
           </ModalIcon>       
-          <LeftArrowButton arrowButtonHandler={arrowButtonHandler}/> 
+          <LeftArrowButton showModal={showModal} arrowButtonHandler={arrowButtonHandler}/> 
           <div className="middleColumn">
             <img alt="test" src={imageData[modalSelect].image} className={imageData[modalSelect].orientation} />
             <div>
@@ -32,7 +32,7 @@ function ModalComponent({ setShowModal, modalSelect, arrowButtonHandler }) {
               </p>
             </div>
           </div>  
-          <RightArrowButton arrowButtonHandler={arrowButtonHandler}/> 
+          <RightArrowButton showModal={showModal} arrowButtonHandler={arrowButtonHandler}/> 
         </div>  
       </Modal>     
     </>
