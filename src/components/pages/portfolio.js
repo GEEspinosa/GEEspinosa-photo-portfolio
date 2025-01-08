@@ -32,7 +32,7 @@ const SideNav = styled.div`
 `;
 
 const Gallery = styled.div`
-  background-color: gainsboro;
+ // background-color: gainsboro;
   //display: flex;
   flex-direction: row;
   //position: relative;
@@ -63,7 +63,7 @@ const ImageBox = styled.div`
 `;  
 
 const ScrollGallery = styled.div`
-  border: solid;
+  //border: solid;
   display: flex;
   justify-content: center;
   align-items; stretch;
@@ -74,7 +74,7 @@ const ScrollGallery = styled.div`
   
   .scrollGalleryBorders {
     display: flex;
-    background-color: #28282B;
+    //background-color: #28282B;
     justify-content: center;
     width: 15vh;
     height: 15vh;
@@ -90,6 +90,72 @@ const ScrollGallery = styled.div`
     flex-grow: 1;
     object-fit: contain;  
   }
+
+  .leftGalleryButton {
+    
+    visibility: ${({leftButton}) => leftButton === true ? 'visible' : 'hidden'};
+    
+    border: none;
+    background-color: white;
+    color: silver;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin-top: 65px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+
+    &:hover {
+      color: white;
+      background-color: gainsboro;
+     
+    }
+
+
+    .dots {
+   
+      line-height: 0;
+      margin-top: -4px;
+      
+      
+    }
+    
+  }
+
+  .rightGalleryButton {
+    
+    visibility: ${({rightButton}) => rightButton === true ? 'visible' : 'hidden'};
+    
+    border: none;
+    background-color: white;
+    color: silver;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin-top: 65px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 600;
+
+    &:hover {
+      color: white;
+      background-color: gainsboro;
+     
+    }
+    .dots {
+   
+      line-height: 0;
+      margin-top: -4px;
+      
+      
+    }
+    
+  }
 `;
 
 const NavButtons = styled.div`
@@ -102,13 +168,6 @@ const NavButtons = styled.div`
   }
 `;
 
-const Slideshow = styled.div`
-  display: flex;
-  width: 80%;
-  height: 100%;
-  align-items: center;
-`;
-
 function Portfolio({
   album, 
   setAlbum, 
@@ -119,9 +178,12 @@ function Portfolio({
   arrowButtonHandler
 }) {
   
-  const [windowIndexes, setWindowIndexes] = useState({
-  })
+  const [windowIndexes, setWindowIndexes] = useState({})
+  const [galleryIndexes, setGalleryIndexes] = useState ({})
   const [windowArray, setWindowArray] = useState([])
+  const [galleryArray, setGalleryArray] = useState([])
+  const [leftScrollButtonsAppear, setLeftScrollButtonsAppear] = useState(false)
+  const [rightScrollButtonsAppear, setRightScrollButtonsAppear] = useState(false)
   
   useEffect (() => {
     let p = [];
@@ -139,17 +201,46 @@ function Portfolio({
         begIndex: 0,
         lastIndex: 5,
       })
+      setGalleryIndexes({
+        begGalleryIndex: 0,
+        lastGalleryIndex: 5,
+      })
       
   }, [album])
 
   useEffect(() => {
     testSliding(portfolio)
-  }, [windowIndexes])
+    leftGalleryButtonHandler(galleryIndexes)
+    rightGalleryButtonHandler(portfolio, galleryIndexes.lastGalleryIndex)
+  }, [ galleryIndexes])
 
   function testSliding (p) {
     let slidingWindow = p.filter((i, key) => (key >= windowIndexes.begIndex ) && (key < windowIndexes.lastIndex))
-    console.log(slidingWindow, windowIndexes.begIndex)
     setWindowArray(slidingWindow)
+    let slidingGallery = p.filter((i, key) => (key >= galleryIndexes.begGalleryIndex ) && (key < galleryIndexes.lastGalleryIndex))
+    setGalleryArray(slidingGallery)
+  }
+
+  function leftGalleryButtonHandler (window) {
+    let {lastGalleryIndex} = window
+    console.log(lastGalleryIndex)
+    if (lastGalleryIndex >= 6) {
+      console.log('yes')
+      setLeftScrollButtonsAppear(true)
+    }
+    else {
+      console.log('no')
+      setLeftScrollButtonsAppear(false)
+    }  
+  }
+
+  function rightGalleryButtonHandler (portfolio, lastGalleryIndex){
+    if (portfolio.length > 5 && lastGalleryIndex !== portfolio.length) {
+      setRightScrollButtonsAppear(true)
+    }
+    else {
+      setRightScrollButtonsAppear(false)
+    }
   }
     
   return (
@@ -179,28 +270,30 @@ function Portfolio({
             
           </ImageBox>
           
-          <ScrollGallery>
-            <button onClick={() => setWindowIndexes((windowIndexes.begIndex !== 0) && (portfolio.length >= 5) ? {begIndex: windowIndexes.begIndex - 1, lastIndex: windowIndexes.lastIndex - 1} : {
-    begIndex: 0,
-    lastIndex: 5,
-  })}>left</button>
+          <ScrollGallery leftButton={leftScrollButtonsAppear} rightButton={rightScrollButtonsAppear}>
+            <button  className='leftGalleryButton'  onClick={() => setGalleryIndexes((galleryIndexes.begGalleryIndex !== 0) && (portfolio.length >= 5) ? {begGalleryIndex: galleryIndexes.begGalleryIndex - 1, lastGalleryIndex: galleryIndexes.lastGalleryIndex - 1} : {
+              begGalleryIndex: 0,
+              lastGalleryIndex: 5,
+              })}><div className='dots'>. . .</div></button>
           {
-            windowArray.map((i, key) => {
+            galleryArray.map((i, key) => {
+              let adjust = key + galleryIndexes.begGalleryIndex
+              console.log(adjust)
               return (
-                <div className='scrollGalleryBorders' onClick={() => setSlide(key)}>
+                <div className='scrollGalleryBorders' onClick={() => setSlide(adjust)}>
                   <img alt='test' src={i}/>
                 </div> 
               )
             })
           }
 
-<button onClick={() => setWindowIndexes((windowIndexes.lastIndex !== portfolio.length) && (portfolio.length >= 5) ? {begIndex: windowIndexes.begIndex + 1, lastIndex: windowIndexes.lastIndex + 1} : 
+            <button className='rightGalleryButton' onClick={() => setGalleryIndexes((galleryIndexes.lastGalleryIndex !== portfolio.length) && (portfolio.length >= 5) ? {begGalleryIndex: galleryIndexes.begGalleryIndex + 1, lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1} : 
 
-{
-  begIndex: portfolio.length - 5,
-  lastIndex: portfolio.length,
-}
-)}>right</button>
+            {
+              begGalleryIndex: portfolio.length - 5,
+              lastGalleryIndex: portfolio.length,
+            }
+            )}><div className='dots'>. . .</div></button>
           </ScrollGallery>
         </Gallery>
         <NavButtons onClick={() => setWindowIndexes((windowIndexes.lastIndex !== portfolio.length) && (portfolio.length >= 5) ? {begIndex: windowIndexes.begIndex + 1, lastIndex: windowIndexes.lastIndex + 1} : 

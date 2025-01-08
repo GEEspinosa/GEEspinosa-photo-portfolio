@@ -8,7 +8,7 @@ const LeftArrowButtonIcon = styled.div`
   padding: 25px;
   margin: 25px;
   cursor: pointer;
-  border: solid silver;
+  //border: solid silver;
 
     :first-child {
       transform: rotate(-45deg);
@@ -24,7 +24,8 @@ const LeftArrowButtonIcon = styled.div`
   }
 
   .leftArrowIcon {
-    width: 30px;
+    //dev note: width below was 30
+    width: 24px;
     height: 4px;
     background-color: gray;
     pointer-events: none;
