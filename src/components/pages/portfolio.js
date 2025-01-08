@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import imageData from "../../assets/image-data";
-import {LeftArrowButton} from '../common/arrow-buttons/left-arrow-button/left-arrow-button';
+import { LeftArrowButton } from '../common/arrow-buttons/left-arrow-button/left-arrow-button';
 import { RightArrowButton } from "../common/arrow-buttons/right-arrow-button/right-arrow-button";
 
 const PortfolioContainer = styled.div`
- // border: solid;
   display: flex;
   width: 100%;
   height: 100%;
@@ -161,7 +160,7 @@ const ScrollGallery = styled.div`
 const NavButtons = styled.div`
   cursor: pointer;
   margin: auto;
-  bottom: 40%;
+  bottom: 30%;
 
   :hover {
     background-color: gainsboro;
@@ -180,8 +179,10 @@ function Portfolio({
   
   const [windowIndexes, setWindowIndexes] = useState({})
   const [galleryIndexes, setGalleryIndexes] = useState ({})
-  const [windowArray, setWindowArray] = useState([])
+  //const [windowArray, setWindowArray] = useState([])
   const [galleryArray, setGalleryArray] = useState([])
+  const [leftWindowButtonAppear, setLeftWindowButtonAppear] = useState(false)
+  const [rightWindowButtonAppear, setRightWindowButtonAppear] = useState(false)
   const [leftScrollButtonsAppear, setLeftScrollButtonsAppear] = useState(false)
   const [rightScrollButtonsAppear, setRightScrollButtonsAppear] = useState(false)
   
@@ -210,26 +211,47 @@ function Portfolio({
 
   useEffect(() => {
     testSliding(portfolio)
+    leftSlideshowButtonHandler()
+    rightSlideshowButtonHandler(portfolio)
     leftGalleryButtonHandler(galleryIndexes)
     rightGalleryButtonHandler(portfolio, galleryIndexes.lastGalleryIndex)
-  }, [ galleryIndexes])
+    
+  }, [slide, windowIndexes, galleryIndexes, portfolio])
 
   function testSliding (p) {
-    let slidingWindow = p.filter((i, key) => (key >= windowIndexes.begIndex ) && (key < windowIndexes.lastIndex))
-    setWindowArray(slidingWindow)
+    // let slidingWindow = p.filter((i, key) => (key >= windowIndexes.begIndex ) && (key < windowIndexes.lastIndex))
+    // setWindowArray(slidingWindow)
     let slidingGallery = p.filter((i, key) => (key >= galleryIndexes.begGalleryIndex ) && (key < galleryIndexes.lastGalleryIndex))
     setGalleryArray(slidingGallery)
   }
 
-  function leftGalleryButtonHandler (window) {
-    let {lastGalleryIndex} = window
-    console.log(lastGalleryIndex)
-    if (lastGalleryIndex >= 6) {
+
+  function leftSlideshowButtonHandler() {
+    if (slide > 0) {
       console.log('yes')
+      setLeftWindowButtonAppear(true)
+    } 
+    else {
+      setLeftWindowButtonAppear(false)
+    }
+  }
+
+  function rightSlideshowButtonHandler () {
+    if (slide < portfolio.length-1) {
+      setRightWindowButtonAppear(true)
+    }
+    else {
+      setRightWindowButtonAppear(false)
+    }
+  }
+
+
+  function leftGalleryButtonHandler (gallery) {
+    let {lastGalleryIndex} = gallery
+    if (lastGalleryIndex >= 6) {
       setLeftScrollButtonsAppear(true)
     }
     else {
-      console.log('no')
       setLeftScrollButtonsAppear(false)
     }  
   }
@@ -260,7 +282,7 @@ function Portfolio({
     begIndex: 0,
     lastIndex: 5,
   })}>
-            <LeftArrowButton className='test' arrowButtonHandler={arrowButtonHandler}/>
+            <LeftArrowButton leftButton={leftWindowButtonAppear} className='test' arrowButtonHandler={arrowButtonHandler}/>
           </NavButtons>
         <Gallery>
           
@@ -278,7 +300,7 @@ function Portfolio({
           {
             galleryArray.map((i, key) => {
               let adjust = key + galleryIndexes.begGalleryIndex
-              console.log(adjust)
+
               return (
                 <div className='scrollGalleryBorders' onClick={() => setSlide(adjust)}>
                   <img alt='test' src={i}/>
@@ -302,7 +324,7 @@ function Portfolio({
   begIndex: portfolio.length - 5,
   lastIndex: portfolio.length,
 })}>
-            <RightArrowButton arrowButtonHandler={arrowButtonHandler}/>
+            <RightArrowButton rightButton={rightWindowButtonAppear} arrowButtonHandler={arrowButtonHandler}/>
           </NavButtons>
           {/* </Slideshow> */}
       </PortfolioContainer>

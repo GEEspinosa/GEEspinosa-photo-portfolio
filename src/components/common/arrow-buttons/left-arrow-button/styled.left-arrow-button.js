@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 const LeftArrowButtonIcon = styled.div`
- 
+ visibility: ${({leftButton}) => leftButton === true ? 'visible' : 'hidden'};
   display: flex;
   flex-direction: column;
   z-index: 1000;
   padding: 25px;
   margin: 25px;
   cursor: pointer;
+  margin-bottom: 210px;
   //border: solid silver;
 
     :first-child {
@@ -19,9 +20,9 @@ const LeftArrowButtonIcon = styled.div`
       transform: rotate(45deg);
     }
 
-  @media (max-width: 1400px) {
-     margin-bottom: 210px;
-  }
+  // @media (max-width: 1400px) {
+  //    margin-bottom: 210px;
+  // }
 
   .leftArrowIcon {
     //dev note: width below was 30

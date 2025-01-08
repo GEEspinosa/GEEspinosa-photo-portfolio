@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const RightArrowButtonIcon = styled.div`
- 
+ visibility: ${({rightButton}) => rightButton === true ? 'visible' : 'hidden'};
     display: flex;
     flex-direction: column;
     position: fixed
@@ -9,6 +9,7 @@ const RightArrowButtonIcon = styled.div`
     padding: 25px;
     margin: 25px;
     cursor: pointer;
+    margin-bottom: 210px;
     //border: solid silver;
 
     :hover {

@@ -2,9 +2,9 @@ import React from "react";
 import { RightArrowButtonIcon } from "./styled.right-arrow-button";
 
 
-function RightArrowButton ({arrowButtonHandler}) {
+function RightArrowButton ({rightButton, arrowButtonHandler}) {
     return (
-        <RightArrowButtonIcon onClick={() => arrowButtonHandler('Right')}>
+        <RightArrowButtonIcon rightButton={rightButton} onClick={() => arrowButtonHandler('Right')}>
             <div className="RightArrowIcon" />
             <div className="RightArrowIcon" />
         </RightArrowButtonIcon>
