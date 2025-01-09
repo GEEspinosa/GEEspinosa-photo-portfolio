@@ -11,23 +11,37 @@ const PortfolioContainer = styled.div`
 `;
 
 const SideNav = styled.div`
-  padding: 40px 0px;
+  padding: 40px 0px 0px 0px;
   width: 30vh;
   min-width: 30vh;
+  //border: solid;
   
-  :hover {
-      color: red;
-  }
     
   li {
     color: grey;
     font-size: 22px;
     list-style-type: none;
     padding: 6px;
-    margin: 10px;  
+    margin: 10px;
     cursor: pointer;
+    &:hover {
+      color: red;
+  }
   }
 
+
+  .description-box {
+   //border: solid;
+    color: grey;
+    font-size: 22px;
+    list-style-type: none;
+    padding: 0px 10px 30px 10px;
+    margin: 10px;
+    margin-top: 110%;
+    max-height: 350px;
+    min-height: 350px;
+    text-align: center;
+  }
 `;
 
 const Gallery = styled.div`
@@ -167,6 +181,16 @@ const NavButtons = styled.div`
   }
 `;
 
+
+const initialMessage = {
+  title: 'select an album',
+  location: '',
+  date: '',
+  camera: '',
+  film: '',
+  shot: '',
+}
+
 function Portfolio({
   album, 
   setAlbum, 
@@ -181,6 +205,8 @@ function Portfolio({
   const [galleryIndexes, setGalleryIndexes] = useState ({})
   //const [windowArray, setWindowArray] = useState([])
   const [galleryArray, setGalleryArray] = useState([])
+  const [descriptionsArray, setDescriptionsArray] = useState([])
+  const [slideMessage, setSlideMessage] = useState(initialMessage)
   const [leftWindowButtonAppear, setLeftWindowButtonAppear] = useState(false)
   const [rightWindowButtonAppear, setRightWindowButtonAppear] = useState(false)
   const [leftScrollButtonsAppear, setLeftScrollButtonsAppear] = useState(false)
@@ -188,15 +214,18 @@ function Portfolio({
   
   useEffect (() => {
     let p = [];
+    let description = []
       imageData.map((entry) => {
         if ('album' in entry ) {
           if (album in entry.album) {
-            p.push(entry.image)
+            p.push(entry.image)         
+            description.push(entry.description)           
           }
         } 
       });
       setPortfolio(p)
-      setSlide(0) 
+      setDescriptionsArray(description) 
+      setSlide(0)
       testSliding(p)
       setWindowIndexes({
         begIndex: 0,
@@ -207,10 +236,12 @@ function Portfolio({
         lastGalleryIndex: 5,
       })
       
+      
   }, [album])
 
   useEffect(() => {
     testSliding(portfolio)
+    if (album !== 'cover') {setSlideMessage(descriptionsArray[slide])}
     leftSlideshowButtonHandler()
     rightSlideshowButtonHandler(portfolio)
     leftGalleryButtonHandler(galleryIndexes)
@@ -275,6 +306,23 @@ function Portfolio({
             <li onClick={() => setAlbum('test2')}>Live Performances</li>
             <li onClick={() => setAlbum('test3')}>Test3</li>
           </ul>
+
+          <div className='description-box'>
+              <p>
+                {slideMessage.title}
+              
+                {/* test test test test test test test test test test test test
+                test test test test test test test test test test test test
+                test test test test test test test test test test test test
+                test test test test test test test test test test test test
+                test test test test test test test test test test test test
+                test test test test test test test test test test test test
+                test test test test test test test test test test test test
+                test test test test test test test test test test test test
+                test test test test test test test test */}
+            
+              </p>
+          </div>
         </SideNav>
 
         {/* <Slideshow> */}
