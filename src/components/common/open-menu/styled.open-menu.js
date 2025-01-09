@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const StyledOpenMenu = styled.nav`
+  z-index: 2;
   background: gray;
   overflow-x: hidden;
   height: 100vh;

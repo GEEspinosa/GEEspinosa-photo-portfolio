@@ -8,13 +8,15 @@ const PortfolioContainer = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
+
+  
 `;
 
 const SideNav = styled.div`
   padding: 40px 0px 0px 0px;
   width: 30vh;
   min-width: 30vh;
-  //border: solid;
+ 
   
     
   li {
@@ -24,18 +26,19 @@ const SideNav = styled.div`
     padding: 6px;
     margin: 10px;
     cursor: pointer;
+
     &:hover {
       color: red;
-  }
+    }
   }
 
 
   .description-box {
-   //border: solid;
+  
     color: grey;
-    font-size: 22px;
+    font-size: 21px;
     list-style-type: none;
-    padding: 0px 10px 30px 45px;
+    padding: 10px 10px 30px 45px;
     margin: 10px;
     margin-top: 110%;
     max-height: 350px;
@@ -44,19 +47,20 @@ const SideNav = styled.div`
 
     h2{
       font-size: 24px;
+      color: grey;
     }
+
   }
 `;
 
 const Gallery = styled.div`
- // background-color: gainsboro;
-  //display: flex;
+  border: solid silver;
   flex-direction: row;
-  //position: relative;
   width: 100vw;
   height: 80vh;
   padding: 25px;
   object-fit: contain;
+  
 `;
 
 const ImageBox = styled.div`
@@ -68,12 +72,9 @@ const ImageBox = styled.div`
   padding: 5px;
 
   
-  img {
-    
-    position: absolute;
-    //border: solid silver;
-    //padding: 10px;
-    
+  img { 
+    z-index: 1;
+    position: absolute;    
     margin: auto;
     top: 0;
     right: 0;
@@ -322,9 +323,7 @@ function Portfolio({
         <Gallery>
           
           <ImageBox>
-            
             <img alt='test' src={portfolio[slide]}/>
-            
           </ImageBox>
           
           <ScrollGallery leftButton={leftScrollButtonsAppear} rightButton={rightScrollButtonsAppear}>
