@@ -55,7 +55,7 @@ const Modal = styled.div`
 
     display: flex;
     justify-content: center;
-    border: solid;
+    //border: solid;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -76,10 +76,10 @@ const Modal = styled.div`
 
     .horizontal {
     
-      border: solid;
-      width: 62%;
+      //border: solid;
+      width: 67%;
       max-height: 70%;
-      min-width: 25%; 
+     // min-width: 25%; 
       padding: 20px 20px;
       object-fit: contain; 
       
@@ -103,73 +103,79 @@ const Modal = styled.div`
       min-width: 25%; 
       padding: 20px 20px;
       object-fit: contain; 
+      align-self: center;
+      
+      @media(max-width: 1400px) {
+        text-align: center;
+      }
       
       
-      @media (max-width: 1400px) {
-        h2 {
+      // @media (max-width: 1400px) {
+      //   h2 {
         
-          margin-left: 230px;
+      //     margin-left: 230px;
+      //     align-self: center;
     
-        }
+      //   }
 
-        p {
-          margin-left: 230px;
-        }
-      }
+      //   p {
+      //     margin-left: 230px;
+      //   }
+      // }
 
-      @media (max-width: 1225px) {
-        h2 {
+      // @media (max-width: 1225px) {
+      //   h2 {
        
-          margin-left: 160px;
+      //     margin-left: 160px;
        
-        }
+      //   }
 
-        p {
-          margin-left: 160px;
-        }
-      }
+      //   p {
+      //     margin-left: 160px;
+      //   }
+      // }
 
-      @media (max-width: 1075px) {
-        h2 {
+      // @media (max-width: 1075px) {
+      //   h2 {
      
-          margin-left: 80px;
+      //     margin-left: 80px;
         
-        }
+      //   }
 
-        p {
-          margin-left: 80px;
-        }
-      }
+      //   p {
+      //     margin-left: 80px;
+      //   }
+      // }
 
-      @media (max-width: 920px) {
-        h2 {
+      // @media (max-width: 920px) {
+      //   h2 {
         
-          margin-left: 10px;
+      //     margin-left: 10px;
        
-        }
+      //   }
 
-        p {
-          margin-left: 10px;
-        }
-      }
+      //   p {
+      //     margin-left: 10px;
+      //   }
+      // }
       
 
-      @media (max-width: 790px) {
-        width: 90%;
-        position: relative;
+      // @media (max-width: 790px) {
+      //   width: 90%;
+      //   position: relative;
         
-      }
+      // }
 
-      @media (max-width: 420px) {
-        width: 125%;
-      }
+      // @media (max-width: 420px) {
+      //   width: 125%;
+      // }
 
 
       
     }
 
     h2 {
-      border: solid;
+      //border: solid;
       font-size: 22px;
       max-width: 300px;
       min-width: 300px;
@@ -194,7 +200,7 @@ const Modal = styled.div`
     }
 
     p {
-      border: solid;
+      //border: solid;
       max-width: 300px;
       min-width: 300px;
       font-size: .9em;
@@ -207,17 +213,12 @@ const Modal = styled.div`
     
       
         @media (max-width: 1400px){
-          display: flex;
+          //display: flex;
           font-size: 14px;
           margin: 0px;
           padding: 0px;
         }
 
-        // @media (max-width: 699px) {
-        //  font-size: 14px;
-        //  padding: 30px 0px 0px 0px;
-        //  margin: 0px 0px 0px 0px;
-        // }  
 
         @media (max-width: 375px ) {
           padding: 20px 0px 0px 0px;
