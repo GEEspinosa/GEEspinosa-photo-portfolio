@@ -57,14 +57,19 @@ const Gallery = styled.div`
 
 const ImageBox = styled.div`
  
-  //border: solid;
+  
   position: relative;
   width: 100%;
   height: 80%;
   padding: 5px;
+
   
   img {
+    
     position: absolute;
+    //border: solid silver;
+    //padding: 10px;
+    
     margin: auto;
     top: 0;
     right: 0;
@@ -97,6 +102,8 @@ const ScrollGallery = styled.div`
   }
 
   img {  
+    border: solid gainsboro;
+    padding: 4px;
     max-width: 95%;
     min-height: 30%;
     margin: 5px;
@@ -124,18 +131,12 @@ const ScrollGallery = styled.div`
     &:hover {
       color: white;
       background-color: gainsboro;
-     
     }
 
-
-    .dots {
-   
+    .dots {   
       line-height: 0;
       margin-top: -4px;
-      
-      
     }
-    
   }
 
   .rightGalleryButton {
@@ -309,7 +310,14 @@ function Portfolio({
 
           <div className='description-box'>
               <p>
-                {slideMessage.title}
+                {slideMessage.title}<br/>
+                {slideMessage.location}<br/>
+                {slideMessage.date}<br/>
+                {slideMessage.camera}<br/>
+                {slideMessage.film}<br/>
+                {slideMessage.shot}<br/>
+
+
               
                 {/* test test test test test test test test test test test test
                 test test test test test test test test test test test test
