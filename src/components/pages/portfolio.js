@@ -35,12 +35,16 @@ const SideNav = styled.div`
     color: grey;
     font-size: 22px;
     list-style-type: none;
-    padding: 0px 10px 30px 10px;
+    padding: 0px 10px 30px 45px;
     margin: 10px;
     margin-top: 110%;
     max-height: 350px;
     min-height: 350px;
-    text-align: center;
+    text-align: left;
+
+    h2{
+      font-size: 24px;
+    }
   }
 `;
 
@@ -182,16 +186,6 @@ const NavButtons = styled.div`
   }
 `;
 
-
-// const initialMessage = {
-//   title: 'select an album',
-//   location: '',
-//   date: '',
-//   camera: '',
-//   film: '',
-//   shot: '',
-// }
-
 function Portfolio({
   album, 
   setAlbum, 
@@ -208,9 +202,7 @@ function Portfolio({
   
   const [windowIndexes, setWindowIndexes] = useState({})
   const [galleryIndexes, setGalleryIndexes] = useState ({})
-  //const [windowArray, setWindowArray] = useState([])
   const [galleryArray, setGalleryArray] = useState([])
- 
   const [leftWindowButtonAppear, setLeftWindowButtonAppear] = useState(false)
   const [rightWindowButtonAppear, setRightWindowButtonAppear] = useState(false)
   const [leftScrollButtonsAppear, setLeftScrollButtonsAppear] = useState(false)
@@ -230,7 +222,7 @@ function Portfolio({
       setPortfolio(p)
       setDescriptionsArray(description) 
       setSlide(0)
-      testSliding(p)
+      createSlidingGallery(p)
       setWindowIndexes({
         begIndex: 0,
         lastIndex: 5,
@@ -244,7 +236,7 @@ function Portfolio({
   }, [album])
 
   useEffect(() => {
-    testSliding(portfolio)
+    createSlidingGallery(portfolio)
     if (album !== 'cover') {setSlideMessage(descriptionsArray[slide])}
     leftSlideshowButtonHandler()
     rightSlideshowButtonHandler(portfolio)
@@ -253,13 +245,10 @@ function Portfolio({
     
   }, [slide, windowIndexes, galleryIndexes, portfolio])
 
-  function testSliding (p) {
-    // let slidingWindow = p.filter((i, key) => (key >= windowIndexes.begIndex ) && (key < windowIndexes.lastIndex))
-    // setWindowArray(slidingWindow)
-    let slidingGallery = p.filter((i, key) => (key >= galleryIndexes.begGalleryIndex ) && (key < galleryIndexes.lastGalleryIndex))
-    setGalleryArray(slidingGallery)
+  function createSlidingGallery (p) {
+    let slidingGalleryFilter = p.filter((i, key) => (key >= galleryIndexes.begGalleryIndex ) && (key < galleryIndexes.lastGalleryIndex))
+    setGalleryArray(slidingGalleryFilter)
   }
-
 
   function leftSlideshowButtonHandler() {
     if (slide > 0) {
@@ -312,26 +301,13 @@ function Portfolio({
           </ul>
 
           <div className='description-box'>
+              <h2>{slideMessage.title}</h2>
               <p>
-                {slideMessage.title}<br/>
                 {slideMessage.location}<br/>
-                {slideMessage.date}<br/>
+                {slideMessage.date}<br/><br/>
                 {slideMessage.camera}<br/>
                 {slideMessage.film}<br/>
                 {slideMessage.shot}<br/>
-
-
-              
-                {/* test test test test test test test test test test test test
-                test test test test test test test test test test test test
-                test test test test test test test test test test test test
-                test test test test test test test test test test test test
-                test test test test test test test test test test test test
-                test test test test test test test test test test test test
-                test test test test test test test test test test test test
-                test test test test test test test test test test test test
-                test test test test test test test test */}
-            
               </p>
           </div>
         </SideNav>
