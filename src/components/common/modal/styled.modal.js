@@ -55,7 +55,7 @@ const Modal = styled.div`
 
     display: flex;
     justify-content: center;
-    //border: solid;
+    border: solid;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -64,20 +64,37 @@ const Modal = styled.div`
       width: 100%;
       height: 100%;
       flex-direction: column; 
-     
+     //justify-content: flex-start;
+      align-items: flex-start;
       
+      
+
+      
+    }
+
+    img {
+
+      @media (max-width: 1400px) {
+      background-color: silver;
+      align-self: center;
+      }
+        
+
+     
+
     }
 
     
 
     .horizontal {
     
-      //border: solid;
+      border: solid;
       width: 62%;
       max-height: 70%;
       min-width: 25%; 
       padding: 20px 20px;
       object-fit: contain; 
+      
 
       @media (max-width: 1400px) {
         width: 100%;
@@ -85,7 +102,6 @@ const Modal = styled.div`
       
       @media (max-width: 790px) {
         width: 110%;
-        //position: relative;
       }
 
       @media (max-width: 420px) {
@@ -100,6 +116,56 @@ const Modal = styled.div`
       padding: 20px 20px;
       object-fit: contain; 
       
+      
+      @media (max-width: 1400px) {
+        h2 {
+        
+          margin-left: 230px;
+    
+        }
+
+        p {
+          margin-left: 230px;
+        }
+      }
+
+      @media (max-width: 1225px) {
+        h2 {
+       
+          margin-left: 160px;
+       
+        }
+
+        p {
+          margin-left: 160px;
+        }
+      }
+
+      @media (max-width: 1075px) {
+        h2 {
+     
+          margin-left: 80px;
+        
+        }
+
+        p {
+          margin-left: 80px;
+        }
+      }
+
+      @media (max-width: 920px) {
+        h2 {
+        
+          margin-left: 10px;
+       
+        }
+
+        p {
+          margin-left: 10px;
+        }
+      }
+      
+
       @media (max-width: 790px) {
         width: 90%;
         position: relative;
@@ -109,51 +175,52 @@ const Modal = styled.div`
       @media (max-width: 420px) {
         width: 125%;
       }
+
+
+      
     }
 
     h2 {
-      //border: solid;
-      font-size: 26px;
+      border: solid;
+      font-size: 22px;
       max-width: 300px;
       min-width: 300px;
       
       color: gray;
-      display: block;
-      margin: 10px 10px 10px 10px;
+      margin: 40px 10px 10px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.5;
-      //margin-right: 100px;
- 
+      
       @media (max-width: 1400px) {
-        
-        font-size: 20px;
+        font-size: 18px;
         margin: 0px;
         padding: 0px;
-        
+        align-self: flex-end;
       }
 
       @media (max-width: 375px ) {
           font-size: 18px;
           line-height: 1.2
           padding: 0px 0px 0px 0px;
-        }
+      }
     }
 
     p {
-     // border: solid;
+      border: solid;
       max-width: 300px;
       min-width: 300px;
-      font-size: 1.1em;
+      font-size: .9em;
       color: gray;
       display: block;
-      margin: 10px 0px 10px 10px;
-      padding: 0px 80px 30px 30px;
-      line-height: 1.5;
+      margin: 10px 0px 40px 10px;
+      padding: 0px 80px 0px 30px;
+      line-height: 1.2;
+      
     
       
         @media (max-width: 1400px){
           display: flex;
-          font-size: 16px;
+          font-size: 14px;
           margin: 0px;
           padding: 0px;
         }
