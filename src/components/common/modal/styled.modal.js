@@ -65,26 +65,14 @@ const Modal = styled.div`
       height: 100%;
       flex-direction: column; 
      //justify-content: flex-start;
-      align-items: flex-start;
-      
-      
-
-      
+      align-items: flex-start;    
     }
 
     img {
-
       @media (max-width: 1400px) {
-      background-color: silver;
-      align-self: center;
+        align-self: center;
       }
-        
-
-     
-
     }
-
-    
 
     .horizontal {
     
