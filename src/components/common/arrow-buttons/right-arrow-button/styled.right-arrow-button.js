@@ -46,7 +46,7 @@ const RightArrowButtonIcon = styled.div`
     //dev note: transform-origin below was 21
     transform-origin: 15px;
 
-    @media (max-width: 699px) {
+    @media (max-width: 790px) {
         display: none;
     }
   }

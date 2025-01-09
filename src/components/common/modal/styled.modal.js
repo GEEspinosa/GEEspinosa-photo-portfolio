@@ -83,9 +83,9 @@ const Modal = styled.div`
         width: 100%;
       }
       
-      @media (max-width: 699px) {
-        width: 135%;
-        position: relative;
+      @media (max-width: 790px) {
+        width: 110%;
+        //position: relative;
       }
 
       @media (max-width: 420px) {
@@ -100,8 +100,8 @@ const Modal = styled.div`
       padding: 20px 20px;
       object-fit: contain; 
       
-      @media (max-width: 699px) {
-        width: 140%;
+      @media (max-width: 790px) {
+        width: 90%;
         position: relative;
         
       }
@@ -158,14 +158,11 @@ const Modal = styled.div`
           padding: 0px;
         }
 
-        @media (max-width: 699px) {
-         font-size: 14px;
-         //width: 100%;
-         //border: solid;
-         //text-align: center;
-         padding: 30px 0px 0px 0px;
-         margin: 0px 0px 0px 0px;
-        }  
+        // @media (max-width: 699px) {
+        //  font-size: 14px;
+        //  padding: 30px 0px 0px 0px;
+        //  margin: 0px 0px 0px 0px;
+        // }  
 
         @media (max-width: 375px ) {
           padding: 20px 0px 0px 0px;

@@ -38,7 +38,7 @@ const LeftArrowButtonIcon = styled.div`
     margin: 3px;
     transform-origin: 9px;
 
-    @media (max-width: 699px) {
+    @media (max-width: 790px) {
         display: none;
     }
   }
