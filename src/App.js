@@ -7,6 +7,20 @@ import About from "./components/pages/about";
 import ModalComponent from "./components/common/modal/modal";
 import imageData from "./assets/image-data";
 
+
+
+const initialMessage = {
+  title: 'select an album',
+  location: '',
+  date: '',
+  camera: '',
+  film: '',
+  shot: '',
+}
+
+
+
+
 function App() {
 
   const [open, setOpen] = useState(false);
@@ -16,6 +30,9 @@ function App() {
   const [album, setAlbum] = useState('cover')
   const [portfolio, setPortfolio] = useState([])
   const [slide, setSlide] = useState(null)
+
+  const [descriptionsArray, setDescriptionsArray] = useState([])
+  const [slideMessage, setSlideMessage] = useState(initialMessage)
 
   function imageClickHandler(id) {
     setModalSelect(id);
@@ -127,6 +144,10 @@ function App() {
             slide = {slide}
             setSlide = {setSlide}
             arrowButtonHandler={arrowButtonHandler}
+            descriptionsArray={descriptionsArray}
+            setDescriptionsArray={setDescriptionsArray}
+            slideMessage={slideMessage}
+            setSlideMessage={setSlideMessage}
           />
         } />
         <Route path="/about" element={<About />} />

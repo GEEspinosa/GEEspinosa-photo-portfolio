@@ -183,14 +183,14 @@ const NavButtons = styled.div`
 `;
 
 
-const initialMessage = {
-  title: 'select an album',
-  location: '',
-  date: '',
-  camera: '',
-  film: '',
-  shot: '',
-}
+// const initialMessage = {
+//   title: 'select an album',
+//   location: '',
+//   date: '',
+//   camera: '',
+//   film: '',
+//   shot: '',
+// }
 
 function Portfolio({
   album, 
@@ -199,15 +199,18 @@ function Portfolio({
   setPortfolio, 
   slide, 
   setSlide, 
-  arrowButtonHandler
+  arrowButtonHandler,
+  descriptionsArray,
+  setDescriptionsArray,
+  slideMessage,
+  setSlideMessage,
 }) {
   
   const [windowIndexes, setWindowIndexes] = useState({})
   const [galleryIndexes, setGalleryIndexes] = useState ({})
   //const [windowArray, setWindowArray] = useState([])
   const [galleryArray, setGalleryArray] = useState([])
-  const [descriptionsArray, setDescriptionsArray] = useState([])
-  const [slideMessage, setSlideMessage] = useState(initialMessage)
+ 
   const [leftWindowButtonAppear, setLeftWindowButtonAppear] = useState(false)
   const [rightWindowButtonAppear, setRightWindowButtonAppear] = useState(false)
   const [leftScrollButtonsAppear, setLeftScrollButtonsAppear] = useState(false)
