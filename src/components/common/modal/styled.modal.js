@@ -55,7 +55,6 @@ const Modal = styled.div`
 
     display: flex;
     justify-content: center;
-    //border: solid;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -76,16 +75,85 @@ const Modal = styled.div`
 
     .horizontal {
     
-      //border: solid;
+      border: solid;
       width: 67%;
       max-height: 70%;
-     // min-width: 25%; 
+     //min-width: 25%; 
       padding: 20px 20px;
       object-fit: contain; 
+      align-self: center;
       
+     
+      
+    @media  (max-height: 1038px) {
+      h2 {
+
+       
+       // margin-left: 30px;
+       //object-fit: contain;
+      }
+      p {
+       // margin-left: 30px;
+      }
+    }
+    
+    
+
+    //   @media  (max-height: 979px) {
+    //     h2 {
+        
+    //       margin-left: 80px;
+          
+    
+    //     }
+
+    //     p {
+    //       margin-left: 80px;
+    //     }
+    //   }
+
+
+    //   @media  (max-height: 887px) {
+    //   h2 {
+    //     margin-left: 130px;
+    //   }
+    //   p {
+    //     margin-left: 130px;
+    //   }
+    // }
+
+    // @media  (max-height: 793px) {
+    //   h2 {
+    //     margin-left: 180px;
+    //   }
+    //   p {
+    //     margin-left: 180px;
+    //   }
+    // }
+
+    // @media  (max-height: 693px) {
+    //   h2 {
+    //     margin-left: 230px;
+    //   }
+    //   p {
+    //     margin-left: 230px;
+    //   }
+     
+    // }
+
+    // @media  (max-height: 603px) {
+    //   h2 {
+    //     margin-left: 280px;
+    //   }
+    //   p {
+    //     margin-left: 280px;
+    //   }
+     
+    // }
 
       @media (max-width: 1400px) {
         width: 100%;
+        
       }
       
       @media (max-width: 790px) {
@@ -98,7 +166,6 @@ const Modal = styled.div`
     }
 
     .vertical {
-     // border: solid;
       max-height: 70%;
       min-width: 25%; 
       padding: 20px 20px;
@@ -109,69 +176,23 @@ const Modal = styled.div`
         text-align: center;
       }
       
-      
-      // @media (max-width: 1400px) {
-      //   h2 {
-        
-      //     margin-left: 230px;
-      //     align-self: center;
-    
-      //   }
+      @media(max-height: 1024px) { 
+        h2 {
+            margin: auto;
+        }
+        p {
+            margin: auto;
+        }
+      }
+  
+      @media (max-width: 790px) {
+        width: 90%;
+        position: relative;       
+      }
 
-      //   p {
-      //     margin-left: 230px;
-      //   }
-      // }
-
-      // @media (max-width: 1225px) {
-      //   h2 {
-       
-      //     margin-left: 160px;
-       
-      //   }
-
-      //   p {
-      //     margin-left: 160px;
-      //   }
-      // }
-
-      // @media (max-width: 1075px) {
-      //   h2 {
-     
-      //     margin-left: 80px;
-        
-      //   }
-
-      //   p {
-      //     margin-left: 80px;
-      //   }
-      // }
-
-      // @media (max-width: 920px) {
-      //   h2 {
-        
-      //     margin-left: 10px;
-       
-      //   }
-
-      //   p {
-      //     margin-left: 10px;
-      //   }
-      // }
-      
-
-      // @media (max-width: 790px) {
-      //   width: 90%;
-      //   position: relative;
-        
-      // }
-
-      // @media (max-width: 420px) {
-      //   width: 125%;
-      // }
-
-
-      
+      @media (max-width: 420px) {
+        width: 125%;
+      }     
     }
 
     h2 {
