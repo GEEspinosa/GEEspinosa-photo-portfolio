@@ -68,11 +68,7 @@ const Modal = styled.div`
       
     }
 
-    // @media (max-width: 699px) {
-      
-    //   // padding: 10px;
-    //   // margin: 10px;
-    // }
+    
 
     .horizontal {
     
@@ -128,7 +124,7 @@ const Modal = styled.div`
       line-height: 1.5;
       //margin-right: 100px;
  
-      @media (max-width: 1149px) {
+      @media (max-width: 1400px) {
         
         font-size: 20px;
         margin: 0px;
@@ -155,7 +151,7 @@ const Modal = styled.div`
       line-height: 1.5;
     
       
-        @media (max-width: 1149px){
+        @media (max-width: 1400px){
           display: flex;
           font-size: 16px;
           margin: 0px;

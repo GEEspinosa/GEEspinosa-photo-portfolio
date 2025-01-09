@@ -27,11 +27,12 @@ const RightArrowButtonIcon = styled.div`
 
     @media (max-width: 1400px) {
      margin-bottom: ${({showModal}) =>  showModal === true ? '310px' : '210px'};
+     margin-bottom: 190px;
   }
 
-  @media (max-width: 1149px) {
-    margin-bottom: 190px;
-  }
+  // @media (max-width: 1149px) {
+  //   margin-bottom: 190px;
+  // }
 
   .RightArrowIcon {
     
