@@ -62,15 +62,11 @@ const Modal = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    // max-height: 100%;
-    // max-width: 100%;
-    //overscroll-behavior: contain;
   
     @media (max-width: 1400px) {
       width: 100%;
       height: 100%;
       flex-direction: column; 
-     //justify-content: flex-start;
       align-items: flex-start;    
     }
 
@@ -82,84 +78,20 @@ const Modal = styled.div`
 
     .horizontal {
     
-     border: solid;
-      //width: 67%;
-      //width: 100%;
+     border: solid gainsboro;
       max-height: 70%;
-     //min-width: 20%; 
       padding: 20px 20px;
       object-fit: contain; 
       align-self: center;
       
-     @media (max-width: 2150px) {
+     @media (max-width: 1950px){
       width: 67%;
      }
       
-    @media  (max-height: 1038px) {
-      h2 {
-
-       
-       // margin-left: 30px;
-       //object-fit: contain;
-      }
-      p {
-       // margin-left: 30px;
-      }
-    }
-    
-    
-
-    //   @media  (max-height: 979px) {
-    //     h2 {
-        
-    //       margin-left: 80px;
-          
-    
-    //     }
-
-    //     p {
-    //       margin-left: 80px;
-    //     }
-    //   }
-
-
-    //   @media  (max-height: 887px) {
-    //   h2 {
-    //     margin-left: 130px;
-    //   }
-    //   p {
-    //     margin-left: 130px;
-    //   }
-    // }
-
-    // @media  (max-height: 793px) {
-    //   h2 {
-    //     margin-left: 180px;
-    //   }
-    //   p {
-    //     margin-left: 180px;
-    //   }
-    // }
-
-    // @media  (max-height: 693px) {
-    //   h2 {
-    //     margin-left: 230px;
-    //   }
-    //   p {
-    //     margin-left: 230px;
-    //   }
-     
-    // }
-
-    // @media  (max-height: 603px) {
-    //   h2 {
-    //     margin-left: 280px;
-    //   }
-    //   p {
-    //     margin-left: 280px;
-    //   }
-     
-    // }
+     @media (max-height: 1038px) {
+      width: auto;
+     }
+      
 
       @media (max-width: 1400px) {
         width: 100%;
@@ -176,6 +108,7 @@ const Modal = styled.div`
     }
 
     .vertical {
+      border: solid;
       max-height: 70%;
       min-width: 25%; 
       padding: 20px 20px;
@@ -184,15 +117,6 @@ const Modal = styled.div`
       
       @media(max-width: 1400px) {
         text-align: center;
-      }
-      
-      @media(max-height: 1024px) { 
-        h2 {
-            margin: auto;
-        }
-        p {
-            margin: auto;
-        }
       }
   
       @media (max-width: 790px) {
@@ -206,10 +130,10 @@ const Modal = styled.div`
     }
 
     h2 {
-      border: solid;
+      //border: solid;
       font-size: 22px;
-      max-width: 300px;
-      min-width: 300px;
+      max-width: 12vw;
+      min-width: 12vw;
       
       color: gray;
       margin: 40px 10px 10px 10px;
@@ -221,6 +145,8 @@ const Modal = styled.div`
         margin: 0px;
         padding: 0px;
         align-self: flex-end;
+        max-width: 25vw;
+        min-width: 25vw;
       }
 
       @media (max-width: 375px ) {
@@ -231,14 +157,14 @@ const Modal = styled.div`
     }
 
     p {
-      border: solid;
-      max-width: 300px;
-      min-width: 300px;
+      //border: solid;
+      max-width: 12vw;
+      min-width: 12vw;
       font-size: .9em;
       color: gray;
       display: block;
       margin: 10px 0px 40px 10px;
-      padding: 0px 80px 0px 30px;
+      padding: 0px 30px 0px 30px;
       line-height: 1.2;
       
     
@@ -246,6 +172,8 @@ const Modal = styled.div`
         @media (max-width: 1400px){
           //display: flex;
           font-size: 14px;
+          max-width: 35vw;
+          min-width: 25vw;
           margin: 0px;
           padding: 0px;
         }
