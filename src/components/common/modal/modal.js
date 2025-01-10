@@ -19,7 +19,7 @@ function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandl
           <LeftArrowButton showModal={showModal} arrowButtonHandler={arrowButtonHandler}/> 
           <div className="middleColumn">
             <img alt="test" src={imageData[modalSelect].image} className={imageData[modalSelect].orientation} />
-            <div className={imageData[modalSelect].orientation === 'vertical' ? imageData[modalSelect].orientation : ''} >
+            <div className={imageData[modalSelect].orientation } >
               <h2>{imageData[modalSelect].description.title}</h2>
               <p >  
                 {imageData[modalSelect].description.location} <br/>

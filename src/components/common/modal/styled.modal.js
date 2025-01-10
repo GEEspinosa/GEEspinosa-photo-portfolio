@@ -67,7 +67,7 @@ const Modal = styled.div`
       width: 100%;
       height: 100%;
       flex-direction: column; 
-      align-items: flex-start;    
+      //align-items: flex-start;    
     }
 
     img {
@@ -80,13 +80,20 @@ const Modal = styled.div`
     
      border: solid gainsboro;
       max-height: 70%;
+      
       padding: 20px 20px;
       object-fit: contain; 
-      align-self: center;
+      align-items: center;
+     
+
       
+      
+
      @media (max-width: 1950px){
       width: 67%;
      }
+
+     
       
      @media (max-height: 1038px) {
       width: auto;
@@ -95,6 +102,10 @@ const Modal = styled.div`
 
       @media (max-width: 1400px) {
         width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        //align-items: flex-start;
         
       }
       
@@ -145,7 +156,7 @@ const Modal = styled.div`
         font-size: 18px;
         margin: 0px;
         padding: 0px;
-        align-self: flex-end;
+       // align-self: flex-end;
         max-width: 35vw;
         min-width: 35vw;
         border: solid;
