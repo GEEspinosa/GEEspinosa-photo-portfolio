@@ -120,12 +120,12 @@ const Modal = styled.div`
       }
   
       @media (max-width: 790px) {
-        width: 90%;
+        //width: 90%;
         position: relative;       
       }
 
       @media (max-width: 420px) {
-        width: 125%;
+       // width: 125%;
       }     
     }
 
@@ -134,19 +134,22 @@ const Modal = styled.div`
       font-size: 22px;
       max-width: 12vw;
       min-width: 12vw;
-      
+      //display: block;
       color: gray;
       margin: 40px 10px 10px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.5;
+      
       
       @media (max-width: 1400px) {
         font-size: 18px;
         margin: 0px;
         padding: 0px;
         align-self: flex-end;
-        max-width: 25vw;
-        min-width: 25vw;
+        max-width: 35vw;
+        min-width: 35vw;
+        border: solid;
+       
       }
 
       @media (max-width: 375px ) {
@@ -157,7 +160,7 @@ const Modal = styled.div`
     }
 
     p {
-      //border: solid;
+      border: solid;
       max-width: 12vw;
       min-width: 12vw;
       font-size: .9em;
