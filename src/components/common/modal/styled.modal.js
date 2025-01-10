@@ -28,11 +28,15 @@ const ModalIcon = styled.div`
   }
 
   .xIcon {
-    width: 40px;
-    height: 5px;
+    //dev note: changed size because it was too big
+    //width: 40px;
+    width: 30px;
+    height: 3px;
     background-color: gray;
+   // margin: 3px;
     margin: 3px;
-    transform-origin: 4px;
+   // transform-origin: 4px;
+    transform-origin: 2px;
   } 
 `;
 
@@ -58,6 +62,9 @@ const Modal = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    // max-height: 100%;
+    // max-width: 100%;
+    //overscroll-behavior: contain;
   
     @media (max-width: 1400px) {
       width: 100%;
@@ -75,15 +82,18 @@ const Modal = styled.div`
 
     .horizontal {
     
-      border: solid;
-      width: 67%;
+     // border: solid;
+      //width: 67%;
+      //width: 100%;
       max-height: 70%;
-     //min-width: 25%; 
+     //min-width: 20%; 
       padding: 20px 20px;
       object-fit: contain; 
       align-self: center;
       
-     
+     @media (max-width: 2100px) {
+      //width: 67%;
+     }
       
     @media  (max-height: 1038px) {
       h2 {
