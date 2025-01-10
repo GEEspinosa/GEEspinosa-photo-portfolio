@@ -82,7 +82,7 @@ const Modal = styled.div`
 
     .horizontal {
     
-     // border: solid;
+     border: solid;
       //width: 67%;
       //width: 100%;
       max-height: 70%;
@@ -91,8 +91,8 @@ const Modal = styled.div`
       object-fit: contain; 
       align-self: center;
       
-     @media (max-width: 2100px) {
-      //width: 67%;
+     @media (max-width: 2150px) {
+      width: 67%;
      }
       
     @media  (max-height: 1038px) {
@@ -206,7 +206,7 @@ const Modal = styled.div`
     }
 
     h2 {
-      //border: solid;
+      border: solid;
       font-size: 22px;
       max-width: 300px;
       min-width: 300px;
@@ -231,7 +231,7 @@ const Modal = styled.div`
     }
 
     p {
-      //border: solid;
+      border: solid;
       max-width: 300px;
       min-width: 300px;
       font-size: .9em;
