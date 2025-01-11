@@ -1,33 +1,34 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const RightArrowButtonIcon = styled.div`
- visibility: ${({showModal, rightButton}) => showModal === true || rightButton === true ? 'visible' : 'hidden'};
-    display: flex;
-    flex-direction: column;
-    position: fixed
-    z-index: 1000;
-    padding: 25px;
-    margin: 25px;
-    cursor: pointer;
-    margin-bottom: ${({rightButton}) =>  rightButton === true ? '210px' : '0px'};
-    //border: solid silver;
+  visibility: ${({ showModal, rightButton }) =>
+    showModal === true || rightButton === true ? 'visible' : 'hidden'};
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 25px;
+  margin: 25px;
+  cursor: pointer;
+  margin-bottom: ${({ rightButton }) =>
+    rightButton === true ? '210px' : '0px'};
+  //border: solid silver;
 
-    :hover {
-      background-color: red;
-    }
-    
+  :hover {
+    background-color: red;
+  }
 
-    :first-child {
-      transform: scaleY(-1) rotate(-45deg);
-    }
+  :first-child {
+    transform: scaleY(-1) rotate(-45deg);
+  }
 
-    :nth-child(2) {
-      transform: scaleY(-1) rotate(45deg);
-    }
+  :nth-child(2) {
+    transform: scaleY(-1) rotate(45deg);
+  }
 
-    @media (max-width: 1400px) {
-     margin-bottom: ${({showModal}) =>  showModal === true ? '310px' : '210px'};
-     margin-bottom: 190px;
+  @media (max-width: 1400px) {
+    margin-bottom: ${({ showModal }) =>
+      showModal === true ? '310px' : '210px'};
+    margin-bottom: 190px;
   }
 
   // @media (max-width: 1149px) {
@@ -35,7 +36,6 @@ const RightArrowButtonIcon = styled.div`
   // }
 
   .RightArrowIcon {
-    
     //dev note: width below was 30
     width: 24px;
     height: 4px;
@@ -47,9 +47,9 @@ const RightArrowButtonIcon = styled.div`
     transform-origin: 15px;
 
     @media (max-width: 790px) {
-        display: none;
+      display: none;
     }
   }
 `;
 
-export {RightArrowButtonIcon}
+export { RightArrowButtonIcon };

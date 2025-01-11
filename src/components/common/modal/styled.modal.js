@@ -78,35 +78,26 @@ const Modal = styled.div`
 
     .horizontal {
     
-     border: solid gainsboro;
+     //border: solid gainsboro;
       max-height: 70%;
-      
       padding: 20px 20px;
       object-fit: contain; 
       align-items: center;
-     
-
-      
-      
-
+    
      @media (max-width: 1950px){
       width: 67%;
      }
 
-     
-      
      @media (max-height: 1038px) {
       width: auto;
      }
       
-
       @media (max-width: 1400px) {
         width: 100%;
         text-align: center;
         display: flex;
         flex-direction: column;
-        //align-items: flex-start;
-        
+        //align-items: flex-start;    
       }
       
       @media (max-width: 790px) {
@@ -119,7 +110,7 @@ const Modal = styled.div`
     }
 
     .vertical {
-      border: solid;
+      //border: solid;
       max-height: 70%;
       min-width: 25%; 
       padding: 20px 20px;
@@ -159,7 +150,7 @@ const Modal = styled.div`
        // align-self: flex-end;
         max-width: 35vw;
         min-width: 35vw;
-        border: solid;
+       // border: solid;
        
       }
 
@@ -171,7 +162,7 @@ const Modal = styled.div`
     }
 
     p {
-      border: solid;
+      //border: solid;
       max-width: 12vw;
       min-width: 12vw;
       font-size: .9em;
