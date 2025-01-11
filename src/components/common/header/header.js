@@ -11,21 +11,22 @@ function Header({ open, setOpen, showModal }) {
           G A B R I E L &nbsp; E S P I N O S A
           <br />P h o t o g r a p h y
         </Title>
+        <div>
+          <StyledLink to="/" className="navbar-link">
+            Home
+          </StyledLink>
+          <StyledLink to="/portfolio" className="navbar-link">
+            Portfolio
+          </StyledLink>
+          <StyledLink to="/about" className="navbar-link">
+            About
+          </StyledLink>
 
-        <StyledLink to="/" className="navbar-link">
-          Home
-        </StyledLink>
-        <StyledLink to="/portfolio" className="navbar-link">
-          Portfolio
-        </StyledLink>
-        <StyledLink to="/about" className="navbar-link">
-          About
-        </StyledLink>
-
-        {!showModal && (
-          <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
-        )}
-        <OpenMenu open={open} setOpen={setOpen} />
+          {!showModal && (
+            <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
+          )}
+          <OpenMenu open={open} setOpen={setOpen} />
+        </div>
       </Navbar>
     </Head>
   );

@@ -6,6 +6,9 @@ const Head = styled.header`
   text-align: center;
   padding: 20px;
   height: 100px;
+  position: sticky;
+  top: 0;
+  background: white;
 
   @media (max-width: 710px) {
     padding: 10px;
@@ -14,12 +17,16 @@ const Head = styled.header`
 
 const Navbar = styled.nav`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   font-size: 20px;
-  padding: 20px;
+  // padding: 20px;
 
-  :hover {
-    color: red;
+  .navbar-link {
+    &:hover {
+      color: red;
+    }
   }
 
   @media (max-width: 710px) {
@@ -34,8 +41,8 @@ const Title = styled.div`
   flex: 1;
   text-align: left;
   justify-content: start;
-  padding-top: 7px;
-  padding-left: 20px;
+  // padding-top: 7px;
+  // padding-left: 20px;
 
   @media (max-width: 710px) {
     font-size: 18px;
