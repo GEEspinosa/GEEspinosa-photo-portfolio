@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 const Head = styled.header`
   text-align: center;
-  padding: 20px;
-  height: 100px;
+  padding: 40px;
+  height: 120px;
   position: sticky;
   top: 0;
   background: white;
 
   @media (max-width: 710px) {
-    padding: 10px;
+    // padding: 10px;
   }
 `;
 
@@ -23,9 +23,14 @@ const Navbar = styled.nav`
   font-size: 20px;
   // padding: 20px;
 
-  .navbar-link {
-    &:hover {
-      color: red;
+  .link-container {
+    .navbar-link {
+      position: relative;
+      top: 12px;
+
+      &:hover {
+        color: red;
+      }
     }
   }
 

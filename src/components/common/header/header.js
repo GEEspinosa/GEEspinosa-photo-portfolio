@@ -11,7 +11,7 @@ function Header({ open, setOpen, showModal }) {
           G A B R I E L &nbsp; E S P I N O S A
           <br />P h o t o g r a p h y
         </Title>
-        <div>
+        <div className="link-container">
           <StyledLink to="/" className="navbar-link">
             Home
           </StyledLink>

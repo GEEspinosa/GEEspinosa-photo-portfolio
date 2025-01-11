@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const StyledOpenMenu = styled.nav`
   z-index: 2;
@@ -11,7 +11,7 @@ const StyledOpenMenu = styled.nav`
   top: 0;
   right: 0;
   transition: transform 0.3s ease-in-out;
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
 
   div {
     display: flex;
