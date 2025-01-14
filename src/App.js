@@ -76,7 +76,6 @@ function App() {
         setModalSelect(imageData.length - 1);
       }
     }
-    
     if (direction === 'Right' && showModal) {
       let right = modalSelect + 1;
       if (right < imageData.length - 1) {
