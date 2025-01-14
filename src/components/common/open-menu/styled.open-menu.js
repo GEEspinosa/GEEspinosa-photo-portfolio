@@ -34,6 +34,10 @@ const StyledOpenMenuLink = styled(Link)`
   &:hover {
     color: red;
   }
+
+  @media (max-width: 430px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export { StyledOpenMenu, StyledOpenMenuLink };

@@ -5,8 +5,8 @@ const MenuIconStyled = styled.div`
   flex-direction: column;
 
   position: absolute;
-  right: 40px;
-  top: 50px;
+  right: 14px;
+  top: 40px;
   z-index: 1000;
 
   :first-child {
@@ -34,6 +34,14 @@ const MenuIconStyled = styled.div`
 
     @media (max-width: 710px) {
       display: block;
+
+      
+    }
+
+    @media (max-width: 430px) {
+      width: 30px;
+      height: 4px;
+      transform-origin: 1px;
     }
   }
 `;

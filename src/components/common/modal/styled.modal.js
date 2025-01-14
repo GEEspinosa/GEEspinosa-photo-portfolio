@@ -33,10 +33,13 @@ const ModalIcon = styled.div`
     width: 30px;
     height: 3px;
     background-color: gray;
-   // margin: 3px;
     margin: 3px;
-   // transform-origin: 4px;
     transform-origin: 2px;
+
+    @media (max-width: 430px) {
+      position: relative;
+      top: -20px;
+    }
   } 
 `;
 
@@ -66,8 +69,7 @@ const Modal = styled.div`
     @media (max-width: 1400px) {
       width: 100%;
       height: 100%;
-      flex-direction: column; 
-      //align-items: flex-start;    
+      flex-direction: column;    
     }
 
     img {
@@ -77,13 +79,11 @@ const Modal = styled.div`
     }
 
     .horizontal {
-    
-     //border: solid gainsboro;
       max-height: 70%;
       padding: 20px 20px;
       object-fit: contain; 
       align-items: center;
-    
+         
      @media (max-width: 1950px){
       width: 67%;
      }
@@ -102,15 +102,16 @@ const Modal = styled.div`
       
       @media (max-width: 790px) {
         width: 110%;
+        padding: 10px;
       }
 
-      @media (max-width: 420px) {
+      @media (max-width: 430px) {
         width: 180%;
+        padding: 10px;
       }
     }
 
     .vertical {
-      //border: solid;
       max-height: 70%;
       min-width: 25%; 
       padding: 20px 20px;
@@ -122,47 +123,41 @@ const Modal = styled.div`
       }
   
       @media (max-width: 790px) {
-        //width: 90%;
-        position: relative;       
+        position: relative; 
+        padding: 10px;      
       }
 
-      @media (max-width: 420px) {
-       // width: 125%;
+      @media (max-width: 430px) {
+        max-height: 55%;
+        padding: 10px;
       }     
     }
 
     h2 {
-      //border: solid;
       font-size: 22px;
       max-width: 12vw;
       min-width: 12vw;
-      //display: block;
       color: gray;
       margin: 40px 10px 10px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.5;
-      
-      
+         
       @media (max-width: 1400px) {
         font-size: 18px;
-        margin: 0px;
-        padding: 0px;
-       // align-self: flex-end;
+        margin: 0px 0px 10px 0px;
+        padding: 0px
         max-width: 35vw;
-        min-width: 35vw;
-       // border: solid;
-       
+        min-width: 35vw;         
       }
 
-      @media (max-width: 375px ) {
+      @media (max-width: 430px ) {
           font-size: 18px;
-          line-height: 1.2
-          padding: 0px 0px 0px 0px;
+          line-height: 1.2;
+          padding: 0px;         
       }
     }
 
     p {
-      //border: solid;
       max-width: 12vw;
       min-width: 12vw;
       font-size: .9em;
@@ -171,11 +166,8 @@ const Modal = styled.div`
       margin: 10px 0px 40px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.2;
-      
-    
-      
+       
         @media (max-width: 1400px){
-          //display: flex;
           font-size: 14px;
           max-width: 35vw;
           min-width: 25vw;
@@ -183,10 +175,9 @@ const Modal = styled.div`
           padding: 0px;
         }
 
-
-        @media (max-width: 375px ) {
-          padding: 20px 0px 0px 0px;
-          line-height: 1.2;
+        @media (max-width: 430px ) {
+          margin: 15px 0px 0px 0px;
+          line-height: 1.2;         
         }
     }
   }

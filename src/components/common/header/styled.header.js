@@ -12,6 +12,8 @@ const Head = styled.header`
 
   @media (max-width: 710px) {
     // padding: 10px;
+    height: 80px;
+    padding: 30px;
   }
 `;
 
@@ -27,6 +29,11 @@ const Navbar = styled.nav`
     .navbar-link {
       position: relative;
       top: 12px;
+
+      @media (max-width: 900px) {
+        font-size: 18px;
+      }
+      
 
       &:hover {
         color: red;
@@ -49,9 +56,18 @@ const Title = styled.div`
   // padding-top: 7px;
   // padding-left: 20px;
 
-  @media (max-width: 710px) {
+  @media(max-width: 900px) {
     font-size: 18px;
+
+  }
+
+  @media (max-width: 710px) {
+    font-size: 16px;
     padding-left: 0px;
+  }
+
+  @media (max-width: 319px) {
+    visibility: hidden;
   }
 `;
 
