@@ -6,12 +6,12 @@ import { RightArrowButton } from '../common/arrow-buttons/right-arrow-button/rig
 
 const PortfolioPage = styled.div`
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 350px 1fr;
   height: calc(100vh - 100px);
 `;
 
 const PortfolioContainer = styled.div`
-  border: solid green;
+  //border: solid green;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@ const SideNav = styled.div`
   flex-direction: column;
   gap: 50%;
   padding: 30px;
-  border: 1px solid red;
+  //border: 1px solid red;
 
   ul {
     padding: 0px;
@@ -55,13 +55,9 @@ const SideNav = styled.div`
 `;
 
 const Gallery = styled.div`
-  border: solid silver;
+  //border: solid silver;
   display: flex;
   flex-direction: column;
-  // width: 100%;
-  // width: 100vw;
-  // height: 80vh;
-  // width: 80%;
   padding: 25px;
   justify-content: center;
   align-items: center;
@@ -69,7 +65,7 @@ const Gallery = styled.div`
 `;
 
 const ImageBox = styled.div`
-  border: 1px solid red;
+  //border: 1px solid red;
   width: 100%;
   // height: 80%;
   max-height: 800px;
@@ -104,7 +100,6 @@ const ScrollGallery = styled.div`
   }
 
   img {
-    border: solid gainsboro;
     padding: 4px;
     width: 100%;
     height: 100%;
@@ -118,7 +113,6 @@ const ScrollGallery = styled.div`
       leftButton === true ? 'visible' : 'hidden'};
 
     border: none;
-    background-color: black;
     color: silver;
     border-radius: 50%;
     width: 75px;
@@ -145,7 +139,6 @@ const ScrollGallery = styled.div`
       rightButton === true ? 'visible' : 'hidden'};
 
     border: none;
-    background-color: black;
     color: silver;
     border-radius: 50%;
 
@@ -168,12 +161,10 @@ const ScrollGallery = styled.div`
 `;
 
 const NavButtons = styled.div`
-  border: solid;
+ 
   cursor: pointer;
-  margin: 1%;
-  //margin: auto;
- //margin-left: 10px;
-  //margin-right: 10px;
+  //margin: 1%;
+
   :hover {
     background-color: gainsboro;
   }

@@ -7,7 +7,9 @@ const LeftArrowButtonIcon = styled.div`
   flex-direction: column;
   z-index: 1000;
   padding: 25px;
-  margin: 25px;
+  margin: ${({ showModal}) =>
+    showModal === true ? '25px' : '25px 0px 0px 0px'};
+
   cursor: pointer;
   margin-bottom: ${({ leftButton }) => (leftButton === true ? '210px' : '0px')};
   //border: solid silver;
