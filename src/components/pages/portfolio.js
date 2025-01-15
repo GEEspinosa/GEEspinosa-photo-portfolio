@@ -5,8 +5,6 @@ import { LeftArrowButton } from '../common/arrow-buttons/left-arrow-button/left-
 import { RightArrowButton } from '../common/arrow-buttons/right-arrow-button/right-arrow-button';
 
 const PortfolioPage = styled.div`
-  // display: flex;
-  // overflow: hidden;
   display: grid;
   grid-template-columns: 400px 1fr;
   height: calc(100vh - 100px);
@@ -16,32 +14,25 @@ const PortfolioContainer = styled.div`
   border: solid green;
   display: flex;
   align-items: center;
-  // padding: 24px;
-  // display: grid;
-  // grid-template-columns: 60px 1fr 60px;
+  justify-content: center;
 `;
 
 const SideNav = styled.div`
-  // padding: 40px 0px 0px 0px;
-  //width: 30vh;
-  //height: 80vh;
-  //min-width: 30vh;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  padding: 20px;
+  gap: 50%;
+  padding: 30px;
   border: 1px solid red;
 
   ul {
-    padding: 0;
+    padding: 0px;
+    line-height: 3rem;
   }
 
   li {
     color: grey;
     font-size: 22px;
     list-style-type: none;
-    // padding: 6px;
-    // margin: 10px;
     cursor: pointer;
 
     &:hover {
@@ -53,12 +44,8 @@ const SideNav = styled.div`
     color: grey;
     font-size: 21px;
     list-style-type: none;
-    // padding: 10px 10px 30px 45px;
-    // margin: 10px;
-    // margin-top: 110%;
-    // max-height: 350px;
-    // min-height: 350px;
     text-align: left;
+    
 
     h2 {
       font-size: 24px;
@@ -78,15 +65,14 @@ const Gallery = styled.div`
   padding: 25px;
   justify-content: center;
   align-items: center;
-  // object-fit: contain;
+ 
 `;
 
 const ImageBox = styled.div`
   border: 1px solid red;
-  // position: relative;
   width: 100%;
   // height: 80%;
-  max-height: 600px;
+  max-height: 800px;
   padding: 5px;
   display: flex;
   justify-content: center;
@@ -95,15 +81,6 @@ const ImageBox = styled.div`
     width: 100%;
     max-width: 1400px;
     object-fit: contain;
-    //z-index: 1;
-    // position: absolute;
-    // margin: auto;
-    // top: 0;
-    // right: 0;
-    // bottom: 0;
-    // left: 0;
-    // max-width: 100%;
-    // max-height: 100%;
   }
 `;
 
@@ -120,8 +97,8 @@ const ScrollGallery = styled.div`
   .scrollGalleryBorders {
     display: flex;
     justify-content: center;
-    // width: 15vh;
-    // height: 15vh;
+    width: 15vh;
+    height: 15vh;
     margin: 5px;
     cursor: pointer;
   }
@@ -129,12 +106,8 @@ const ScrollGallery = styled.div`
   img {
     border: solid gainsboro;
     padding: 4px;
-    width: 18%;
-    min-height: 100%;
-    height: 100px;
-    width: 100px;
-    // max-width: 95%;
-    // min-height: 30%;
+    width: 100%;
+    height: 100%;
     margin: 5px;
     flex-grow: 1;
     object-fit: contain;
@@ -196,12 +169,11 @@ const ScrollGallery = styled.div`
 
 const NavButtons = styled.div`
   border: solid;
-  //background-color: red;
   cursor: pointer;
-  margin: auto;
-  //bottom: 30%;
-  // width: 20%;
-
+  margin: 1%;
+  //margin: auto;
+ //margin-left: 10px;
+  //margin-right: 10px;
   :hover {
     background-color: gainsboro;
   }
