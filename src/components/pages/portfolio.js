@@ -8,6 +8,12 @@ const PortfolioPage = styled.div`
   display: grid;
   grid-template-columns: 350px 1fr;
   height: calc(100vh - 100px);
+  
+ @media (max-height: 800px) {
+ grid-template-columns: 275px 1fr;
+  
+ }
+ 
 `;
 
 const PortfolioContainer = styled.div`
@@ -20,9 +26,34 @@ const PortfolioContainer = styled.div`
 const SideNav = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 50%;
+  gap: 54.5%;
+ 
   padding: 30px;
-  //border: 1px solid red;
+  border: 1px solid red;
+
+   @media (max-height: 1250px) {
+    gap: 50%;
+  }
+
+  @media (max-height: 1156px) {
+    gap: 48%;
+  }
+    @media (max-height: 1070px) {
+    gap: 38%;
+  }
+
+  //  @media (max-height: 935px) {
+  //   gap: 32%;
+  // }
+
+  //  @media (max-height: 868px) {
+  //   gap: 26%;
+  // }
+
+  // @media (max-height: 800px) {
+  //   gap: 38%;
+  // }
+  
 
   ul {
     padding: 0px;
@@ -38,24 +69,39 @@ const SideNav = styled.div`
     &:hover {
       color: red;
     }
+
+     @media (max-height: 800px) {
+      font-size: 18px;
+      line-height: 2rem;
+    }
   }
 
   .description-box {
+    border: solid grey;
+    padding: 25px;
     color: grey;
-    font-size: 21px;
+    font-size: 20px;
     list-style-type: none;
     text-align: left;
     
 
+    @media (max-height: 800px) {
+      font-size: 16px;
+    }
+    
     h2 {
-      font-size: 24px;
+      font-size: 22px;
       color: grey;
+
+       @media (max-height: 800px) {
+      font-size: 18px;
+    }
     }
   }
 `;
 
 const Gallery = styled.div`
-  //border: solid silver;
+  border: solid silver;
   display: flex;
   flex-direction: column;
   padding: 25px;
@@ -65,23 +111,59 @@ const Gallery = styled.div`
 `;
 
 const ImageBox = styled.div`
-  //border: 1px solid red;
-  width: 100%;
+  border: 1px solid red;
+  // width: 100%;
   // height: 80%;
-  max-height: 800px;
+ //max-height: 800px;
+  //max-width: 60%;
+ //max-width: 70vh;
+  max-height: 70vh;
   padding: 5px;
   display: flex;
   justify-content: center;
+  position: relative;
+
+  //  @media (max-height: 1156px) {
+  //   max-width: 500px;
+  // }
+
+  //  @media (max-height: 1070px) {
+  //   max-width: 425px;
+  // }
+
+  // @media (max-height: 935px) {
+  //   max-width: 390px;
+  // }
+
+  // @media (max-height: 868px) {
+  //   max-width: 360px;
+  // }
+
+  // @media (max-height: 800px) {
+  //  max-width: 300px;
+  // }
 
   img {
-    width: 100%;
+   //width: 100%;
     max-width: 1400px;
     object-fit: contain;
+   
+  }
+
+  h2 {
+    //border: solid red;
+    visibility: ${({album}) => album === 'cover' ? 'visible' : 'hidden' };
+    position: absolute;
+    color: white;
+
+    top: 47.5%;
+   
   }
 `;
 
 const ScrollGallery = styled.div`
-  // border: solid;
+   border: solid;
+  visibility: ${({album}) => album === 'cover' ? 'hidden' : 'visible'};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,6 +182,7 @@ const ScrollGallery = styled.div`
   }
 
   img {
+    
     padding: 4px;
     width: 100%;
     height: 100%;
@@ -284,6 +367,7 @@ function Portfolio({
         <div className="description-box">
           <h2>{slideMessage.title}</h2>
           <p>
+            <br />
             {slideMessage.location}
             <br />
             {slideMessage.date}
@@ -322,11 +406,14 @@ function Portfolio({
           />
         </NavButtons>
         <Gallery>
-          <ImageBox>
-            <img alt="test" src={portfolio[slide]} />
+          <ImageBox album={album}>
+            <img alt="test" src={portfolio[slide]}/>
+            <h2>{slideMessage.title}</h2>
+            
           </ImageBox>
-
+          
           <ScrollGallery
+            album = {album}
             leftButton={leftScrollButtonsAppear}
             rightButton={rightScrollButtonsAppear}
           >

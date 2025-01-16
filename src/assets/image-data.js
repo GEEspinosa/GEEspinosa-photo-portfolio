@@ -45,6 +45,7 @@ import longbeachOrcasOverhead from "./images/longbeach_orcaoverhead.jpg";
 import longbeachRestArea from "./images/longbeach_restarea.png";
 import longbeachTireMarks from "./images/longbeach_tiremarks.jpg";
 import longbeachWetTireMarks from "./images/longbeach_wetsandtiremarks.png";
+import portfolioCover from "./images/portfolio_cover.png";
 
 let id = 0;
 
@@ -810,6 +811,22 @@ const imageData = [
     album: {
       longbeach: 1,
     },
+  },
+  {
+    id: addId(),
+    image: portfolioCover,
+    orientation: 'horizontal',
+    text: "Portfolio Cover",
+    description: {
+      title: 'Portfolio Cover',
+      location: '',
+      date: '',
+      camera: '',
+      film: '',
+      shot: ''
+    },
+    album: {cover: 1},
+    
   },
 ];
 
