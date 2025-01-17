@@ -27,7 +27,7 @@ const SideNav = styled.div`
   //gap: 54.5%;
 
   padding: 30px;
-  border: 1px solid red;
+  //border: 1px solid red;
 
   ul {
     padding: 0px;
@@ -56,7 +56,7 @@ const SideNav = styled.div`
   }
 
   .description-box {
-    border: solid grey;
+   // border: solid grey;
     padding: 25px;
     color: grey;
     font-size: 20px;
@@ -83,7 +83,7 @@ const SideNav = styled.div`
 `;
 
 const Gallery = styled.div`
-  border: solid silver;
+ //border: solid silver;
   display: flex;
   flex-direction: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? 'row' : 'column'};
@@ -91,43 +91,37 @@ const Gallery = styled.div`
   justify-content: center;
   align-items: center;
   position: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? 'relative' : ''}
+    portfolioGalleryMidLayout ? 'relative' : ''};
 `;
 
 const ImageBox = styled.div`
-  border: 1px solid red;
+  //border: 1px solid red;
   width: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? '81vh' : '70vh'};
   height: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? '81vh' : '70vh'};
   padding: 5px;
-  display: flex; 
+  display: flex;
   justify-content: center;
   align-item: center;
   position: relative;
-  //width: 100%;
-  
-  
 
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    
   }
 
   h2 {
-    //border: solid red;
     visibility: ${({ album }) => (album === 'cover' ? 'visible' : 'hidden')};
     position: absolute;
     color: white;
-
     top: 47.5%;
   }
 `;
 
 const ScrollGallery = styled.div`
-  border: solid;
+  //border: solid;
   visibility: ${({ album }) => (album === 'cover' ? 'hidden' : 'visible')};
   display: flex;
   flex-direction: ${({ portfolioGalleryMidLayout }) =>
@@ -146,14 +140,15 @@ const ScrollGallery = styled.div`
   .scrollGalleryBorders {
     display: flex;
     justify-content: center;
-    width:  ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? '13.3vh' : '15vh'};
-    
+    align-items: center;
+    width: ${({ portfolioGalleryMidLayout }) =>
+      portfolioGalleryMidLayout ? '13.3vh' : '15vh'};
+
     height: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? '13.3vh' : '15vh'};
+      portfolioGalleryMidLayout ? '13.3vh' : '15vh'};
     margin: 5px;
     cursor: pointer;
-    border: solid;
+    border: solid gainsboro;
   }
 
   img {
@@ -168,21 +163,21 @@ const ScrollGallery = styled.div`
   .leftGalleryButton {
     visibility: ${({ leftButton }) =>
       leftButton === true ? 'visible' : 'hidden'};
-
     border: none;
-    color: silver;
+    color: grey;
     border-radius: 50%;
-     width: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? '50px' : '75px'};
+    width: ${({ portfolioGalleryMidLayout }) =>
+      portfolioGalleryMidLayout ? '50px' : '75px'};
     height: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? '50px' : '75px'};
+      portfolioGalleryMidLayout ? '50px' : '75px'};
     align-items: center;
-    
+
     margin-right: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? '' : '10px'};
+      portfolioGalleryMidLayout ? '' : '10px'};
     text-align: center;
     font-size: 1em;
     font-weight: 600;
+    background-color: white;
 
     &:hover {
       color: white;
@@ -198,20 +193,19 @@ const ScrollGallery = styled.div`
   .rightGalleryButton {
     visibility: ${({ rightButton }) =>
       rightButton === true ? 'visible' : 'hidden'};
-
     border: none;
-    color: silver;
+    color: grey;
     border-radius: 50%;
-
     width: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? '50px' : '75px'};
+      portfolioGalleryMidLayout ? '50px' : '75px'};
     height: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? '50px' : '75px'};
+      portfolioGalleryMidLayout ? '50px' : '75px'};
     margin-left: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? '' : '10px'};
+      portfolioGalleryMidLayout ? '' : '10px'};
     text-align: center;
     font-size: 1em;
     font-weight: 600;
+    background-color: white;
 
     &:hover {
       color: white;
@@ -225,31 +219,25 @@ const ScrollGallery = styled.div`
 `;
 
 const NavButtons = styled.div`
-  cursor: pointer;
-  border: solid;
-  //background-color: gray;
-  
-  
-&.left-arrow-portfolio {
-    position: absolute;
-   
-    top: 46.4%;
-    left: 5%;
-    
-  }
+  margin-bottom: 190px;
+  border-radius: 25%;
 
+  &.left-arrow-portfolio {
+    position: absolute;
+    opacity: 0.6;
+    top: 46.4%;
+    left: 2%;
+  }
 
   &.right-arrow-portfolio {
     position: absolute;
-    
+    opacity: 0.6;
     top: 46.4%;
-    right: 5%;
-  
+    right: 2%;
   }
 
-
-  :hover {
-    background-color: gainsboro;
+  &:hover {
+    opacity: 1;
   }
 `;
 
@@ -398,7 +386,7 @@ function Portfolio({
           </p>
         </div>
       </SideNav>
-
+{/* <div style={{border: ' 2px solid grey', }}> */}
       <PortfolioContainer>
         {!portfolioGalleryMidLayout && (
           <NavButtons
@@ -416,7 +404,7 @@ function Portfolio({
               )
             }
           >
-            <LeftArrowButton 
+            <LeftArrowButton
               leftButton={leftWindowButtonAppear}
               className="test"
               arrowButtonHandler={arrowButtonHandler}
@@ -424,73 +412,66 @@ function Portfolio({
           </NavButtons>
         )}
         <Gallery portfolioGalleryMidLayout={portfolioGalleryMidLayout}>
-       
-
-
-
-
-          <ImageBox album={album} portfolioGalleryMidLayout={portfolioGalleryMidLayout}>
-
-          {portfolioGalleryMidLayout && (
-          <NavButtons className='left-arrow-portfolio' 
-            onClick={() =>
-              setWindowIndexes(
-                windowIndexes.begIndex !== 0 && portfolio.length >= 5
-                  ? {
-                      begIndex: windowIndexes.begIndex - 1,
-                      lastIndex: windowIndexes.lastIndex - 1,
-                    }
-                  : {
-                      begIndex: 0,
-                      lastIndex: 5,
-                    }
-              )
-            }
+          <ImageBox
+            album={album}
+            portfolioGalleryMidLayout={portfolioGalleryMidLayout}
           >
-            <LeftArrowButton 
-              leftButton={leftWindowButtonAppear}
-              className="test"
-              arrowButtonHandler={arrowButtonHandler}
-              portfolioGalleryMidLayout = {portfolioGalleryMidLayout}
-            />
-          </NavButtons>
-        )}
+            {portfolioGalleryMidLayout && leftWindowButtonAppear && (
+              <NavButtons
+                className="left-arrow-portfolio"
+                portfolioGalleryMidLayout={portfolioGalleryMidLayout}
+                onClick={() =>
+                  setWindowIndexes(
+                    windowIndexes.begIndex !== 0 && portfolio.length >= 5
+                      ? {
+                          begIndex: windowIndexes.begIndex - 1,
+                          lastIndex: windowIndexes.lastIndex - 1,
+                        }
+                      : {
+                          begIndex: 0,
+                          lastIndex: 5,
+                        }
+                  )
+                }
+              >
+                <LeftArrowButton
+                  leftButton={leftWindowButtonAppear}
+                  className="test"
+                  arrowButtonHandler={arrowButtonHandler}
+                  portfolioGalleryMidLayout={portfolioGalleryMidLayout}
+                />
+              </NavButtons>
+            )}
 
-
-
-
-            
             <img alt="test" src={portfolio[slide]} />
             <h2>{slideMessage.title}</h2>
-            
 
-            {portfolioGalleryMidLayout && (
-          <NavButtons className='right-arrow-portfolio'
-            onClick={() =>
-              setWindowIndexes(
-                windowIndexes.lastIndex !== portfolio.length &&
-                  portfolio.length >= 5
-                  ? {
-                      begIndex: windowIndexes.begIndex + 1,
-                      lastIndex: windowIndexes.lastIndex + 1,
-                    }
-                  : {
-                      begIndex: portfolio.length - 5,
-                      lastIndex: portfolio.length,
-                    }
-              )
-            }
-          >
-            <RightArrowButton
-              rightButton={rightWindowButtonAppear}
-              arrowButtonHandler={arrowButtonHandler}
-              portfolioGalleryMidLayout = {portfolioGalleryMidLayout}
-            />
-          </NavButtons>
-        )}
+            {portfolioGalleryMidLayout && rightWindowButtonAppear && (
+              <NavButtons
+                className="right-arrow-portfolio"
+                onClick={() =>
+                  setWindowIndexes(
+                    windowIndexes.lastIndex !== portfolio.length &&
+                      portfolio.length >= 5
+                      ? {
+                          begIndex: windowIndexes.begIndex + 1,
+                          lastIndex: windowIndexes.lastIndex + 1,
+                        }
+                      : {
+                          begIndex: portfolio.length - 5,
+                          lastIndex: portfolio.length,
+                        }
+                  )
+                }
+              >
+                <RightArrowButton
+                  rightButton={rightWindowButtonAppear}
+                  arrowButtonHandler={arrowButtonHandler}
+                  portfolioGalleryMidLayout={portfolioGalleryMidLayout}
+                />
+              </NavButtons>
+            )}
           </ImageBox>
-
-          
 
           <ScrollGallery
             album={album}
@@ -573,8 +554,8 @@ function Portfolio({
             />
           </NavButtons>
         )}
-       
       </PortfolioContainer>
+      {/* </div> */}
     </PortfolioPage>
   );
 }

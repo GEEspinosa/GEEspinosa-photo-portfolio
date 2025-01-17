@@ -12,10 +12,10 @@ const RightArrowButtonIcon = styled.div`
   cursor: pointer;
   margin-bottom: ${({ rightButton, showModal }) =>
     rightButton === true && showModal === true ? '210px' : '0px'};
-  border: solid silver;
+  //border: solid silver;
 
-  :hover {
-    background-color: red;
+  &:hover {
+    background-color: gainsboro;
   }
 
   :first-child {
@@ -25,6 +25,8 @@ const RightArrowButtonIcon = styled.div`
   :nth-child(2) {
     transform: scaleY(-1) rotate(45deg);
   }
+
+
 
   @media (max-width: 1400px) {
     margin-bottom: ${({ showModal }) =>

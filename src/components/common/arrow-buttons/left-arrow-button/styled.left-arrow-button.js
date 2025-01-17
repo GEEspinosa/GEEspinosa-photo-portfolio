@@ -12,7 +12,10 @@ const LeftArrowButtonIcon = styled.div`
 
   cursor: pointer;
   margin-bottom: ${({ leftButton, showModal }) => (leftButton === true && showModal === true ? '210px' : '0px')};
-  border: solid silver;
+  
+  &:hover {
+    background-color: gainsboro;
+  }
 
   :first-child {
     transform: rotate(-45deg);
