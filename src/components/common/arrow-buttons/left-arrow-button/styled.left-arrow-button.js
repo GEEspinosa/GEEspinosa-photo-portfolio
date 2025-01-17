@@ -8,11 +8,11 @@ const LeftArrowButtonIcon = styled.div`
   z-index: 1000;
   padding: 25px;
   margin: ${({ showModal}) =>
-    showModal === true ? '25px' : '25px 0px 0px 0px'};
+    showModal === true ? '25px' : '0px 0px 0px 0px'};
 
   cursor: pointer;
-  margin-bottom: ${({ leftButton }) => (leftButton === true ? '210px' : '0px')};
-  //border: solid silver;
+  margin-bottom: ${({ leftButton, showModal }) => (leftButton === true && showModal === true ? '210px' : '0px')};
+  border: solid silver;
 
   :first-child {
     transform: rotate(-45deg);
@@ -24,19 +24,16 @@ const LeftArrowButtonIcon = styled.div`
 
   @media (max-width: 1400px) {
     margin-bottom: ${({ showModal }) =>
-      showModal === true ? '310px' : '210px'};
-    margin-bottom: 190px;
+      showModal === true ? '190px' : '0px'};
+   //dev note: 190px vs 310px?
   }
 
-  // @media (max-width: 1149px) {
-  //   margin-bottom: 190px;
-  // }
 
   .leftArrowIcon {
     //dev note: width below was 30
     width: 24px;
     height: 4px;
-    background-color: gray;
+    background-color: ${({portfolioGalleryMidLayout}) => portfolioGalleryMidLayout ? 'white' : 'gray'};
     pointer-events: none;
     margin: 3px;
     transform-origin: 9px;
