@@ -12,7 +12,7 @@ const RightArrowButtonIcon = styled.div`
   cursor: pointer;
   margin-bottom: ${({ rightButton, showModal }) =>
     rightButton === true && showModal === true ? '210px' : '0px'};
-  //border: solid silver;
+   
 
   &:hover {
     background-color: gainsboro;
@@ -42,7 +42,7 @@ const RightArrowButtonIcon = styled.div`
     //dev note: width below was 30
     width: 24px;
     height: 4px;
-    background-color: ${({portfolioGalleryMidLayout}) => portfolioGalleryMidLayout ? 'white' : 'gray'};
+    background-color: ${({portfolioGalleryMidLayout, orientationSelected}) => portfolioGalleryMidLayout || orientationSelected ? 'white' : 'gray'};
     pointer-events: none;
     margin: 3px;
 

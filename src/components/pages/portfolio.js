@@ -226,7 +226,7 @@ const ScrollGallery = styled.div`
 const NavButtons = styled.div`
   margin-bottom: ${({arrowInside, portfolioGalleryMidLayout}) => (!arrowInside && portfolioGalleryMidLayout) ? '0px' : '190px'};
   //border-radius: 25%;
-  background-color: ${({orientationSelected}) => orientationSelected === 'vertical' ? 'grey' : ''};
+  background-color: ${({orientationSelected, portfolioGalleryMidLayout}) => (orientationSelected === 'vertical')  ? 'grey' : ''};
 
   &.left-arrow-portfolio {
     position: absolute;
@@ -476,6 +476,7 @@ function Portfolio({
                   className="test"
                   arrowButtonHandler={arrowButtonHandler}
                   portfolioGalleryMidLayout={portfolioGalleryMidLayout}
+                  orientationSelected={orientationSelected}
                 />
               </NavButtons>
             )}
@@ -486,6 +487,7 @@ function Portfolio({
             {arrowInside && rightWindowButtonAppear && (
               <NavButtons
               orientationSelected={orientationSelected}
+              portfolioGalleryMidLayout={portfolioGalleryMidLayout}
                 className="right-arrow-portfolio"
                 onClick={() =>
                   setWindowIndexes(
@@ -506,6 +508,7 @@ function Portfolio({
                   rightButton={rightWindowButtonAppear}
                   arrowButtonHandler={arrowButtonHandler}
                   portfolioGalleryMidLayout={portfolioGalleryMidLayout}
+                  orientationSelected={orientationSelected}
                 />
               </NavButtons>
             )}
@@ -571,7 +574,7 @@ function Portfolio({
         </Gallery>
         {!arrowInside && (
           <NavButtons
-            arrowInside={arrowInside}
+          arrowInside={arrowInside}
             portfolioGalleryMidLayout={portfolioGalleryMidLayout}
             onClick={() =>
               setWindowIndexes(

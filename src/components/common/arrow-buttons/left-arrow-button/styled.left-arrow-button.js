@@ -36,7 +36,7 @@ const LeftArrowButtonIcon = styled.div`
     //dev note: width below was 30
     width: 24px;
     height: 4px;
-    background-color: ${({portfolioGalleryMidLayout}) => portfolioGalleryMidLayout ? 'white' : 'gray'};
+    background-color: ${({portfolioGalleryMidLayout, orientationSelected}) => portfolioGalleryMidLayout || orientationSelected ? 'white' : 'gray'};
     pointer-events: none;
     margin: 3px;
     transform-origin: 9px;
