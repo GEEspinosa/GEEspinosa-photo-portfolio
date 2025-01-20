@@ -6,11 +6,22 @@ import { RightArrowButton } from '../common/arrow-buttons/right-arrow-button/rig
 
 const PortfolioPage = styled.div`
   display: grid;
+  
   grid-template-columns: 350px 1fr;
   // height: calc(100vh - 100px);
 
   @media (max-height: 1050px) {
     grid-template-columns: 270px 1fr;
+  }
+    
+  @media (max-width: 1525px) {
+
+    grid-template-columns: 270px 1fr;
+  }
+
+  @media (max-width: 1200px) {
+
+    grid-template-columns: 60px 1fr;
   }
 `;
 
@@ -27,7 +38,7 @@ const SideNav = styled.div`
   //gap: 54.5%;
 
   padding: 30px;
-  //border: 1px solid red;
+  border: 1px solid red;
 
   ul {
     padding: 0px;
@@ -49,6 +60,11 @@ const SideNav = styled.div`
       line-height: 2rem;
     }
 
+    // @media (max-width: 1525px) {
+    //   font-size: 18px;
+    //   line-height: 2rem;
+    // }
+
     @media (max-height: 800px) {
       font-size: 18px;
       line-height: 2rem;
@@ -67,6 +83,11 @@ const SideNav = styled.div`
       font-size: 16px;
     }
 
+    // @media (max-width: 1525px) {
+    //   font-size: 16px;
+    
+    // }
+
     @media (max-height: 800px) {
       font-size: 16px;
     }
@@ -75,6 +96,11 @@ const SideNav = styled.div`
       font-size: 22px;
       color: grey;
 
+
+    //   @media (max-width: 1525px) {
+    //   font-size: 18px;
+      
+    // }
       @media (max-height: 800px) {
         font-size: 18px;
       }
@@ -104,14 +130,21 @@ const ImageBox = styled.div`
     portfolioGalleryMidLayout ? '81vh' : '70vh'};
   padding: 5px;
   display: flex;
+  
   justify-content: center;
   align-item: center;
   position: relative;
+
+  @media (max-width: 1525px)  {
+    width: 70vh;
+    height: 70vh;
+  }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    
   }
 
   h2 {
@@ -123,7 +156,7 @@ const ImageBox = styled.div`
 `;
 
 const ScrollGallery = styled.div`
-  //border: solid;
+  
   visibility: ${({ album }) => (album === 'cover' ? 'hidden' : 'visible')};
   display: flex;
   position: ${({ portfolioGalleryMidLayout }) =>
@@ -142,6 +175,8 @@ const ScrollGallery = styled.div`
   margin: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? '0vw 1vw 0vw 3vw' : ''};
 
+  
+
   .scrollGalleryBorders {
     display: flex;
     justify-content: center;
@@ -154,6 +189,13 @@ const ScrollGallery = styled.div`
     margin: 5px;
     cursor: pointer;
     border: solid gainsboro;
+
+
+@media (max-width: 1525px)  {
+    width: 13.3vh;
+    height: 13.3vh;
+  }
+ 
   }
 
   img {
