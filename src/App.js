@@ -6,6 +6,7 @@ import Portfolio from './components/pages/portfolio';
 import About from './components/pages/about';
 import ModalComponent from './components/common/modal/modal';
 import imageData from './assets/image-data';
+import useWindowSize from './hooks/useWindowSize';
 
 const initialMessage = {
   title: 'select an album',
@@ -20,7 +21,6 @@ function App() {
   const [open, setOpen] = useState(false);
   const [modalSelect, setModalSelect] = useState(0);
   const [showModal, setShowModal] = useState(false);
-  const [smallLandingLayout, setSmallLandingLayout] = useState(false);
   const [album, setAlbum] = useState('cover');
   const [portfolio, setPortfolio] = useState([]);
   const [slide, setSlide] = useState(null);
@@ -28,16 +28,20 @@ function App() {
   const [descriptionsArray, setDescriptionsArray] = useState([]);
   const [slideMessage, setSlideMessage] = useState(initialMessage);
 
+  const {width} = useWindowSize()
+
   function imageClickHandler(id) {
     setModalSelect(id);
     setShowModal(true);
   }
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 710) {
-      setOpen(false);
+  
+  useEffect (() => {
+    if (width > 710) {
+      setOpen(false)
     }
-  });
+  }, [width])
+  
 
   function keyDownHandler(e) {
     if (e.key === 'Escape') {
@@ -92,23 +96,12 @@ function App() {
     }
   };
 
-  //dev note: because of react re-renders,
-  //eventlisteners must be added and removed with useEffect hook!!!
-  //the eventlistener calls the above declared keyDownHandler
-  // innerWidth either 802px or 956px?
 
   useEffect(() => {
     document.addEventListener('keydown', keyDownHandler);
     return () => document.removeEventListener('keydown', keyDownHandler);
   });
 
-  useEffect(() => {
-    if (window.innerWidth <= 956) {
-      setSmallLandingLayout(true);
-    } else {
-      setSmallLandingLayout(false);
-    }
-  }, []);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -128,8 +121,6 @@ function App() {
           element={
             <Landing
               imageClickHandler={imageClickHandler}
-              smallLandingLayout={smallLandingLayout}
-              setSmallLandingLayout={setSmallLandingLayout}
             />
           }
         />

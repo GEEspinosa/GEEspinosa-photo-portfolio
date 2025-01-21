@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import imageData from '../../assets/image-data';
 import { LeftArrowButton } from '../common/arrow-buttons/left-arrow-button/left-arrow-button';
 import { RightArrowButton } from '../common/arrow-buttons/right-arrow-button/right-arrow-button';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const PortfolioPage = styled.div`
   display: grid;
@@ -14,15 +15,6 @@ const PortfolioPage = styled.div`
     grid-template-columns: 270px 1fr;
   }
     
-  @media (max-width: 1525px) {
-
-    grid-template-columns: 270px 1fr;
-  }
-
-  @media (max-width: 1200px) {
-
-    grid-template-columns: 60px 1fr;
-  }
 `;
 
 const PortfolioContainer = styled.div`
@@ -60,11 +52,6 @@ const SideNav = styled.div`
       line-height: 2rem;
     }
 
-    // @media (max-width: 1525px) {
-    //   font-size: 18px;
-    //   line-height: 2rem;
-    // }
-
     @media (max-height: 800px) {
       font-size: 18px;
       line-height: 2rem;
@@ -83,11 +70,6 @@ const SideNav = styled.div`
       font-size: 16px;
     }
 
-    // @media (max-width: 1525px) {
-    //   font-size: 16px;
-    
-    // }
-
     @media (max-height: 800px) {
       font-size: 16px;
     }
@@ -96,18 +78,12 @@ const SideNav = styled.div`
       font-size: 22px;
       color: grey;
 
-
-    //   @media (max-width: 1525px) {
-    //   font-size: 18px;
-      
-    // }
       @media (max-height: 800px) {
         font-size: 18px;
       }
     }
   }
 `;
-
 
 
 const Gallery = styled.div`
@@ -135,16 +111,10 @@ const ImageBox = styled.div`
   align-item: center;
   position: relative;
 
-  @media (max-width: 1525px)  {
-    width: 70vh;
-    height: 70vh;
-  }
-
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    
   }
 
   h2 {
@@ -156,7 +126,6 @@ const ImageBox = styled.div`
 `;
 
 const ScrollGallery = styled.div`
-  
   visibility: ${({ album }) => (album === 'cover' ? 'hidden' : 'visible')};
   display: flex;
   position: ${({ portfolioGalleryMidLayout }) =>
@@ -170,12 +139,9 @@ const ScrollGallery = styled.div`
   white-space: nowrap;
   width: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? '' : '100%'};
-
   padding: 5px;
   margin: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? '0vw 1vw 0vw 3vw' : ''};
-
-  
 
   .scrollGalleryBorders {
     display: flex;
@@ -189,13 +155,6 @@ const ScrollGallery = styled.div`
     margin: 5px;
     cursor: pointer;
     border: solid gainsboro;
-
-
-@media (max-width: 1525px)  {
-    width: 13.3vh;
-    height: 13.3vh;
-  }
- 
   }
 
   img {
@@ -218,7 +177,6 @@ const ScrollGallery = styled.div`
     height: ${({ portfolioGalleryMidLayout }) =>
       portfolioGalleryMidLayout ? '50px' : '75px'};
     align-items: center;
-
     margin-right: ${({ portfolioGalleryMidLayout }) =>
       portfolioGalleryMidLayout ? '' : '10px'};
     text-align: center;
@@ -302,7 +260,6 @@ function Portfolio({
   slideMessage,
   setSlideMessage,
 }) {
-  const [windowIndexes, setWindowIndexes] = useState({});
   const [galleryIndexes, setGalleryIndexes] = useState({});
   const [galleryArray, setGalleryArray] = useState([]);
   const [leftWindowButtonAppear, setLeftWindowButtonAppear] = useState(false);
@@ -317,33 +274,25 @@ function Portfolio({
   const [orientationSelected, setOrientationSelected] = useState('')
   const [arrowInside, setArrowInside] = useState (false)
 
+  const {width, height} = useWindowSize()
+
   useEffect(() => {
-    function portfolioResizeHandler() {
-      if (window.innerWidth <= 1050 || window.innerHeight <= 1050) {
+      if (width <= 1050 || height <= 1050) {
         setPortfolioGalleryMidLayout(true);
       } 
       else {
         setPortfolioGalleryMidLayout(false);
       }
-    }
-    portfolioResizeHandler();
-    window.addEventListener('resize', portfolioResizeHandler);
-    return () => window.removeEventListener('resize', portfolioResizeHandler);
-  });
+}, [width, height]);
 
   useEffect(() => {
-    function portfolioResizeArrowHandler() {
-      if (window.innerWidth <= 1525 ) {
+      if (width <= 1525 ) {
         setArrowInside(true);
       } 
       else {
         setArrowInside(false);
       }
-    }
-    portfolioResizeArrowHandler();
-    window.addEventListener('resize', portfolioResizeArrowHandler);
-    return () => window.removeEventListener('resize', portfolioResizeArrowHandler);
-  });
+  }, [width]);
 
   useEffect(() => {
     let p = [];
@@ -355,10 +304,8 @@ function Portfolio({
       if ('album' in entry) {
         if (album in entry.album) {
           p.push(entry.image);
-          
           orientation.push(entry.orientation);
-          description.push(entry.description);
-          
+          description.push(entry.description);    
         }
       }
     });
@@ -368,10 +315,6 @@ function Portfolio({
     setOrientationSelected(orientationArray[slide])
     setSlide(0);
     createSlidingGallery(p);
-    setWindowIndexes({
-      begIndex: 0,
-      lastIndex: 5,
-    });
     setGalleryIndexes({
       begGalleryIndex: 0,
       lastGalleryIndex: 5,
@@ -389,7 +332,7 @@ function Portfolio({
     rightGalleryButtonHandler(portfolio, galleryIndexes.lastGalleryIndex);
     setOrientationSelected(orientationArray[slide])
     
-  }, [slide, windowIndexes, galleryIndexes, portfolio]);
+  }, [slide, galleryIndexes, portfolio]);
 
   function createSlidingGallery(p) {
     let slidingGalleryFilter = p.filter(
@@ -402,7 +345,6 @@ function Portfolio({
 
   function leftSlideshowButtonHandler() {
     if (slide > 0) {
-      console.log('yes');
       setLeftWindowButtonAppear(true);
     } else {
       setLeftWindowButtonAppear(false);
@@ -434,6 +376,8 @@ function Portfolio({
     }
   }
 
+  
+
   return (
     <PortfolioPage>
       <SideNav>
@@ -462,25 +406,12 @@ function Portfolio({
           </p>
         </div>
       </SideNav>
-{/* <div style={{border: ' 2px solid grey', }}> */}
+
       <PortfolioContainer>
         {!arrowInside && (
           <NavButtons
             arrowInside={arrowInside}
             portfolioGalleryMidLayout={portfolioGalleryMidLayout}
-            onClick={() =>
-              setWindowIndexes(
-                windowIndexes.begIndex !== 0 && portfolio.length >= 5
-                  ? {
-                      begIndex: windowIndexes.begIndex - 1,
-                      lastIndex: windowIndexes.lastIndex - 1,
-                    }
-                  : {
-                      begIndex: 0,
-                      lastIndex: 5,
-                    }
-              )
-            }
           >
             <LeftArrowButton
               leftButton={leftWindowButtonAppear}
@@ -499,19 +430,6 @@ function Portfolio({
                 className="left-arrow-portfolio"
                 portfolioGalleryMidLayout={portfolioGalleryMidLayout}
                 orientationSelected={orientationSelected}
-                onClick={() =>
-                  setWindowIndexes(
-                    windowIndexes.begIndex !== 0 && portfolio.length >= 5
-                      ? {
-                          begIndex: windowIndexes.begIndex - 1,
-                          lastIndex: windowIndexes.lastIndex - 1,
-                        }
-                      : {
-                          begIndex: 0,
-                          lastIndex: 5,
-                        }
-                  )
-                }
               >
                 <LeftArrowButton
                   leftButton={leftWindowButtonAppear}
@@ -531,20 +449,6 @@ function Portfolio({
               orientationSelected={orientationSelected}
               portfolioGalleryMidLayout={portfolioGalleryMidLayout}
                 className="right-arrow-portfolio"
-                onClick={() =>
-                  setWindowIndexes(
-                    windowIndexes.lastIndex !== portfolio.length &&
-                      portfolio.length >= 5
-                      ? {
-                          begIndex: windowIndexes.begIndex + 1,
-                          lastIndex: windowIndexes.lastIndex + 1,
-                        }
-                      : {
-                          begIndex: portfolio.length - 5,
-                          lastIndex: portfolio.length,
-                        }
-                  )
-                }
               >
                 <RightArrowButton
                   rightButton={rightWindowButtonAppear}
@@ -564,19 +468,19 @@ function Portfolio({
           >
             <button
               className="leftGalleryButton"
-              onClick={() =>
-                setGalleryIndexes(
-                  galleryIndexes.begGalleryIndex !== 0 && portfolio.length >= 5
-                    ? {
-                        begGalleryIndex: galleryIndexes.begGalleryIndex - 1,
-                        lastGalleryIndex: galleryIndexes.lastGalleryIndex - 1,
-                      }
-                    : {
-                        begGalleryIndex: 0,
-                        lastGalleryIndex: 5,
-                      }
-                )
-              }
+              // onClick={() =>
+              //   setGalleryIndexes(
+              //     galleryIndexes.begGalleryIndex !== 0 && portfolio.length >= 5
+              //       ? {
+              //           begGalleryIndex: galleryIndexes.begGalleryIndex - 1,
+              //           lastGalleryIndex: galleryIndexes.lastGalleryIndex - 1,
+              //         }
+              //       : {
+              //           begGalleryIndex: 0,
+              //           lastGalleryIndex: 5,
+              //         }
+              //   )
+              // }
             >
               <div className="dots">. . .</div>
             </button>
@@ -595,20 +499,20 @@ function Portfolio({
 
             <button
               className="rightGalleryButton"
-              onClick={() =>
-                setGalleryIndexes(
-                  galleryIndexes.lastGalleryIndex !== portfolio.length &&
-                    portfolio.length >= 5
-                    ? {
-                        begGalleryIndex: galleryIndexes.begGalleryIndex + 1,
-                        lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1,
-                      }
-                    : {
-                        begGalleryIndex: portfolio.length - 5,
-                        lastGalleryIndex: portfolio.length,
-                      }
-                )
-              }
+              // onClick={() =>
+              //   setGalleryIndexes(
+              //     galleryIndexes.lastGalleryIndex !== portfolio.length &&
+              //       portfolio.length >= 5
+              //       ? {
+              //           begGalleryIndex: galleryIndexes.begGalleryIndex + 1,
+              //           lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1,
+              //         }
+              //       : {
+              //           begGalleryIndex: portfolio.length - 5,
+              //           lastGalleryIndex: portfolio.length,
+              //         }
+              //   )
+              // }
             >
               <div className="dots">. . .</div>
             </button>
@@ -618,20 +522,6 @@ function Portfolio({
           <NavButtons
           arrowInside={arrowInside}
             portfolioGalleryMidLayout={portfolioGalleryMidLayout}
-            onClick={() =>
-              setWindowIndexes(
-                windowIndexes.lastIndex !== portfolio.length &&
-                  portfolio.length >= 5
-                  ? {
-                      begIndex: windowIndexes.begIndex + 1,
-                      lastIndex: windowIndexes.lastIndex + 1,
-                    }
-                  : {
-                      begIndex: portfolio.length - 5,
-                      lastIndex: portfolio.length,
-                    }
-              )
-            }
           >
             <RightArrowButton
               rightButton={rightWindowButtonAppear}
@@ -649,19 +539,19 @@ function Portfolio({
           >
             <button
               className="leftGalleryButton"
-              onClick={() =>
-                setGalleryIndexes(
-                  galleryIndexes.begGalleryIndex !== 0 && portfolio.length >= 5
-                    ? {
-                        begGalleryIndex: galleryIndexes.begGalleryIndex - 1,
-                        lastGalleryIndex: galleryIndexes.lastGalleryIndex - 1,
-                      }
-                    : {
-                        begGalleryIndex: 0,
-                        lastGalleryIndex: 5,
-                      }
-                )
-              }
+              // onClick={() =>
+              //   setGalleryIndexes(
+              //     galleryIndexes.begGalleryIndex !== 0 && portfolio.length >= 5
+              //       ? {
+              //           begGalleryIndex: galleryIndexes.begGalleryIndex - 1,
+              //           lastGalleryIndex: galleryIndexes.lastGalleryIndex - 1,
+              //         }
+              //       : {
+              //           begGalleryIndex: 0,
+              //           lastGalleryIndex: 5,
+              //         }
+              //   )
+              // }
             >
               <div className="dots">. . .</div>
             </button>
@@ -680,26 +570,26 @@ function Portfolio({
 
             <button
               className="rightGalleryButton"
-              onClick={() =>
-                setGalleryIndexes(
-                  galleryIndexes.lastGalleryIndex !== portfolio.length &&
-                    portfolio.length >= 5
-                    ? {
-                        begGalleryIndex: galleryIndexes.begGalleryIndex + 1,
-                        lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1,
-                      }
-                    : {
-                        begGalleryIndex: portfolio.length - 5,
-                        lastGalleryIndex: portfolio.length,
-                      }
-                )
-              }
+              // onClick={() =>
+              //   setGalleryIndexes(
+              //     galleryIndexes.lastGalleryIndex !== portfolio.length &&
+              //       portfolio.length >= 5
+              //       ? {
+              //           begGalleryIndex: galleryIndexes.begGalleryIndex + 1,
+              //           lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1,
+              //         }
+              //       : {
+              //           begGalleryIndex: portfolio.length - 5,
+              //           lastGalleryIndex: portfolio.length,
+              //         }
+              //   )
+              // }
             >
               <div className="dots">. . .</div>
             </button>
           </ScrollGallery>}
       </PortfolioContainer>
-      {/* </div> */}
+ 
 
       
     </PortfolioPage>

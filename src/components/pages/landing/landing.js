@@ -1,7 +1,7 @@
 import React from "react";
 import imageData from "../../../assets/image-data";
 import { Gallery, GallerySmall, TopButton } from "./styled.landing";
-
+import useWindowSize from "../../../hooks/useWindowSize";
 
 
 // dev notes: logic to sort through imageData and make three arrays for 
@@ -48,17 +48,20 @@ function Landing({
   //dev notes: checking resizing window to change from larger to smaller gallery layout
   // can't tell if innerwidth 802 or 956?
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth <= 1293) {
-      setSmallLandingLayout(true);
-    } else {
-      setSmallLandingLayout(false);
-    }
-  });
+  // window.addEventListener("resize", () => {
+  //   if (window.innerWidth <= 1293) {
+  //     setSmallLandingLayout(true);
+  //   } else {
+  //     setSmallLandingLayout(false);
+  //   }
+  // });
+
+
+  const {width} = useWindowSize()
 
   return (
     <>
-      {smallLandingLayout ? (
+      {width <= 1355 ? (
         <GallerySmall>
           <div className="row">
             <div className="column">
