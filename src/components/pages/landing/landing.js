@@ -61,7 +61,7 @@ function Landing({
 
   return (
     <>
-      {width <= 1355 ? (
+      {width <= 1376 ? (
         <GallerySmall>
           <div className="row">
             <div className="column">

@@ -1,36 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import imageData from '../../assets/image-data';
-import { LeftArrowButton } from '../common/arrow-buttons/left-arrow-button/left-arrow-button';
-import { RightArrowButton } from '../common/arrow-buttons/right-arrow-button/right-arrow-button';
-import useWindowSize from '../../hooks/useWindowSize';
+import imageData from '../../../../assets/image-data';
+import { LeftArrowButton } from '../../../common/arrow-buttons/left-arrow-button/left-arrow-button';
+import { RightArrowButton } from '../../../common/arrow-buttons/right-arrow-button/right-arrow-button';
+import useWindowSize from '../../../../hooks/useWindowSize';
 
 const PortfolioPage = styled.div`
+  border: solid;
   display: grid;
-  
-  grid-template-columns: 350px 1fr;
-  // height: calc(100vh - 100px);
+  grid-template-columns: 16vw 1fr;
 
-  @media (max-height: 1050px) {
-    grid-template-columns: 270px 1fr;
+  height: 90vh;
+
+  //   @media (max-height: 1050px) {
+  //     grid-template-columns: 270px 1fr;
+  //   }
+
+  //   @media (max-width: 1440px) and (max-height: 1050px) {
+  //     grid-template-columns: 240px 1fr;
+  //   }
+
+  //   @media (max-width: 1260px) and (max-height: 1050px) {
+  //     grid-template-columns: 180px 1fr;
+  //   }
+
+  @media (max-width: 1780px) and (min-height: 1051px) {
+    display: flex;
+    flex-direction: column;
   }
-    
 `;
 
 const PortfolioContainer = styled.div`
-  //border: solid green;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 18px;
+  
 `;
 
 const SideNav = styled.div`
   display: flex;
   flex-direction: column;
-  //gap: 54.5%;
-
+  gap: 50%;
   padding: 30px;
   border: 1px solid red;
+
+  @media (max-width: 1780px) and (min-height: 1051px) {
+    //display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 1vh;
+    width: 100%;
+  }
+
+  @media (max-height: 690px) {
+    padding: 12px;
+  }
+
+  //   @media (max-width: 1134px) and (max-height: 924px) {
+  //     display: flex;
+  //     padding: 1vh;
+  //     width: 100%;
+  //   }
 
   ul {
     padding: 0px;
@@ -56,60 +87,103 @@ const SideNav = styled.div`
       font-size: 18px;
       line-height: 2rem;
     }
+
+    @media (max-height: 690px) {
+      font-size: 12px;
+      line-height: 1.6rem;
+    }
   }
 
   .description-box {
-   // border: solid grey;
-    padding: 25px;
     color: grey;
     font-size: 20px;
     list-style-type: none;
-    text-align: left;
 
     @media (max-height: 1050px) {
       font-size: 16px;
     }
 
-    @media (max-height: 800px) {
+    @media (max-width: 1260px) and (max-height: 1050px) {
       font-size: 16px;
+    }
+
+    @media (min-height: 1050px) {
+      font-size: 14px;
+    }
+
+    @media (min-height: 1200px) {
+      font-size: 16px;
+    }
+    @media (min-height: 1300px) {
+      font-size: 18px;
     }
 
     h2 {
       font-size: 22px;
       color: grey;
 
-      @media (max-height: 800px) {
+      @media (min-height: 1050px) {
+        font-size: 16px;
+      }
+
+      @media (min-height: 1200px) {
         font-size: 18px;
+      }
+      @media (min-height: 1300px) {
+        font-size: 20px;
       }
     }
   }
 `;
 
-
 const Gallery = styled.div`
- //border: solid silver;
+  border: solid silver;
   display: flex;
   flex-direction: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? 'row' : 'column'};
-  padding: 25px;
+  //padding: 25px;
   justify-content: center;
   align-items: center;
-  position: ${({ portfolioGalleryMidLayout }) =>
+  //position: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? 'relative' : ''};
+
+  @media (max-width: 1780px) and (min-height: 1051px) {
+    padding: 0px;
+  }
 `;
 
 const ImageBox = styled.div`
-  //border: 1px solid red;
+  border: 1px solid red;
   width: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? '81vh' : '70vh'};
   height: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? '81vh' : '70vh'};
   padding: 5px;
   display: flex;
-  
+
   justify-content: center;
-  align-item: center;
+  //align-item: center;
   position: relative;
+
+  @media (max-width: 1780px) and (min-height: 1051px) {
+    height: 58vh;
+    width: 58vh;
+  }
+
+  @media (max-width: 1260px) and (max-height: 1050px) {
+    width: 68vh;
+    height: 68vh;
+  }
+
+  @media only screen and (max-height: 865px) {
+    width: 70vh;
+    height: 70vh;
+  }
+
+  @media only screen and (max-width: 768px) and (max-height: 1024px) {
+    width: 55vh;
+    height: 55vh;
+  }
 
   img {
     width: 100%;
@@ -126,19 +200,17 @@ const ImageBox = styled.div`
 `;
 
 const ScrollGallery = styled.div`
+  border: solid;
   visibility: ${({ album }) => (album === 'cover' ? 'hidden' : 'visible')};
   display: flex;
   position: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? "sticky" : '' };
+    portfolioGalleryMidLayout ? 'sticky' : ''};
   left: 88vw;
   flex-direction: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? 'column' : 'row'};
   justify-content: center;
   align-items: center;
-  overflow-x: auto;
-  white-space: nowrap;
-  width: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? '' : '100%'};
+
   padding: 5px;
   margin: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? '0vw 1vw 0vw 3vw' : ''};
@@ -155,6 +227,11 @@ const ScrollGallery = styled.div`
     margin: 5px;
     cursor: pointer;
     border: solid gainsboro;
+
+    @media (max-width: 1780px) and (min-height: 1051px) {
+      width: 13vh;
+      height: 13vh;
+    }
   }
 
   img {
@@ -224,14 +301,17 @@ const ScrollGallery = styled.div`
 `;
 
 const NavButtons = styled.div`
-  margin-bottom: ${({arrowInside, portfolioGalleryMidLayout}) => (!arrowInside && portfolioGalleryMidLayout) ? '0px' : '190px'};
+  margin-bottom: ${({ arrowInside, portfolioGalleryMidLayout }) =>
+    !arrowInside && portfolioGalleryMidLayout ? '0px' : '190px'};
   //border-radius: 25%;
-  background-color: ${({orientationSelected, portfolioGalleryMidLayout}) => (orientationSelected === 'vertical')  ? 'grey' : ''};
+  background-color: ${({ orientationSelected, portfolioGalleryMidLayout }) =>
+    orientationSelected === 'vertical' ? 'grey' : ''};
 
   &.left-arrow-portfolio {
     position: absolute;
     opacity: 0.6;
     top: 46.4%;
+    //top: 36.4vh;
     left: 2%;
   }
 
@@ -239,6 +319,7 @@ const NavButtons = styled.div`
     position: absolute;
     opacity: 0.6;
     top: 46.4%;
+    //top: 36.4vh;
     right: 2%;
   }
 
@@ -247,7 +328,7 @@ const NavButtons = styled.div`
   }
 `;
 
-function Portfolio({
+function MediumLayout({
   album,
   setAlbum,
   portfolio,
@@ -270,49 +351,72 @@ function Portfolio({
 
   const [portfolioGalleryMidLayout, setPortfolioGalleryMidLayout] =
     useState(false);
-  const [orientationArray, setOrientationArray] = useState('')
-  const [orientationSelected, setOrientationSelected] = useState('')
-  const [arrowInside, setArrowInside] = useState (false)
-
-  const {width, height} = useWindowSize()
-
-  useEffect(() => {
-      if (width <= 1050 || height <= 1050) {
-        setPortfolioGalleryMidLayout(true);
-      } 
-      else {
-        setPortfolioGalleryMidLayout(false);
-      }
-}, [width, height]);
+  const [orientationArray, setOrientationArray] = useState('');
+  const [orientationSelected, setOrientationSelected] = useState('');
+  const [arrowInside, setArrowInside] = useState(false);
+  const { width, height } = useWindowSize();
+  const [galleryAmount, setGalleryAmount] = useState('lastGalleryIndex');
 
   useEffect(() => {
-      if (width <= 1525 ) {
-        setArrowInside(true);
-      } 
-      else {
-        setArrowInside(false);
-      }
+    if (height <= 1050) {
+      setPortfolioGalleryMidLayout(true);
+    } else {
+      setPortfolioGalleryMidLayout(false);
+    }
+  }, [height]);
+
+  useEffect(() => {
+    if (width <= 1525 && portfolioGalleryMidLayout) {
+      setArrowInside(true);
+    } else if (width <= 1780) {
+      setArrowInside(true);
+    } else {
+      setArrowInside(false);
+    }
   }, [width]);
+
+  useEffect(() => {
+    if (portfolioGalleryMidLayout) {
+      if (height <= 865) {
+        setGalleryAmount(-1);
+      }
+      if (height <= 680) {
+        setGalleryAmount(-2);
+      } else if (height > 865) {
+        setGalleryAmount(0);
+      }
+    } else if (!portfolioGalleryMidLayout) {
+      if (width <= 1095) {
+        console.log('true');
+        setGalleryAmount(-1);
+      }
+
+      if (width <= 912) {
+        console.log('true');
+        setGalleryAmount(-2);
+      }
+    }
+    createSlidingGallery(portfolio);
+  }, [width, height]);
 
   useEffect(() => {
     let p = [];
     let description = [];
-    setOrientationArray('')
+    setOrientationArray('');
     let orientation = [];
     imageData.map(entry => {
-      
       if ('album' in entry) {
         if (album in entry.album) {
           p.push(entry.image);
           orientation.push(entry.orientation);
-          description.push(entry.description);    
+          description.push(entry.description);
         }
       }
     });
     setPortfolio(p);
     setDescriptionsArray(description);
     setOrientationArray(orientation);
-    setOrientationSelected(orientationArray[slide])
+    setOrientationSelected(orientationArray[slide]);
     setSlide(0);
     createSlidingGallery(p);
     setGalleryIndexes({
@@ -330,15 +434,14 @@ function Portfolio({
     rightSlideshowButtonHandler(portfolio);
     leftGalleryButtonHandler(galleryIndexes);
     rightGalleryButtonHandler(portfolio, galleryIndexes.lastGalleryIndex);
-    setOrientationSelected(orientationArray[slide])
-    
+    setOrientationSelected(orientationArray[slide]);
   }, [slide, galleryIndexes, portfolio]);
 
   function createSlidingGallery(p) {
     let slidingGalleryFilter = p.filter(
       (i, key) =>
         key >= galleryIndexes.begGalleryIndex &&
-        key < galleryIndexes.lastGalleryIndex
+        key < galleryIndexes['lastGalleryIndex'] + galleryAmount
     );
     setGalleryArray(slidingGalleryFilter);
   }
@@ -376,37 +479,39 @@ function Portfolio({
     }
   }
 
-  
+  function galleryNavigateHandler(direction) {
+    if (direction === 'left') {
+      setGalleryIndexes(
+        galleryIndexes.begGalleryIndex !== 0 && portfolio.length >= 5
+          ? {
+              begGalleryIndex: galleryIndexes.begGalleryIndex - 1,
+              lastGalleryIndex: galleryIndexes.lastGalleryIndex - 1,
+            }
+          : {
+              begGalleryIndex: 0,
+              lastGalleryIndex: 5,
+            }
+      );
+    }
+
+    if (direction === 'right') {
+      setGalleryIndexes(
+        galleryIndexes.lastGalleryIndex !== portfolio.length &&
+          portfolio.length >= 5
+          ? {
+              begGalleryIndex: galleryIndexes.begGalleryIndex + 1,
+              lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1,
+            }
+          : {
+              begGalleryIndex: portfolio.length - 5,
+              lastGalleryIndex: portfolio.length,
+            }
+      );
+    }
+  }
 
   return (
     <PortfolioPage>
-      <SideNav>
-        <ul>
-          <li onClick={() => setAlbum('longbeach')}>Autumn Longbeach, WA</li>
-          <li onClick={() => setAlbum('test1')}>Tessa</li>
-          <li onClick={() => setAlbum('test2')}>Live Performances</li>
-          <li onClick={() => setAlbum('test3')}>Test3</li>
-        </ul>
-
-        <div className="description-box">
-          <h2>{slideMessage.title}</h2>
-          <p>
-            <br />
-            {slideMessage.location}
-            <br />
-            {slideMessage.date}
-            <br />
-            <br />
-            {slideMessage.camera}
-            <br />
-            {slideMessage.film}
-            <br />
-            {slideMessage.shot}
-            <br />
-          </p>
-        </div>
-      </SideNav>
-
       <PortfolioContainer>
         {!arrowInside && (
           <NavButtons
@@ -415,7 +520,6 @@ function Portfolio({
           >
             <LeftArrowButton
               leftButton={leftWindowButtonAppear}
-              className="test"
               arrowButtonHandler={arrowButtonHandler}
             />
           </NavButtons>
@@ -433,7 +537,6 @@ function Portfolio({
               >
                 <LeftArrowButton
                   leftButton={leftWindowButtonAppear}
-                  className="test"
                   arrowButtonHandler={arrowButtonHandler}
                   portfolioGalleryMidLayout={portfolioGalleryMidLayout}
                   orientationSelected={orientationSelected}
@@ -446,8 +549,8 @@ function Portfolio({
 
             {arrowInside && rightWindowButtonAppear && (
               <NavButtons
-              orientationSelected={orientationSelected}
-              portfolioGalleryMidLayout={portfolioGalleryMidLayout}
+                orientationSelected={orientationSelected}
+                portfolioGalleryMidLayout={portfolioGalleryMidLayout}
                 className="right-arrow-portfolio"
               >
                 <RightArrowButton
@@ -460,67 +563,72 @@ function Portfolio({
             )}
           </ImageBox>
 
-         { !portfolioGalleryMidLayout && <ScrollGallery
-            album={album}
-            leftButton={leftScrollButtonsAppear}
-            rightButton={rightScrollButtonsAppear}
-            portfolioGalleryMidLayout={portfolioGalleryMidLayout}
-          >
-            <button
-              className="leftGalleryButton"
-              // onClick={() =>
-              //   setGalleryIndexes(
-              //     galleryIndexes.begGalleryIndex !== 0 && portfolio.length >= 5
-              //       ? {
-              //           begGalleryIndex: galleryIndexes.begGalleryIndex - 1,
-              //           lastGalleryIndex: galleryIndexes.lastGalleryIndex - 1,
-              //         }
-              //       : {
-              //           begGalleryIndex: 0,
-              //           lastGalleryIndex: 5,
-              //         }
-              //   )
-              // }
+          {!portfolioGalleryMidLayout && (
+            <ScrollGallery
+              album={album}
+              leftButton={leftScrollButtonsAppear}
+              rightButton={rightScrollButtonsAppear}
+              portfolioGalleryMidLayout={portfolioGalleryMidLayout}
             >
-              <div className="dots">. . .</div>
-            </button>
-            {galleryArray.map((i, key) => {
-              let adjust = key + galleryIndexes.begGalleryIndex;
+              <button
+                className="leftGalleryButton"
+                onClick={() => galleryNavigateHandler('left')}
+              >
+                <div className="dots">. . .</div>
+              </button>
+              {galleryArray.map((i, key) => {
+                let adjust = key + galleryIndexes.begGalleryIndex;
 
-              return (
-                <div
-                  className="scrollGalleryBorders"
-                  onClick={() => setSlide(adjust)}
-                >
-                  <img alt="test" src={i} />
-                </div>
-              );
-            })}
+                return (
+                  <div
+                    className="scrollGalleryBorders"
+                    onClick={() => setSlide(adjust)}
+                  >
+                    <img alt="test" src={i} />
+                  </div>
+                );
+              })}
+              <button
+                className="rightGalleryButton"
+                onClick={() => galleryNavigateHandler('right')}
+              >
+                <div className="dots">. . .</div>
+              </button>
+            </ScrollGallery>
+          )}
 
-            <button
-              className="rightGalleryButton"
-              // onClick={() =>
-              //   setGalleryIndexes(
-              //     galleryIndexes.lastGalleryIndex !== portfolio.length &&
-              //       portfolio.length >= 5
-              //       ? {
-              //           begGalleryIndex: galleryIndexes.begGalleryIndex + 1,
-              //           lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1,
-              //         }
-              //       : {
-              //           begGalleryIndex: portfolio.length - 5,
-              //           lastGalleryIndex: portfolio.length,
-              //         }
-              //   )
-              // }
-            >
-              <div className="dots">. . .</div>
-            </button>
-          </ScrollGallery>}
+          {width < 1780 && !portfolioGalleryMidLayout && (
+            <SideNav>
+              {/* <ul>
+          <li onClick={() => setAlbum('longbeach')}>Autumn Longbeach, WA</li>
+          <li onClick={() => setAlbum('test1')}>Tessa</li>
+          <li onClick={() => setAlbum('test2')}>Live Performances</li>
+          <li onClick={() => setAlbum('test3')}>Test3</li>
+        </ul> */}
+
+              <div className="description-box">
+                <h2>{slideMessage.title}</h2>
+                <p>
+                  <br />
+                  {slideMessage.location}
+                  <br />
+                  {slideMessage.date}
+                  <br />
+                  <br />
+                  {slideMessage.camera}
+                  <br />
+                  {slideMessage.film}
+                  <br />
+                  {slideMessage.shot}
+                  <br />
+                </p>
+              </div>
+            </SideNav>
+          )}
         </Gallery>
         {!arrowInside && (
           <NavButtons
-          arrowInside={arrowInside}
+            arrowInside={arrowInside}
             portfolioGalleryMidLayout={portfolioGalleryMidLayout}
           >
             <RightArrowButton
@@ -530,8 +638,8 @@ function Portfolio({
           </NavButtons>
         )}
 
-
-{portfolioGalleryMidLayout && <ScrollGallery
+        {portfolioGalleryMidLayout && (
+          <ScrollGallery
             album={album}
             leftButton={leftScrollButtonsAppear}
             rightButton={rightScrollButtonsAppear}
@@ -539,25 +647,12 @@ function Portfolio({
           >
             <button
               className="leftGalleryButton"
-              // onClick={() =>
-              //   setGalleryIndexes(
-              //     galleryIndexes.begGalleryIndex !== 0 && portfolio.length >= 5
-              //       ? {
-              //           begGalleryIndex: galleryIndexes.begGalleryIndex - 1,
-              //           lastGalleryIndex: galleryIndexes.lastGalleryIndex - 1,
-              //         }
-              //       : {
-              //           begGalleryIndex: 0,
-              //           lastGalleryIndex: 5,
-              //         }
-              //   )
-              // }
+              onClick={() => galleryNavigateHandler('left')}
             >
               <div className="dots">. . .</div>
             </button>
             {galleryArray.map((i, key) => {
               let adjust = key + galleryIndexes.begGalleryIndex;
-
               return (
                 <div
                   className="scrollGalleryBorders"
@@ -567,33 +662,17 @@ function Portfolio({
                 </div>
               );
             })}
-
             <button
               className="rightGalleryButton"
-              // onClick={() =>
-              //   setGalleryIndexes(
-              //     galleryIndexes.lastGalleryIndex !== portfolio.length &&
-              //       portfolio.length >= 5
-              //       ? {
-              //           begGalleryIndex: galleryIndexes.begGalleryIndex + 1,
-              //           lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1,
-              //         }
-              //       : {
-              //           begGalleryIndex: portfolio.length - 5,
-              //           lastGalleryIndex: portfolio.length,
-              //         }
-              //   )
-              // }
+              onClick={() => galleryNavigateHandler('right')}
             >
               <div className="dots">. . .</div>
             </button>
-          </ScrollGallery>}
+          </ScrollGallery>
+        )}
       </PortfolioContainer>
- 
-
-      
     </PortfolioPage>
   );
 }
 
-export default Portfolio;
+export default MediumLayout;

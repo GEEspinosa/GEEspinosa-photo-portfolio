@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/common/header/header';
 import Landing from './components/pages/landing/landing';
-import Portfolio from './components/pages/portfolio';
+import Portfolio from './components/pages/portfolio/portfolio';
 import About from './components/pages/about';
 import ModalComponent from './components/common/modal/modal';
 import imageData from './assets/image-data';
@@ -28,20 +28,18 @@ function App() {
   const [descriptionsArray, setDescriptionsArray] = useState([]);
   const [slideMessage, setSlideMessage] = useState(initialMessage);
 
-  const {width} = useWindowSize()
+  const { width } = useWindowSize();
 
   function imageClickHandler(id) {
     setModalSelect(id);
     setShowModal(true);
   }
 
-  
-  useEffect (() => {
+  useEffect(() => {
     if (width > 710) {
-      setOpen(false)
+      setOpen(false);
     }
-  }, [width])
-  
+  }, [width]);
 
   function keyDownHandler(e) {
     if (e.key === 'Escape') {
@@ -96,12 +94,10 @@ function App() {
     }
   };
 
-
   useEffect(() => {
     document.addEventListener('keydown', keyDownHandler);
     return () => document.removeEventListener('keydown', keyDownHandler);
   });
-
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -118,11 +114,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={
-            <Landing
-              imageClickHandler={imageClickHandler}
-            />
-          }
+          element={<Landing imageClickHandler={imageClickHandler} />}
         />
         <Route
           path="/portfolio"

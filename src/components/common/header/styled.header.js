@@ -9,6 +9,7 @@ const Head = styled.header`
   position: sticky;
   top: 0;
   background: white;
+  z-index: 10;
 
   @media (max-width: 710px) {
     // padding: 10px;
