@@ -298,7 +298,8 @@ const NavButtons = styled.div`
     top: 46.4%;
     //top: 36.4vh;
     right: 2%;
-&:hover {
+    
+    &:hover {
       background-color: ${({ rightWindowButtonAppear }) =>
         rightWindowButtonAppear ? 'gainsboro' : ''};
     }
