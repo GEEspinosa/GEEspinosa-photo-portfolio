@@ -21,6 +21,7 @@ function App() {
   const [open, setOpen] = useState(false);
   const [modalSelect, setModalSelect] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false)
   const [album, setAlbum] = useState('cover');
   const [portfolio, setPortfolio] = useState([]);
   const [slide, setSlide] = useState(null);
@@ -40,6 +41,11 @@ function App() {
       setOpen(false);
     }
   }, [width]);
+
+  function fadeHandler () {
+    setFadeIn(!fadeIn)
+    
+  }
 
   function keyDownHandler(e) {
     if (e.key === 'Escape') {
@@ -70,6 +76,7 @@ function App() {
   }
 
   const arrowButtonHandler = direction => {
+    
     if (direction === 'Left' && showModal) {
       let left = modalSelect - 1;
       if (left >= 0) {
@@ -92,6 +99,7 @@ function App() {
     if (direction === 'Right' && slide < portfolio.length - 1) {
       setSlide(slide + 1);
     }
+    fadeHandler()
   };
 
   useEffect(() => {
@@ -107,6 +115,9 @@ function App() {
           setShowModal={setShowModal}
           modalSelect={modalSelect}
           arrowButtonHandler={arrowButtonHandler}
+          fadeIn={fadeIn} 
+          setFadeIn={setFadeIn}
+          fadeHandler={fadeHandler}
         />
       )}
 

@@ -4,7 +4,7 @@ import {LeftArrowButton} from "../arrow-buttons/left-arrow-button/left-arrow-but
 import {RightArrowButton} from "../arrow-buttons/right-arrow-button/right-arrow-button";
 import {ModalIcon, Modal} from "./styled.modal";
 
-function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandler }) {
+function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandler, fadeIn, fadeHandler}) {
   return (
     <> 
       <Modal>
@@ -17,8 +17,8 @@ function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandl
             </div>
           </ModalIcon>       
           <LeftArrowButton showModal={showModal} arrowButtonHandler={arrowButtonHandler}/> 
-          <div className="middleColumn">
-            <img alt="test" src={imageData[modalSelect].image} className={imageData[modalSelect].orientation} />
+          <div className="middleColumn fadeIn">
+            <img alt="test" src={imageData[modalSelect].image} className={`${fadeIn ? 'triggerFade1' : 'triggerFade2'} ${imageData[modalSelect].orientation}`} />
             <div className={imageData[modalSelect].orientation } >
               <h2>{imageData[modalSelect].description.title}</h2>
               <p >  
@@ -32,7 +32,7 @@ function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandl
               </p>
             </div>
           </div>  
-          <RightArrowButton showModal={showModal} arrowButtonHandler={arrowButtonHandler}/> 
+          <RightArrowButton showModal={showModal} arrowButtonHandler={arrowButtonHandler} /> 
         </div>  
       </Modal>     
     </>

@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ModalIcon = styled.div`
   position: fixed;
   top: 44px;
   right: 4%;
-  
+
   .modalIconContainer {
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ const ModalIcon = styled.div`
       position: relative;
       top: -20px;
     }
-  } 
+  }
 `;
 
 const Modal = styled.div`
@@ -49,6 +49,8 @@ const Modal = styled.div`
   background-color: white;
   position: fixed;
   z-index: 1000;
+
+  
    
   .container {
     display: flex;
@@ -56,10 +58,11 @@ const Modal = styled.div`
     align-items: center;
     width: 100%;
     height: 100%; 
+
+    
   }
  
   .middleColumn {
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,18 +75,29 @@ const Modal = styled.div`
       flex-direction: column;    
     }
 
+    
+
     img {
+           
+
+   
+
       @media (max-width: 1400px) {
         align-self: center;
       }
+
+       
+     
     }
+    
+   
 
     .horizontal {
       max-height: 70%;
       padding: 20px 20px;
       object-fit: contain; 
       align-items: center;
-         
+                  
      @media (max-width: 1950px){
       width: 67%;
      }
@@ -132,6 +146,35 @@ const Modal = styled.div`
         padding: 10px;
       }     
     }
+
+    .triggerFade1 {
+            animation: fadeInAnimation ease 1.5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            } 
+
+    .triggerFade2 {
+            animation: fadeInAnimation2 ease 1.5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+    } 
+
+    @keyframes fadeInAnimation {
+              0% {
+                  opacity: 0;
+              }
+              100% {
+                  opacity: 1;
+              }
+            }   
+    @keyframes fadeInAnimation2 {
+              0% {
+                  opacity: 0;
+              }
+              100% {
+                  opacity: 1;
+              }
+            }   
 
     h2 {
       font-size: 22px;
@@ -184,5 +227,4 @@ const Modal = styled.div`
   
 `;
 
-
-export {Modal, ModalIcon};
+export { Modal, ModalIcon };

@@ -9,13 +9,14 @@ const RightArrowButtonIcon = styled.div`
   padding: 25px;
   margin: ${({ showModal }) =>
     showModal === true ? '25px' : '0px 0px 0px 0px'};
-  cursor: pointer;
+  cursor: ${({ width, showModal }) =>
+    showModal && width > 790 ? 'pointer' : ''};
   margin-bottom: ${({ rightButton, showModal }) =>
     rightButton === true && showModal === true ? '210px' : '0px'};
-   
 
   &:hover {
-    background-color: gainsboro;
+    background-color: ${({ width, showModal }) =>
+      showModal && width > 790 ? 'gainsboro' : ''};
   }
 
   :first-child {
@@ -26,11 +27,8 @@ const RightArrowButtonIcon = styled.div`
     transform: scaleY(-1) rotate(45deg);
   }
 
-
-
   @media (max-width: 1400px) {
-    margin-bottom: ${({ showModal }) =>
-      showModal === true ? '190px' : '0px'};
+    margin-bottom: ${({ showModal }) => (showModal === true ? '190px' : '0px')};
     // //dev note: 190px vs 310px?
   }
 
@@ -42,7 +40,8 @@ const RightArrowButtonIcon = styled.div`
     //dev note: width below was 30
     width: 24px;
     height: 4px;
-    background-color: ${({portfolioGalleryMidLayout, orientationSelected}) => portfolioGalleryMidLayout || orientationSelected ? 'white' : 'gray'};
+    background-color: ${({ portfolioGalleryMidLayout, orientationSelected }) =>
+      portfolioGalleryMidLayout || orientationSelected ? 'white' : 'gray'};
     pointer-events: none;
     margin: 3px;
 
@@ -50,7 +49,7 @@ const RightArrowButtonIcon = styled.div`
     transform-origin: 15px;
 
     @media (max-width: 790px) {
-      display: none;
+      display: ${({ showModal }) => (showModal ? 'none' : '')};
     }
   }
 `;

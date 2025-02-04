@@ -7,22 +7,6 @@ import useWindowSize from '../../../../hooks/useWindowSize';
 
 const PortfolioPage = styled.div`
   border: solid;
-  display: grid;
-  grid-template-columns: 16vw 1fr;
-
-  height: 90vh;
-
-  //   @media (max-height: 1050px) {
-  //     grid-template-columns: 270px 1fr;
-  //   }
-
-  //   @media (max-width: 1440px) and (max-height: 1050px) {
-  //     grid-template-columns: 240px 1fr;
-  //   }
-
-  //   @media (max-width: 1260px) and (max-height: 1050px) {
-  //     grid-template-columns: 180px 1fr;
-  //   }
 
   @media (max-width: 1780px) and (min-height: 1051px) {
     display: flex;
@@ -32,10 +16,10 @@ const PortfolioPage = styled.div`
 
 const PortfolioContainer = styled.div`
   display: flex;
+
   align-items: center;
   justify-content: center;
   padding: 18px;
-  
 `;
 
 const SideNav = styled.div`
@@ -46,7 +30,6 @@ const SideNav = styled.div`
   border: 1px solid red;
 
   @media (max-width: 1780px) and (min-height: 1051px) {
-    //display: flex;
     text-align: center;
     align-items: center;
     padding: 1vh;
@@ -56,12 +39,6 @@ const SideNav = styled.div`
   @media (max-height: 690px) {
     padding: 12px;
   }
-
-  //   @media (max-width: 1134px) and (max-height: 924px) {
-  //     display: flex;
-  //     padding: 1vh;
-  //     width: 100%;
-  //   }
 
   ul {
     padding: 0px;
@@ -141,12 +118,8 @@ const Gallery = styled.div`
   display: flex;
   flex-direction: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? 'row' : 'column'};
-  //padding: 25px;
   justify-content: center;
   align-items: center;
-  //position: ${({ portfolioGalleryMidLayout }) =>
-    portfolioGalleryMidLayout ? 'relative' : ''};
-
   @media (max-width: 1780px) and (min-height: 1051px) {
     padding: 0px;
   }
@@ -162,7 +135,6 @@ const ImageBox = styled.div`
   display: flex;
 
   justify-content: center;
-  //align-item: center;
   position: relative;
 
   @media (max-width: 1780px) and (min-height: 1051px) {
@@ -205,7 +177,6 @@ const ScrollGallery = styled.div`
   display: flex;
   position: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? 'sticky' : ''};
-  left: 88vw;
   flex-direction: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? 'column' : 'row'};
   justify-content: center;
@@ -307,12 +278,18 @@ const NavButtons = styled.div`
   background-color: ${({ orientationSelected, portfolioGalleryMidLayout }) =>
     orientationSelected === 'vertical' ? 'grey' : ''};
 
+   
+
   &.left-arrow-portfolio {
     position: absolute;
     opacity: 0.6;
     top: 46.4%;
     //top: 36.4vh;
     left: 2%;
+    &:hover {
+      background-color: ${({ leftWindowButtonAppear }) =>
+        leftWindowButtonAppear ? 'gainsboro' : ''};
+    }
   }
 
   &.right-arrow-portfolio {
@@ -321,6 +298,11 @@ const NavButtons = styled.div`
     top: 46.4%;
     //top: 36.4vh;
     right: 2%;
+&:hover {
+      background-color: ${({ rightWindowButtonAppear }) =>
+        rightWindowButtonAppear ? 'gainsboro' : ''};
+    }
+    
   }
 
   &:hover {
@@ -438,11 +420,13 @@ function MediumLayout({
   }, [slide, galleryIndexes, portfolio]);
 
   function createSlidingGallery(p) {
+
     let slidingGalleryFilter = p.filter(
       (i, key) =>
         key >= galleryIndexes.begGalleryIndex &&
         key < galleryIndexes['lastGalleryIndex'] + galleryAmount
     );
+
     setGalleryArray(slidingGalleryFilter);
   }
 
@@ -464,7 +448,7 @@ function MediumLayout({
 
   function leftGalleryButtonHandler(gallery) {
     let { lastGalleryIndex } = gallery;
-    if (lastGalleryIndex >= 6) {
+    if ((lastGalleryIndex) >= 6) {
       setLeftScrollButtonsAppear(true);
     } else {
       setLeftScrollButtonsAppear(false);
@@ -496,7 +480,7 @@ function MediumLayout({
 
     if (direction === 'right') {
       setGalleryIndexes(
-        galleryIndexes.lastGalleryIndex !== portfolio.length &&
+        (galleryIndexes.lastGalleryIndex + galleryAmount) <= portfolio.length -1 &&
           portfolio.length >= 5
           ? {
               begGalleryIndex: galleryIndexes.begGalleryIndex + 1,
@@ -513,54 +497,41 @@ function MediumLayout({
   return (
     <PortfolioPage>
       <PortfolioContainer>
-        {!arrowInside && (
-          <NavButtons
-            arrowInside={arrowInside}
-            portfolioGalleryMidLayout={portfolioGalleryMidLayout}
-          >
-            <LeftArrowButton
-              leftButton={leftWindowButtonAppear}
-              arrowButtonHandler={arrowButtonHandler}
-            />
-          </NavButtons>
-        )}
         <Gallery portfolioGalleryMidLayout={portfolioGalleryMidLayout}>
           <ImageBox
             album={album}
             portfolioGalleryMidLayout={portfolioGalleryMidLayout}
           >
-            {arrowInside && leftWindowButtonAppear && (
-              <NavButtons
-                className="left-arrow-portfolio"
+            <NavButtons
+              className="left-arrow-portfolio"
+              portfolioGalleryMidLayout={portfolioGalleryMidLayout}
+              orientationSelected={orientationSelected}
+              leftWindowButtonAppear={leftWindowButtonAppear}
+            >
+              <LeftArrowButton
+                leftButton={leftWindowButtonAppear}
+                arrowButtonHandler={arrowButtonHandler}
                 portfolioGalleryMidLayout={portfolioGalleryMidLayout}
                 orientationSelected={orientationSelected}
-              >
-                <LeftArrowButton
-                  leftButton={leftWindowButtonAppear}
-                  arrowButtonHandler={arrowButtonHandler}
-                  portfolioGalleryMidLayout={portfolioGalleryMidLayout}
-                  orientationSelected={orientationSelected}
-                />
-              </NavButtons>
-            )}
+              />
+            </NavButtons>
 
             <img alt="test" src={portfolio[slide]} />
             <h2>{slideMessage.title}</h2>
 
-            {arrowInside && rightWindowButtonAppear && (
-              <NavButtons
-                orientationSelected={orientationSelected}
+            <NavButtons
+              orientationSelected={orientationSelected}
+              portfolioGalleryMidLayout={portfolioGalleryMidLayout}
+              className="right-arrow-portfolio"
+              rightWindowButtonAppear={rightWindowButtonAppear}
+            >
+              <RightArrowButton
+                rightButton={rightWindowButtonAppear}
+                arrowButtonHandler={arrowButtonHandler}
                 portfolioGalleryMidLayout={portfolioGalleryMidLayout}
-                className="right-arrow-portfolio"
-              >
-                <RightArrowButton
-                  rightButton={rightWindowButtonAppear}
-                  arrowButtonHandler={arrowButtonHandler}
-                  portfolioGalleryMidLayout={portfolioGalleryMidLayout}
-                  orientationSelected={orientationSelected}
-                />
-              </NavButtons>
-            )}
+                orientationSelected={orientationSelected}
+              />
+            </NavButtons>
           </ImageBox>
 
           {!portfolioGalleryMidLayout && (
@@ -626,17 +597,6 @@ function MediumLayout({
             </SideNav>
           )}
         </Gallery>
-        {!arrowInside && (
-          <NavButtons
-            arrowInside={arrowInside}
-            portfolioGalleryMidLayout={portfolioGalleryMidLayout}
-          >
-            <RightArrowButton
-              rightButton={rightWindowButtonAppear}
-              arrowButtonHandler={arrowButtonHandler}
-            />
-          </NavButtons>
-        )}
 
         {portfolioGalleryMidLayout && (
           <ScrollGallery

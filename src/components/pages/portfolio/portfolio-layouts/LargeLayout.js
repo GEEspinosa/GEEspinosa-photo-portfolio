@@ -9,8 +9,8 @@ const PortfolioPage = styled.div`
   border: solid;
   display: grid;
   grid-template-columns: 16vw 1fr;
-  
-  height: 90vh;
+
+  //height: 90vh;
 
   @media (max-width: 1780px) and (min-height: 1051px) {
     display: flex;
@@ -128,7 +128,6 @@ const ImageBox = styled.div`
   justify-content: center;
   //align-item: center;
   position: relative;
-
 
   @media (max-width: 1780px) and (min-height: 1051px) {
     height: 58vh;
@@ -266,12 +265,34 @@ const NavButtons = styled.div`
   background-color: ${({ orientationSelected, portfolioGalleryMidLayout }) =>
     orientationSelected === 'vertical' ? 'grey' : ''};
 
+  //   &:hover {
+  //     background-color: gainsboro;
+  //   }
+
+  &.outside-left-window-button {
+    &:hover {
+      background-color: ${({ leftWindowButtonAppear }) =>
+        leftWindowButtonAppear ? 'gainsboro' : ''};
+    }
+  }
+
+  &.outside-right-window-button {
+    &:hover {
+      background-color: ${({ rightWindowButtonAppear }) =>
+        rightWindowButtonAppear ? 'gainsboro' : ''};
+    }
+  }
+
   &.left-arrow-portfolio {
     position: absolute;
     opacity: 0.6;
     top: 46.4%;
     //top: 36.4vh;
     left: 2%;
+    &:hover {
+      background-color: ${({ leftWindowButtonAppear }) =>
+        leftWindowButtonAppear ? 'gainsboro' : ''};
+    }
   }
 
   &.right-arrow-portfolio {
@@ -280,6 +301,10 @@ const NavButtons = styled.div`
     top: 46.4%;
     //top: 36.4vh;
     right: 2%;
+    &:hover {
+      background-color: ${({ rightWindowButtonAppear }) =>
+        rightWindowButtonAppear ? 'gainsboro' : ''};
+    }
   }
 
   &:hover {
@@ -301,7 +326,6 @@ function LargeLayout({
   setSlideMessage,
 }) {
   const [galleryIndexes, setGalleryIndexes] = useState({});
-  const [galleryArray, setGalleryArray] = useState([]);
   const [leftWindowButtonAppear, setLeftWindowButtonAppear] = useState(false);
   const [rightWindowButtonAppear, setRightWindowButtonAppear] = useState(false);
   const [leftScrollButtonsAppear, setLeftScrollButtonsAppear] = useState(false);
@@ -336,15 +360,33 @@ function LargeLayout({
 
   useEffect(() => {
     if (height <= 865) {
-      setGalleryAmount(-1);
+      setGalleryAmount(3);
     }
     if (height <= 680) {
-      setGalleryAmount(-2);
+      setGalleryAmount(2);
     } else if (height > 865) {
-      setGalleryAmount(0);
+      setGalleryAmount(4);
     }
-    createSlidingGallery(portfolio);
+    galleryIndexCalculator()
+    
   }, [height]);
+
+
+  function galleryIndexCalculator() {
+
+    if (galleryIndexes.begGalleryIndex + galleryAmount >= portfolio.length-1 ) {
+      setGalleryIndexes( {
+        begGalleryIndex: (portfolio.length - 1) - (galleryAmount),
+        lastGalleryIndex: portfolio.length - 1,
+      })
+
+    } else {
+      setGalleryIndexes( {
+        begGalleryIndex: galleryIndexes.begGalleryIndex,
+        lastGalleryIndex: galleryIndexes.begGalleryIndex + (galleryAmount),
+      })
+    }
+  }
 
   useEffect(() => {
     let p = [];
@@ -365,15 +407,13 @@ function LargeLayout({
     setOrientationArray(orientation);
     setOrientationSelected(orientationArray[slide]);
     setSlide(0);
-    createSlidingGallery(p);
     setGalleryIndexes({
       begGalleryIndex: 0,
-      lastGalleryIndex: 5,
+      lastGalleryIndex: galleryAmount,
     });
   }, [album]);
 
   useEffect(() => {
-    createSlidingGallery(portfolio);
     if (album !== 'cover') {
       setSlideMessage(descriptionsArray[slide]);
     }
@@ -384,14 +424,6 @@ function LargeLayout({
     setOrientationSelected(orientationArray[slide]);
   }, [slide, galleryIndexes, portfolio]);
 
-  function createSlidingGallery(p) {
-    let slidingGalleryFilter = p.filter(
-      (i, key) =>
-        key >= galleryIndexes.begGalleryIndex &&
-        key < galleryIndexes['lastGalleryIndex'] + galleryAmount
-    );
-    setGalleryArray(slidingGalleryFilter);
-  }
 
   function leftSlideshowButtonHandler() {
     if (slide > 0) {
@@ -410,8 +442,8 @@ function LargeLayout({
   }
 
   function leftGalleryButtonHandler(gallery) {
-    let { lastGalleryIndex } = gallery;
-    if (lastGalleryIndex >= 6) {
+    let { begGalleryIndex } = gallery;
+    if (begGalleryIndex > 0) {
       setLeftScrollButtonsAppear(true);
     } else {
       setLeftScrollButtonsAppear(false);
@@ -419,7 +451,7 @@ function LargeLayout({
   }
 
   function rightGalleryButtonHandler(portfolio, lastGalleryIndex) {
-    if (portfolio.length > 5 && lastGalleryIndex !== portfolio.length) {
+    if (((portfolio.length-1) > galleryAmount) && (lastGalleryIndex !== portfolio.length-1 )) {
       setRightScrollButtonsAppear(true);
     } else {
       setRightScrollButtonsAppear(false);
@@ -429,28 +461,28 @@ function LargeLayout({
   function galleryNavigateHandler(direction) {
     if (direction === 'left') {
       setGalleryIndexes(
-        galleryIndexes.begGalleryIndex !== 0 && portfolio.length >= 5
+        galleryIndexes.begGalleryIndex !== 0 && portfolio.length >= galleryAmount
           ? {
               begGalleryIndex: galleryIndexes.begGalleryIndex - 1,
               lastGalleryIndex: galleryIndexes.lastGalleryIndex - 1,
             }
           : {
               begGalleryIndex: 0,
-              lastGalleryIndex: 5,
+              lastGalleryIndex: galleryAmount,
             }
       );
     }
 
     if (direction === 'right') {
       setGalleryIndexes(
-        galleryIndexes.lastGalleryIndex !== portfolio.length &&
-          portfolio.length >= 5
+        galleryIndexes.lastGalleryIndex <=
+          portfolio.length - 1 && portfolio.length >= galleryAmount
           ? {
               begGalleryIndex: galleryIndexes.begGalleryIndex + 1,
-              lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1,
+              lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1 ,
             }
           : {
-              begGalleryIndex: portfolio.length - 5,
+              begGalleryIndex: portfolio.length - galleryAmount ,
               lastGalleryIndex: portfolio.length,
             }
       );
@@ -493,6 +525,8 @@ function LargeLayout({
           <NavButtons
             arrowInside={arrowInside}
             portfolioGalleryMidLayout={portfolioGalleryMidLayout}
+            leftWindowButtonAppear={leftWindowButtonAppear}
+            className="outside-left-window-button"
           >
             <LeftArrowButton
               leftButton={leftWindowButtonAppear}
@@ -510,6 +544,7 @@ function LargeLayout({
                 className="left-arrow-portfolio"
                 portfolioGalleryMidLayout={portfolioGalleryMidLayout}
                 orientationSelected={orientationSelected}
+                leftWindowButtonAppear={leftWindowButtonAppear}
               >
                 <LeftArrowButton
                   leftButton={leftWindowButtonAppear}
@@ -528,6 +563,7 @@ function LargeLayout({
                 orientationSelected={orientationSelected}
                 portfolioGalleryMidLayout={portfolioGalleryMidLayout}
                 className="right-arrow-portfolio"
+                rightWindowButtonAppear={rightWindowButtonAppear}
               >
                 <RightArrowButton
                   rightButton={rightWindowButtonAppear}
@@ -552,7 +588,7 @@ function LargeLayout({
               >
                 <div className="dots">. . .</div>
               </button>
-              {galleryArray.map((i, key) => {
+              {portfolio.slice(galleryIndexes.begGalleryIndex, (galleryIndexes.lastGalleryIndex + 1)).map((i, key) => {
                 let adjust = key + galleryIndexes.begGalleryIndex;
 
                 return (
@@ -606,6 +642,8 @@ function LargeLayout({
           <NavButtons
             arrowInside={arrowInside}
             portfolioGalleryMidLayout={portfolioGalleryMidLayout}
+            className="outside-right-window-button"
+            rightWindowButtonAppear={rightWindowButtonAppear}
           >
             <RightArrowButton
               rightButton={rightWindowButtonAppear}
@@ -627,7 +665,7 @@ function LargeLayout({
             >
               <div className="dots">. . .</div>
             </button>
-            {galleryArray.map((i, key) => {
+            {portfolio.slice(galleryIndexes.begGalleryIndex, (galleryIndexes.lastGalleryIndex + 1)).map((i, key) => {
               let adjust = key + galleryIndexes.begGalleryIndex;
               return (
                 <div
