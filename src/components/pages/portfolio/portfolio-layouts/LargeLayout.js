@@ -362,7 +362,7 @@ function LargeLayout({
     if (height <= 865) {
       setGalleryAmount(3);
     }
-    if (height <= 680) {
+    if (height <= 680 && (portfolio.length >= 5)) {
       setGalleryAmount(2);
     } else if (height > 865) {
       setGalleryAmount(4);
@@ -374,18 +374,38 @@ function LargeLayout({
 
   function galleryIndexCalculator() {
 
-    if (galleryIndexes.begGalleryIndex + galleryAmount >= portfolio.length-1 ) {
-      setGalleryIndexes( {
-        begGalleryIndex: (portfolio.length - 1) - (galleryAmount),
-        lastGalleryIndex: portfolio.length - 1,
-      })
-
+   if (portfolio.length >= 5){
+      if (galleryIndexes.begGalleryIndex + galleryAmount >= portfolio.length-1) {
+        setGalleryIndexes( {
+          begGalleryIndex: (portfolio.length - 1) - (galleryAmount) ,
+          lastGalleryIndex: portfolio.length - 1,
+        })
+      } else {
+        setGalleryIndexes( {
+          begGalleryIndex: galleryIndexes.begGalleryIndex,
+          lastGalleryIndex: galleryIndexes.begGalleryIndex + (galleryAmount),
+        })
+      }
     } else {
-      setGalleryIndexes( {
-        begGalleryIndex: galleryIndexes.begGalleryIndex,
-        lastGalleryIndex: galleryIndexes.begGalleryIndex + (galleryAmount),
-      })
+
+      if (galleryIndexes.begGalleryIndex + (galleryAmount -1) >= portfolio.length-1) {
+        setGalleryIndexes( {
+          begGalleryIndex: portfolio.length-1 - (galleryAmount -1) ,
+          lastGalleryIndex: portfolio.length-1,
+        })
+
+      } else {
+        setGalleryIndexes( {
+          begGalleryIndex:  galleryIndexes.begGalleryIndex,
+          lastGalleryIndex: galleryIndexes.begGalleryIndex + (galleryAmount -1),
+        })
+
+      }
+      
     }
+    
+
+   
   }
 
   useEffect(() => {
@@ -453,7 +473,13 @@ function LargeLayout({
   function rightGalleryButtonHandler(portfolio, lastGalleryIndex) {
     if (((portfolio.length-1) > galleryAmount) && (lastGalleryIndex !== portfolio.length-1 )) {
       setRightScrollButtonsAppear(true);
-    } else {
+    } 
+    
+    else if (portfolio.length < 5 && lastGalleryIndex !== portfolio.length -1) {
+      setRightScrollButtonsAppear(true)
+    }
+    
+    else {
       setRightScrollButtonsAppear(false);
     }
   }
