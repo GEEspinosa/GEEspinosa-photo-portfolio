@@ -369,7 +369,7 @@ function LargeLayout({
     }
     galleryIndexCalculator()
     
-  }, [height]);
+  }, [width, height]);
 
 
   function galleryIndexCalculator() {
