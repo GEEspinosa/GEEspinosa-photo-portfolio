@@ -10,12 +10,10 @@ const PortfolioPage = styled.div`
   display: grid;
   grid-template-columns: 16vw 1fr;
 
-  //height: 90vh;
-
-  @media (max-width: 1780px) and (min-height: 1051px) {
-    display: flex;
-    flex-direction: column;
-  }
+  // @media (max-width: 1779px) and (min-height: 1051px) {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
 `;
 
 const PortfolioContainer = styled.div`
@@ -26,18 +24,18 @@ const PortfolioContainer = styled.div`
 `;
 
 const SideNav = styled.div`
+  // border: 1px solid red;
   display: flex;
   flex-direction: column;
-  gap: 50%;
+  
   padding: 30px;
-  border: 1px solid red;
 
-  @media (max-width: 1780px) and (min-height: 1051px) {
-    text-align: center;
-    align-items: center;
-    padding: 1vh;
-    width: 100%;
-  }
+  // @media (max-width: 1779px) and (min-height: 1051px) {
+  //   text-align: center;
+  //   align-items: center;
+  //   padding: 1vh;
+  //   width: 100%;
+  // }
 
   ul {
     padding: 0px;
@@ -58,13 +56,19 @@ const SideNav = styled.div`
       font-size: 18px;
       line-height: 2rem;
     }
+    
+   
   }
 
   .description-box {
+    //border: solid black;
     color: grey;
     font-size: 20px;
     list-style-type: none;
     justify-content: center;
+    position: absolute;
+    top: 80vh;
+    
 
     @media (max-height: 1050px) {
       font-size: 16px;
@@ -72,6 +76,7 @@ const SideNav = styled.div`
 
     @media (max-width: 1260px) and (max-height: 1050px) {
       font-size: 16px;
+      
     }
 
     @media (min-height: 1050px) {
@@ -86,7 +91,7 @@ const SideNav = styled.div`
     }
 
     h2 {
-      font-size: 22px;
+      font-size: 18px;
       color: grey;
 
       @media (min-height: 1050px) {
@@ -104,20 +109,36 @@ const SideNav = styled.div`
 `;
 
 const Gallery = styled.div`
-  border: solid silver;
   display: flex;
   flex-direction: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? 'row' : 'column'};
-  //padding: 25px;
   align-items: center;
   justify-content: center;
-  @media (max-width: 1780px) and (min-height: 1051px) {
-    padding: 0px;
+
+  ul {
+    display: flex;
+    flex-direction: row;  
+    //border: solid black;
+    margin: 10px;
   }
+
+  li {
+    margin: 0px 50px 0px 50px;
+    color: grey;
+    font-size: 22px;
+    list-style-type: none;
+    cursor: pointer;
+  
+    &:hover {
+      color: red;
+    }
+  }
+
+  
 `;
 
 const ImageBox = styled.div`
-  border: 1px solid red;
+  //border: 1px solid red;
   width: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? '80vh' : '70vh'};
   height: ${({ portfolioGalleryMidLayout }) =>
@@ -126,12 +147,11 @@ const ImageBox = styled.div`
   display: flex;
 
   justify-content: center;
-  //align-item: center;
   position: relative;
 
-  @media (max-width: 1780px) and (min-height: 1051px) {
-    height: 58vh;
-    width: 58vh;
+  @media (max-width: 1330px) and (min-height: 1051px) {
+    // height: 58vh;
+     width: 56vh;
   }
 
   @media (max-width: 1260px) and (max-height: 1050px) {
@@ -159,7 +179,7 @@ const ImageBox = styled.div`
 `;
 
 const ScrollGallery = styled.div`
-  border: solid;
+  //border: solid;
   visibility: ${({ album }) => (album === 'cover' ? 'hidden' : 'visible')};
   display: flex;
   position: ${({ portfolioGalleryMidLayout }) =>
@@ -186,7 +206,7 @@ const ScrollGallery = styled.div`
     cursor: pointer;
     border: solid gainsboro;
 
-    @media (max-width: 1780px) and (min-height: 1051px) {
+    @media (max-width: 1779px) and (min-height: 1051px) {
       width: 13vh;
       height: 13vh;
     }
@@ -359,53 +379,53 @@ function LargeLayout({
   }, [width]);
 
   useEffect(() => {
-    if (height <= 865) {
+    if (width <= 1330) {
+      setGalleryAmount(3)
+    }
+    if (height <= 865 ) {
       setGalleryAmount(3);
     }
-    if (height <= 680 && (portfolio.length >= 5)) {
+    if (height <= 680 && portfolio.length >= 5) {
       setGalleryAmount(2);
-    } else if (height > 865) {
+    } else if (height > 865 && width >= 1330) {
       setGalleryAmount(4);
     }
-    galleryIndexCalculator()
-    
+    galleryIndexCalculator();
   }, [width, height]);
 
-
   function galleryIndexCalculator() {
-
-   if (portfolio.length >= 5){
-      if (galleryIndexes.begGalleryIndex + galleryAmount >= portfolio.length-1) {
-        setGalleryIndexes( {
-          begGalleryIndex: (portfolio.length - 1) - (galleryAmount) ,
+    if (portfolio.length >= 5) {
+      if (
+        galleryIndexes.begGalleryIndex + galleryAmount >=
+        portfolio.length - 1
+      ) {
+        setGalleryIndexes({
+          begGalleryIndex: portfolio.length - 1 - galleryAmount,
           lastGalleryIndex: portfolio.length - 1,
-        })
+        });
       } else {
-        setGalleryIndexes( {
+        setGalleryIndexes({
           begGalleryIndex: galleryIndexes.begGalleryIndex,
-          lastGalleryIndex: galleryIndexes.begGalleryIndex + (galleryAmount),
-        })
+          lastGalleryIndex: galleryIndexes.begGalleryIndex + galleryAmount,
+        });
       }
     } else {
-
-      if (galleryIndexes.begGalleryIndex + (galleryAmount -1) >= portfolio.length-1) {
-        setGalleryIndexes( {
-          begGalleryIndex: portfolio.length-1 - (galleryAmount -1) ,
-          lastGalleryIndex: portfolio.length-1,
-        })
-
+      if (
+        galleryIndexes.begGalleryIndex + (galleryAmount - 1) >=
+        portfolio.length - 1
+      ) {
+        setGalleryIndexes({
+          begGalleryIndex: portfolio.length - 1 - (galleryAmount - 1),
+          lastGalleryIndex: portfolio.length - 1,
+        });
       } else {
-        setGalleryIndexes( {
-          begGalleryIndex:  galleryIndexes.begGalleryIndex,
-          lastGalleryIndex: galleryIndexes.begGalleryIndex + (galleryAmount -1),
-        })
-
+        setGalleryIndexes({
+          begGalleryIndex: galleryIndexes.begGalleryIndex,
+          lastGalleryIndex:
+            galleryIndexes.begGalleryIndex + (galleryAmount - 1),
+        });
       }
-      
     }
-    
-
-   
   }
 
   useEffect(() => {
@@ -444,7 +464,6 @@ function LargeLayout({
     setOrientationSelected(orientationArray[slide]);
   }, [slide, galleryIndexes, portfolio]);
 
-
   function leftSlideshowButtonHandler() {
     if (slide > 0) {
       setLeftWindowButtonAppear(true);
@@ -471,15 +490,17 @@ function LargeLayout({
   }
 
   function rightGalleryButtonHandler(portfolio, lastGalleryIndex) {
-    if (((portfolio.length-1) > galleryAmount) && (lastGalleryIndex !== portfolio.length-1 )) {
+    if (
+      portfolio.length - 1 > galleryAmount &&
+      lastGalleryIndex !== portfolio.length - 1
+    ) {
       setRightScrollButtonsAppear(true);
-    } 
-    
-    else if (portfolio.length < 5 && lastGalleryIndex !== portfolio.length -1) {
-      setRightScrollButtonsAppear(true)
-    }
-    
-    else {
+    } else if (
+      portfolio.length < 5 &&
+      lastGalleryIndex !== portfolio.length - 1
+    ) {
+      setRightScrollButtonsAppear(true);
+    } else {
       setRightScrollButtonsAppear(false);
     }
   }
@@ -487,7 +508,8 @@ function LargeLayout({
   function galleryNavigateHandler(direction) {
     if (direction === 'left') {
       setGalleryIndexes(
-        galleryIndexes.begGalleryIndex !== 0 && portfolio.length >= galleryAmount
+        galleryIndexes.begGalleryIndex !== 0 &&
+          portfolio.length >= galleryAmount
           ? {
               begGalleryIndex: galleryIndexes.begGalleryIndex - 1,
               lastGalleryIndex: galleryIndexes.lastGalleryIndex - 1,
@@ -501,14 +523,14 @@ function LargeLayout({
 
     if (direction === 'right') {
       setGalleryIndexes(
-        galleryIndexes.lastGalleryIndex <=
-          portfolio.length - 1 && portfolio.length >= galleryAmount
+        galleryIndexes.lastGalleryIndex <= portfolio.length - 1 &&
+          portfolio.length >= galleryAmount
           ? {
               begGalleryIndex: galleryIndexes.begGalleryIndex + 1,
-              lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1 ,
+              lastGalleryIndex: galleryIndexes.lastGalleryIndex + 1,
             }
           : {
-              begGalleryIndex: portfolio.length - galleryAmount ,
+              begGalleryIndex: portfolio.length - galleryAmount,
               lastGalleryIndex: portfolio.length,
             }
       );
@@ -517,7 +539,8 @@ function LargeLayout({
 
   return (
     <PortfolioPage>
-      {(width >= 1780 || portfolioGalleryMidLayout) && (
+      
+      { (
         <SideNav>
           <ul>
             <li onClick={() => setAlbum('longbeach')}>Autumn Longbeach, WA</li>
@@ -526,7 +549,7 @@ function LargeLayout({
             <li onClick={() => setAlbum('test3')}>Test3</li>
           </ul>
 
-          {/* <div className="description-box">
+          <div className="description-box">
             <h2>{slideMessage.title}</h2>
             <p>
               <br />
@@ -542,11 +565,13 @@ function LargeLayout({
               {slideMessage.shot}
               <br />
             </p>
-          </div> */}
+          </div>
         </SideNav>
       )}
 
       <PortfolioContainer>
+
+      
         {!arrowInside && (
           <NavButtons
             arrowInside={arrowInside}
@@ -614,18 +639,23 @@ function LargeLayout({
               >
                 <div className="dots">. . .</div>
               </button>
-              {portfolio.slice(galleryIndexes.begGalleryIndex, (galleryIndexes.lastGalleryIndex + 1)).map((i, key) => {
-                let adjust = key + galleryIndexes.begGalleryIndex;
+              {portfolio
+                .slice(
+                  galleryIndexes.begGalleryIndex,
+                  galleryIndexes.lastGalleryIndex + 1
+                )
+                .map((i, key) => {
+                  let adjust = key + galleryIndexes.begGalleryIndex;
 
-                return (
-                  <div
-                    className="scrollGalleryBorders"
-                    onClick={() => setSlide(adjust)}
-                  >
-                    <img alt="test" src={i} />
-                  </div>
-                );
-              })}
+                  return (
+                    <div
+                      className="scrollGalleryBorders"
+                      onClick={() => setSlide(adjust)}
+                    >
+                      <img alt="test" src={i} />
+                    </div>
+                  );
+                })}
               <button
                 className="rightGalleryButton"
                 onClick={() => galleryNavigateHandler('right')}
@@ -635,23 +665,14 @@ function LargeLayout({
             </ScrollGallery>
           )}
 
-          {width < 1780 && !portfolioGalleryMidLayout && (
-            <SideNav>
-              {/* <ul>
-          <li onClick={() => setAlbum('longbeach')}>Autumn Longbeach, WA</li>
-          <li onClick={() => setAlbum('test1')}>Tessa</li>
-          <li onClick={() => setAlbum('test2')}>Live Performances</li>
-          <li onClick={() => setAlbum('test3')}>Test3</li>
-        </ul> */}
-
+          {/* {width < 1780 && !portfolioGalleryMidLayout && (
               <div className="description-box">
                 <h2>{slideMessage.title}</h2>
                 <p>
-                  <br />
+                  
                   {slideMessage.location}
                   <br />
                   {slideMessage.date}
-                  <br />
                   <br />
                   {slideMessage.camera}
                   <br />
@@ -660,9 +681,8 @@ function LargeLayout({
                   {slideMessage.shot}
                   <br />
                 </p>
-              </div>
-            </SideNav>
-          )}
+              </div>         
+          )} */}
         </Gallery>
         {!arrowInside && (
           <NavButtons
@@ -691,17 +711,22 @@ function LargeLayout({
             >
               <div className="dots">. . .</div>
             </button>
-            {portfolio.slice(galleryIndexes.begGalleryIndex, (galleryIndexes.lastGalleryIndex + 1)).map((i, key) => {
-              let adjust = key + galleryIndexes.begGalleryIndex;
-              return (
-                <div
-                  className="scrollGalleryBorders"
-                  onClick={() => setSlide(adjust)}
-                >
-                  <img alt="test" src={i} />
-                </div>
-              );
-            })}
+            {portfolio
+              .slice(
+                galleryIndexes.begGalleryIndex,
+                galleryIndexes.lastGalleryIndex + 1
+              )
+              .map((i, key) => {
+                let adjust = key + galleryIndexes.begGalleryIndex;
+                return (
+                  <div
+                    className="scrollGalleryBorders"
+                    onClick={() => setSlide(adjust)}
+                  >
+                    <img alt="test" src={i} />
+                  </div>
+                );
+              })}
             <button
               className="rightGalleryButton"
               onClick={() => galleryNavigateHandler('right')}
