@@ -61,7 +61,8 @@ const SideNav = styled.div`
   }
 
   .description-box {
-    //border: solid black;
+    border: solid black;
+    
     color: grey;
     font-size: 20px;
     list-style-type: none;
@@ -109,6 +110,7 @@ const SideNav = styled.div`
 `;
 
 const Gallery = styled.div`
+  border: solid black;
   display: flex;
   flex-direction: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? 'row' : 'column'};
@@ -138,7 +140,7 @@ const Gallery = styled.div`
 `;
 
 const ImageBox = styled.div`
-  //border: 1px solid red;
+  border: 1px solid red;
   width: ${({ portfolioGalleryMidLayout }) =>
     portfolioGalleryMidLayout ? '80vh' : '70vh'};
   height: ${({ portfolioGalleryMidLayout }) =>
@@ -149,10 +151,10 @@ const ImageBox = styled.div`
   justify-content: center;
   position: relative;
 
-  @media (max-width: 1330px) and (min-height: 1051px) {
-    // height: 58vh;
-     width: 56vh;
-  }
+  // @media (max-width: 1330px) and (min-height: 1051px) {
+  //   // height: 58vh;
+  //    width: 58vw;
+  // }
 
   @media (max-width: 1260px) and (max-height: 1050px) {
     width: 68vh;
@@ -206,10 +208,10 @@ const ScrollGallery = styled.div`
     cursor: pointer;
     border: solid gainsboro;
 
-    @media (max-width: 1779px) and (min-height: 1051px) {
-      width: 13vh;
-      height: 13vh;
-    }
+    // @media (max-width: 1779px) and (min-height: 1051px) {
+    //   width: 13vh;
+    //   height: 13vh;
+    // }
   }
 
   img {
@@ -379,19 +381,18 @@ function LargeLayout({
   }, [width]);
 
   useEffect(() => {
-    if (width <= 1330) {
-      setGalleryAmount(3)
-    }
-    if (height <= 865 ) {
+    
+    if ((height <= 865 ) || (width < 1480 && !portfolioGalleryMidLayout)) {
       setGalleryAmount(3);
     }
-    if (height <= 680 && portfolio.length >= 5) {
+    if ((height <= 680 && portfolio.length >= 5) || ((width < 1238) && !portfolioGalleryMidLayout && portfolio.length >= 5)) {
       setGalleryAmount(2);
-    } else if (height > 865 && width >= 1330) {
+    } 
+    else if ((height > 865 && width >= 1480) || (height > 865 && portfolioGalleryMidLayout) ) {
       setGalleryAmount(4);
     }
     galleryIndexCalculator();
-  }, [width, height]);
+  }, [width, height, ]);
 
   function galleryIndexCalculator() {
     if (portfolio.length >= 5) {

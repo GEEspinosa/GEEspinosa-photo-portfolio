@@ -4,77 +4,40 @@ import imageData from '../../../../assets/image-data';
 import { LeftArrowButton } from '../../../common/arrow-buttons/left-arrow-button/left-arrow-button';
 import { RightArrowButton } from '../../../common/arrow-buttons/right-arrow-button/right-arrow-button';
 import useWindowSize from '../../../../hooks/useWindowSize';
+import { GalleryMenuIcon } from '../../../common/gallery-menu-icon/gallery-menu-icon';
+import { GalleryMenuIconStyled } from '../../../common/gallery-menu-icon/styled.gallery-menu-icon';
 
 const PortfolioPage = styled.div`
   border: solid;
-
-  @media (max-width: 1780px) and (min-height: 1051px) {
-    display: flex;
-    flex-direction: column;
-  }
+  display: grid;
+  grid-template-columns: 6vw 1fr;
 `;
 
 const PortfolioContainer = styled.div`
   display: flex;
-
   align-items: center;
   justify-content: center;
   padding: 18px;
 `;
 
 const SideNav = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 50%;
+  background-color: gray;
   padding: 30px;
+
   border: 1px solid red;
 
-  @media (max-width: 1780px) and (min-height: 1051px) {
+  .description-box {
+    color: grey;
+    background-color: white;
+    font-size: 20px;
+    list-style-type: none;
+
+    @media (max-width: 1780px) and (min-height: 1051px) {
     text-align: center;
     align-items: center;
     padding: 1vh;
     width: 100%;
   }
-
-  @media (max-height: 690px) {
-    padding: 12px;
-  }
-
-  ul {
-    padding: 0px;
-    line-height: 3rem;
-  }
-
-  li {
-    color: grey;
-    font-size: 22px;
-    list-style-type: none;
-    cursor: pointer;
-
-    &:hover {
-      color: red;
-    }
-
-    @media (max-height: 1050px) {
-      font-size: 18px;
-      line-height: 2rem;
-    }
-
-    @media (max-height: 800px) {
-      font-size: 18px;
-      line-height: 2rem;
-    }
-
-    @media (max-height: 690px) {
-      font-size: 12px;
-      line-height: 1.6rem;
-    }
-  }
-
-  .description-box {
-    color: grey;
-    font-size: 20px;
-    list-style-type: none;
 
     @media (max-height: 1050px) {
       font-size: 16px;
@@ -274,11 +237,8 @@ const ScrollGallery = styled.div`
 const NavButtons = styled.div`
   margin-bottom: ${({ arrowInside, portfolioGalleryMidLayout }) =>
     !arrowInside && portfolioGalleryMidLayout ? '0px' : '190px'};
-  //border-radius: 25%;
   background-color: ${({ orientationSelected, portfolioGalleryMidLayout }) =>
     orientationSelected === 'vertical' ? 'grey' : ''};
-
-   
 
   &.left-arrow-portfolio {
     position: absolute;
@@ -302,8 +262,7 @@ const NavButtons = styled.div`
     &:hover {
       background-color: ${({ rightWindowButtonAppear }) =>
         rightWindowButtonAppear ? 'gainsboro' : ''};
-    }
-    
+    } 
   }
 
   &:hover {
@@ -496,8 +455,16 @@ function MediumLayout({
   }
 
   return (
+    <>
+    
     <PortfolioPage>
+
+    <SideNav>
+      <GalleryMenuIcon />
+          
+    </SideNav>      
       <PortfolioContainer>
+       
         <Gallery portfolioGalleryMidLayout={portfolioGalleryMidLayout}>
           <ImageBox
             album={album}
@@ -586,7 +553,7 @@ function MediumLayout({
                   <br />
                   {slideMessage.date}
                   <br />
-                  <br />
+        
                   {slideMessage.camera}
                   <br />
                   {slideMessage.film}
@@ -633,6 +600,7 @@ function MediumLayout({
         )}
       </PortfolioContainer>
     </PortfolioPage>
+    </>
   );
 }
 
