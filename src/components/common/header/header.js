@@ -34,7 +34,7 @@ function Header({ open, setOpen, showModal, setPage }) {
           {!showModal && (
             <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
           )}
-          <OpenMenu open={open} setOpen={setOpen} />
+          <OpenMenu open={open} setOpen={setOpen} setPage={setPage}/>
         </div>
       </Navbar>
     </Head>

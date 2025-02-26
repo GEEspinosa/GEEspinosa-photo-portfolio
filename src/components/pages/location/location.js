@@ -5,7 +5,7 @@ import useWindowSize from '../../../hooks/useWindowSize';
 
 function Location ({ imageClickHandler, pageAlbum, page, isLoaded }) {
 
-    const landingAlbum = pageAlbum.location[0] || [];
+    const landingAlbum = pageAlbum[page][0] || [];
 
     let count = 0;
     let smallGalleryArray1 = [];

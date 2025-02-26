@@ -179,15 +179,18 @@ function addId() {
         />
         <Route
           path="/people"
-          element={<People imageClickHandler={imageClickHandler} />}
+          element={<People imageClickHandler={imageClickHandler} pageAlbum={pageAlbum}
+          page={page}/>}
         />
         <Route
           path="/still-life"
-          element={<StillLife imageClickHandler={imageClickHandler} />}
+          element={<StillLife imageClickHandler={imageClickHandler} pageAlbum={pageAlbum}
+          page={page}/>}
         />
         <Route
           path="/performance"
-          element={<Performance imageClickHandler={imageClickHandler} />}
+          element={<Performance imageClickHandler={imageClickHandler} pageAlbum={pageAlbum}
+          page={page} />}
         />
 
 

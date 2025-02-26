@@ -7,7 +7,7 @@ import useWindowSize from '../../../hooks/useWindowSize';
 // smallGallery columns
 
 function Landing({ imageClickHandler, pageAlbum, page, isLoaded }) {
-  const landingAlbum = pageAlbum.landing[0] || [];
+  const landingAlbum = pageAlbum[page][0] || [];
 
   let count = 0;
   let smallGalleryArray1 = [];
