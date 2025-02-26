@@ -109,14 +109,12 @@ function Landing({ imageClickHandler, pageAlbum, page, isLoaded }) {
           </ul>
         </Gallery>
       )}
-
       <TopButton onClick={scrollToTop}>
         <button>Scroll To Top</button>
       </TopButton>
     </>
   );
 }
-
 export default Landing;
 
 // {/* {imageData.map((img) => {
