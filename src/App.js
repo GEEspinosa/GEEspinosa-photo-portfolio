@@ -128,11 +128,17 @@ function App() {
   //   setPortfolio(p);
   // }, [page])
 
+  let id = 0;
+
+function addId() {
+  return id++;
+}
   useEffect(() => {
     const filteredImages = imageData.filter(img => page in img.album)
-
+    filteredImages.map((img, key) => img.id = key)
     setPageAlbum({...pageAlbum, [page]: [filteredImages]})
     setIsLoaded(true)
+    
     
   }, [page])
 
@@ -168,7 +174,8 @@ function App() {
         />}
         <Route
           path="/location"
-          element={<Location imageClickHandler={imageClickHandler} />}
+          element={<Location imageClickHandler={imageClickHandler} pageAlbum={pageAlbum}
+          page={page} />}
         />
         <Route
           path="/people"

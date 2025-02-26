@@ -85,7 +85,7 @@ const imageData = [
     },
     album: {
       landing: 1,
-      longbeach: 1,
+      location: 1,
     }
   },
   {
@@ -101,7 +101,7 @@ const imageData = [
       film: 'Kodak ColorPlus 200 35mm',
       shot: 'Box',
     },
-    album: {landing: 1},
+    album: {},
   },
   {
     id: addId(),
@@ -131,7 +131,7 @@ const imageData = [
       film: 'Kodak ColorPlus 200 35mm',
       shot: 'Box',
     },
-    album: {landing: 1},
+    album: {},
   },
   {
     id: addId(),
@@ -272,8 +272,8 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: 'Box', 
     },
-    album: {landing: 1,
-      test3: 1
+    album: {location: 1,
+      
     },
   },
   {
@@ -337,7 +337,7 @@ const imageData = [
       shot: '400 / +2',
     },
     album: {landing: 1,
-      test3: 1
+      
     },
   },
   {
@@ -455,8 +455,8 @@ const imageData = [
       film: 'Expired TriX 35mm',
       shot: '3200 / +3'
     },
-    album: {landing: 1,
-      test1: 1
+    album: {performance: 1,
+      
     },
   },
   {
@@ -472,7 +472,7 @@ const imageData = [
       film: 'Expired TriX 35mm',
       shot: '3200 / +3'
     },
-    album: {landing: 1},
+    album: {performance: 1},
   },
   {
     id: addId(),
@@ -625,8 +625,8 @@ const imageData = [
       shot: '1600 / +1',
     },
     album: {
-      landing: 1,
-      test1: 1
+      
+      people: 1
     },
   },
   {
@@ -658,8 +658,8 @@ const imageData = [
       shot: 'Box',
     },
     album: {
-      landing: 1,
-      test1: 1
+      
+      people: 1
     },
   },
   {

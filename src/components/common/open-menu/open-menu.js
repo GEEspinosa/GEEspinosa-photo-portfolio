@@ -9,8 +9,17 @@ function OpenMenu({ open, setOpen }) {
           <StyledOpenMenuLink to="/" onClick={() => setOpen(!open)}>
             Home
           </StyledOpenMenuLink>
-          <StyledOpenMenuLink to="/portfolio" onClick={() => setOpen(!open)}>
-            Portfolio
+          <StyledOpenMenuLink to="/location" onClick={() => setOpen(!open)}>
+            Location
+          </StyledOpenMenuLink>
+          <StyledOpenMenuLink to="/people" onClick={() => setOpen(!open)}>
+            People
+          </StyledOpenMenuLink>
+          <StyledOpenMenuLink to="/still-life" onClick={() => setOpen(!open)}>
+            Still Life
+          </StyledOpenMenuLink>
+          <StyledOpenMenuLink to="/performance" onClick={() => setOpen(!open)}>
+            Performance
           </StyledOpenMenuLink>
           <StyledOpenMenuLink to="/about" onClick={() => setOpen(!open)}>
             About
