@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import selfInstaxBryan from '../../assets/images/gabi_instax_bryan2.png';
-import imageData from '../../assets/image-data';
+import selfInstaxBryan from '../../../assets/images/gabi_instax_bryan2.png';
+import imageData from '../../../assets/image-data';
 
 const AboutContainer = styled.div`
   display: flex;

@@ -1,10 +1,12 @@
 import React from "react";
-import imageData from "../../../assets/image-data";
+//import imageData from "../../../assets/image-data";
 import {LeftArrowButton} from "../arrow-buttons/left-arrow-button/left-arrow-button";
 import {RightArrowButton} from "../arrow-buttons/right-arrow-button/right-arrow-button";
 import {ModalIcon, Modal} from "./styled.modal";
 
-function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandler, fadeIn, fadeHandler}) {
+function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandler, fadeIn, fadeHandler, pageAlbum, page}) {
+  let album = pageAlbum[page][0]
+  
   return (
     <> 
       <Modal>
@@ -18,17 +20,17 @@ function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandl
           </ModalIcon>       
           <LeftArrowButton showModal={showModal} arrowButtonHandler={arrowButtonHandler}/> 
           <div className="middleColumn fadeIn">
-            <img alt="test" src={imageData[modalSelect].image} className={`${fadeIn ? 'triggerFade1' : 'triggerFade2'} ${imageData[modalSelect].orientation}`} />
-            <div className={imageData[modalSelect].orientation } >
-              <h2>{imageData[modalSelect].description.title}</h2>
+            <img alt="test" src={album[modalSelect].image} className={`${fadeIn ? 'triggerFade1' : 'triggerFade2'} ${album[modalSelect].orientation}`} />
+            <div className={album[modalSelect].orientation } >
+              <h2>{album[modalSelect].description.title}</h2>
               <p >  
-                {imageData[modalSelect].description.location} <br/>
-                {imageData[modalSelect].description.date} <br/>
+                {album[modalSelect].description.location} <br/>
+                {album[modalSelect].description.date} <br/>
                 <br/>
                 {/* Technical Details: <br/> */}
-                {imageData[modalSelect].description.camera} <br/>
-                {imageData[modalSelect].description.film} <br/>
-                {imageData[modalSelect].description.shot} 
+                {album[modalSelect].description.camera} <br/>
+                {album[modalSelect].description.film} <br/>
+                {album[modalSelect].description.shot} 
               </p>
             </div>
           </div>  

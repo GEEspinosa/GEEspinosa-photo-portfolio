@@ -1,38 +1,32 @@
-import React from "react";
-import imageData from "../../../assets/image-data";
-import { Gallery, GallerySmall, TopButton } from "./styled.landing";
-import useWindowSize from "../../../hooks/useWindowSize";
+import React, { useState } from 'react';
+import imageData from '../../../assets/image-data';
+import { Gallery, GallerySmall, TopButton } from './styled.landing';
+import useWindowSize from '../../../hooks/useWindowSize';
 
-
-// dev notes: logic to sort through imageData and make three arrays for 
+// dev notes: logic to sort through imageData and make three arrays for
 // smallGallery columns
 
-let count = 0;
-let smallGalleryArray1 = [];
-let smallGalleryArray2 = [];
-let smallGalleryArray3 = [];
+function Landing({ imageClickHandler, pageAlbum, page, isLoaded }) {
+  const landingAlbum = pageAlbum.landing[0] || [];
 
-for (let i = 0; i < imageData.length; i++) {
+  let count = 0;
+  let smallGalleryArray1 = [];
+  let smallGalleryArray2 = [];
+  let smallGalleryArray3 = [];
 
-  if (count === 0) {
-    smallGalleryArray1.push(imageData[i]);
-    count++;
+  for (let i = 0; i < landingAlbum.length; i++) {
+    if (count === 0) {
+      smallGalleryArray1.push(landingAlbum[i]);
+      count++;
+    } else if (count === 1) {
+      smallGalleryArray2.push(landingAlbum[i]);
+      count++;
+    } else if (count === 2) {
+      smallGalleryArray3.push(landingAlbum[i]);
+      count = 0;
+    }
   }
-  else if (count === 1) {
-    smallGalleryArray2.push(imageData[i])
-    count++;
-  }
-  else if (count === 2) {
-    smallGalleryArray3.push(imageData[i]);
-    count = 0
-  }
-}
 
-function Landing({
-  imageClickHandler,
-  smallLandingLayout,
-  setSmallLandingLayout,
-}) {
   const scrollToTop = () => {
     let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed
     let scrollInterval = setInterval(() => {
@@ -44,20 +38,7 @@ function Landing({
     }, 30); // Adjust the interval time for smoothness
   };
 
-
-  //dev notes: checking resizing window to change from larger to smaller gallery layout
-  // can't tell if innerwidth 802 or 956?
-
-  // window.addEventListener("resize", () => {
-  //   if (window.innerWidth <= 1293) {
-  //     setSmallLandingLayout(true);
-  //   } else {
-  //     setSmallLandingLayout(false);
-  //   }
-  // });
-
-
-  const {width} = useWindowSize()
+  const { width } = useWindowSize();
 
   return (
     <>
@@ -65,90 +46,90 @@ function Landing({
         <GallerySmall>
           <div className="row">
             <div className="column">
-              {
-                smallGalleryArray1.map((img) => {
-                  return (
-                    <img 
-                      key={img.id}
-                      alt={img.text}
-                      src={img.image}
-                      onClick={() => imageClickHandler(img.id)}
-                      style={{ width: "100%", cursor: "pointer" }}
-                      loading="lazy" 
-                    /> 
-                  )
-                })
-              }
-  
+              {smallGalleryArray1.map(img => {
+                return (
+                  <img
+                    key={img.id}
+                    alt={img.text}
+                    src={img.image}
+                    onClick={() => imageClickHandler(img.id)}
+                    style={{ width: '100%', cursor: 'pointer' }}
+                    loading="lazy"
+                  />
+                );
+              })}
             </div>
 
             <div className="column">
-
-            {
-                smallGalleryArray2.map((img) => {
-                  return (
-                    <img 
-                      key={img.id}
-                      alt={img.text}
-                      src={img.image}
-                      onClick={() => imageClickHandler(img.id)}
-                      style={{ width: "100%", cursor: "pointer" }}
-                      loading="lazy" 
-                    /> 
-                  )
-                })
-              }
-              
+              {smallGalleryArray2.map(img => {
+                return (
+                  <img
+                    key={img.id}
+                    alt={img.text}
+                    src={img.image}
+                    onClick={() => imageClickHandler(img.id)}
+                    style={{ width: '100%', cursor: 'pointer' }}
+                    loading="lazy"
+                  />
+                );
+              })}
             </div>
 
             <div className="column">
-            {
-                smallGalleryArray3.map((img) => {
-                  return (
-                    <img 
-                      key={img.id}
-                      alt={img.text}
-                      src={img.image}
-                      onClick={() => imageClickHandler(img.id)}
-                      style={{ width: "100%", cursor: "pointer"}}
-                      loading="lazy" 
-                    /> 
-                  )
-                })
-              }
-
+              {smallGalleryArray3.map(img => {
+                return (
+                  <img
+                    key={img.id}
+                    alt={img.text}
+                    src={img.image}
+                    onClick={() => imageClickHandler(img.id)}
+                    style={{ width: '100%', cursor: 'pointer' }}
+                    loading="lazy"
+                  />
+                );
+              })}
             </div>
           </div>
         </GallerySmall>
       ) : (
         <Gallery>
           <ul>
-            {imageData.map((img) => {
-              if ('album' in img){
-                if ('landing' in img.album){return (
-                  <li key={img.id}>
-                    <img
-                      alt={img.text}
-                      src={img.image}
-                      onClick={() => imageClickHandler(img.id)}
-                      loading="lazy"
-                    />
-                  </li>
-                )};
-              }
-                
-                
-                
+            {landingAlbum.map(img => {
+              return (
+                <li key={img.id}>
+                  <img
+                    alt={img.text}
+                    src={img.image}
+                    onClick={() => imageClickHandler(img.id)}
+                    loading="lazy"
+                  />
+                </li>
+              );
             })}
           </ul>
         </Gallery>
       )}
 
-      <TopButton onClick={scrollToTop} >
-        <button >Scroll To Top</button>
+      <TopButton onClick={scrollToTop}>
+        <button>Scroll To Top</button>
       </TopButton>
     </>
   );
 }
 
 export default Landing;
+
+// {/* {imageData.map((img) => {
+//               if ('album' in img){
+//                 if ('landing' in img.album){return (
+//                   <li key={img.id}>
+//                     <img
+//                       alt={img.text}
+//                       src={img.image}
+//                       onClick={() => imageClickHandler(img.id)}
+//                       loading="lazy"
+//                     />
+//                   </li>
+//                 )};
+//               }
+//             })} */}

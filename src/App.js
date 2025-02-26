@@ -1,35 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/common/header/header';
+
+
+//dev note: page component imports
 import Landing from './components/pages/landing/landing';
-import Portfolio from './components/pages/portfolio/portfolio';
-import About from './components/pages/about';
+import Location from './components/pages/location/location';
+import People from './components/pages/people/people';
+import StillLife from './components/pages/still-life/still-life';
+import Performance from './components/pages/performance/performance';
+// import Portfolio from './components/pages/portfolio/portfolio';
+import About from './components/pages/about/about';
+
+
 import ModalComponent from './components/common/modal/modal';
 import imageData from './assets/image-data';
 import useWindowSize from './hooks/useWindowSize';
 
-const initialMessage = {
-  title: 'select an album',
-  location: '',
-  date: '',
-  camera: '',
-  film: '',
-  shot: '',
-};
 
 function App() {
   const [open, setOpen] = useState(false);
+  const [pageAlbum, setPageAlbum] = useState({
+    landing: [],
+    location: [],
+    people: [],
+    stillLife: [],
+    performance: [],
+    
+  })
+  const [page, setPage] = useState('landing')
   const [modalSelect, setModalSelect] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [fadeIn, setFadeIn] = useState(false)
-  const [album, setAlbum] = useState('cover');
   const [portfolio, setPortfolio] = useState([]);
   const [slide, setSlide] = useState(null);
-
-  const [descriptionsArray, setDescriptionsArray] = useState([]);
-  const [slideMessage, setSlideMessage] = useState(initialMessage);
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const { width } = useWindowSize();
+  let album = pageAlbum[page][0] || [];
 
   function imageClickHandler(id) {
     setModalSelect(id);
@@ -56,12 +64,12 @@ function App() {
       if (left >= 0) {
         setModalSelect(left);
       } else {
-        setModalSelect(imageData.length - 1);
+        setModalSelect(album.length - 1);
       }
     }
     if (e.key === 'ArrowRight' && showModal) {
       let right = modalSelect + 1;
-      if (right < imageData.length - 1) {
+      if (right < album.length - 1) {
         setModalSelect(right);
       } else {
         setModalSelect(0);
@@ -82,12 +90,12 @@ function App() {
       if (left >= 0) {
         setModalSelect(left);
       } else {
-        setModalSelect(imageData.length - 1);
+        setModalSelect(album.length - 1);
       }
     }
     if (direction === 'Right' && showModal) {
       let right = modalSelect + 1;
-      if (right < imageData.length - 1) {
+      if (right < album.length - 1) {
         setModalSelect(right);
       } else {
         setModalSelect(0);
@@ -107,6 +115,29 @@ function App() {
     return () => document.removeEventListener('keydown', keyDownHandler);
   });
 
+
+  // useEffect(() => {
+  //   let p = [];
+  //   imageData.map(entry => {
+  //     if ('album' in entry) {
+  //       if (page in entry.album) {
+  //         p.push(entry.image);
+  //       }
+  //     }
+  //   });
+  //   setPortfolio(p);
+  // }, [page])
+
+  useEffect(() => {
+    const filteredImages = imageData.filter(img => page in img.album)
+
+    setPageAlbum({...pageAlbum, [page]: [filteredImages]})
+    setIsLoaded(true)
+    
+  }, [page])
+
+
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       {showModal && (
@@ -118,16 +149,43 @@ function App() {
           fadeIn={fadeIn} 
           setFadeIn={setFadeIn}
           fadeHandler={fadeHandler}
+          pageAlbum={pageAlbum}
+          page={page}
         />
       )}
 
-      <Header open={open} setOpen={setOpen} showModal={showModal} />
+      <Header open={open} setOpen={setOpen} showModal={showModal} setPage={setPage}/>
       <Routes>
-        <Route
+        {isLoaded && <Route
           path="/"
-          element={<Landing imageClickHandler={imageClickHandler} />}
+          element={
+            <Landing 
+              imageClickHandler={imageClickHandler} 
+              pageAlbum={pageAlbum}
+              page={page}
+            />
+          }
+        />}
+        <Route
+          path="/location"
+          element={<Location imageClickHandler={imageClickHandler} />}
         />
         <Route
+          path="/people"
+          element={<People imageClickHandler={imageClickHandler} />}
+        />
+        <Route
+          path="/still-life"
+          element={<StillLife imageClickHandler={imageClickHandler} />}
+        />
+        <Route
+          path="/performance"
+          element={<Performance imageClickHandler={imageClickHandler} />}
+        />
+
+
+        {/* dev note: complex route  */}
+        {/* <Route
           path="/portfolio"
           element={
             <Portfolio
@@ -144,7 +202,7 @@ function App() {
               setSlideMessage={setSlideMessage}
             />
           }
-        />
+        /> */}
         <Route path="/about" element={<About />} />
       </Routes>
     </div>

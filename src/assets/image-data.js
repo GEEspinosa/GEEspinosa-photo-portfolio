@@ -369,7 +369,7 @@ const imageData = [
       shot: 'Box',
     },
     album: {landing: 1,
-      test2: 1
+      people: 1
     },
   },
   {
@@ -387,7 +387,7 @@ const imageData = [
     },
     album: {
       landing: 1,
-      longbeach: 1
+      location: 1
     }
   },
   {
@@ -404,7 +404,7 @@ const imageData = [
       shot: 'Box',
     },
     album: {landing: 1,
-      test2: 1
+      location: 1
     },
   },
   {
@@ -420,7 +420,10 @@ const imageData = [
       film: 'Lomography 800 35mm',
       shot: '1600 / +1',
     },
-    album: {landing: 1},
+    album: {
+      landing: 1,
+      people: 1,
+    },
   },
   {
     id: addId(),
