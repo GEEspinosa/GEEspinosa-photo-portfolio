@@ -34,7 +34,6 @@ const Navbar = styled.nav`
       @media (max-width: 900px) {
         font-size: 18px;
       }
-      
 
       &:hover {
         color: red;
@@ -57,9 +56,8 @@ const Title = styled.div`
   // padding-top: 7px;
   // padding-left: 20px;
 
-  @media(max-width: 900px) {
+  @media (max-width: 900px) {
     font-size: 18px;
-
   }
 
   @media (max-width: 710px) {

@@ -47,15 +47,9 @@ import longbeachTireMarks from './images/longbeach_tiremarks.jpg';
 import longbeachWetTireMarks from './images/longbeach_wetsandtiremarks.png';
 import portfolioCover from './images/portfolio_cover.png';
 
-let id = 0;
-
-function addId() {
-  return id++;
-}
-
 const imageData = [
   {
-    id: addId(),
+    //id: addId(),
     image: alexTasting,
     orientation: 'vertical',
     text: 'Alex Tasting Cherry Blossoms',
@@ -70,7 +64,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: antonioLongbeach,
     orientation: 'horizontal',
     text: 'Dodging Longbeach',
@@ -88,7 +82,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: astoriaBridgeDocks,
     orientation: 'horizontal',
     text: 'View From Above',
@@ -105,7 +99,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: astoriaBridgeEmpty,
     orientation: 'horizontal',
     text: 'Columbia Crossing',
@@ -120,7 +114,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: astoriaBridgeRedBoat,
     orientation: 'horizontal',
     text: 'Astoria-Megler Bridge',
@@ -135,7 +129,7 @@ const imageData = [
     album: { location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: bagdadTheater,
     orientation: 'horizontal',
     text: 'Bagdad Theater',
@@ -150,7 +144,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: blackButteTree,
     orientation: 'vertical',
     text: 'Hiking Black Butte',
@@ -165,7 +159,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: boats,
     orientation: 'vertical',
     text: 'Kerr Public Docks',
@@ -180,7 +174,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: bonsai,
     orientation: 'horizontal',
     text: 'Early Morning Bonsai',
@@ -195,7 +189,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: carlButoh,
     orientation: 'vertical',
     text: 'Ghostly Performance',
@@ -210,7 +204,7 @@ const imageData = [
     album: { landing: 1, performance: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: christian,
     orientation: 'horizontal',
     text: 'Friends Hug',
@@ -225,7 +219,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: dannyBassFeedback,
     orientation: 'vertical',
     text: 'Feedback',
@@ -240,7 +234,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: eagleCrestSunset,
     orientation: 'horizontal',
     text: 'Eagle Crest Sunset',
@@ -255,7 +249,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: eagleCrestSunset2,
     orientation: 'horizontal',
     text: 'Eagle Crest Sunset',
@@ -270,7 +264,7 @@ const imageData = [
     album: { location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: entrainLunch,
     orientation: 'horizontal',
     text: 'Back From Break',
@@ -285,7 +279,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: estellaBrotherRollei,
     orientation: 'horizontal',
     text: "Father's Camera",
@@ -300,7 +294,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: fadedGraffiti,
     orientation: 'horizontal',
     text: 'Faded Graffiti',
@@ -315,7 +309,7 @@ const imageData = [
     album: { landing: 1, },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: fadedMural,
     orientation: 'vertical',
     text: 'Faded Mural',
@@ -330,7 +324,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: greyTrunk,
     orientation: 'vertical',
     text: 'Grey Trunk',
@@ -345,7 +339,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: kaycie,
     orientation: 'horizontal',
     text: 'Kaycie',
@@ -360,7 +354,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: longbeachKid,
     orientation: 'horizontal',
     text: 'Sea Kid',
@@ -378,7 +372,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: momAntonioBeach,
     orientation: 'horizontal',
     text: 'Watchers',
@@ -393,7 +387,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: nikkiSynth,
     orientation: 'vertical',
     text: 'Nikhil Synths',
@@ -411,7 +405,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: notnotsEric,
     orientation: 'vertical',
     text: 'Notnauts: Eric',
@@ -426,7 +420,7 @@ const imageData = [
     album: { landing: 1, performance: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: otdHalloween1,
     orientation: 'horizontal',
     text: 'Old Town Diamonds: Halloween',
@@ -441,7 +435,7 @@ const imageData = [
     album: { performance: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: otdHalloween2,
     orientation: 'horizontal',
     text: 'Old Town Diamonds: Halloween',
@@ -456,7 +450,7 @@ const imageData = [
     album: { },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: parkingLot,
     orientation: 'horizontal',
     text: 'Suburban Parking',
@@ -471,7 +465,7 @@ const imageData = [
     album: {location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: porterPoint,
     orientation: 'horizontal',
     text: 'Nestucca',
@@ -486,7 +480,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: proposalRock,
     orientation: 'horizontal',
     text: 'Proposal Rock',
@@ -501,7 +495,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: ripleyGuitar,
     orientation: 'horizontal',
     text: 'Ripley',
@@ -516,7 +510,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: schnitzer,
     orientation: 'vertical',
     text: 'Schnitzer',
@@ -531,7 +525,7 @@ const imageData = [
     album: { landing: 1, location: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: seanCostume,
     orientation: 'horizontal',
     text: 'Halloween Costume',
@@ -546,7 +540,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: seanGuitar,
     orientation: 'horizontal',
     text: 'Mistons: Rickenbacker',
@@ -561,7 +555,7 @@ const imageData = [
     album: { landing: 1, performance: 1 },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: swimBuddies,
     orientation: 'horizontal',
     text: 'Jacuzzi',
@@ -576,7 +570,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: tessaBeach,
     orientation: 'vertical',
     text: 'Tessa Beach',
@@ -591,7 +585,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: tessaFlowers,
     orientation: 'horizontal',
     text: 'Tessa Flowers',
@@ -608,7 +602,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: yaquinaHeadLighthouse,
     orientation: 'horizontal',
     text: 'Spring Light',
@@ -623,7 +617,7 @@ const imageData = [
     album: { landing: 1, location: 1, },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: zoranPatSwim,
     orientation: 'horizontal',
     text: 'Swim Boys',
@@ -640,7 +634,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: zoranPolaroid,
     orientation: 'horizontal',
     text: 'Instant Zoran',
@@ -655,7 +649,7 @@ const imageData = [
     album: { landing: 1, people: 1 },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: longbeachDistantHouse,
     orientation: 'horizontal',
     text: 'Distant House',
@@ -672,7 +666,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: longbeachDistantWalker,
     orientation: 'horizontal',
     text: 'Walker',
@@ -689,7 +683,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: longbeachNoHorizon,
     orientation: 'horizontal',
     text: 'No Horizon',
@@ -706,7 +700,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: longbeachRestArea,
     orientation: 'horizontal',
     text: 'Rest Area',
@@ -723,7 +717,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    ////id: addId(),
     image: longbeachOrcas,
     orientation: 'horizontal',
     text: 'Orcas',
@@ -740,7 +734,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: longbeachOrcasOverhead,
     orientation: 'horizontal',
     text: 'Overhead',
@@ -757,7 +751,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: longbeachTireMarks,
     orientation: 'horizontal',
     text: 'Tire Marks',
@@ -774,7 +768,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: longbeachWetTireMarks,
     orientation: 'horizontal',
     text: 'Wet Sand',
@@ -791,7 +785,7 @@ const imageData = [
     },
   },
   {
-    id: addId(),
+    //id: addId(),
     image: portfolioCover,
     orientation: 'horizontal',
     text: 'Portfolio Cover',
