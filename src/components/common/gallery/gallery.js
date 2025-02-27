@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Gallery, GallerySmall, TopButton } from './styled.gallery';
 import useWindowSize from '../../../hooks/useWindowSize';
 
@@ -6,25 +6,61 @@ import useWindowSize from '../../../hooks/useWindowSize';
 // smallGallery columns
 
 function GalleryPage({ imageClickHandler, pageAlbum, page }) {
+  const [smGalleryColNum, setSmGalleryColNum] = useState(0);
+  const [smGalleryArray, setSmallGalleryArray] = useState([]);
+
   const landingAlbum = pageAlbum[page][0] || [];
 
-  let count = 0;
-  let smallGalleryArray1 = [];
-  let smallGalleryArray2 = [];
-  let smallGalleryArray3 = [];
+  const { width } = useWindowSize();
 
-  for (let i = 0; i < landingAlbum.length; i++) {
-    if (count === 0) {
-      smallGalleryArray1.push(landingAlbum[i]);
-      count++;
-    } else if (count === 1) {
-      smallGalleryArray2.push(landingAlbum[i]);
-      count++;
-    } else if (count === 2) {
-      smallGalleryArray3.push(landingAlbum[i]);
-      count = 0;
+  // let count = 0;
+
+  function fillingColumns(smGalleryColNum, landingAlbum) {
+    let mainArray = new Array(smGalleryColNum).fill(null).map(() => []);
+    let count = 0;
+
+    for (let i = 0; i < landingAlbum.length; i++) {
+      if (count < smGalleryColNum - 1) {
+        mainArray[count].push(landingAlbum[i]);
+        count++;
+        continue;
+      } else if (count === smGalleryColNum - 1) {
+        mainArray[count].push(landingAlbum[i]);
+        count = 0;
+      }
     }
+    setSmallGalleryArray(mainArray);
   }
+
+  useEffect(() => {
+    if (width > 1025) {
+      setSmGalleryColNum(3);
+    } else if (width > 725) {
+      setSmGalleryColNum(2);
+    } else setSmGalleryColNum(1);
+  }, [width]);
+
+  useEffect(() => {
+    fillingColumns(smGalleryColNum, landingAlbum);
+  }, [smGalleryColNum]);
+
+  // let smallGalleryArray1 = [];
+  // let smallGalleryArray2 = [];
+  // let smallGalleryArray3 = [];
+
+  // for (let i = 0; i < landingAlbum.length; i++) {
+  //   if (count === 0) {
+  //     smallGalleryArray1.push(landingAlbum[i]);
+  //     count++;
+  //   } else if (count === 1) {
+  //     smallGalleryArray2.push(landingAlbum[i]);
+  //     count++;
+  //   } else if (count === 2) {
+  //     smallGalleryArray3.push(landingAlbum[i]);
+  //     count = 0;
+  //   }
+
+  // }
 
   const scrollToTop = () => {
     let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed
@@ -37,14 +73,30 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
     }, 30); // Adjust the interval time for smoothness
   };
 
-  const { width } = useWindowSize();
-
   return (
     <>
       {width <= 1376 ? (
-        <GallerySmall>
+        <GallerySmall smGalleryColNum={smGalleryColNum}>
           <div className="row">
-            <div className="column">
+            {smGalleryArray.map((arr, key) => {
+              return (
+                <div className="column">
+                  {smGalleryArray[key].map(img => {
+                    return (
+                      <img
+                        key={img.id}
+                        alt={img.text}
+                        src={img.image}
+                        onClick={() => imageClickHandler(img.id)}
+                        style={{ width: '100%', cursor: 'pointer' }}
+                        loading="lazy"
+                      />
+                    );
+                  })}
+                </div>
+              );
+            })}
+            {/* <div className="column">
               {smallGalleryArray1.map(img => {
                 return (
                   <img
@@ -87,7 +139,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
                   />
                 );
               })}
-            </div>
+            </div> */}
           </div>
         </GallerySmall>
       ) : (

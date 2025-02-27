@@ -19,17 +19,8 @@ const Gallery = styled.div`
       cursor: pointer;
     }
 
-    //dev note: bigger images
-    // height: 55vh;
-    // margin: 14px;
-    // border: solid;
-
     @media (max-width: 768px) {
-      //dev note: adding width will look good with .rows
-      //width: 40%;
       height: 100%;
-
-      //margin: 14px;
       margin: 6px;
     }
   }
@@ -46,7 +37,7 @@ const Gallery = styled.div`
 
 const GallerySmall = styled.div`
   box-sizing: border-box;
-
+  
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -55,9 +46,8 @@ const GallerySmall = styled.div`
   }
 
   .column {
+    flex-wrap: wrap;
     flex: 25%;
-    max-width: 40%;
-
     padding: 10px;
   }
 
@@ -95,7 +85,6 @@ const TopButton = styled.div`
     background-color: #555555;
     color: white;
   }
-
 `;
 
 export { Gallery, GallerySmall, TopButton };
