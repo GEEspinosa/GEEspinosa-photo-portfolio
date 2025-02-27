@@ -41,7 +41,7 @@ const Navbar = styled.nav`
     }
   }
 
-  @media (max-width: 710px) {
+  @media (max-width: 1111px) {
     .navbar-link {
       display: none;
     }

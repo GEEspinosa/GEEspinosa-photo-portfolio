@@ -58,7 +58,7 @@ function App() {
     }
     if (e.key === 'ArrowRight' && showModal) {
       let right = modalSelect + 1;
-      if (right < album.length - 1) {
+      if (right < album.length) {
         setModalSelect(right);
       } else {
         setModalSelect(0);
@@ -77,7 +77,7 @@ function App() {
     }
     if (direction === 'Right' && showModal) {
       let right = modalSelect + 1;
-      if (right < album.length - 1) {
+      if (right < album.length) {
         setModalSelect(right);
       } else {
         setModalSelect(0);
@@ -114,7 +114,7 @@ function App() {
           arrowButtonHandler={arrowButtonHandler}
           fadeIn={fadeIn}
           setFadeIn={setFadeIn}
-          fadeHandler={fadeHandler}
+          //fadeHandler={fadeHandler}
           pageAlbum={pageAlbum}
           page={page}
         />

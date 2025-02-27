@@ -45,7 +45,22 @@ import longbeachOrcasOverhead from './images/longbeach_orcaoverhead.jpg';
 import longbeachRestArea from './images/longbeach_restarea.png';
 import longbeachTireMarks from './images/longbeach_tiremarks.jpg';
 import longbeachWetTireMarks from './images/longbeach_wetsandtiremarks.png';
-import portfolioCover from './images/portfolio_cover.png';
+import brokenHouseGorge from './images/Broken House_Gorge.png';
+import bryanShakes1K  from './images/Bryan_Shakes_1K.png';
+import danielSmoking from './images/Daniel_Smoking.png';
+import gwapBodecker from './images/Gwap_Bodecker.png';
+import mattSavior from './images/Matt_Savior.png';
+import morganRiver from './images/Morgan_River.png';
+import pdxButohFest2024_1 from './images/PDX_ButohFest2024_1.png';
+import pdxButohFest2024_2 from './images/PDX_ButohFest2024_2.png';
+import pdxButohFest2024_3 from './images/PDX_ButohFest2024_3.png';
+import portBlakeyMillBainBridge from './images/Port_Blakey_Mill_BainBridge.png';
+import summerLightKitchen from './images/Summer_Light_Kitchen.png';
+import taylorBirthday from './images/Taylor_Birthday.png';
+import tessaSunsetLowerShades from './images/Tessa_Sunset_LowerShades.png';
+import vistaHousePuddle from './images/VistaHouse_Puddle.jpg';
+import vistaHouse from './images/VistaHouse.png';
+
 
 const imageData = [
   {
@@ -784,21 +799,240 @@ const imageData = [
       longbeach: 1,
     },
   },
+ 
+
+
+ 
+  
+  
+
+
   {
     //id: addId(),
-    image: portfolioCover,
+    image: brokenHouseGorge ,
     orientation: 'horizontal',
-    text: 'Portfolio Cover',
+    text: 'Broken House, Gorge',
     description: {
-      title: 'Portfolio Cover',
-      location: '',
-      date: '',
-      camera: '',
-      film: '',
-      shot: '',
+      title: 'Broken House',
+      location: 'Columbia Gorge',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
     },
-    album: { cover: 1 },
+    album: { landing: 1, location: 1 },
   },
+  {
+    //id: addId(),
+    image: bryanShakes1K,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { landing: 1, people: 1 },
+  },
+  {
+    //id: addId(),
+    image: danielSmoking,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { landing: 1, people: 1 },
+  },
+  {
+    //id: addId(),
+    image: gwapBodecker,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { people: 1 },
+  },
+  {
+    //id: addId(),
+    image: mattSavior,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { people: 1 },
+  },
+  {
+    //id: addId(),
+    image: morganRiver,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { people: 1 },
+  },
+  {
+    //id: addId(),
+    image: pdxButohFest2024_1,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { landing: 1, performance: 1 },
+  },
+  {
+    //id: addId(),
+    image: pdxButohFest2024_2,
+    orientation: 'vertical',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { performance: 1 },
+  },
+  {
+    //id: addId(),
+    image: pdxButohFest2024_3,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { landing: 1, performance: 1 },
+  },
+  {
+    //id: addId(),
+    image: portBlakeyMillBainBridge,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { location: 1 },
+  },
+  {
+    //id: addId(),
+    image: summerLightKitchen,
+    orientation: 'vertical',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { stillLife: 1 },
+  },
+  {
+    //id: addId(),
+    image: taylorBirthday,
+    orientation: 'vertical',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { people: 1 },
+  },
+  {
+    //id: addId(),
+    image: tessaSunsetLowerShades,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { landing: 1, people: 1 },
+  },
+  {
+    //id: addId(),
+    image: vistaHousePuddle,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { location: 1 },
+  },
+  {
+    //id: addId(),
+    image: vistaHouse,
+    orientation: 'horizontal',
+    text: 'Alex Tasting Cherry Blossoms',
+    description: {
+      title: 'Alex Tasting Blossoms',
+      location: 'Cathedral Park, Portland, OR',
+      date: 'May 12, 2022',
+      camera: '"Ike" Fujica AX3',
+      film: '35mm Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { landing: 1, location: 1 },
+  },
+
 ];
 
 export default imageData;

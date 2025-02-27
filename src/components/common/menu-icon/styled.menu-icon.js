@@ -32,7 +32,7 @@ const MenuIconStyled = styled.div`
     transform-origin: 2px;
     transition: all 0.5s ease-out;
 
-    @media (max-width: 710px) {
+    @media (max-width: 1111px) {
       display: block;
 
       
