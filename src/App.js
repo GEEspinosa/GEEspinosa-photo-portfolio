@@ -100,6 +100,7 @@ function App() {
 
   useEffect(() => {
     const filteredImages = imageData.filter(img => page in img.album);
+    filteredImages.sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0))
     filteredImages.map((img, key) => (img.id = key));
     setPageAlbum({ ...pageAlbum, [page]: [filteredImages] });
     setIsLoaded(true);

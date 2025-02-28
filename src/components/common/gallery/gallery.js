@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Gallery, GallerySmall, TopButton } from './styled.gallery';
 import useWindowSize from '../../../hooks/useWindowSize';
 
-// dev notes: logic to sort through imageData and make three arrays for
-// smallGallery columns
-
 function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   const [smGalleryColNum, setSmGalleryColNum] = useState(0);
   const [smGalleryArray, setSmallGalleryArray] = useState([]);

@@ -5,7 +5,7 @@ const MenuIconStyled = styled.div`
   flex-direction: column;
 
   position: absolute;
-  right: 14px;
+  right: 40px;
   top: 40px;
   z-index: 1000;
 

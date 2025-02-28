@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const Head = styled.header`
   text-align: center;
+  border: solid black;
   padding: 40px;
   height: 120px;
   position: sticky;
@@ -11,11 +12,11 @@ const Head = styled.header`
   background: white;
   z-index: 10;
 
-  @media (max-width: 710px) {
-    // padding: 10px;
-    height: 80px;
-    padding: 30px;
-  }
+  // @media (max-width: 710px) {
+  //   // padding: 10px;
+  //   height: 80px;
+  //   padding: 30px;
+  // }
 `;
 
 const Navbar = styled.nav`
@@ -60,10 +61,10 @@ const Title = styled.div`
     font-size: 18px;
   }
 
-  @media (max-width: 710px) {
-    font-size: 16px;
-    padding-left: 0px;
-  }
+  // @media (max-width: 710px) {
+  //   font-size: 16px;
+  //   padding-left: 0px;
+  // }
 
   @media (max-width: 319px) {
     visibility: hidden;

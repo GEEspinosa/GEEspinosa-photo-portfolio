@@ -76,7 +76,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 0, people: 0 },
   },
   {
     //id: addId(),
@@ -93,7 +93,7 @@ const imageData = [
     },
     album: {
       landing: 1,
-      location: 1,
+      location: 0,
     },
   },
   {
@@ -126,7 +126,7 @@ const imageData = [
       film: 'Kodak Portra 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 2, location: 2 },
   },
   {
     //id: addId(),
@@ -141,7 +141,7 @@ const imageData = [
       film: 'Kodak ColorPlus 200 35mm',
       shot: 'Box',
     },
-    album: { location: 1 },
+    album: { location: 3 },
   },
   {
     //id: addId(),
@@ -156,7 +156,7 @@ const imageData = [
       film: 'Kodak Gold 200 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 3, location: 4 },
   },
   {
     //id: addId(),
@@ -171,7 +171,7 @@ const imageData = [
       film: 'Ilford SFX 200 35mm',
       shot: 'Red Filter / Box',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 4, location: 5 },
   },
   {
     //id: addId(),
@@ -186,7 +186,7 @@ const imageData = [
       film: 'Fuji Superia Xtra 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 5, location: 6 },
   },
   {
     //id: addId(),
@@ -201,7 +201,7 @@ const imageData = [
       film: 'Kodak Gold 200 35mm',
       shot: '400 / + 1',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 6, location: 7 },
   },
   {
     //id: addId(),
@@ -216,7 +216,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '800 / +1',
     },
-    album: { landing: 1, performance: 1 },
+    album: { landing: 7, performance: 0 },
   },
   {
     //id: addId(),
@@ -231,7 +231,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 8, people: 1 },
   },
   {
     //id: addId(),
@@ -246,7 +246,7 @@ const imageData = [
       film: 'Ilford Delta 3200 35mm',
       shot: '1600 / +0',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 9, people: 2 },
   },
   {
     //id: addId(),
@@ -261,7 +261,7 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 10, location: 8 },
   },
   {
     //id: addId(),
@@ -276,7 +276,7 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: 'Box',
     },
-    album: { location: 1 },
+    album: { location: 9 },
   },
   {
     //id: addId(),
@@ -291,7 +291,7 @@ const imageData = [
       film: 'Expired Kodak TriX 35mm',
       shot: '200 / +1',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 11, people: 3 },
   },
   {
     //id: addId(),
@@ -306,7 +306,7 @@ const imageData = [
       film: 'Kodak Portra 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 12, people: 4 },
   },
   {
     //id: addId(),
@@ -321,7 +321,7 @@ const imageData = [
       film: 'Expired Kroger 400 35mm (UltraMax)',
       shot: '400 / +2',
     },
-    album: { landing: 1, },
+    album: { landing: 13, },
   },
   {
     //id: addId(),
@@ -336,7 +336,7 @@ const imageData = [
       film: 'Expired Kroger 400 35mm (UltraMax)',
       shot: '400 / +2',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 14, location: 10 },
   },
   {
     //id: addId(),
@@ -351,7 +351,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '1600 / +2',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 15, location: 11 },
   },
   {
     //id: addId(),
@@ -366,7 +366,7 @@ const imageData = [
       film: 'Expired Kodak TriX 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 16, people: 5 },
   },
   {
     //id: addId(),
@@ -382,8 +382,8 @@ const imageData = [
       shot: '800 / +1',
     },
     album: {
-      landing: 1,
-      location: 1,
+      landing: 17,
+      location: 12,
     },
   },
   {
@@ -399,7 +399,7 @@ const imageData = [
       film: 'Fomapan 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 18, people: 6 },
   },
   {
     //id: addId(),
@@ -415,8 +415,8 @@ const imageData = [
       shot: '1600 / +1',
     },
     album: {
-      landing: 1,
-      people: 1,
+      landing: 19,
+      people: 7,
     },
   },
   {
@@ -432,7 +432,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '800 / +1',
     },
-    album: { landing: 1, performance: 1 },
+    album: { landing: 20, performance: 1 },
   },
   {
     //id: addId(),
@@ -447,7 +447,7 @@ const imageData = [
       film: 'Expired TriX 35mm',
       shot: '3200 / +3',
     },
-    album: { performance: 1 },
+    album: { performance: 2 },
   },
   {
     //id: addId(),
@@ -477,7 +477,7 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
     },
-    album: {location: 1 },
+    album: {location: 13 },
   },
   {
     //id: addId(),
@@ -492,7 +492,7 @@ const imageData = [
       film: 'Kodak Delta 3200 35mm',
       shot: '800 / Box',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 21, location: 14 },
   },
   {
     //id: addId(),
@@ -507,7 +507,7 @@ const imageData = [
       film: 'Fomapan 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 22, location: 15 },
   },
   {
     //id: addId(),
@@ -522,7 +522,7 @@ const imageData = [
       film: 'Kodak Delta 3200 35mm',
       shot: '1600 / Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 23, people: 8 },
   },
   {
     //id: addId(),
@@ -537,7 +537,7 @@ const imageData = [
       film: 'Cinestill 400D 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 24, location: 16 },
   },
   {
     //id: addId(),
@@ -552,7 +552,7 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 25, people: 9 },
   },
   {
     //id: addId(),
@@ -567,7 +567,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '1600 / +2',
     },
-    album: { landing: 1, performance: 1 },
+    album: { landing: 26, performance: 3 },
   },
   {
     ////id: addId(),
@@ -582,7 +582,7 @@ const imageData = [
       film: 'Kodak Portra 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 27, people: 10 },
   },
   {
     ////id: addId(),
@@ -597,7 +597,7 @@ const imageData = [
       film: 'Kodak Delta 3200 35mm',
       shot: '800 / Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 28, people: 11 },
   },
   {
     ////id: addId(),
@@ -613,7 +613,7 @@ const imageData = [
       shot: '1600 / +1',
     },
     album: {
-      people: 1,
+      people: 12,
     },
   },
   {
@@ -629,7 +629,7 @@ const imageData = [
       film: 'Fomapan 100 35mm',
       shot: '200 / +1',
     },
-    album: { landing: 1, location: 1, },
+    album: { landing: 29, location: 17, },
   },
   {
     ////id: addId(),
@@ -645,7 +645,7 @@ const imageData = [
       shot: 'Box',
     },
     album: {
-      people: 1,
+      people: 13,
     },
   },
   {
@@ -661,7 +661,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 30, people: 14 },
   },
   {
     ////id: addId(),
@@ -677,7 +677,7 @@ const imageData = [
       shot: '800 / +1',
     },
     album: {
-      location: 1,
+      location: 18,
     },
   },
   {
@@ -711,7 +711,7 @@ const imageData = [
       shot: '200 / -1',
     },
     album: {
-      location: 1,
+      location: 19,
     },
   },
   {
@@ -728,7 +728,7 @@ const imageData = [
       shot: '200 / -1',
     },
     album: {
-      location: 1,
+      location: 20,
     },
   },
   {
@@ -745,7 +745,7 @@ const imageData = [
       shot: 'Red Filter/ 200 / Box',
     },
     album: {
-      location: 1,
+      location: 21,
     },
   },
   {
@@ -820,7 +820,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 31, location: 22 },
   },
   {
     //id: addId(),
@@ -835,7 +835,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 32, people: 15 },
   },
   {
     //id: addId(),
@@ -850,7 +850,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 33, people: 16 },
   },
   {
     //id: addId(),
@@ -865,7 +865,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { people: 1 },
+    album: { people: 17 },
   },
   {
     //id: addId(),
@@ -880,7 +880,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { people: 1 },
+    album: { people: 18 },
   },
   {
     //id: addId(),
@@ -895,7 +895,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { people: 1 },
+    album: { people: 19 },
   },
   {
     //id: addId(),
@@ -910,7 +910,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, performance: 1 },
+    album: { landing: 34, performance: 4 },
   },
   {
     //id: addId(),
@@ -925,7 +925,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { performance: 1 },
+    album: { performance: 5 },
   },
   {
     //id: addId(),
@@ -940,7 +940,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, performance: 1 },
+    album: { landing: 35, performance: 6 },
   },
   {
     //id: addId(),
@@ -955,7 +955,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { location: 1 },
+    album: { location: 23 },
   },
   {
     //id: addId(),
@@ -970,7 +970,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { stillLife: 1 },
+    album: { stillLife: 0 },
   },
   {
     //id: addId(),
@@ -985,7 +985,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { people: 1 },
+    album: { people: 20 },
   },
   {
     //id: addId(),
@@ -1000,7 +1000,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, people: 1 },
+    album: { landing: 36, people: 21 },
   },
   {
     //id: addId(),
@@ -1015,7 +1015,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { location: 1 },
+    album: { location: 24 },
   },
   {
     //id: addId(),
@@ -1030,7 +1030,7 @@ const imageData = [
       film: '35mm Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 1, location: 1 },
+    album: { landing: 37, location: 25 },
   },
 
 ];
