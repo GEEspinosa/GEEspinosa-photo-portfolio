@@ -10,10 +10,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   const [smGalleryArray, setSmallGalleryArray] = useState([]);
 
   const landingAlbum = pageAlbum[page][0] || [];
-
   const { width } = useWindowSize();
-
-  // let count = 0;
 
   function fillingColumns(smGalleryColNum, landingAlbum) {
     let mainArray = new Array(smGalleryColNum).fill(null).map(() => []);
@@ -43,24 +40,6 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   useEffect(() => {
     fillingColumns(smGalleryColNum, landingAlbum);
   }, [smGalleryColNum]);
-
-  // let smallGalleryArray1 = [];
-  // let smallGalleryArray2 = [];
-  // let smallGalleryArray3 = [];
-
-  // for (let i = 0; i < landingAlbum.length; i++) {
-  //   if (count === 0) {
-  //     smallGalleryArray1.push(landingAlbum[i]);
-  //     count++;
-  //   } else if (count === 1) {
-  //     smallGalleryArray2.push(landingAlbum[i]);
-  //     count++;
-  //   } else if (count === 2) {
-  //     smallGalleryArray3.push(landingAlbum[i]);
-  //     count = 0;
-  //   }
-
-  // }
 
   const scrollToTop = () => {
     let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed
@@ -96,50 +75,6 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
                 </div>
               );
             })}
-            {/* <div className="column">
-              {smallGalleryArray1.map(img => {
-                return (
-                  <img
-                    key={img.id}
-                    alt={img.text}
-                    src={img.image}
-                    onClick={() => imageClickHandler(img.id)}
-                    style={{ width: '100%', cursor: 'pointer' }}
-                    loading="lazy"
-                  />
-                );
-              })}
-            </div>
-
-            <div className="column">
-              {smallGalleryArray2.map(img => {
-                return (
-                  <img
-                    key={img.id}
-                    alt={img.text}
-                    src={img.image}
-                    onClick={() => imageClickHandler(img.id)}
-                    style={{ width: '100%', cursor: 'pointer' }}
-                    loading="lazy"
-                  />
-                );
-              })}
-            </div>
-
-            <div className="column">
-              {smallGalleryArray3.map(img => {
-                return (
-                  <img
-                    key={img.id}
-                    alt={img.text}
-                    src={img.image}
-                    onClick={() => imageClickHandler(img.id)}
-                    style={{ width: '100%', cursor: 'pointer' }}
-                    loading="lazy"
-                  />
-                );
-              })}
-            </div> */}
           </div>
         </GallerySmall>
       ) : (

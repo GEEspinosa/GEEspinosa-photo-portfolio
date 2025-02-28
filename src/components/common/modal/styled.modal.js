@@ -110,8 +110,7 @@ const Modal = styled.div`
         width: 100%;
         text-align: center;
         display: flex;
-        flex-direction: column;
-        //align-items: flex-start;    
+        flex-direction: column; 
       }
       
       @media (max-width: 790px) {
@@ -119,8 +118,13 @@ const Modal = styled.div`
         padding: 10px;
       }
 
-      @media (max-width: 430px) {
-        width: 180%;
+      @media (max-width: 660px) {
+        width: 140%;
+        padding: 10px;
+      }
+
+      @media (max-width: 450px) {
+        width: 170%;
         padding: 10px;
       }
     }
@@ -138,11 +142,17 @@ const Modal = styled.div`
   
       @media (max-width: 790px) {
         position: relative; 
-        padding: 10px;      
+        padding: 10px;  
+         
+      }
+
+      @media (max-width: 600px) {
+        max-height: 55%;
+        padding: 10px;
       }
 
       @media (max-width: 430px) {
-        max-height: 55%;
+        max-height: 45%;
         padding: 10px;
       }     
     }

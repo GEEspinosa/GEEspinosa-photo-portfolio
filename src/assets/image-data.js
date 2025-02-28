@@ -694,7 +694,7 @@ const imageData = [
       shot: '200 / -1',
     },
     album: {
-      location: 1,
+      
     },
   },
   {
@@ -728,7 +728,7 @@ const imageData = [
       shot: '200 / -1',
     },
     album: {
-      longbeach: 1,
+      location: 1,
     },
   },
   {
@@ -745,7 +745,7 @@ const imageData = [
       shot: 'Red Filter/ 200 / Box',
     },
     album: {
-      longbeach: 1,
+      location: 1,
     },
   },
   {
@@ -762,7 +762,7 @@ const imageData = [
       shot: 'Red Filter/ 200 / Box',
     },
     album: {
-      longbeach: 1,
+      
     },
   },
   {

@@ -35,8 +35,20 @@ const StyledOpenMenuLink = styled(Link)`
     color: red;
   }
 
+  @media (max-width: 680px) {
+    font-size: 1.2rem;
+    padding: 1.5rem 0;
+   
+  }
+
   @media (max-width: 430px) {
     font-size: 1.2rem;
+    padding: 1.5rem 0;
+  }
+
+  @media (max-width: 380px) {
+    font-size: 1rem;
+    padding: 1rem 0;
   }
 `;
 

@@ -86,8 +86,9 @@ function App() {
     fadeHandler();
   };
 
+  //dev note: was 710, but changed
   useEffect(() => {
-    if (width > 710) {
+    if (width > 1111) {
       setOpen(false);
     }
   }, [width]);
