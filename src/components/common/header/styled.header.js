@@ -2,9 +2,10 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+
 const Head = styled.header`
   text-align: center;
-  border: solid black;
+  //border: solid black;
   padding: 40px;
   height: 120px;
   position: sticky;
@@ -66,7 +67,7 @@ const Title = styled.div`
   //   padding-left: 0px;
   // }
 
-  @media (max-width: 319px) {
+  @media (max-width: 350px) {
     visibility: hidden;
   }
 `;

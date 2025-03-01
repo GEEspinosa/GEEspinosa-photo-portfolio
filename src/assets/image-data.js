@@ -38,13 +38,13 @@ import yaquinaHeadLighthouse from './images/yaquina_head_lighthouse.png';
 import zoranPatSwim from './images/zoran_pat_swim.png';
 import zoranPolaroid from './images/zoran_polaroid.jpg';
 import longbeachDistantHouse from './images/longbeach_distanthouse.png';
-import longbeachDistantWalker from './images/longbeach_distantwalker.png';
+//import longbeachDistantWalker from './images/longbeach_distantwalker.png';
 import longbeachNoHorizon from './images/longbeach_nohorizon.jpg';
 import longbeachOrcas from './images/longbeach_orcas.png';
-import longbeachOrcasOverhead from './images/longbeach_orcaoverhead.jpg';
+//import longbeachOrcasOverhead from './images/longbeach_orcaoverhead.jpg';
 import longbeachRestArea from './images/longbeach_restarea.png';
-import longbeachTireMarks from './images/longbeach_tiremarks.jpg';
-import longbeachWetTireMarks from './images/longbeach_wetsandtiremarks.png';
+//import longbeachTireMarks from './images/longbeach_tiremarks.jpg';
+//import longbeachWetTireMarks from './images/longbeach_wetsandtiremarks.png';
 import brokenHouseGorge from './images/Broken House_Gorge.png';
 import bryanShakes1K  from './images/Bryan_Shakes_1K.png';
 import danielSmoking from './images/Daniel_Smoking.png';
@@ -73,7 +73,7 @@ const imageData = [
       location: 'Cathedral Park, Portland, OR',
       date: 'May 12, 2022',
       camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
+      film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
     album: { landing: 0, people: 0 },
@@ -682,23 +682,6 @@ const imageData = [
   },
   {
     ////id: addId(),
-    image: longbeachDistantWalker,
-    orientation: 'horizontal',
-    text: 'Walker',
-    description: {
-      title: 'Walker',
-      location: 'Longbeach, WA',
-      date: 'Oct. 10, 2022',
-      camera: '"Mina" Minolta SRT100',
-      film: 'Expired Kodak TriX 35mm',
-      shot: '200 / -1',
-    },
-    album: {
-      
-    },
-  },
-  {
-    ////id: addId(),
     image: longbeachNoHorizon,
     orientation: 'horizontal',
     text: 'No Horizon',
@@ -750,74 +733,15 @@ const imageData = [
   },
   {
     //id: addId(),
-    image: longbeachOrcasOverhead,
-    orientation: 'horizontal',
-    text: 'Overhead',
-    description: {
-      title: 'Overhead',
-      location: 'Longbeach, WA',
-      date: 'Oct. 7, 2023',
-      camera: '"Mina" Minolta SRT100',
-      film: 'Ilford SFX 200 35mm',
-      shot: 'Red Filter/ 200 / Box',
-    },
-    album: {
-      
-    },
-  },
-  {
-    //id: addId(),
-    image: longbeachTireMarks,
-    orientation: 'horizontal',
-    text: 'Tire Marks',
-    description: {
-      title: 'Tire Marks',
-      location: 'Longbeach, WA',
-      date: 'Oct. 18, 2024',
-      camera: '"Mina" Minolta SRT100',
-      film: 'Ilford HP5+ 35mm',
-      shot: '800 / +1',
-    },
-    album: {
-      longbeach: 1,
-    },
-  },
-  {
-    //id: addId(),
-    image: longbeachWetTireMarks,
-    orientation: 'horizontal',
-    text: 'Wet Sand',
-    description: {
-      title: 'Wet Sand',
-      location: 'Longbeach, WA',
-      date: 'Oct. 10, 2022',
-      camera: '"Mina" Minolta SRT100',
-      film: 'Expired Kodak TriX 35mm',
-      shot: '200 / -1',
-    },
-    album: {
-      longbeach: 1,
-    },
-  },
- 
-
-
- 
-  
-  
-
-
-  {
-    //id: addId(),
     image: brokenHouseGorge ,
     orientation: 'horizontal',
     text: 'Broken House, Gorge',
     description: {
       title: 'Broken House',
-      location: 'Columbia Gorge',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 29, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
     album: { landing: 31, location: 22 },
@@ -826,13 +750,13 @@ const imageData = [
     //id: addId(),
     image: bryanShakes1K,
     orientation: 'horizontal',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'Bryan Shakes',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
+      title: 'Bryan Bathes',
+      location: 'Thousand Acres, Portland, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
     album: { landing: 32, people: 15 },
@@ -841,14 +765,14 @@ const imageData = [
     //id: addId(),
     image: danielSmoking,
     orientation: 'horizontal',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'Daniel Smokes',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
-      shot: 'Box',
+      title: 'Last Hurrah',
+      location: 'Portland, OR',
+      date: 'Aug 10, 2023',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: '800 / +1',
     },
     album: { landing: 33, people: 16 },
   },
@@ -858,12 +782,12 @@ const imageData = [
     orientation: 'horizontal',
     text: 'Alex Tasting Cherry Blossoms',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
-      shot: 'Box',
+      title: 'Gwap Recording',
+      location: 'Bodecker Foundation, Portland, OR',
+      date: 'Mar 11, 2023',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Cinestill 800t 35mm',
+      shot: '1600 / +1',
     },
     album: { people: 17 },
   },
@@ -871,14 +795,14 @@ const imageData = [
     //id: addId(),
     image: mattSavior,
     orientation: 'horizontal',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'Matt Savior',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
-      shot: 'Box',
+      title: 'Savior',
+      location: 'Portland, OR',
+      date: 'Mar 15, 2024',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: '1600 / Box',
     },
     album: { people: 18 },
   },
@@ -886,13 +810,13 @@ const imageData = [
     //id: addId(),
     image: morganRiver,
     orientation: 'horizontal',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'Morgan River',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
+      title: 'River Cooldown',
+      location: 'Zigzag, OR',
+      date: 'July 3, 2023',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Kodak Portra 400 35mm',
       shot: 'Box',
     },
     album: { people: 19 },
@@ -901,14 +825,14 @@ const imageData = [
     //id: addId(),
     image: pdxButohFest2024_1,
     orientation: 'horizontal',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'PDX Butoh Festival: Paige 1',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
-      shot: 'Box',
+      title: 'PDX Butoh Festival: Paige 1',
+      location: 'Portland Arts Collective, Portland, OR',
+      date: 'Apr 5, 2024',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Kodak TMax P3200 35mm',
+      shot: '3200 / box',
     },
     album: { landing: 34, performance: 4 },
   },
@@ -916,14 +840,14 @@ const imageData = [
     //id: addId(),
     image: pdxButohFest2024_2,
     orientation: 'vertical',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'PDX Butoh Festival: Paige 2',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
-      shot: 'Box',
+      title: 'PDX Butoh Festival: Paige 2',
+      location: 'Portland Arts Collective, Portland, OR',
+      date: 'Apr 5, 2024',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Kodak TMax P3200 35mm',
+      shot: '3200 / Box',
     },
     album: { performance: 5 },
   },
@@ -931,14 +855,14 @@ const imageData = [
     //id: addId(),
     image: pdxButohFest2024_3,
     orientation: 'horizontal',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'PDX Butoh Festival: Alex',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
-      shot: 'Box',
+      title: 'PDX Butoh Festival: Alex',
+      location: 'Portland Arts Collective, Portland, OR',
+      date: 'Apr 5, 2024',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Kodak TMax P3200 35mm',
+      shot: '3200 / Box',
     },
     album: { landing: 35, performance: 6 },
   },
@@ -946,13 +870,13 @@ const imageData = [
     //id: addId(),
     image: portBlakeyMillBainBridge,
     orientation: 'horizontal',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'Port Blakey Mill',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
+      title: 'Port Blakey Mill',
+      location: 'Port Blakey Mill, Bainbridge, WA',
+      date: 'May 22, 2024',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford FP4 35mm',
       shot: 'Box',
     },
     album: { location: 23 },
@@ -961,14 +885,14 @@ const imageData = [
     //id: addId(),
     image: summerLightKitchen,
     orientation: 'vertical',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'Summer Afternoon, Kitchen',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
-      shot: 'Box',
+      title: 'Summer Afternoon, Kitchen',
+      location: 'Portland, OR',
+      date: 'Mar 15, 2024',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: '1600 / +2',
     },
     album: { stillLife: 0 },
   },
@@ -976,14 +900,14 @@ const imageData = [
     //id: addId(),
     image: taylorBirthday,
     orientation: 'vertical',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: "Taylor's Birthday",
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
-      shot: 'Box',
+      title: "Taylor's Birthday",
+      location: 'Portland, OR',
+      date: 'May 15, 2024',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: '1600 / +2',
     },
     album: { people: 20 },
   },
@@ -991,14 +915,14 @@ const imageData = [
     //id: addId(),
     image: tessaSunsetLowerShades,
     orientation: 'horizontal',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'Her Shades',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
-      shot: 'Box',
+      title: 'Her Shades',
+      location: 'Lincoln City, OR',
+      date: 'Dec 5, 2023',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Kodak Portra 800 35mm',
+      shot: '1600 / +1',
     },
     album: { landing: 36, people: 21 },
   },
@@ -1006,13 +930,13 @@ const imageData = [
     //id: addId(),
     image: vistaHousePuddle,
     orientation: 'horizontal',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'Vista House: Puddle',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
+      title: 'Vista House: Puddle',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
     album: { location: 24 },
@@ -1021,18 +945,92 @@ const imageData = [
     //id: addId(),
     image: vistaHouse,
     orientation: 'horizontal',
-    text: 'Alex Tasting Cherry Blossoms',
+    text: 'Vista House',
     description: {
-      title: 'Alex Tasting Blossoms',
-      location: 'Cathedral Park, Portland, OR',
-      date: 'May 12, 2022',
-      camera: '"Ike" Fujica AX3',
-      film: '35mm Ilford HP5+ 35mm',
+      title: 'Vista House',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
     album: { landing: 37, location: 25 },
   },
 
 ];
+
+
+
+
+//dev note: not used
+
+// {
+//   ////id: addId(),
+//   image: longbeachDistantWalker,
+//   orientation: 'horizontal',
+//   text: 'Walker',
+//   description: {
+//     title: 'Walker',
+//     location: 'Longbeach, WA',
+//     date: 'Oct. 10, 2022',
+//     camera: '"Mina" Minolta SRT100',
+//     film: 'Expired Kodak TriX 35mm',
+//     shot: '200 / -1',
+//   },
+//   album: {
+    
+//   },
+// },
+// {
+//   //id: addId(),
+//   image: longbeachOrcasOverhead,
+//   orientation: 'horizontal',
+//   text: 'Overhead',
+//   description: {
+//     title: 'Overhead',
+//     location: 'Longbeach, WA',
+//     date: 'Oct. 7, 2023',
+//     camera: '"Mina" Minolta SRT100',
+//     film: 'Ilford SFX 200 35mm',
+//     shot: 'Red Filter/ 200 / Box',
+//   },
+//   album: {
+    
+//   },
+// },
+// {
+//   //id: addId(),
+//   image: longbeachTireMarks,
+//   orientation: 'horizontal',
+//   text: 'Tire Marks',
+//   description: {
+//     title: 'Tire Marks',
+//     location: 'Longbeach, WA',
+//     date: 'Oct. 18, 2024',
+//     camera: '"Mina" Minolta SRT100',
+//     film: 'Ilford HP5+ 35mm',
+//     shot: '800 / +1',
+//   },
+//   album: {
+   
+//   },
+// },
+// {
+//   //id: addId(),
+//   image: longbeachWetTireMarks,
+//   orientation: 'horizontal',
+//   text: 'Wet Sand',
+//   description: {
+//     title: 'Wet Sand',
+//     location: 'Longbeach, WA',
+//     date: 'Oct. 10, 2022',
+//     camera: '"Mina" Minolta SRT100',
+//     film: 'Expired Kodak TriX 35mm',
+//     shot: '200 / -1',
+//   },
+//   album: {
+  
+//   },
+// },
 
 export default imageData;
