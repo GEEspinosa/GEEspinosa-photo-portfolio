@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ScrollToTopButtonStyled = styled.div`
   display: flex;
@@ -28,6 +28,6 @@ const ScrollToTopButtonStyled = styled.div`
     background-color: #555555;
     color: white;
   }
-`
+`;
 
-export {ScrollToTopButtonStyled};
+export { ScrollToTopButtonStyled };

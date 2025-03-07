@@ -36,7 +36,7 @@ const ContentContainer = styled.div`
         width: 4.5vh;
       }
     }
-      
+
     .ig-icon {
       width: 35px;
       margin: 10px;

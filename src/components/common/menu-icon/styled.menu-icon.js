@@ -34,8 +34,6 @@ const MenuIconStyled = styled.div`
 
     @media (max-width: 1111px) {
       display: block;
-
-      
     }
 
     @media (max-width: 430px) {

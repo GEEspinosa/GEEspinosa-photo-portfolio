@@ -46,7 +46,7 @@ import longbeachRestArea from './images/longbeach_restarea.png';
 //import longbeachTireMarks from './images/longbeach_tiremarks.jpg';
 //import longbeachWetTireMarks from './images/longbeach_wetsandtiremarks.png';
 import brokenHouseGorge from './images/Broken House_Gorge.png';
-import bryanShakes1K  from './images/Bryan_Shakes_1K.png';
+import bryanShakes1K from './images/Bryan_Shakes_1K.png';
 import danielSmoking from './images/Daniel_Smoking.png';
 import gwapBodecker from './images/Gwap_Bodecker.png';
 import mattSavior from './images/Matt_Savior.png';
@@ -60,7 +60,6 @@ import taylorBirthday from './images/Taylor_Birthday.png';
 import tessaSunsetLowerShades from './images/Tessa_Sunset_LowerShades.png';
 import vistaHousePuddle from './images/VistaHouse_Puddle.jpg';
 import vistaHouse from './images/VistaHouse.png';
-
 
 const imageData = [
   {
@@ -321,7 +320,7 @@ const imageData = [
       film: 'Expired Kroger 400 35mm (UltraMax)',
       shot: '400 / +2',
     },
-    album: { landing: 13, },
+    album: { landing: 13 },
   },
   {
     //id: addId(),
@@ -462,7 +461,7 @@ const imageData = [
       film: 'Expired TriX 35mm',
       shot: '3200 / +3',
     },
-    album: { },
+    album: {},
   },
   {
     //id: addId(),
@@ -477,7 +476,7 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
     },
-    album: {location: 13 },
+    album: { location: 13 },
   },
   {
     //id: addId(),
@@ -629,7 +628,7 @@ const imageData = [
       film: 'Fomapan 100 35mm',
       shot: '200 / +1',
     },
-    album: { landing: 29, location: 17, },
+    album: { landing: 29, location: 17 },
   },
   {
     ////id: addId(),
@@ -733,7 +732,7 @@ const imageData = [
   },
   {
     //id: addId(),
-    image: brokenHouseGorge ,
+    image: brokenHouseGorge,
     orientation: 'horizontal',
     text: 'Broken House, Gorge',
     description: {
@@ -956,11 +955,7 @@ const imageData = [
     },
     album: { landing: 37, location: 25 },
   },
-
 ];
-
-
-
 
 //dev note: not used
 
@@ -978,7 +973,7 @@ const imageData = [
 //     shot: '200 / -1',
 //   },
 //   album: {
-    
+
 //   },
 // },
 // {
@@ -995,7 +990,7 @@ const imageData = [
 //     shot: 'Red Filter/ 200 / Box',
 //   },
 //   album: {
-    
+
 //   },
 // },
 // {
@@ -1012,7 +1007,7 @@ const imageData = [
 //     shot: '800 / +1',
 //   },
 //   album: {
-   
+
 //   },
 // },
 // {
@@ -1029,7 +1024,7 @@ const imageData = [
 //     shot: '200 / -1',
 //   },
 //   album: {
-  
+
 //   },
 // },
 

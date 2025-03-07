@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Gallery, GallerySmall} from './styled.gallery';
+import { Gallery, GallerySmall } from './styled.gallery';
 import ScrollToTopButton from '../scroll-to-top-button/scroll-to-top-button';
 import useWindowSize from '../../../hooks/useWindowSize';
 
 function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   const [smGalleryColNum, setSmGalleryColNum] = useState(0);
   const [smGalleryArray, setSmallGalleryArray] = useState([]);
-
   const landingAlbum = pageAlbum[page][0] || [];
   const { width } = useWindowSize();
 
@@ -82,7 +81,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
           </ul>
         </Gallery>
       )}
-      <ScrollToTopButton/>
+      <ScrollToTopButton />
     </>
   );
 }

@@ -20,7 +20,9 @@ function Header({ open, setOpen, showModal, setPage }) {
                 to={link.params}
                 className="navbar-link"
                 onClick={() => setPage(link.pageString)}
-              >{link.name}</StyledLink>
+              >
+                {link.name}
+              </StyledLink>
             );
           })}
           <StyledLink to="/about" className="navbar-link">

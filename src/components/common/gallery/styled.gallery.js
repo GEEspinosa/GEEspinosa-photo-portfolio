@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Gallery = styled.div`
   box-sizing: border-box;
@@ -37,7 +37,7 @@ const Gallery = styled.div`
 
 const GallerySmall = styled.div`
   box-sizing: border-box;
-  
+
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +53,7 @@ const GallerySmall = styled.div`
 
   .column img {
     margin-top: 14px;
-    vertical-align: middle;    
+    vertical-align: middle;
   }
 `;
 
