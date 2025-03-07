@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Gallery, GallerySmall, TopButton } from './styled.gallery';
+import { Gallery, GallerySmall} from './styled.gallery';
+import ScrollToTopButton from '../scroll-to-top-button/scroll-to-top-button';
 import useWindowSize from '../../../hooks/useWindowSize';
 
 function GalleryPage({ imageClickHandler, pageAlbum, page }) {
@@ -37,17 +38,6 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   useEffect(() => {
     fillingColumns(smGalleryColNum, landingAlbum);
   }, [smGalleryColNum]);
-
-  const scrollToTop = () => {
-    let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed
-    let scrollInterval = setInterval(() => {
-      if (window.scrollY === 0) {
-        clearInterval(scrollInterval);
-      } else {
-        window.scrollBy(0, scrollStep);
-      }
-    }, 30); // Adjust the interval time for smoothness
-  };
 
   return (
     <>
@@ -92,9 +82,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
           </ul>
         </Gallery>
       )}
-      <TopButton onClick={scrollToTop}>
-        <button>Scroll To Top</button>
-      </TopButton>
+      <ScrollToTopButton/>
     </>
   );
 }
