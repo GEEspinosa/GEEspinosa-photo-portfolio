@@ -14,7 +14,7 @@ function ScrollToTopButton() {
   };
 
   return (
-    <ScrollToTopButtonStyled onClick={scrollToTop}>
+    <ScrollToTopButtonStyled data-testid = "scroll-to-top-testID" onClick={scrollToTop}>
       <button>Scroll To Top</button>
     </ScrollToTopButtonStyled>
   );
