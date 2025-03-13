@@ -13,6 +13,7 @@ import About from './components/pages/about/about';
 import ModalComponent from './components/common/modal/modal';
 import imageData from './assets/image-data';
 import useWindowSize from './hooks/useWindowSize';
+import { scrollToTop } from './utils/utils';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -43,6 +44,11 @@ function App() {
     setFadeIn(!fadeIn);
   }
 
+  function navClickHander (link) {
+    setPage(link)
+    scrollToTop()
+  }
+
   function keyDownHandler(e) {
     if (e.key === 'Escape') {
       setShowModal(false);
@@ -63,6 +69,7 @@ function App() {
         setModalSelect(0);
       }
     }
+    fadeHandler()
   }
 
   const arrowButtonHandler = direction => {
@@ -125,6 +132,7 @@ function App() {
         setOpen={setOpen}
         showModal={showModal}
         setPage={setPage}
+        navClickHander = {navClickHander}
       />
       <Routes>
         {isLoaded && (

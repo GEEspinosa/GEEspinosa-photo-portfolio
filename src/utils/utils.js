@@ -1,8 +1,12 @@
 let id = 0;
 
+//dev note: id incrementor 
+
 const addId = () => {
   return id++;
 };
+
+//dev note: smooth scrolling function for button botton
 
 const scrollToTop = () => {
   let scrollStep = -window.scrollY / 20; // Adjust the divisor for speed

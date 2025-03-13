@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyledOpenMenu, StyledOpenMenuLink } from './styled.open-menu';
 import { linkArray } from '../../../constants/linkArray';
+import { scrollToTop } from '../../../utils/utils';
 
 function OpenMenu({ open, setOpen, setPage }) {
   function clickHandler(page) {
     setOpen(!open);
     setPage(page);
+    scrollToTop()
   }
 
   return (

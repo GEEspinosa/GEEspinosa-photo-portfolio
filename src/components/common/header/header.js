@@ -4,7 +4,7 @@ import { MenuIcon } from '../menu-icon/menu-icon';
 import { OpenMenu } from '../open-menu/open-menu';
 import { linkArray } from '../../../constants/linkArray';
 
-function Header({ open, setOpen, showModal, setPage }) {
+function Header({ open, setOpen, showModal, setPage, navClickHander }) {
   return (
     <Head>
       <Navbar>
@@ -19,7 +19,7 @@ function Header({ open, setOpen, showModal, setPage }) {
                 key={link.pageString}
                 to={link.params}
                 className="navbar-link"
-                onClick={() => setPage(link.pageString)}
+                onClick={() => navClickHander(link.pageString)}
               >
                 {link.name}
               </StyledLink>
