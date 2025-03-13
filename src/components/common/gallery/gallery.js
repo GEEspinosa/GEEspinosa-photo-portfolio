@@ -42,7 +42,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
     <>
       {width <= 1376 ? (
         <GallerySmall smGalleryColNum={smGalleryColNum}>
-          <div className="row">
+          <div className="row" data-testid = 'small-gallery-div'>
             {smGalleryArray.map((arr, key) => {
               return (
                 <div className="column">
@@ -65,7 +65,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
         </GallerySmall>
       ) : (
         <Gallery>
-          <ul>
+          <ul data-testid = 'gallery'>
             {landingAlbum.map(img => {
               return (
                 <li key={img.id}>

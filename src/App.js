@@ -122,7 +122,6 @@ function App() {
           arrowButtonHandler={arrowButtonHandler}
           fadeIn={fadeIn}
           setFadeIn={setFadeIn}
-          //fadeHandler={fadeHandler}
           pageAlbum={pageAlbum}
           page={page}
         />

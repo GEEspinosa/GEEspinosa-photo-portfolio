@@ -3,7 +3,7 @@ import {LeftArrowButton} from "../arrow-buttons/left-arrow-button/left-arrow-but
 import {RightArrowButton} from "../arrow-buttons/right-arrow-button/right-arrow-button";
 import {ModalIcon, Modal} from "./styled.modal";
 
-function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandler, fadeIn, fadeHandler, pageAlbum, page}) {
+function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandler, fadeIn, pageAlbum, page}) {
   let album = pageAlbum[page][0]
   
   return (
