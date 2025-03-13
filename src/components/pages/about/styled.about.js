@@ -53,8 +53,9 @@ const ContentContainer = styled.div`
 `;
 
 const BioText = styled.div`
-  padding: 20px 150px 20px 20px;
+  padding: 20px 80px 20px 20px;
   color: grey;
+  border: solid black;
 
   @media (max-width: 1385px) {
     padding: 10px 20px 20px 20px;
