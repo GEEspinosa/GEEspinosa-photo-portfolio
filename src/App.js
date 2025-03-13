@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './components/common/header/header';
 
 //dev note: page component imports
@@ -29,6 +29,9 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+
+
+  const navigate = useNavigate();
 
   //dev note: destructuring from custom hook
   const { width } = useWindowSize();
@@ -103,6 +106,10 @@ function App() {
     document.addEventListener('keydown', keyDownHandler);
     return () => document.removeEventListener('keydown', keyDownHandler);
   });
+
+  useEffect(()=> {
+      navigate('/')  
+  }, [])
 
   useEffect(() => {
     const filteredImages = imageData.filter(img => page in img.album);
