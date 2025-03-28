@@ -5,14 +5,14 @@ const ModalIcon = styled.div`
   top: 44px;
   right: 4%;
 
+  :hover {
+    cursor: pointer;
+  }
+
   .modalIconContainer {
     display: flex;
     flex-direction: column;
     z-index: 1000;
-
-    :hover {
-      cursor: pointer;
-    }
 
     :first-child {
       transform: rotate(45deg);
