@@ -49,17 +49,13 @@ const Modal = styled.div`
   background-color: white;
   position: fixed;
   z-index: 1000;
-
-  
-   
+ 
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%; 
-
-    
+    height: 100%;     
   }
  
   .middleColumn {
@@ -68,6 +64,7 @@ const Modal = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    border: solid black;
   
     @media (max-width: 1400px) {
       width: 100%;
@@ -75,28 +72,25 @@ const Modal = styled.div`
       flex-direction: column;    
     }
 
+    @media only screen and (max-height: 575px) and (orientation: landscape) 
+    {
+      flex-direction: row;  
+    }
+
     
 
     img {
-           
-
-   
-
       @media (max-width: 1400px) {
         align-self: center;
-      }
-
-       
-     
+      }     
     }
     
-   
-
     .horizontal {
       max-height: 70%;
       padding: 20px 20px;
       object-fit: contain; 
       align-items: center;
+      border: solid black;
                   
      @media (max-width: 1950px){
       width: 67%;
@@ -127,14 +121,25 @@ const Modal = styled.div`
         width: 170%;
         padding: 10px;
       }
+
+    @media only screen 
+      and (max-height: 575px)
+      and (orientation: landscape) 
+    {
+      text-align: left;
+      align-items: unset;
+    }
+     
     }
 
     .vertical {
+      
       max-height: 70%;
       min-width: 25%; 
       padding: 20px 20px;
       object-fit: contain; 
       align-self: center;
+      border: solid black;
       
       @media(max-width: 1400px) {
         text-align: center;
@@ -143,18 +148,24 @@ const Modal = styled.div`
       @media (max-width: 790px) {
         position: relative; 
         padding: 10px;  
-         
       }
 
       @media (max-width: 600px) {
         max-height: 55%;
-        padding: 10px;
+        padding: 10px;      
       }
 
       @media (max-width: 430px) {
         max-height: 45%;
-        padding: 10px;
-      }     
+        padding: 10px; 
+      } 
+
+      @media only screen 
+        and (max-height: 575px)
+        and (orientation: landscape) 
+      {
+        text-align: left;
+      }
     }
 
     .triggerFade1 {
@@ -194,6 +205,7 @@ const Modal = styled.div`
       margin: 40px 10px 10px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.5;
+      border: solid black;
          
       @media (max-width: 1400px) {
         font-size: 18px;
@@ -207,6 +219,12 @@ const Modal = styled.div`
           font-size: 18px;
           line-height: 1.2;
           padding: 0px;         
+      }   
+          
+      @media only screen and (orientation: landscape) {
+        padding: 0px;
+        max-width: 25vw;
+        min-width: 20vw;
       }
     }
 
@@ -219,6 +237,7 @@ const Modal = styled.div`
       margin: 10px 0px 40px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.2;
+      border: solid black;
        
         @media (max-width: 1400px){
           font-size: 14px;
