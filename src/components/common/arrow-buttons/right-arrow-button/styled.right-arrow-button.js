@@ -32,9 +32,14 @@ const RightArrowButtonIcon = styled.div`
     // //dev note: 190px vs 310px?
   }
 
-  // @media (max-width: 1149px) {
-  //   margin-bottom: 190px;
-  // }
+  @media only screen 
+        and (max-height: 575px)
+        and (orientation: landscape) 
+      {
+        margin-bottom: 20px;
+        //border: solid black;
+      }
+    }
 
   .RightArrowIcon {
     //dev note: width below was 30

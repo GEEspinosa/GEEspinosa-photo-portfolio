@@ -32,6 +32,15 @@ const LeftArrowButtonIcon = styled.div`
     //dev note: 190px vs 310px?
   }
 
+  @media only screen 
+        and (max-height: 575px)
+        and (orientation: landscape) 
+      {
+        margin-bottom: 20px;
+        //border: solid black;
+      }
+    }
+
   .leftArrowIcon {
     //dev note: width below was 30
     width: 24px;

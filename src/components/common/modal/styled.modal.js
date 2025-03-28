@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ModalIcon = styled.div`
   position: fixed;
   top: 44px;
-  right: 4%;
+  right: 43px;
 
   :hover {
     cursor: pointer;
@@ -64,7 +64,7 @@ const Modal = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    border: solid black;
+    //border: solid black;
   
     @media (max-width: 1400px) {
       width: 100%;
@@ -77,8 +77,6 @@ const Modal = styled.div`
       flex-direction: row;  
     }
 
-    
-
     img {
       @media (max-width: 1400px) {
         align-self: center;
@@ -90,7 +88,7 @@ const Modal = styled.div`
       padding: 20px 20px;
       object-fit: contain; 
       align-items: center;
-      border: solid black;
+      //border: solid black;
                   
      @media (max-width: 1950px){
       width: 67%;
@@ -113,22 +111,33 @@ const Modal = styled.div`
       }
 
       @media (max-width: 660px) {
-        width: 140%;
+        width: 120%;
         padding: 10px;
       }
 
-      @media (max-width: 450px) {
-        width: 170%;
-        padding: 10px;
+      // @media (max-width: 450px) {
+      //   width: 140%;
+      //   padding: 10px;
+      // }
+
+      @media only screen 
+        and (max-height: 575px)
+        and (orientation: landscape) 
+      {
+        //width: 60%;
+        text-align: left;
+        align-items: unset;
       }
 
-    @media only screen 
-      and (max-height: 575px)
-      and (orientation: landscape) 
-    {
-      text-align: left;
-      align-items: unset;
-    }
+      @media only screen 
+        and (max-height: 575px)
+        and (max-width: 950px)
+        and (orientation: landscape) 
+      {
+        width: 60%;
+        text-align: left;
+        align-items: unset;
+      }
      
     }
 
@@ -139,7 +148,7 @@ const Modal = styled.div`
       padding: 20px 20px;
       object-fit: contain; 
       align-self: center;
-      border: solid black;
+      //border: solid black;
       
       @media(max-width: 1400px) {
         text-align: center;
@@ -165,6 +174,7 @@ const Modal = styled.div`
         and (orientation: landscape) 
       {
         text-align: left;
+        
       }
     }
 
@@ -205,7 +215,7 @@ const Modal = styled.div`
       margin: 40px 10px 10px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.5;
-      border: solid black;
+      //border: solid black;
          
       @media (max-width: 1400px) {
         font-size: 18px;
@@ -221,7 +231,8 @@ const Modal = styled.div`
           padding: 0px;         
       }   
           
-      @media only screen and (orientation: landscape) {
+      @media only screen and (max-height: 575px)
+        and (orientation: landscape)  {
         padding: 0px;
         max-width: 25vw;
         min-width: 20vw;
@@ -237,7 +248,7 @@ const Modal = styled.div`
       margin: 10px 0px 40px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.2;
-      border: solid black;
+      //border: solid black;
        
         @media (max-width: 1400px){
           font-size: 14px;
@@ -251,6 +262,13 @@ const Modal = styled.div`
           margin: 15px 0px 0px 0px;
           line-height: 1.2;         
         }
+
+        @media only screen and (max-height: 575px)
+        and (orientation: landscape)  {
+        padding: 0px;
+        // max-width: 25vw;
+        // min-width: 20vw;
+      }
     }
   }
   
