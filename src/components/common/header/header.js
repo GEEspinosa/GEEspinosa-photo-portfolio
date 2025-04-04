@@ -7,8 +7,7 @@ import { linkArray } from '../../../constants/linkArray';
 function Header({ open, setOpen, showModal, setPage, navClickHander }) {
   
   return (
-    <Head>
-      
+    <Head> 
       <Navbar>
         <Title>
           G A B R I E L &nbsp; E S P I N O S A
@@ -30,11 +29,6 @@ function Header({ open, setOpen, showModal, setPage, navClickHander }) {
           <StyledLink to="/about" className="navbar-link">
             About
           </StyledLink>
-
-          {/* {!showModal && (
-            <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
-          )}
-          <OpenMenu open={open} setOpen={setOpen} setPage={setPage} /> */}
         </div>
       </Navbar>
     </Head>
