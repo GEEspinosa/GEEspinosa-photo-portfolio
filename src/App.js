@@ -121,6 +121,13 @@ function App() {
     setIsLoaded(true);
   }, [page]);
 
+  useEffect(() => {
+      if (open){document.body.style.overflow = "hidden";
+      return () => {
+          document.body.style.overflow = "scroll"
+      };}
+  }, [open]);
+
   return (
     <>
     <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -198,13 +205,13 @@ function App() {
         />
         <Route path="/about" element={<About />} />
       </Routes>
-
+      {!showModal && (
+        <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
+      )}
+      <OpenMenu open={open} setOpen={setOpen} setPage={setPage} />
       
     </div>
-{!showModal && (
-            <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
-          )}
-          <OpenMenu open={open} setOpen={setOpen} setPage={setPage} />
+
     
     </>
   );

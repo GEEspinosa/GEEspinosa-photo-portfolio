@@ -10,6 +10,8 @@ function OpenMenu({ open, setOpen, setPage }) {
     scrollToTop()
   }
 
+  
+
   return (
     <>
       <StyledOpenMenu open={open}>
