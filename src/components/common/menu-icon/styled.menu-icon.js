@@ -10,7 +10,7 @@ const MenuIconStyled = styled.div`
   z-index: 1001;
 
   :first-child {
-    transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
+    transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0deg)')};
   }
 
   :nth-child(2) {
@@ -19,7 +19,7 @@ const MenuIconStyled = styled.div`
   }
 
   :nth-child(3) {
-    transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
+    transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0deg)')};
   }
 
   div {
