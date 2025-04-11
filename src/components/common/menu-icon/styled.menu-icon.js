@@ -10,7 +10,7 @@ const MenuIconStyled = styled.div`
   z-index: 1001;
 
   :first-child {
-    transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
+    transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0deg)')};
   }
 
   :nth-child(2) {
