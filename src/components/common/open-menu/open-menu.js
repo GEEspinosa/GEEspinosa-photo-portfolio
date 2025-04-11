@@ -12,7 +12,7 @@ function OpenMenu({ open, setOpen, setPage }) {
 
   return (
     <>
-      <StyledOpenMenu open={open}>
+      <StyledOpenMenu open={open} role = 'navigation'>
         <div>
           {linkArray.map(link => {
             return (
