@@ -9,6 +9,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   const landingAlbum = pageAlbum[page][0] || [];
   const { width } = useWindowSize();
 
+
   function fillingColumns(smGalleryColNum, landingAlbum) {
     let mainArray = new Array(smGalleryColNum).fill(null).map(() => []);
     let count = 0;
