@@ -6,21 +6,21 @@ import useWindowSize from '../../../hooks/useWindowSize';
 function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   const [smGalleryColNum, setSmGalleryColNum] = useState(0);
   const [smGalleryArray, setSmallGalleryArray] = useState([]);
-  const landingAlbum = pageAlbum[page][0] || [];
+  const galleryAlbum = pageAlbum[page][0] || [];
   const { width } = useWindowSize();
 
 
-  function fillingColumns(smGalleryColNum, landingAlbum) {
+  function fillingColumns(smGalleryColNum, galleryAlbum) {
     let mainArray = new Array(smGalleryColNum).fill(null).map(() => []);
     let count = 0;
 
-    for (let i = 0; i < landingAlbum.length; i++) {
+    for (let i = 0; i < galleryAlbum.length; i++) {
       if (count < smGalleryColNum - 1) {
-        mainArray[count].push(landingAlbum[i]);
+        mainArray[count].push(galleryAlbum[i]);
         count++;
         continue;
       } else if (count === smGalleryColNum - 1) {
-        mainArray[count].push(landingAlbum[i]);
+        mainArray[count].push(galleryAlbum[i]);
         count = 0;
       }
     }
@@ -36,7 +36,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   }, [width]);
 
   useEffect(() => {
-    fillingColumns(smGalleryColNum, landingAlbum);
+    fillingColumns(smGalleryColNum, galleryAlbum);
   }, [smGalleryColNum]);
 
   return (
@@ -67,7 +67,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
       ) : (
         <Gallery>
           <ul data-testid = 'gallery'>
-            {landingAlbum.map(img => {
+            {galleryAlbum.map(img => {
               return (
                 <li key={img.id}>
                   <img

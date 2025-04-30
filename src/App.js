@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './components/common/header/header';
-import { MenuIcon } from './components/common/menu-icon/menu-icon';
-import { OpenMenu } from './components/common/open-menu/open-menu';
+// import { MenuIcon } from './components/common/menu-icon/menu-icon';
+// import { OpenMenu } from './components/common/open-menu/open-menu';
 
 //dev note: page component imports
 import Landing from './components/pages/landing/landing';
@@ -205,10 +205,10 @@ function App() {
         />
         <Route path="/about" element={<About />} />
       </Routes>
-      {!showModal && (
+      {/* {!showModal && (
         <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
       )}
-      <OpenMenu open={open} setOpen={setOpen} setPage={setPage} />
+      <OpenMenu open={open} setOpen={setOpen} setPage={setPage} /> */}
       
     </div>
 

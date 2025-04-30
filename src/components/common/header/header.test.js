@@ -1,84 +1,63 @@
 import React from 'react';
 import { render, screen, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/extend-expect';
 import Header from './header';
-import { BrowserRouter} from 'react-router-dom';
 
-afterEach(() => {
-    cleanup();
+jest.mock('react-router-dom', () => ({
+  Link: ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>,
+  useNavigate: () => jest.fn(),
+}));
+
+
+// Helper function to render Header with required props
+const renderHeader = (props = {}) => {
+  render(
+    <Header
+      open={false}
+      setOpen={() => {}}
+      showModal={false}
+      setPage={() => {}}
+      navClickHander={() => {}}
+      {...props}
+    />
+  );
+};
+
+afterEach(cleanup);
+
+describe('Header Links', () => {
+  test('[1] - Render Home Link Correctly', () => {
+    renderHeader()
+    const homeLink = screen.getByRole('link', { name: /home/i });
+    expect(homeLink).toBeInTheDocument();
+    expect(homeLink).toHaveAttribute('href', '/');
+  });
+
+  test('[2] - Render Location Link Correctly', () => {
+    renderHeader()
+    const locationLink = screen.getByRole('link', { name: /location/i });
+    expect(locationLink).toBeInTheDocument();
+    expect(locationLink).toHaveAttribute('href', '/location');
+  });
+
+  test('[3] - Render People Link Correctly', () => {
+    renderHeader()
+    const peopleLink = screen.getByRole('link', { name: /people/i });
+    expect(peopleLink).toBeInTheDocument();
+    expect(peopleLink).toHaveAttribute('href', '/people');
+  });
+
+  test('[4] - Render Performance Link Correctly', () => {
+    renderHeader()
+    const perfLink = screen.getByRole('link', { name: /performance/i });
+    expect(perfLink).toBeInTheDocument();
+    expect(perfLink).toHaveAttribute('href', '/performance');
+  });
+
+  test('[5] - Render About Link Correctly', () => {
+    renderHeader()
+    const aboutLink = screen.getByRole('link', { name: /about/i });
+    expect(aboutLink).toBeInTheDocument();
+    expect(aboutLink).toHaveAttribute('href', '/about');
+  });
 });
-
-describe ('Header Links', () => {
-    test ('[1] - Render About Home Correctly', () => {
-
-        render (
-            <BrowserRouter>
-                <Header />
-            </BrowserRouter>
-        )
-
-        const aboutLink = screen.getAllByRole('link', {name: /home/i})
-        expect(aboutLink).toHaveLength(1)
-        expect(aboutLink[0]).toBeInTheDocument();
-        expect(aboutLink[0]).toHaveAttribute('href', '/')
-    }) 
-
-    test ('[2] - Render Location Link Correctly', () => {
-
-        render (
-            <BrowserRouter>
-                <Header />
-            </BrowserRouter>
-        )
-
-        const aboutLink = screen.getAllByRole('link', {name: /location/i})
-        expect(aboutLink).toHaveLength(1)
-        expect(aboutLink[0]).toBeInTheDocument();
-        expect(aboutLink[0]).toHaveAttribute('href', '/location')
-    }) 
-
-    test ('[3] - Render Location People Correctly', () => {
-
-        render (
-            <BrowserRouter>
-                <Header />
-            </BrowserRouter>
-        )
-
-        const aboutLink = screen.getAllByRole('link', {name: /people/i})
-        expect(aboutLink).toHaveLength(1)
-        expect(aboutLink[0]).toBeInTheDocument();
-        expect(aboutLink[0]).toHaveAttribute('href', '/people')
-    }) 
-
-    test ('[4] - Render Location Performance Correctly', () => {
-
-        render (
-            <BrowserRouter>
-                <Header />
-            </BrowserRouter>
-        )
-
-        const aboutLink = screen.getAllByRole('link', {name: /performance/i})
-        expect(aboutLink).toHaveLength(1)
-        expect(aboutLink[0]).toBeInTheDocument();
-        expect(aboutLink[0]).toHaveAttribute('href', '/performance')
-    }) 
-
-
-    test ('[5] - Render Location About Correctly', () => {
-
-        render (
-            <BrowserRouter>
-                <Header />
-            </BrowserRouter>
-        )
-
-        const aboutLink = screen.getAllByRole('link', {name: /about/i})
-        expect(aboutLink).toHaveLength(1)
-        expect(aboutLink[0]).toBeInTheDocument();
-        expect(aboutLink[0]).toHaveAttribute('href', '/about')
-    }) 
-
-
-})

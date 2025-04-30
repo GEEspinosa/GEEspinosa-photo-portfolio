@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const MenuIconStyled = styled.div`
   display: flex;
   flex-direction: column;
-
   position: absolute;
   right: 40px;
   top: 40px;
@@ -28,7 +27,6 @@ const MenuIconStyled = styled.div`
     height: 5px;
     background-color: ${({ open }) => (open ? 'white' : 'black')};
     margin: 3px 0;
-    //position: relative;
     transform-origin: 2px;
     transition: all 0.5s ease-out;
 
