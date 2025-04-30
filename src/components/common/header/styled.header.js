@@ -48,7 +48,7 @@ const Navbar = styled.nav`
 const Title = styled.div`
   font-family: 'Poppins', sans-serif;
   opacity: 0.7;
-  font-weight: 530;
+  font-weight: 60;
   font-size: 1rem;
   display: flex;
   flex: 1;
