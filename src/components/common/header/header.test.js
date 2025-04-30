@@ -4,8 +4,8 @@ import '@testing-library/jest-dom/extend-expect';
 import Header from './header';
 
 jest.mock('react-router-dom', () => ({
-  Link: ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>,
-  useNavigate: () => jest.fn(),
+  Link: ({ to, children }) => <a href={to}>{children}</a>, // Simply mock it as an <a> tag
+  
 }));
 
 

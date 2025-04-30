@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const MenuIconStyled = styled.div`
   display: flex;
+  opacity: ${({ open }) => (open ? '1' : '0.7')};
   flex-direction: column;
   position: absolute;
   right: 40px;
@@ -26,11 +27,12 @@ const MenuIconStyled = styled.div`
     width: 35px;
     height: 5px;
     background-color: ${({ open }) => (open ? 'white' : 'black')};
+    
     margin: 3px 0;
     transform-origin: 2px;
     transition: all 0.5s ease-out;
 
-    @media (max-width: 1111px) {
+    @media (max-width: 1185px) {
       display: block;
     }
 

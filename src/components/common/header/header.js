@@ -1,7 +1,7 @@
 import React from 'react';
 import { Head, Navbar, Title, StyledLink } from './styled.header';
- import { MenuIcon } from '../menu-icon/menu-icon';
- import { OpenMenu } from '../open-menu/open-menu';
+import { MenuIcon } from '../menu-icon/menu-icon';
+import { OpenMenu } from '../open-menu/open-menu';
 import { linkArray } from '../../../constants/linkArray';
 
 function Header({ open, setOpen, showModal, setPage, navClickHander }) {

@@ -99,7 +99,7 @@ function App() {
 
   //dev note: was 710, but changed
   useEffect(() => {
-    if (width > 1111) {
+    if (width > 1185) {
       setOpen(false);
     }
   }, [width]);

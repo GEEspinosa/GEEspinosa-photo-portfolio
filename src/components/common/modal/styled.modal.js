@@ -208,6 +208,7 @@ const Modal = styled.div`
             }   
 
     h2 {
+    font-family: 'Lato', sans-serif;
       font-size: 22px;
       max-width: 12vw;
       min-width: 12vw;
@@ -240,6 +241,7 @@ const Modal = styled.div`
     }
 
     p {
+    font-family: 'Lato', sans-serif;
       max-width: 12vw;
       min-width: 12vw;
       font-size: .9em;
