@@ -5,8 +5,7 @@ import styled from 'styled-components';
 const Head = styled.header`
   text-align: center;
   font-family: 'Lato', sans-serif;
-  
-  
+  font-weight: 300;
   padding: 40px;
   height: 120px;
   position: sticky;
@@ -21,13 +20,15 @@ const Navbar = styled.nav`
   align-items: center;
   width: 100%;
   font-size: 20px;
+  
 
   .link-container {
     opacity: 0.7;
     .navbar-link {
-      position: relative;
-      top: 12px;
-
+      //dev note: not sure if I like the nav links lower
+      //position: relative;
+      //top: 12px;
+  
       @media (max-width: 900px) {
         font-size: 18px;
       }

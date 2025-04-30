@@ -60,6 +60,14 @@ import taylorBirthday from './images/Taylor_Birthday.png';
 import tessaSunsetLowerShades from './images/Tessa_Sunset_LowerShades.png';
 import vistaHousePuddle from './images/VistaHouse_Puddle.jpg';
 import vistaHouse from './images/VistaHouse.png';
+import hallowedGramma_1 from './images/clarehallowedgramma_PIBF2025.png'
+import hallowedGramma_2 from './images/clareHallowGramma_2_PIBF2025.png'
+import hankLogan_1 from './images/hankLogan_PIBF2025.png';
+import hankLogan_2 from './images/hankLogan_2_PIBF2025.png';
+import bkNotNauts from './images/bk_notnauts_live.jpg';
+import helenThorsen_1 from './images/helenThorsen_1_PIBF2025.png';
+import helenThorsen_2 from './images/helenThorsen_2_PIBF2025.png';
+import paulaHelen_1 from './images/paulaHelen_1_PIBF2025.png';
 
 const imageData = [
   {
@@ -954,6 +962,126 @@ const imageData = [
       shot: 'Box',
     },
     album: { landing: 37, location: 25 },
+  },
+  {
+    //id: addId(),
+    image: hallowedGramma_1,
+    orientation: 'horizontal',
+    text: 'Vista House',
+    description: {
+      title: 'Vista House',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { landing: 38, performance: 7 },
+  },
+  {
+    //id: addId(),
+    image: hankLogan_1,
+    orientation: 'horizontal',
+    text: 'Vista House',
+    description: {
+      title: 'Vista House',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { landing: 40, performance: 8 },
+  },
+  {
+    //id: addId(),
+    image: bkNotNauts,
+    orientation: 'horizontal',
+    text: 'Vista House',
+    description: {
+      title: 'Vista House',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { performance: 9 },
+  },
+  {
+    //id: addId(),
+    image: hallowedGramma_2,
+    orientation: 'horizontal',
+    text: 'Vista House',
+    description: {
+      title: 'Vista House',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { performance: 10 },
+  },
+  {
+    //id: addId(),
+    image: helenThorsen_1,
+    orientation: 'horizontal',
+    text: 'Vista House',
+    description: {
+      title: 'Vista House',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { performance: 11 },
+  },
+  {
+    //id: addId(),
+    image: paulaHelen_1,
+    orientation: 'horizontal',
+    text: 'Vista House',
+    description: {
+      title: 'Vista House',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { performance: 12 },
+  },
+  {
+    //id: addId(),
+    image: helenThorsen_2,
+    orientation: 'horizontal',
+    text: 'Vista House',
+    description: {
+      title: 'Vista House',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { performance: 4 },
+  },
+  {
+    //id: addId(),
+    image: hankLogan_2,
+    orientation: 'horizontal',
+    text: 'Vista House',
+    description: {
+      title: 'Vista House',
+      location: 'Columbia Gorge, OR',
+      date: 'Jan 27, 2025',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Ilford HP5+ 35mm',
+      shot: 'Box',
+    },
+    album: { performance: 2 },
   },
 ];
 
