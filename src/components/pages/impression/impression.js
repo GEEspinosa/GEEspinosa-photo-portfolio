@@ -1,7 +1,7 @@
 import React from "react";
 import GalleryPage from "../../common/gallery/gallery";
 
-function StillLife ({imageClickHandler, pageAlbum, page}) {
+function Impression ({imageClickHandler, pageAlbum, page}) {
 
   return (
     <GalleryPage
@@ -12,4 +12,4 @@ function StillLife ({imageClickHandler, pageAlbum, page}) {
   )
 }
 
-export default StillLife
+export default Impression;

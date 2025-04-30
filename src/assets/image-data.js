@@ -178,7 +178,7 @@ const imageData = [
       film: 'Ilford SFX 200 35mm',
       shot: 'Red Filter / Box',
     },
-    album: { landing: 4, location: 5 },
+    album: { landing: 4, impression: 5 },
   },
   {
     //id: addId(),
@@ -193,7 +193,7 @@ const imageData = [
       film: 'Fuji Superia Xtra 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 5, location: 6 },
+    album: { landing: 5, impression: 6 },
   },
   {
     //id: addId(),
@@ -328,7 +328,7 @@ const imageData = [
       film: 'Expired Kroger 400 35mm (UltraMax)',
       shot: '400 / +2',
     },
-    album: { landing: 13 },
+    album: { landing: 13, impression: 1 },
   },
   {
     //id: addId(),
@@ -343,7 +343,7 @@ const imageData = [
       film: 'Expired Kroger 400 35mm (UltraMax)',
       shot: '400 / +2',
     },
-    album: { landing: 14, location: 10 },
+    album: { landing: 14, impression: 10 },
   },
   {
     //id: addId(),
@@ -358,7 +358,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '1600 / +2',
     },
-    album: { landing: 15, location: 11 },
+    album: { landing: 15, impression: 11 },
   },
   {
     //id: addId(),
@@ -423,7 +423,7 @@ const imageData = [
     },
     album: {
       landing: 19,
-      people: 7,
+      performance: 5,
     },
   },
   {
@@ -901,7 +901,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '1600 / +2',
     },
-    album: { stillLife: 0 },
+    album: { impression: 0 },
   },
   {
     //id: addId(),
@@ -931,7 +931,7 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
     },
-    album: { landing: 36, people: 21 },
+    album: { landing: 36, people: 21, },
   },
   {
     //id: addId(),

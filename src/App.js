@@ -8,7 +8,7 @@ import Header from './components/common/header/header';
 import Landing from './components/pages/landing/landing';
 import Location from './components/pages/location/location';
 import People from './components/pages/people/people';
-import StillLife from './components/pages/still-life/still-life';
+import Impression from './components/pages/impression/impression';
 import Performance from './components/pages/performance/performance';
 import About from './components/pages/about/about';
 
@@ -23,7 +23,7 @@ function App() {
     landing: [],
     location: [],
     people: [],
-    stillLife: [],
+    impression: [],
     performance: [],
   });
   const [page, setPage] = useState('landing');
@@ -184,9 +184,9 @@ function App() {
           }
         />
         <Route
-          path="/still-life"
+          path="/impression"
           element={
-            <StillLife
+            <Impression
               imageClickHandler={imageClickHandler}
               pageAlbum={pageAlbum}
               page={page}
