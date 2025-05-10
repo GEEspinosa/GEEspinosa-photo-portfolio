@@ -4,10 +4,8 @@ import '@testing-library/jest-dom/extend-expect';
 import Header from './header';
 
 jest.mock('react-router-dom', () => ({
-  Link: ({ to, children }) => <a href={to}>{children}</a>, // Simply mock it as an <a> tag
-  
+  Link: ({ to, children }) => <a href={to}>{children}</a>, // Simply mock it as an <a> tag 
 }));
-
 
 // Helper function to render Header with required props
 const renderHeader = (props = {}) => {

@@ -4,8 +4,6 @@ import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import { MenuIcon } from './menu-icon';
 
-
-
 afterEach(() => {
     cleanup();
 });
@@ -44,8 +42,6 @@ describe ('menu-icon', () => {
     })
 
     test ('[4] - Hamburger Menu styling changes to X, test top div rotation', () => {
-        // const setOpenMock = jest.fn();
-        // render(<MenuIcon open={false} setOpen={setOpenMock}/>)
         render(<MenuIconTestWrapper/>)
         const divs = screen.getAllByTestId('menu-icon-test')
         const topDiv= divs[0]

@@ -32,7 +32,6 @@ function About() {
             <br />spending countless hours in the school’s darkroom, <br />
             assisting classmates in their intro to black and white courses.
             <br />
-
               <br />
               Years later, just before the COVID-19 lockdowns, I decided to bring Mina <br /> out of retirement to document running my own recording studio. <br />
               Since then, I’ve fallen back in love with the process, exploring <br />film photography purely for its own sake. <br />
@@ -41,7 +40,6 @@ function About() {
               <br />
               I do imagine my hobby fitting into a quiet retirement, <br /> 
               writing ghost stories for no one on the Oregon Coast, <br />teaching myself math, and capturing the timeless <br />beauty of the same stretches of coastline through my lens. <br />
-             
             </p>
           </BioText>
         </ContentContainer>

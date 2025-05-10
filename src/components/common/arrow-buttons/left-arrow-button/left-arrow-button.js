@@ -19,7 +19,6 @@ function LeftArrowButton({
         onClick={() => arrowButtonHandler('Left')}
         portfolioGalleryMidLayout={portfolioGalleryMidLayout}
         orientationSelected={orientationSelected}
-
       >
         <div className="leftArrowIcon" />
         <div className="leftArrowIcon" />

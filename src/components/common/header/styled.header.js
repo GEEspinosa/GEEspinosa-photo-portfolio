@@ -21,7 +21,6 @@ const Navbar = styled.nav`
   width: 100%;
   font-size: 20px;
   
-
   .link-container {
     opacity: 0.7;
     .navbar-link {
@@ -64,7 +63,6 @@ const Title = styled.div`
     font-size: 16px;
   }
   
-
   @media (max-width: 370px) {
     visibility: hidden;
   }

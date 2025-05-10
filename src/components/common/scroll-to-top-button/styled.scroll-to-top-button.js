@@ -12,7 +12,6 @@ const ScrollToTopButtonStyled = styled.div`
     font-size: 16px;
     padding: 16px 32px;
     margin: 4px 2px;
-
     transition-duration: 0.4s;
     cursor: pointer;
 

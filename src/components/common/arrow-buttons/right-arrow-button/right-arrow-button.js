@@ -2,7 +2,6 @@ import React from "react";
 import { RightArrowButtonIcon } from "./styled.right-arrow-button";
 import useWindowSize from "../../../../hooks/useWindowSize";
 
-
 function RightArrowButton ({showModal, rightButton, arrowButtonHandler, portfolioGalleryMidLayout, orientationSelected}) {
     const {width} = useWindowSize()
     return (

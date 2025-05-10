@@ -1,10 +1,8 @@
 import React from "react";
 import GalleryPage from "../../common/gallery/gallery";
 
-
 function Location ({ imageClickHandler, pageAlbum, page }) {
-
- return (
+  return (
     <GalleryPage
       imageClickHandler={imageClickHandler}
       pageAlbum={pageAlbum}
