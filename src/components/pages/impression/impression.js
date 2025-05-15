@@ -1,4 +1,3 @@
-import React from "react";
 import GalleryPage from "../../common/gallery/gallery";
 
 function Impression ({imageClickHandler, pageAlbum, page}) {

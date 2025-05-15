@@ -1,4 +1,3 @@
-import React from "react";
 import { MenuIconStyled } from "./styled.menu-icon";
 
 function MenuIcon({ open, setOpen }) {

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ScrollToTopButtonStyled } from './styled.scroll-to-top-button';
 import { scrollToTop } from '../../../utils/utils';
 

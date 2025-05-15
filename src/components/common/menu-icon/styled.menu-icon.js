@@ -15,7 +15,6 @@ const MenuIconStyled = styled.div`
 
   :nth-child(2) {
     opacity: ${({ open }) => (open ? '0' : '1')};
-    //transform: ${({ open }) => (open ? 'translateX(20px)' : 'translateX(0)')}
   }
 
   :nth-child(3) {

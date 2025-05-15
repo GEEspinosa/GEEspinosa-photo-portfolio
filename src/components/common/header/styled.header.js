@@ -1,4 +1,3 @@
-//import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -21,14 +20,10 @@ const Navbar = styled.nav`
   width: 100%;
   font-size: 20px;
   
-
   .link-container {
     opacity: 0.7;
     .navbar-link {
-      //dev note: not sure if I like the nav links lower
-      //position: relative;
-      //top: 12px;
-  
+
       @media (max-width: 900px) {
         font-size: 18px;
       }
@@ -64,7 +59,6 @@ const Title = styled.div`
     font-size: 16px;
   }
   
-
   @media (max-width: 370px) {
     visibility: hidden;
   }

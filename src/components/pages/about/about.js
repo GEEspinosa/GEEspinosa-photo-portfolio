@@ -1,4 +1,3 @@
-import React from 'react';
 import selfInstaxBryan from '../../../assets/images/gabi_instax_bryan2.png';
 import {
   AboutContainer,

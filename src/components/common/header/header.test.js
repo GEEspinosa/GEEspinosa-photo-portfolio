@@ -5,7 +5,6 @@ import Header from './header';
 
 jest.mock('react-router-dom', () => ({
   Link: ({ to, children }) => <a href={to}>{children}</a>, // Simply mock it as an <a> tag
-  
 }));
 
 

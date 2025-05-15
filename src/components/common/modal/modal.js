@@ -1,4 +1,3 @@
-import React from "react";
 import {LeftArrowButton} from "../arrow-buttons/left-arrow-button/left-arrow-button";
 import {RightArrowButton} from "../arrow-buttons/right-arrow-button/right-arrow-button";
 import {ModalIcon, Modal} from "./styled.modal";

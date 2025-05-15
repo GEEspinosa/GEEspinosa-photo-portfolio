@@ -29,7 +29,6 @@ const LeftArrowButtonIcon = styled.div`
 
   @media (max-width: 1400px) {
     margin-bottom: ${({ showModal }) => (showModal === true ? '190px' : '0px')};
-    //dev note: 190px vs 310px?
   }
 
   @media only screen 
@@ -37,12 +36,10 @@ const LeftArrowButtonIcon = styled.div`
         and (orientation: landscape) 
       {
         margin-bottom: 20px;
-        //border: solid black;
       }
     }
 
   .leftArrowIcon {
-    //dev note: width below was 30
     width: 24px;
     height: 4px;
     background-color: gray;
