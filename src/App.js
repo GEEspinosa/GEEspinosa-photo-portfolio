@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './components/common/header/header';
 
@@ -11,8 +11,14 @@ import Performance from './components/pages/performance/performance';
 import About from './components/pages/about/about';
 
 import ModalComponent from './components/common/modal/modal';
+
+//dev note: all the image objects imports
 import imageData from './assets/image-data';
+
+//dev note: custom hook that stores width and height of browser
 import useWindowSize from './hooks/useWindowSize';
+
+//dev note: util function that scrolls to the top of screen
 import { scrollToTop } from './utils/utils';
 
 function App() {

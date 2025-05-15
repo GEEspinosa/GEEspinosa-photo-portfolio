@@ -1,6 +1,6 @@
-let id = 0;
+//dev note: id incrementor
 
-//dev note: id incrementor 
+let id = 0;
 
 const addId = () => {
   return id++;
