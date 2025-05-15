@@ -205,14 +205,7 @@ function App() {
         />
         <Route path="/about" element={<About />} />
       </Routes>
-      {/* {!showModal && (
-        <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
-      )}
-      <OpenMenu open={open} setOpen={setOpen} setPage={setPage} /> */}
-      
-    </div>
-
-    
+    </div>    
     </>
   );
 }

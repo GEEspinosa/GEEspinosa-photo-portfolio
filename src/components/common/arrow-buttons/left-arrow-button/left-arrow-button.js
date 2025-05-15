@@ -2,11 +2,13 @@ import React from 'react';
 import { LeftArrowButtonIcon } from './styled.left-arrow-button';
 import useWindowSize from '../../../../hooks/useWindowSize';
 
+//Dev Note: left arrow button component used for modal viewing mode. 
+
+
 function LeftArrowButton({
   showModal,
   leftButton,
   arrowButtonHandler,
-  portfolioGalleryMidLayout,
   orientationSelected,
 }) {
   const { width } = useWindowSize();
@@ -17,9 +19,7 @@ function LeftArrowButton({
         showModal={showModal}
         leftButton={leftButton}
         onClick={() => arrowButtonHandler('Left')}
-        portfolioGalleryMidLayout={portfolioGalleryMidLayout}
         orientationSelected={orientationSelected}
-
       >
         <div className="leftArrowIcon" />
         <div className="leftArrowIcon" />
