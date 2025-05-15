@@ -8,9 +8,9 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   const [smGalleryArray, setSmallGalleryArray] = useState([]);
 
   //Dev Note: a variable is assigned a disjunctive identity,
-  //this says it's either pageAlbum, which is sent as props, looking inside for a key-value pair, 
-  //a page property with a value of an array that holds objects, or it's an empty array. 
-  //This ensures that React doesn't crash being unable to read undefined values before state is set.
+  //this says it's either pageAlbum, which is received as props, looking inside for a key-value pair, 
+  //a page property with the value of an array that holds objects, or it's an empty array. 
+  //This ensures that React doesn't crash when unable to read undefined values before state is set.
 
   const galleryAlbum = pageAlbum[page][0] || [];
 
