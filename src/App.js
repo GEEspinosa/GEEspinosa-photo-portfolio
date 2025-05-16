@@ -137,7 +137,9 @@ function App() {
   // then it reassign a new id to the images equal to it's index in the array.
   // then updates pageAlbum, spreading it's current state 
   // while adjusting variable key page to the filtered array
-  // finally indicates that the page is loaded.
+  // finally indicates that the page is loaded. 
+  // isLoaded indicates to render landing page route on first render given PageAlbum has state,
+  // after it stays true.
 
   useEffect(() => {
     const filteredImages = imageData.filter(img => page in img.album);
