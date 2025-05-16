@@ -41,40 +41,41 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
 
-  //dev note: destructuring from custom hook
+  // dev note: destructuring `width` from custom hook `useWindowSize` to get current window width.
   const { width } = useWindowSize();
 
   let album = pageAlbum[page][0] || [];
 
-  //dev note: click handler that sets mouse clicked image's id in gallery viewing mode to state and makes showModal true,
-  //thereby bypassing gallery viewing mode and setting the image to be displayed in modal mode.
+  // dev note: click handler that sets the clicked image's id to state
+  // and triggers modal mode, bypassing gallery view to display the image in modal.
   function imageClickHandler(id) {
     setModalSelect(id);
     setShowModal(true);
   }
 
-  //dev note: this is used to assist fade effect logic when scrolling in modal viewing mode
+  // dev note: toggles `fadeIn` state to assist with the fade effect logic
+  // when scrolling in modal viewing mode (triggering CSS transitions).
   function fadeHandler() {
     setFadeIn(!fadeIn);
   }
 
-  //dev note: click handler that sets page and scrolls to the top
+  // dev note: click handler to set the page and scroll to the top
   function navClickHander(link) {
     setPage(link);
     scrollToTop();
   }
 
-  //dev note: event handler for keyboard commands to control scrolling and exiting modal viewing mode
+  // dev note: event handler for keyboard commands to control modal (escape to close, arrow keys to navigate)
   function keyDownHandler(e) {
     if (e.key === 'Escape') {
-      setShowModal(false);
+      setShowModal(false); // Close modal on Escape
     }
     if (e.key === 'ArrowLeft' && showModal) {
       let left = modalSelect - 1;
       if (left >= 0) {
         setModalSelect(left);
       } else {
-        setModalSelect(album.length - 1);
+        setModalSelect(album.length - 1); // Loop to last image if at the start
       }
     }
     if (e.key === 'ArrowRight' && showModal) {
@@ -82,20 +83,20 @@ function App() {
       if (right < album.length) {
         setModalSelect(right);
       } else {
-        setModalSelect(0);
+        setModalSelect(0); // Loop to first image if at the end
       }
     }
     fadeHandler();
   }
 
-  //dev note: click handler for left/right buttons in modal viewing mode
+  // dev note: click handler for navigating left/right in modal view
   const arrowButtonHandler = direction => {
     if (direction === 'Left' && showModal) {
       let left = modalSelect - 1;
       if (left >= 0) {
         setModalSelect(left);
       } else {
-        setModalSelect(album.length - 1);
+        setModalSelect(album.length - 1); // Loop to last image if at the start
       }
     }
     if (direction === 'Right' && showModal) {
@@ -103,7 +104,7 @@ function App() {
       if (right < album.length) {
         setModalSelect(right);
       } else {
-        setModalSelect(0);
+        setModalSelect(0); // Loop to first image if at the end
       }
     }
     fadeHandler();
@@ -116,40 +117,49 @@ function App() {
     }
   }, [width]);
 
-  //dev note: useEffect hook that creates event listeners for keyboard commands when App mounts,
-  //calling KeyDown event handler function
-  //and then when App unmounts, it removes the event listeners using cleanup function
+ // dev note: useEffect sets up keydown event listener when the app mounts,
+ // calling `keyDownHandler` on key press. Removes listener when app unmounts.
   useEffect(() => {
     document.addEventListener('keydown', keyDownHandler);
     return () => document.removeEventListener('keydown', keyDownHandler);
   });
 
-  //dev note: first render always starts on landing page
+  //dev note: first render always navigates to the landing page
   useEffect(() => {
     navigate('/');
   }, []);
 
 
-  // dev note: useEffect that triggers when page state changes.
-  // filteredImages store any image that has the album object 
-  // containing a key that matches what's stored in state.
-  // then it sorts the filtered images in increasing order
-  // then it reassign a new id to the images equal to it's index in the array.
-  // then updates pageAlbum, spreading it's current state 
-  // while adjusting variable key page to the filtered array
-  // finally indicates that the page is loaded. 
-  // isLoaded indicates to render landing page route on first render given PageAlbum has state,
-  // after it stays true.
+// dev note: useEffect runs when `page` state changes.
+//
+// first thing it does is check if `pageAlbum[page]` already has images.
+// if the array isn't empty, we skip the rest — no need to reprocess.
+//
+// otherwise:
+// - filter `imageData` to grab any image that includes the current page in its album.
+// - sort those images in increasing order based on album[page] value.
+// - reassign new ids to each image based on its index in the sorted array.
+// - update `pageAlbum` by spreading the current state and assigning the new filtered list
+//   to the page key — wrapped in an extra array (so it's [filteredImages], not just filteredImages).
+//
+// finally, set `isLoaded` to true — only relevant for the landing page on first load,
+// after that it stays true and isn’t used again.
+//
+// what’s nice here is the early return: if that page’s images are already cached in state,
+// we skip all the sorting and mapping work. just reuse what’s already stored.
+// simple and efficient.
 
   useEffect(() => {
+    if (pageAlbum[page].length > 0) return
     const filteredImages = imageData.filter(img => page in img.album);
     filteredImages.sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0));
     filteredImages.map((img, key) => (img.id = key));
     setPageAlbum({ ...pageAlbum, [page]: [filteredImages] });
     setIsLoaded(true);
-  }, [page]);
+  }, [page, pageAlbum]);
 
-  //dev note: if slide out menu is open, scrolling is disabiled allowing setting to revert when closed.
+ // dev note: if slide-out menu is open, scrolling is disabled.
+ // when it's closed, scroll setting reverts back to normal.
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
