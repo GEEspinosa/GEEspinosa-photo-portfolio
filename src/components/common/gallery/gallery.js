@@ -7,10 +7,9 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   const [smGalleryColNum, setSmGalleryColNum] = useState(0);
   const [smGalleryArray, setSmallGalleryArray] = useState([]);
 
-  //Dev Note: a variable is assigned a disjunctive identity,
-  //this says it's either pageAlbum, which is received as props, looking inside for a key-value pair, 
-  //a page property with the value of an array that holds objects, or it's an empty array. 
-  //This ensures that React doesn't crash when unable to read undefined values before state is set.
+  // dev note: `galleryAlbum` is assigned a value based on `pageAlbum` (received as props).
+  // It checks for the key-value pair with the current `page` as the key. If found, it returns the array of objects,
+  // otherwise, it defaults to an empty array. This prevents React from crashing due to undefined values before state is set.
 
   const galleryAlbum = pageAlbum[page][0] || [];
 
@@ -62,15 +61,12 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   }, [smGalleryColNum]);
 
 
-  //Dev Note: most JSX below exists in a giant terinary statement. 
-  //Given width of browser size (1376 px), the component renders either "Gallery" or "GallerySmall"
-  //Styled-Components, each using different layout styles and mapping over two different arrays.
-  //the former simply maps over galleryAlbum as is 
-  //while the latter maps over the mainArray (an array of arrays) set to state in smGalleryArray.
-  //For each layout, mapping over objects creates new <img> elements with dynamically assigned values 
-  //to attributes based on inputed data stored in galleryAlbum objects
+  // dev note: JSX below uses a ternary to render either "Gallery" or "GallerySmall" based on browser width (1376px).
+  // - For screens <= 1376px, it renders `GallerySmall`, which maps over `smGalleryArray` (an array of arrays).
+  // - For larger screens, it renders `Gallery`, mapping over `galleryAlbum` directly.
+  // Each layout creates `<img>` elements with dynamically assigned attributes based on data from either `smGalleryArray` or `galleryAlbum`.
 
-  //Dev Note: at the bottom, an imported Styled-Component for a scroll up button is rendering.
+  // dev note: At the bottom, an imported Styled-Component for the "scroll up" button is rendered.
 
   return (
     <>
