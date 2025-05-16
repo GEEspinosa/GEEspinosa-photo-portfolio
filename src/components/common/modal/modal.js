@@ -25,7 +25,6 @@ function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandl
                 {album[modalSelect].description.location} <br/>
                 {album[modalSelect].description.date} <br/>
                 <br/>
-                {/* Technical Details: <br/> */}
                 {album[modalSelect].description.camera} <br/>
                 {album[modalSelect].description.film} <br/>
                 {album[modalSelect].description.shot} 
