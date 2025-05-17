@@ -1,15 +1,13 @@
-import GalleryPage from "../../common/gallery/gallery";
+import GalleryPage from '../../common/gallery/gallery';
 
-
-function Location ({ imageClickHandler, pageAlbum, page }) {
-
- return (
+function Location({ imageClickHandler, pageAlbum, page }) {
+  return (
     <GalleryPage
       imageClickHandler={imageClickHandler}
       pageAlbum={pageAlbum}
       page={page}
     />
- )
+  );
 }
 
-export default Location
+export default Location;

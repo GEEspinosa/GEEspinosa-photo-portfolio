@@ -1,13 +1,13 @@
-import GalleryPage from "../../common/gallery/gallery";
+import GalleryPage from '../../common/gallery/gallery';
 
-function People ({imageClickHandler, pageAlbum, page}) {
+function People({ imageClickHandler, pageAlbum, page }) {
   return (
     <GalleryPage
       imageClickHandler={imageClickHandler}
       pageAlbum={pageAlbum}
       page={page}
     />
-  )
+  );
 }
 
-export default People
+export default People;

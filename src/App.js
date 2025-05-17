@@ -117,8 +117,8 @@ function App() {
     }
   }, [width]);
 
- // dev note: useEffect sets up keydown event listener when the app mounts,
- // calling `keyDownHandler` on key press. Removes listener when app unmounts.
+  // dev note: useEffect sets up keydown event listener when the app mounts,
+  // calling `keyDownHandler` on key press. Removes listener when app unmounts.
   useEffect(() => {
     document.addEventListener('keydown', keyDownHandler);
     return () => document.removeEventListener('keydown', keyDownHandler);
@@ -129,28 +129,26 @@ function App() {
     navigate('/');
   }, []);
 
-
-// dev note: useEffect runs when `page` state changes.
-//
-// first thing it does is check if `pageAlbum[page]` already has images.
-// if the array isn't empty, we skip the rest — no need to reprocess.
-//
-// otherwise:
-// - filter `imageData` to grab any image that includes the current page in its album.
-// - sort those images in increasing order based on album[page] value.
-// - reassign new ids to each image based on its index in the sorted array.
-// - update `pageAlbum` by spreading the current state and assigning the new filtered list
-//   to the page key — wrapped in an extra array (so it's [filteredImages], not just filteredImages).
-//
-// finally, set `isLoaded` to true — only relevant for the landing page on first load,
-// after that it stays true and isn’t used again.
-//
-// what’s nice here is the early return: if that page’s images are already cached in state,
-// we skip all the sorting and mapping work. just reuse what’s already stored.
-// simple and efficient.
-
+  // dev note: useEffect runs when `page` state changes.
+  //
+  // first thing it does is check if `pageAlbum[page]` already has images.
+  // if the array isn't empty, we skip the rest — no need to reprocess.
+  //
+  // otherwise:
+  // - filter `imageData` to grab any image that includes the current page in its album.
+  // - sort those images in increasing order based on album[page] value.
+  // - reassign new ids to each image based on its index in the sorted array.
+  // - update `pageAlbum` by spreading the current state and assigning the new filtered list
+  //   to the page key — wrapped in an extra array (so it's [filteredImages], not just filteredImages).
+  //
+  // finally, set `isLoaded` to true — only relevant for the landing page on first load,
+  // after that it stays true and isn’t used again.
+  //
+  // what’s nice here is the early return: if that page’s images are already cached in state,
+  // we skip all the sorting and mapping work. just reuse what’s already stored.
+  // simple and efficient.
   useEffect(() => {
-    if (pageAlbum[page].length > 0) return
+    if (pageAlbum[page].length > 0) return;
     const filteredImages = imageData.filter(img => page in img.album);
     filteredImages.sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0));
     filteredImages.map((img, key) => (img.id = key));
@@ -158,8 +156,8 @@ function App() {
     setIsLoaded(true);
   }, [page, pageAlbum]);
 
- // dev note: if slide-out menu is open, scrolling is disabled.
- // when it's closed, scroll setting reverts back to normal.
+  // dev note: if slide-out menu is open, scrolling is disabled.
+  // when it's closed, scroll setting reverts back to normal.
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';

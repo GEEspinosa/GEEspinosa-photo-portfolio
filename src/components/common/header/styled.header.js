@@ -19,11 +19,10 @@ const Navbar = styled.nav`
   align-items: center;
   width: 100%;
   font-size: 20px;
-  
+
   .link-container {
     opacity: 0.7;
     .navbar-link {
-
       @media (max-width: 900px) {
         font-size: 18px;
       }
@@ -58,7 +57,7 @@ const Title = styled.div`
   @media (max-width: 400px) {
     font-size: 16px;
   }
-  
+
   @media (max-width: 370px) {
     visibility: hidden;
   }

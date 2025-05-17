@@ -57,4 +57,4 @@ const GallerySmall = styled.div`
   }
 `;
 
-export { Gallery, GallerySmall};
+export { Gallery, GallerySmall };

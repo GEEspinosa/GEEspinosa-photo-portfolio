@@ -28,8 +28,6 @@ const ModalIcon = styled.div`
   }
 
   .xIcon {
-    //dev note: changed size because it was too big
-    //width: 40px;
     width: 30px;
     height: 3px;
     background-color: gray;
@@ -64,7 +62,6 @@ const Modal = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    //border: solid black;
   
     @media (max-width: 1400px) {
       width: 100%;
@@ -88,7 +85,6 @@ const Modal = styled.div`
       padding: 20px 20px;
       object-fit: contain; 
       align-items: center;
-      //border: solid black;
                   
      @media (max-width: 1950px){
       width: 67%;
@@ -115,16 +111,10 @@ const Modal = styled.div`
         padding: 10px;
       }
 
-      // @media (max-width: 450px) {
-      //   width: 140%;
-      //   padding: 10px;
-      // }
-
       @media only screen 
         and (max-height: 575px)
         and (orientation: landscape) 
       {
-        //width: 60%;
         text-align: left;
         align-items: unset;
       }
@@ -137,18 +127,15 @@ const Modal = styled.div`
         width: 60%;
         text-align: left;
         align-items: unset;
-      }
-     
+      }    
     }
 
-    .vertical {
-      
+    .vertical { 
       max-height: 70%;
       min-width: 25%; 
       padding: 20px 20px;
       object-fit: contain; 
       align-self: center;
-      //border: solid black;
       
       @media(max-width: 1400px) {
         text-align: center;
@@ -173,8 +160,7 @@ const Modal = styled.div`
         and (max-height: 575px)
         and (orientation: landscape) 
       {
-        text-align: left;
-        
+        text-align: left; 
       }
     }
 
@@ -208,7 +194,7 @@ const Modal = styled.div`
             }   
 
     h2 {
-    font-family: 'Lato', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-size: 22px;
       max-width: 12vw;
       min-width: 12vw;
@@ -216,7 +202,6 @@ const Modal = styled.div`
       margin: 40px 10px 10px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.5;
-      //border: solid black;
          
       @media (max-width: 1400px) {
         font-size: 18px;
@@ -233,7 +218,7 @@ const Modal = styled.div`
       }   
           
       @media only screen and (max-height: 575px)
-        and (orientation: landscape)  {
+        and (orientation: landscape){
         padding: 0px;
         max-width: 25vw;
         min-width: 20vw;
@@ -241,7 +226,7 @@ const Modal = styled.div`
     }
 
     p {
-    font-family: 'Lato', sans-serif;
+      font-family: 'Lato', sans-serif;
       max-width: 12vw;
       min-width: 12vw;
       font-size: .9em;
@@ -250,7 +235,6 @@ const Modal = styled.div`
       margin: 10px 0px 40px 10px;
       padding: 0px 30px 0px 30px;
       line-height: 1.2;
-      //border: solid black;
        
         @media (max-width: 1400px){
           font-size: 14px;
@@ -268,12 +252,9 @@ const Modal = styled.div`
         @media only screen and (max-height: 575px)
         and (orientation: landscape)  {
         padding: 0px;
-        // max-width: 25vw;
-        // min-width: 20vw;
       }
     }
-  }
-  
+  }  
 `;
 
 export { Modal, ModalIcon };

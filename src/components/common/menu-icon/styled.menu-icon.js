@@ -26,7 +26,7 @@ const MenuIconStyled = styled.div`
     width: 35px;
     height: 5px;
     background-color: ${({ open }) => (open ? 'white' : 'black')};
-    
+
     margin: 3px 0;
     transform-origin: 2px;
     transition: all 0.5s ease-out;
