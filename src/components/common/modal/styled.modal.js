@@ -196,8 +196,9 @@ const Modal = styled.div`
     h2 {
       font-family: 'Lato', sans-serif;
       font-size: 22px;
-      max-width: 12vw;
-      min-width: 12vw;
+      // max-width: 12vw;
+      // min-width: 12vw;
+      width: 12vw;
       color: gray;
       margin: 40px 10px 10px 10px;
       padding: 0px 30px 0px 30px;
@@ -208,7 +209,7 @@ const Modal = styled.div`
         margin: 0px 0px 10px 0px;
         padding: 0px
         max-width: 35vw;
-        min-width: 35vw;         
+        min-width: 35vw;        
       }
 
       @media (max-width: 430px ) {

@@ -58,9 +58,6 @@ function App() {
 
   // dev note: toggles `fadeIn` state to assist with the fade effect logic
   // when scrolling in modal viewing mode (triggering CSS transitions).
-  // function fadeHandler() {
-  //   setFadeIn(!fadeIn);
-  // }
 
   const fadeHandler = useCallback(() => {
     setFadeIn(prev => !prev);
@@ -77,28 +74,6 @@ function App() {
   );
 
   // dev note: event handler for keyboard commands to control modal (escape to close, arrow keys to navigate)
-  // function keyDownHandler(e) {
-  //   if (e.key === 'Escape') {
-  //     setShowModal(false); // Close modal on Escape
-  //   }
-  //   if (e.key === 'ArrowLeft' && showModal) {
-  //     let left = modalSelect - 1;
-  //     if (left >= 0) {
-  //       setModalSelect(left);
-  //     } else {
-  //       setModalSelect(album.length - 1); // Loop to last image if at the start
-  //     }
-  //   }
-  //   if (e.key === 'ArrowRight' && showModal) {
-  //     let right = modalSelect + 1;
-  //     if (right < album.length) {
-  //       setModalSelect(right);
-  //     } else {
-  //       setModalSelect(0); // Loop to first image if at the end
-  //     }
-  //   }
-  //   fadeHandler();
-  // }
 
   const keyDownHandler = useCallback(
     e => {
@@ -184,14 +159,6 @@ function App() {
   // what’s nice here is the early return: if that page’s images are already cached in state,
   // we skip all the sorting and mapping work. just reuse what’s already stored.
   // simple and efficient.
-  // useEffect(() => {
-  //   if (pageAlbum[page].length > 0) return;
-  //   const filteredImages = imageData.filter(img => page in img.album);
-  //   filteredImages.sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0));
-  //   filteredImages.map((img, key) => (img.id = key));
-  //   setPageAlbum({ ...pageAlbum, [page]: [filteredImages] });
-  //   setIsLoaded(true);
-  // }, [page, pageAlbum]);
 
   useEffect(() => {
     setPageAlbum(prev => {

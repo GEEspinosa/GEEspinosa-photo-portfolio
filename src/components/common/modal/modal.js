@@ -1,12 +1,22 @@
-import {LeftArrowButton} from "../arrow-buttons/left-arrow-button/left-arrow-button";
-import {RightArrowButton} from "../arrow-buttons/right-arrow-button/right-arrow-button";
-import {ModalIcon, Modal} from "./styled.modal";
+import { LeftArrowButton } from '../arrow-buttons/left-arrow-button/left-arrow-button';
+import { RightArrowButton } from '../arrow-buttons/right-arrow-button/right-arrow-button';
+import { ModalIcon, Modal } from './styled.modal';
 
-function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandler, fadeIn, pageAlbum, page}) {
-  let album = pageAlbum[page][0]
-  
+function ModalComponent({
+  showModal,
+  setShowModal,
+  modalSelect,
+  arrowButtonHandler,
+  fadeIn,
+  pageAlbum,
+  page,
+}) {
+  if (!showModal) return null;
+  const album = pageAlbum[page][0];
+  const currentImage = album[modalSelect];
+
   return (
-    <> 
+    <>
       <Modal>
         <div className="container">
           <ModalIcon onClick={() => setShowModal(false)}>
@@ -15,25 +25,37 @@ function ModalComponent({ showModal, setShowModal, modalSelect, arrowButtonHandl
               <div className="xIcon" />
               <div className="xIcon" />
             </div>
-          </ModalIcon>       
-          <LeftArrowButton showModal={showModal} arrowButtonHandler={arrowButtonHandler}/> 
+          </ModalIcon>
+          <LeftArrowButton
+            showModal={showModal}
+            arrowButtonHandler={arrowButtonHandler}
+          />
           <div className="middleColumn fadeIn">
-            <img alt="test" src={album[modalSelect].image} className={`${fadeIn ? 'triggerFade1' : 'triggerFade2'} ${album[modalSelect].orientation}`} />
-            <div className={album[modalSelect].orientation } >
-              <h2>{album[modalSelect].description.title}</h2>
-              <p >  
-                {album[modalSelect].description.location} <br/>
-                {album[modalSelect].description.date} <br/>
-                <br/>
-                {album[modalSelect].description.camera} <br/>
-                {album[modalSelect].description.film} <br/>
-                {album[modalSelect].description.shot} 
+            <img
+              alt="test"
+              src={currentImage.image}
+              className={`${fadeIn ? 'triggerFade1' : 'triggerFade2'} ${
+                currentImage.orientation
+              }`}
+            />
+            <div className={currentImage.orientation}>
+              <h2>{currentImage.description.title}</h2>
+              <p>
+                {currentImage.description.location} <br />
+                {currentImage.description.date} <br />
+                <br />
+                {currentImage.description.camera} <br />
+                {currentImage.description.film} <br />
+                {currentImage.description.shot}
               </p>
             </div>
-          </div>  
-          <RightArrowButton showModal={showModal} arrowButtonHandler={arrowButtonHandler} /> 
-        </div>  
-      </Modal>     
+          </div>
+          <RightArrowButton
+            showModal={showModal}
+            arrowButtonHandler={arrowButtonHandler}
+          />
+        </div>
+      </Modal>
     </>
   );
 }
