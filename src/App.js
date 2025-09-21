@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 //dev note: importing head which floats in all gallery viewing modes no matter the page unless
@@ -44,7 +44,10 @@ function App() {
   // dev note: destructuring `width` from custom hook `useWindowSize` to get current window width.
   const { width } = useWindowSize();
 
-  let album = pageAlbum[page][0] || [];
+  // let album = pageAlbum[page]?.[0] || [];
+  const album = useMemo(() => {
+    return pageAlbum[page]?.[0] || [];
+  }, [pageAlbum, page]);
 
   // dev note: click handler that sets the clicked image's id to state
   // and triggers modal mode, bypassing gallery view to display the image in modal.
@@ -55,39 +58,73 @@ function App() {
 
   // dev note: toggles `fadeIn` state to assist with the fade effect logic
   // when scrolling in modal viewing mode (triggering CSS transitions).
-  function fadeHandler() {
-    setFadeIn(!fadeIn);
-  }
+  // function fadeHandler() {
+  //   setFadeIn(!fadeIn);
+  // }
+
+  const fadeHandler = useCallback(() => {
+    setFadeIn(prev => !prev);
+  }, []);
 
   // dev note: click handler to set the page and scroll to the top
-  function navClickHander(link) {
-    setPage(link);
-    scrollToTop();
-  }
+  const navClickHander = useCallback(
+    link => {
+      setPage(link);
+      scrollToTop();
+      navigate(link === 'landing' ? '/' : `/${link}`);
+    },
+    [navigate]
+  );
 
   // dev note: event handler for keyboard commands to control modal (escape to close, arrow keys to navigate)
-  function keyDownHandler(e) {
-    if (e.key === 'Escape') {
-      setShowModal(false); // Close modal on Escape
-    }
-    if (e.key === 'ArrowLeft' && showModal) {
-      let left = modalSelect - 1;
-      if (left >= 0) {
-        setModalSelect(left);
-      } else {
-        setModalSelect(album.length - 1); // Loop to last image if at the start
+  // function keyDownHandler(e) {
+  //   if (e.key === 'Escape') {
+  //     setShowModal(false); // Close modal on Escape
+  //   }
+  //   if (e.key === 'ArrowLeft' && showModal) {
+  //     let left = modalSelect - 1;
+  //     if (left >= 0) {
+  //       setModalSelect(left);
+  //     } else {
+  //       setModalSelect(album.length - 1); // Loop to last image if at the start
+  //     }
+  //   }
+  //   if (e.key === 'ArrowRight' && showModal) {
+  //     let right = modalSelect + 1;
+  //     if (right < album.length) {
+  //       setModalSelect(right);
+  //     } else {
+  //       setModalSelect(0); // Loop to first image if at the end
+  //     }
+  //   }
+  //   fadeHandler();
+  // }
+
+  const keyDownHandler = useCallback(
+    e => {
+      if (e.key === 'Escape') {
+        setShowModal(false); // Close modal on Escape
       }
-    }
-    if (e.key === 'ArrowRight' && showModal) {
-      let right = modalSelect + 1;
-      if (right < album.length) {
-        setModalSelect(right);
-      } else {
-        setModalSelect(0); // Loop to first image if at the end
+      if (e.key === 'ArrowLeft' && showModal) {
+        let left = modalSelect - 1;
+        if (left >= 0) {
+          setModalSelect(left);
+        } else {
+          setModalSelect(album.length - 1); // Loop to last image if at the start
+        }
       }
-    }
-    fadeHandler();
-  }
+      if (e.key === 'ArrowRight' && showModal) {
+        let right = modalSelect + 1;
+        if (right < album.length) {
+          setModalSelect(right);
+        } else {
+          setModalSelect(0); // Loop to first image if at the end
+        }
+      }
+      fadeHandler();
+    },
+    [showModal, modalSelect, album, fadeHandler]
+  );
 
   // dev note: click handler for navigating left/right in modal view
   const arrowButtonHandler = direction => {
@@ -122,12 +159,12 @@ function App() {
   useEffect(() => {
     document.addEventListener('keydown', keyDownHandler);
     return () => document.removeEventListener('keydown', keyDownHandler);
-  });
+  }, [keyDownHandler]);
 
   //dev note: first render always navigates to the landing page
   useEffect(() => {
     navigate('/');
-  }, []);
+  }, [navigate]);
 
   // dev note: useEffect runs when `page` state changes.
   //
@@ -147,14 +184,26 @@ function App() {
   // what’s nice here is the early return: if that page’s images are already cached in state,
   // we skip all the sorting and mapping work. just reuse what’s already stored.
   // simple and efficient.
+  // useEffect(() => {
+  //   if (pageAlbum[page].length > 0) return;
+  //   const filteredImages = imageData.filter(img => page in img.album);
+  //   filteredImages.sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0));
+  //   filteredImages.map((img, key) => (img.id = key));
+  //   setPageAlbum({ ...pageAlbum, [page]: [filteredImages] });
+  //   setIsLoaded(true);
+  // }, [page, pageAlbum]);
+
   useEffect(() => {
-    if (pageAlbum[page].length > 0) return;
-    const filteredImages = imageData.filter(img => page in img.album);
-    filteredImages.sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0));
-    filteredImages.map((img, key) => (img.id = key));
-    setPageAlbum({ ...pageAlbum, [page]: [filteredImages] });
+    setPageAlbum(prev => {
+      if (prev[page].length > 0) return prev;
+      const filteredImages = imageData
+        .filter(img => page in img.album)
+        .sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0))
+        .map((img, key) => ({ ...img, id: key }));
+      return { ...prev, [page]: [filteredImages] };
+    });
     setIsLoaded(true);
-  }, [page, pageAlbum]);
+  }, [page]);
 
   // dev note: if slide-out menu is open, scrolling is disabled.
   // when it's closed, scroll setting reverts back to normal.
