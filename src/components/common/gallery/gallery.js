@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Gallery, GallerySmall } from './styled.gallery';
 import ScrollToTopButton from '../scroll-to-top-button/scroll-to-top-button';
 import useWindowSize from '../../../hooks/useWindowSize';
@@ -11,7 +11,9 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   // It checks for the key-value pair with the current `page` as the key. If found, it returns the array of objects,
   // otherwise, it defaults to an empty array. This prevents React from crashing due to undefined values before state is set.
 
-  const galleryAlbum = pageAlbum[page][0] || [];
+  const galleryAlbum = useMemo(() => {
+    return pageAlbum[page]?.[0] || [];
+  }, [pageAlbum, page]);
 
   //Dev Note: destructuring width from imported custom hook useWindowSize
 
@@ -57,7 +59,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
 
   useEffect(() => {
     fillingColumns(smGalleryColNum, galleryAlbum);
-  }, [smGalleryColNum]);
+  }, [smGalleryColNum, galleryAlbum]);
 
   // dev note: JSX below uses a ternary to render either "Gallery" or "GallerySmall" based on browser width (1376px).
   // - For screens <= 1376px, it renders `GallerySmall`, which maps over `smGalleryArray` (an array of arrays).
@@ -74,7 +76,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
             {smGalleryArray.map((arr, key) => {
               return (
                 <div className="column">
-                  {smGalleryArray[key].map(img => {
+                  {arr.map(img => {
                     return (
                       <img
                         key={img.id}
