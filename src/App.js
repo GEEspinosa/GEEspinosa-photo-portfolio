@@ -64,7 +64,7 @@ function App() {
   }, []);
 
   // dev note: click handler to set the page and scroll to the top
-  const navClickHander = useCallback(
+  const navClickHandler = useCallback(
     link => {
       setPage(link);
       scrollToTop();
@@ -203,7 +203,7 @@ function App() {
           setOpen={setOpen}
           showModal={showModal}
           setPage={setPage}
-          navClickHander={navClickHander}
+          navClickHandler={navClickHandler}
         />
         <Routes>
           {isLoaded && (
