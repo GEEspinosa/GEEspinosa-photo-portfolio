@@ -35,7 +35,7 @@ const Gallery = styled.div`
   }
 `;
 
-const GallerySmall = styled.div`
+const GallerySmall = styled.div.attrs(props => ({smGalleryColNum: undefined}))`
   box-sizing: border-box;
 
   .row {
