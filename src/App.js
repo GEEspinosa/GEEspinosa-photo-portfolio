@@ -38,7 +38,7 @@ function App() {
   const [modalSelect, setModalSelect] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
+  //const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
 
   // dev note: destructuring `width` from custom hook `useWindowSize` to get current window width.
@@ -153,7 +153,7 @@ function App() {
     filteredImages.sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0));
     filteredImages.map((img, key) => (img.id = key));
     setPageAlbum({ ...pageAlbum, [page]: [filteredImages] });
-    setIsLoaded(true);
+    //setIsLoaded(true);
   }, [page, pageAlbum]);
 
   // dev note: if slide-out menu is open, scrolling is disabled.
@@ -190,7 +190,6 @@ function App() {
           navClickHander={navClickHandler}
         />
         <Routes>
-          {isLoaded && (
             <Route
               path="/"
               element={
@@ -201,7 +200,6 @@ function App() {
                 />
               }
             />
-          )}
           <Route
             path="/location"
             element={
