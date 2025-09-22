@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 //dev note: importing head which floats in all gallery viewing modes no matter the page unless
@@ -44,10 +44,7 @@ function App() {
   // dev note: destructuring `width` from custom hook `useWindowSize` to get current window width.
   const { width } = useWindowSize();
 
-  // let album = pageAlbum[page]?.[0] || [];
-  const album = useMemo(() => {
-    return pageAlbum[page]?.[0] || [];
-  }, [pageAlbum, page]);
+  let album = pageAlbum[page][0] || [];
 
   // dev note: click handler that sets the clicked image's id to state
   // and triggers modal mode, bypassing gallery view to display the image in modal.
@@ -58,48 +55,39 @@ function App() {
 
   // dev note: toggles `fadeIn` state to assist with the fade effect logic
   // when scrolling in modal viewing mode (triggering CSS transitions).
-
-  const fadeHandler = useCallback(() => {
-    setFadeIn(prev => !prev);
-  }, []);
+  function fadeHandler() {
+    setFadeIn(!fadeIn);
+  }
 
   // dev note: click handler to set the page and scroll to the top
-  const navClickHandler = useCallback(
-    link => {
-      setPage(link);
-      scrollToTop();
-      navigate(link === 'landing' ? '/' : `/${link}`);
-    },
-    [navigate]
-  );
+  function navClickHandler(link) {
+    setPage(link);
+    scrollToTop();
+  }
 
   // dev note: event handler for keyboard commands to control modal (escape to close, arrow keys to navigate)
-
-  const keyDownHandler = useCallback(
-    e => {
-      if (e.key === 'Escape') {
-        setShowModal(false); // Close modal on Escape
+  function keyDownHandler(e) {
+    if (e.key === 'Escape') {
+      setShowModal(false); // Close modal on Escape
+    }
+    if (e.key === 'ArrowLeft' && showModal) {
+      let left = modalSelect - 1;
+      if (left >= 0) {
+        setModalSelect(left);
+      } else {
+        setModalSelect(album.length - 1); // Loop to last image if at the start
       }
-      if (e.key === 'ArrowLeft' && showModal) {
-        let left = modalSelect - 1;
-        if (left >= 0) {
-          setModalSelect(left);
-        } else {
-          setModalSelect(album.length - 1); // Loop to last image if at the start
-        }
+    }
+    if (e.key === 'ArrowRight' && showModal) {
+      let right = modalSelect + 1;
+      if (right < album.length) {
+        setModalSelect(right);
+      } else {
+        setModalSelect(0); // Loop to first image if at the end
       }
-      if (e.key === 'ArrowRight' && showModal) {
-        let right = modalSelect + 1;
-        if (right < album.length) {
-          setModalSelect(right);
-        } else {
-          setModalSelect(0); // Loop to first image if at the end
-        }
-      }
-      fadeHandler();
-    },
-    [showModal, modalSelect, album, fadeHandler]
-  );
+    }
+    fadeHandler();
+  }
 
   // dev note: click handler for navigating left/right in modal view
   const arrowButtonHandler = direction => {
@@ -134,12 +122,12 @@ function App() {
   useEffect(() => {
     document.addEventListener('keydown', keyDownHandler);
     return () => document.removeEventListener('keydown', keyDownHandler);
-  }, [keyDownHandler]);
+  });
 
   //dev note: first render always navigates to the landing page
   useEffect(() => {
     navigate('/');
-  }, [navigate]);
+  }, []);
 
   // dev note: useEffect runs when `page` state changes.
   //
@@ -159,18 +147,14 @@ function App() {
   // what’s nice here is the early return: if that page’s images are already cached in state,
   // we skip all the sorting and mapping work. just reuse what’s already stored.
   // simple and efficient.
-
   useEffect(() => {
-    setPageAlbum(prev => {
-      if (prev[page].length > 0) return prev;
-      const filteredImages = imageData
-        .filter(img => page in img.album)
-        .sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0))
-        .map((img, key) => ({ ...img, id: key }));
-      return { ...prev, [page]: [filteredImages] };
-    });
+    if (pageAlbum[page].length > 0) return;
+    const filteredImages = imageData.filter(img => page in img.album);
+    filteredImages.sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0));
+    filteredImages.map((img, key) => (img.id = key));
+    setPageAlbum({ ...pageAlbum, [page]: [filteredImages] });
     setIsLoaded(true);
-  }, [page]);
+  }, [page, pageAlbum]);
 
   // dev note: if slide-out menu is open, scrolling is disabled.
   // when it's closed, scroll setting reverts back to normal.
@@ -203,7 +187,7 @@ function App() {
           setOpen={setOpen}
           showModal={showModal}
           setPage={setPage}
-          navClickHandler={navClickHandler}
+          navClickHander={navClickHandler}
         />
         <Routes>
           {isLoaded && (

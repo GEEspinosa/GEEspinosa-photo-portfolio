@@ -3,7 +3,7 @@ import { MenuIcon } from '../menu-icon/menu-icon';
 import { OpenMenu } from '../open-menu/open-menu';
 import { linkArray } from '../../../constants/linkArray';
 
-function Header({ open, setOpen, showModal, setPage, navClickHandler }) {
+function Header({ open, setOpen, showModal, setPage, navClickHander }) {
   return (
     <Head>
       <Navbar>
@@ -11,23 +11,23 @@ function Header({ open, setOpen, showModal, setPage, navClickHandler }) {
           G A B R I E L &nbsp; E S P I N O S A
           <br />P h o t o g r a p h y
         </Title>
-        <nav className="link-container">
-          {linkArray.map(({name, pageString, params}) => {
+        <div className="link-container">
+          {linkArray.map(link => {
             return (
               <StyledLink
-                key={pageString}
-                to={params}
+                key={link.pageString}
+                to={link.params}
                 className="navbar-link"
-                onClick={() => navClickHandler(pageString)}
+                onClick={() => navClickHander(link.pageString)}
               >
-                {name}
+                {link.name}
               </StyledLink>
             );
           })}
           <StyledLink to="/about" className="navbar-link">
             About
           </StyledLink>
-        </nav>
+        </div>
       </Navbar>
       {!showModal && (
         <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
