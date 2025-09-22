@@ -26,7 +26,10 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   //mainArray is set in state for jsx mapping below.
 
   function fillingColumns(smGalleryColNum, galleryAlbum) {
-    let mainArray = new Array(smGalleryColNum).fill(null).map(() => []);
+    if (!galleryAlbum.length || smGalleryColNum <= 0) return; 
+    // let mainArray = new Array(smGalleryColNum).fill(null).map(() => []);
+    
+    const mainArray = Array.from({ length: smGalleryColNum }, () => []);
     let count = 0;
 
     for (let i = 0; i < galleryAlbum.length; i++) {
@@ -58,7 +61,10 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   //This allows for the smaller gallery to stay responsive to further resizing.
 
   useEffect(() => {
+    // fillingColumns(smGalleryColNum, galleryAlbum);
+    if (smGalleryColNum > 0 && galleryAlbum.length > 0) {
     fillingColumns(smGalleryColNum, galleryAlbum);
+  }
   }, [smGalleryColNum, galleryAlbum]);
 
   // dev note: JSX below uses a ternary to render either "Gallery" or "GallerySmall" based on browser width (1376px).
@@ -73,13 +79,13 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
       {width <= 1376 ? (
         <GallerySmall smGalleryColNum={smGalleryColNum}>
           <div className="row" data-testid="small-gallery-div">
-            {smGalleryArray.map((arr, key) => {
+            {smGalleryArray.map((arr, colIndex) => {
               return (
-                <div className="column">
-                  {arr.map(img => {
+                <div className="column" key={colIndex}>
+                  {arr.map((img, index) => {
                     return (
                       <img
-                        key={img.id}
+                        key={`${img.id}-${index}`}
                         alt={img.text}
                         src={img.image}
                         onClick={() => imageClickHandler(img.id)}
@@ -96,9 +102,9 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
       ) : (
         <Gallery>
           <ul data-testid="gallery">
-            {galleryAlbum.map(img => {
+            {galleryAlbum.map((img, index) => {
               return (
-                <li key={img.id}>
+                <li key={`${img.id}-${index}`}>
                   <img
                     alt={img.text}
                     src={img.image}
