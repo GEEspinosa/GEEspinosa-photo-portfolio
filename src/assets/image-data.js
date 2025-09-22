@@ -1,78 +1,6 @@
-import alexTasting from './images/alex_tasting.png';
-import antonioLongbeach from './images/antonio_longbeach.jpg';
-import astoriaBridgeDocks from './images/astoria_bridge_docks.png';
-import astoriaBridgeEmpty from './images/astoria_bridge_empty.jpg';
-import astoriaBridgeRedBoat from './images/astoria_bridge_red_boat.png';
-import bagdadTheater from './images/bagdad_theater.png';
-import blackButteTree from './images/black_butte_tree.png';
-import boats from './images/boats.png';
-import bonsai from './images/bonsai.jpg';
-import carlButoh from './images/carl_butoh.png';
-import christian from './images/christian.png';
-import dannyBassFeedback from './images/danny_bass_feedback.png';
-import eagleCrestSunset from './images/eagle_crest_sunset.png';
-import eagleCrestSunset2 from './images/eagle_crest_sunset2.png';
-import entrainLunch from './images/entrain_lunch.png';
-import estellaBrotherRollei from './images/estella_brother_rollei.png';
-import fadedGraffiti from './images/faded_graffiti.png';
-import fadedMural from './images/faded_mural.png';
-import greyTrunk from './images/grey_trunk.png';
-import kaycie from './images/kaycie.png';
-import longbeachKid from './images/longbeach_kid.png';
-import momAntonioBeach from './images/mom_antonio_beach.png';
-import nikkiSynth from './images/nikki_synth.jpg';
-import notnotsEric from './images/notnauts_eric.png';
-import otdHalloween1 from './images/otd_halloween1.jpeg';
-import otdHalloween2 from './images/otd_halloween2.jpeg';
-import parkingLot from './images/parking_lot.png';
-import porterPoint from './images/porter_point.jpg';
-import proposalRock from './images/proposal_rock.png';
-import ripleyGuitar from './images/ripley_guitar.png';
-import schnitzer from './images/schnitzer.jpg';
-import seanCostume from './images/sean_costume.png';
-import seanGuitar from './images/sean_guitar.jpg';
-import swimBuddies from './images/swim_buddies.png';
-import tessaBeach from './images/tessa_beach.jpg';
-import tessaFlowers from './images/tessa_flowers.png';
-import yaquinaHeadLighthouse from './images/yaquina_head_lighthouse.png';
-import zoranPatSwim from './images/zoran_pat_swim.png';
-import zoranPolaroid from './images/zoran_polaroid.jpg';
-import longbeachDistantHouse from './images/longbeach_distanthouse.png';
-//import longbeachDistantWalker from './images/longbeach_distantwalker.png';
-import longbeachNoHorizon from './images/longbeach_nohorizon.jpg';
-import longbeachOrcas from './images/longbeach_orcas.png';
-//import longbeachOrcasOverhead from './images/longbeach_orcaoverhead.jpg';
-import longbeachRestArea from './images/longbeach_restarea.png';
-//import longbeachTireMarks from './images/longbeach_tiremarks.jpg';
-//import longbeachWetTireMarks from './images/longbeach_wetsandtiremarks.png';
-import brokenHouseGorge from './images/Broken House_Gorge.png';
-import bryanShakes1K from './images/Bryan_Shakes_1K.png';
-import danielSmoking from './images/Daniel_Smoking.png';
-import gwapBodecker from './images/Gwap_Bodecker.png';
-import mattSavior from './images/Matt_Savior.png';
-import morganRiver from './images/Morgan_River.png';
-import pdxButohFest2024_1 from './images/PDX_ButohFest2024_1.png';
-import pdxButohFest2024_2 from './images/PDX_ButohFest2024_2.png';
-import pdxButohFest2024_3 from './images/PDX_ButohFest2024_3.png';
-import portBlakeyMillBainBridge from './images/Port_Blakey_Mill_BainBridge.png';
-import summerLightKitchen from './images/Summer_Light_Kitchen.png';
-import taylorBirthday from './images/Taylor_Birthday.png';
-import tessaSunsetLowerShades from './images/Tessa_Sunset_LowerShades.png';
-import vistaHousePuddle from './images/VistaHouse_Puddle.jpg';
-import vistaHouse from './images/VistaHouse.png';
-import hallowedGramma_1 from './images/clarehallowedgramma_PIBF2025.png';
-import hallowedGramma_2 from './images/clareHallowGramma_2_PIBF2025.png';
-import hankLogan_1 from './images/hankLogan_PIBF2025.png';
-import hankLogan_2 from './images/hankLogan_2_PIBF2025.png';
-import bkNotNauts from './images/bk_notnauts_live.jpg';
-import helenThorsen_1 from './images/helenThorsen_1_PIBF2025.png';
-import helenThorsen_2 from './images/helenThorsen_2_PIBF2025.png';
-import paulaHelen_1 from './images/paulaHelen_1_PIBF2025.png';
-
 const imageData = [
   {
-    //id: addId(),
-    image: alexTasting,
+    image: '/images/alex_tasting.png',
     orientation: 'vertical',
     text: 'Alex Tasting Cherry Blossoms',
     description: {
@@ -86,8 +14,7 @@ const imageData = [
     album: { landing: 0, people: 0 },
   },
   {
-    //id: addId(),
-    image: antonioLongbeach,
+    image: '/images/antonio_longbeach.jpg',
     orientation: 'horizontal',
     text: 'Dodging Longbeach',
     description: {
@@ -104,8 +31,7 @@ const imageData = [
     },
   },
   {
-    //id: addId(),
-    image: astoriaBridgeDocks,
+    image: '/images/astoria_bridge_docks.png',
     orientation: 'horizontal',
     text: 'View From Above',
     description: {
@@ -121,8 +47,7 @@ const imageData = [
     },
   },
   {
-    //id: addId(),
-    image: astoriaBridgeEmpty,
+    image: '/images/astoria_bridge_empty.jpg',
     orientation: 'horizontal',
     text: 'Columbia Crossing',
     description: {
@@ -136,8 +61,7 @@ const imageData = [
     album: { landing: 2, location: 2 },
   },
   {
-    //id: addId(),
-    image: astoriaBridgeRedBoat,
+    image: '/images/astoria_bridge_red_boat.png',
     orientation: 'horizontal',
     text: 'Astoria-Megler Bridge',
     description: {
@@ -151,8 +75,7 @@ const imageData = [
     album: { location: 3 },
   },
   {
-    //id: addId(),
-    image: bagdadTheater,
+    image: '/images/bagdad_theater.png',
     orientation: 'horizontal',
     text: 'Bagdad Theater',
     description: {
@@ -166,8 +89,7 @@ const imageData = [
     album: { landing: 3, location: 4 },
   },
   {
-    //id: addId(),
-    image: blackButteTree,
+    image: '/images/black_butte_tree.png',
     orientation: 'vertical',
     text: 'Hiking Black Butte',
     description: {
@@ -181,8 +103,7 @@ const imageData = [
     album: { landing: 4, impression: 5 },
   },
   {
-    //id: addId(),
-    image: boats,
+    image: '/images/boats.png',
     orientation: 'vertical',
     text: 'Kerr Public Docks',
     description: {
@@ -196,8 +117,7 @@ const imageData = [
     album: { landing: 5, impression: 6 },
   },
   {
-    //id: addId(),
-    image: bonsai,
+    image: '/images/bonsai.jpg',
     orientation: 'horizontal',
     text: 'Early Morning Bonsai',
     description: {
@@ -211,8 +131,7 @@ const imageData = [
     album: { landing: 6, location: 7 },
   },
   {
-    //id: addId(),
-    image: carlButoh,
+    image: '/images/carl_butoh.png',
     orientation: 'vertical',
     text: 'Ghostly Performance',
     description: {
@@ -226,8 +145,7 @@ const imageData = [
     album: { landing: 7, performance: 0 },
   },
   {
-    //id: addId(),
-    image: christian,
+    image: '/images/christian.png',
     orientation: 'horizontal',
     text: 'Friends Hug',
     description: {
@@ -241,8 +159,7 @@ const imageData = [
     album: { landing: 8, people: 1 },
   },
   {
-    //id: addId(),
-    image: dannyBassFeedback,
+    image: '/images/danny_bass_feedback.png',
     orientation: 'vertical',
     text: 'Feedback',
     description: {
@@ -256,8 +173,7 @@ const imageData = [
     album: { landing: 9, people: 2 },
   },
   {
-    //id: addId(),
-    image: eagleCrestSunset,
+    image: '/images/eagle_crest_sunset.png',
     orientation: 'horizontal',
     text: 'Eagle Crest Sunset',
     description: {
@@ -271,8 +187,7 @@ const imageData = [
     album: { landing: 10, location: 8 },
   },
   {
-    //id: addId(),
-    image: eagleCrestSunset2,
+    image: '/images/eagle_crest_sunset2.png',
     orientation: 'horizontal',
     text: 'Eagle Crest Sunset',
     description: {
@@ -286,8 +201,7 @@ const imageData = [
     album: { location: 9 },
   },
   {
-    //id: addId(),
-    image: entrainLunch,
+    image: '/images/entrain_lunch.png',
     orientation: 'horizontal',
     text: 'Back From Break',
     description: {
@@ -301,8 +215,7 @@ const imageData = [
     album: { landing: 11, people: 3 },
   },
   {
-    //id: addId(),
-    image: estellaBrotherRollei,
+    image: '/images/estella_brother_rollei.png',
     orientation: 'horizontal',
     text: "Father's Camera",
     description: {
@@ -316,8 +229,7 @@ const imageData = [
     album: { landing: 12, people: 4 },
   },
   {
-    //id: addId(),
-    image: fadedGraffiti,
+    image: '/images/faded_graffiti.png',
     orientation: 'horizontal',
     text: 'Faded Graffiti',
     description: {
@@ -331,8 +243,7 @@ const imageData = [
     album: { landing: 13, impression: 1 },
   },
   {
-    //id: addId(),
-    image: fadedMural,
+    image: '/images/faded_mural.png',
     orientation: 'vertical',
     text: 'Faded Mural',
     description: {
@@ -346,8 +257,7 @@ const imageData = [
     album: { landing: 14, impression: 10 },
   },
   {
-    //id: addId(),
-    image: greyTrunk,
+    image: '/images/grey_trunk.png',
     orientation: 'vertical',
     text: 'Grey Trunk',
     description: {
@@ -361,8 +271,7 @@ const imageData = [
     album: { landing: 15, impression: 11 },
   },
   {
-    //id: addId(),
-    image: kaycie,
+    image: '/images/kaycie.png',
     orientation: 'horizontal',
     text: 'Kaycie',
     description: {
@@ -376,8 +285,7 @@ const imageData = [
     album: { landing: 16, people: 5 },
   },
   {
-    //id: addId(),
-    image: longbeachKid,
+    image: '/images/longbeach_kid.png',
     orientation: 'horizontal',
     text: 'Sea Kid',
     description: {
@@ -394,8 +302,7 @@ const imageData = [
     },
   },
   {
-    //id: addId(),
-    image: momAntonioBeach,
+    image: '/images/mom_antonio_beach.png',
     orientation: 'horizontal',
     text: 'Watchers',
     description: {
@@ -409,8 +316,7 @@ const imageData = [
     album: { landing: 18, people: 6 },
   },
   {
-    //id: addId(),
-    image: nikkiSynth,
+    image: '/images/nikki_synth.jpg',
     orientation: 'vertical',
     text: 'Nikhil Synths',
     description: {
@@ -427,8 +333,7 @@ const imageData = [
     },
   },
   {
-    //id: addId(),
-    image: notnotsEric,
+    image: '/images/notnauts_eric.png',
     orientation: 'vertical',
     text: 'Notnauts: Eric',
     description: {
@@ -442,8 +347,7 @@ const imageData = [
     album: { landing: 20, performance: 1 },
   },
   {
-    //id: addId(),
-    image: otdHalloween1,
+    image: '/images/otd_halloween1.jpeg',
     orientation: 'horizontal',
     text: 'Old Town Diamonds: Halloween',
     description: {
@@ -457,8 +361,7 @@ const imageData = [
     album: { performance: 2 },
   },
   {
-    //id: addId(),
-    image: otdHalloween2,
+    image: '/images/otd_halloween2.jpeg',
     orientation: 'horizontal',
     text: 'Old Town Diamonds: Halloween',
     description: {
@@ -472,8 +375,7 @@ const imageData = [
     album: {},
   },
   {
-    //id: addId(),
-    image: parkingLot,
+    image: '/images/parking_lot.png',
     orientation: 'horizontal',
     text: 'Suburban Parking',
     description: {
@@ -487,8 +389,7 @@ const imageData = [
     album: { location: 13 },
   },
   {
-    //id: addId(),
-    image: porterPoint,
+    image: '/images/porter_point.jpg',
     orientation: 'horizontal',
     text: 'Nestucca',
     description: {
@@ -502,8 +403,7 @@ const imageData = [
     album: { landing: 21, location: 14 },
   },
   {
-    //id: addId(),
-    image: proposalRock,
+    image: '/images/proposal_rock.png',
     orientation: 'horizontal',
     text: 'Proposal Rock',
     description: {
@@ -517,8 +417,7 @@ const imageData = [
     album: { landing: 22, location: 15 },
   },
   {
-    //id: addId(),
-    image: ripleyGuitar,
+    image: '/images/ripley_guitar.png',
     orientation: 'horizontal',
     text: 'Ripley',
     description: {
@@ -532,8 +431,7 @@ const imageData = [
     album: { landing: 23, people: 8 },
   },
   {
-    //id: addId(),
-    image: schnitzer,
+    image: '/images/schnitzer.jpg',
     orientation: 'vertical',
     text: 'Schnitzer',
     description: {
@@ -547,8 +445,7 @@ const imageData = [
     album: { landing: 24, location: 16 },
   },
   {
-    //id: addId(),
-    image: seanCostume,
+    image: '/images/sean_costume.png',
     orientation: 'horizontal',
     text: 'Halloween Costume',
     description: {
@@ -562,8 +459,7 @@ const imageData = [
     album: { landing: 25, people: 9 },
   },
   {
-    //id: addId(),
-    image: seanGuitar,
+    image: '/images/sean_guitar.jpg',
     orientation: 'horizontal',
     text: 'Mistons: Rickenbacker',
     description: {
@@ -577,8 +473,7 @@ const imageData = [
     album: { landing: 26, performance: 3 },
   },
   {
-    ////id: addId(),
-    image: swimBuddies,
+    image: '/images/swim_buddies.png',
     orientation: 'horizontal',
     text: 'Jacuzzi',
     description: {
@@ -592,8 +487,7 @@ const imageData = [
     album: { landing: 27, people: 10 },
   },
   {
-    ////id: addId(),
-    image: tessaBeach,
+    image: '/images/tessa_beach.jpg',
     orientation: 'vertical',
     text: 'Tessa Beach',
     description: {
@@ -607,8 +501,7 @@ const imageData = [
     album: { landing: 28, people: 11 },
   },
   {
-    ////id: addId(),
-    image: tessaFlowers,
+    image: '/images/tessa_flowers.png',
     orientation: 'horizontal',
     text: 'Tessa Flowers',
     description: {
@@ -624,8 +517,7 @@ const imageData = [
     },
   },
   {
-    ////id: addId(),
-    image: yaquinaHeadLighthouse,
+    image: '/images/yaquina_head_lighthouse.png',
     orientation: 'horizontal',
     text: 'Spring Light',
     description: {
@@ -639,8 +531,7 @@ const imageData = [
     album: { landing: 29, location: 17 },
   },
   {
-    ////id: addId(),
-    image: zoranPatSwim,
+    image: '/images/zoran_pat_swim.png',
     orientation: 'horizontal',
     text: 'Swim Boys',
     description: {
@@ -656,8 +547,7 @@ const imageData = [
     },
   },
   {
-    ////id: addId(),
-    image: zoranPolaroid,
+    image: '/images/zoran_polaroid.jpg',
     orientation: 'horizontal',
     text: 'Instant Zoran',
     description: {
@@ -671,8 +561,7 @@ const imageData = [
     album: { landing: 30, people: 14 },
   },
   {
-    ////id: addId(),
-    image: longbeachDistantHouse,
+    image: '/images/longbeach_distanthouse.png',
     orientation: 'horizontal',
     text: 'Distant House',
     description: {
@@ -688,8 +577,7 @@ const imageData = [
     },
   },
   {
-    ////id: addId(),
-    image: longbeachNoHorizon,
+    image: '/images/longbeach_nohorizon.jpg',
     orientation: 'horizontal',
     text: 'No Horizon',
     description: {
@@ -705,8 +593,7 @@ const imageData = [
     },
   },
   {
-    ////id: addId(),
-    image: longbeachRestArea,
+    image: '/images/longbeach_restarea.png',
     orientation: 'horizontal',
     text: 'Rest Area',
     description: {
@@ -722,8 +609,7 @@ const imageData = [
     },
   },
   {
-    ////id: addId(),
-    image: longbeachOrcas,
+    image: '/images/longbeach_orcas.png',
     orientation: 'horizontal',
     text: 'Orcas',
     description: {
@@ -739,8 +625,7 @@ const imageData = [
     },
   },
   {
-    //id: addId(),
-    image: brokenHouseGorge,
+    image: '/images/Broken House_Gorge.png',
     orientation: 'horizontal',
     text: 'Broken House, Gorge',
     description: {
@@ -754,8 +639,7 @@ const imageData = [
     album: { landing: 31, location: 22 },
   },
   {
-    //id: addId(),
-    image: bryanShakes1K,
+    image: '/images/Bryan_Shakes_1K.png',
     orientation: 'horizontal',
     text: 'Bryan Shakes',
     description: {
@@ -769,8 +653,7 @@ const imageData = [
     album: { landing: 32, people: 15 },
   },
   {
-    //id: addId(),
-    image: danielSmoking,
+    image: '/images/Daniel_Smoking.png',
     orientation: 'horizontal',
     text: 'Daniel Smokes',
     description: {
@@ -784,8 +667,7 @@ const imageData = [
     album: { landing: 33, people: 16 },
   },
   {
-    //id: addId(),
-    image: gwapBodecker,
+    image: '/images/Gwap_Bodecker.png',
     orientation: 'horizontal',
     text: 'Alex Tasting Cherry Blossoms',
     description: {
@@ -799,8 +681,7 @@ const imageData = [
     album: { people: 17 },
   },
   {
-    //id: addId(),
-    image: mattSavior,
+    image: '/images/Matt_Savior.png',
     orientation: 'horizontal',
     text: 'Matt Savior',
     description: {
@@ -814,8 +695,7 @@ const imageData = [
     album: { people: 18 },
   },
   {
-    //id: addId(),
-    image: morganRiver,
+    image: '/images/Morgan_River.png',
     orientation: 'horizontal',
     text: 'Morgan River',
     description: {
@@ -829,8 +709,7 @@ const imageData = [
     album: { people: 19 },
   },
   {
-    //id: addId(),
-    image: pdxButohFest2024_1,
+    image: '/images/PDX_ButohFest2024_1.png',
     orientation: 'horizontal',
     text: 'PDX Butoh Festival: Paige 1',
     description: {
@@ -844,8 +723,7 @@ const imageData = [
     album: { landing: 34, performance: 4 },
   },
   {
-    //id: addId(),
-    image: pdxButohFest2024_2,
+    image: '/images/PDX_ButohFest2024_2.png',
     orientation: 'vertical',
     text: 'PDX Butoh Festival: Paige 2',
     description: {
@@ -859,8 +737,7 @@ const imageData = [
     album: { performance: 5 },
   },
   {
-    //id: addId(),
-    image: pdxButohFest2024_3,
+    image: '/images/PDX_ButohFest2024_3.png',
     orientation: 'horizontal',
     text: 'PDX Butoh Festival: Alex',
     description: {
@@ -874,8 +751,7 @@ const imageData = [
     album: { landing: 35, performance: 6 },
   },
   {
-    //id: addId(),
-    image: portBlakeyMillBainBridge,
+    image: '/images/Port_Blakey_Mill_BainBridge.png',
     orientation: 'horizontal',
     text: 'Port Blakey Mill',
     description: {
@@ -889,8 +765,7 @@ const imageData = [
     album: { location: 23 },
   },
   {
-    //id: addId(),
-    image: summerLightKitchen,
+    image: '/images/Summer_Light_Kitchen.png',
     orientation: 'vertical',
     text: 'Summer Afternoon, Kitchen',
     description: {
@@ -904,8 +779,7 @@ const imageData = [
     album: { impression: 0 },
   },
   {
-    //id: addId(),
-    image: taylorBirthday,
+    image: '/images/Taylor_Birthday.png',
     orientation: 'vertical',
     text: "Taylor's Birthday",
     description: {
@@ -919,8 +793,7 @@ const imageData = [
     album: { people: 20 },
   },
   {
-    //id: addId(),
-    image: tessaSunsetLowerShades,
+    image: '/images/Tessa_Sunset_LowerShades.png',
     orientation: 'horizontal',
     text: 'Her Shades',
     description: {
@@ -934,8 +807,7 @@ const imageData = [
     album: { landing: 36, people: 21 },
   },
   {
-    //id: addId(),
-    image: vistaHousePuddle,
+    image: '/images/VistaHouse_Puddle.jpg',
     orientation: 'horizontal',
     text: 'Vista House: Puddle',
     description: {
@@ -949,8 +821,7 @@ const imageData = [
     album: { location: 24 },
   },
   {
-    //id: addId(),
-    image: vistaHouse,
+    image: '/images/VistaHouse.png',
     orientation: 'horizontal',
     text: 'Vista House',
     description: {
@@ -964,8 +835,7 @@ const imageData = [
     album: { landing: 37, location: 25 },
   },
   {
-    //id: addId(),
-    image: hallowedGramma_1,
+    image: '/images/clarehallowedgramma_PIBF2025.png',
     orientation: 'horizontal',
     text: 'Hallowed Gramma',
     description: {
@@ -979,8 +849,7 @@ const imageData = [
     album: { landing: 38, performance: 7 },
   },
   {
-    //id: addId(),
-    image: hankLogan_1,
+    image: '/images/hankLogan_PIBF2025.png',
     orientation: 'vertical',
     text: 'Portland Butoh Festival 2025: Hank Logan Breathe',
     description: {
@@ -994,8 +863,7 @@ const imageData = [
     album: { landing: 40, performance: 8 },
   },
   {
-    //id: addId(),
-    image: bkNotNauts,
+    image: '/images/bk_notnauts_live.jpg',
     orientation: 'vertical',
     text: 'Notnauts: Brian',
     description: {
@@ -1009,8 +877,7 @@ const imageData = [
     album: { performance: 9 },
   },
   {
-    //id: addId(),
-    image: hallowedGramma_2,
+    image: '/images/clareHallowGramma_2_PIBF2025.png',
     orientation: 'horizontal',
     text: 'Portland Butoh Festival 2025: Hallowed Gramma 2',
     description: {
@@ -1024,8 +891,7 @@ const imageData = [
     album: { performance: 10 },
   },
   {
-    //id: addId(),
-    image: helenThorsen_1,
+    image: '/images/helenThorsen_1_PIBF2025.png',
     orientation: 'horizontal',
     text: 'Portland Butoh Festival 2025: Helen Thorsen 1',
     description: {
@@ -1039,8 +905,7 @@ const imageData = [
     album: { performance: 11 },
   },
   {
-    //id: addId(),
-    image: paulaHelen_1,
+    image: '/images/paulaHelen_1_PIBF2025.png',
     orientation: 'horizontal',
     text: 'Portland Butoh Festival 2025: Paula Helen',
     description: {
@@ -1054,8 +919,7 @@ const imageData = [
     album: { performance: 12 },
   },
   {
-    //id: addId(),
-    image: helenThorsen_2,
+    image: '/images/helenThorsen_2_PIBF2025.png',
     orientation: 'horizontal',
     text: 'Portland Butoh Festival 2025: Helen Thorsen 2',
     description: {
@@ -1069,8 +933,7 @@ const imageData = [
     album: { performance: 4 },
   },
   {
-    //id: addId(),
-    image: hankLogan_2,
+    image: '/images/hankLogan_2_PIBF2025.png',
     orientation: 'vertical',
     text: 'Portland Butoh Festival 2025: Hank Logan Silouette',
     description: {

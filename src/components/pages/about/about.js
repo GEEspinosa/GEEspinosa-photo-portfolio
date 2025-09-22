@@ -1,4 +1,3 @@
-import selfInstaxBryan from '../../../assets/images/gabi_instax_bryan2.png';
 import {
   AboutContainer,
   ContentContainer,
@@ -13,7 +12,7 @@ function About() {
       <AboutContainer>
         <ContentContainer>
           <div className="selfie-container">
-            <Selfie alt="doggie" src={selfInstaxBryan} />
+            <Selfie alt="doggie" src={'/images/gabi_instax_bryan2.png'} />
             <a href="https://www.instagram.com/_abriel_spinosa/">
               <img className="ig-icon" alt="ig-icon" src={instagramIcon} />
             </a>
@@ -32,8 +31,8 @@ function About() {
               <br />
               I do imagine my hobby fitting into a quiet retirement, <br />
               writing ghost stories for no one on the Oregon Coast, <br />
-              teaching myself math, and capturing the timeless <br />
-              beauty of the same stretches of coastline through my lens. <br />
+              teaching myself math, and endlessly capturing the <br />
+              same stretches of coastline like a ghost from a story. <br />
             </p>
           </BioText>
         </ContentContainer>
