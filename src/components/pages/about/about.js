@@ -12,7 +12,7 @@ function About() {
       <AboutContainer>
         <ContentContainer>
           <div className="selfie-container">
-            <Selfie alt="doggie" src={'/images/gabi_instax_bryan2.png'} />
+            <Selfie alt="doggie" src={'/images/gabi_instax_bryan2.webp'} />
             <a href="https://www.instagram.com/_abriel_spinosa/">
               <img className="ig-icon" alt="ig-icon" src={instagramIcon} />
             </a>
