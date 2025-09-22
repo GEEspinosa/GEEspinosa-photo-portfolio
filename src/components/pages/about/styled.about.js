@@ -16,7 +16,7 @@ const ContentContainer = styled.div`
   max-width: 100%;
 
   @media (max-width: 1385px) {
-    text-align: center;
+    text-align: left;
     justify-content: center;
     max-width: 90%;
   }
