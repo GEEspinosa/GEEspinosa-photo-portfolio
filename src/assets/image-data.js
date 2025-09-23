@@ -322,7 +322,7 @@ const imageData = [
     description: {
       title: 'Nikhil Synths',
       location: 'Portland, OR',
-      date: 'March 6, 2023',
+      date: 'Mar. 6, 2023',
       camera: '"Mina" Minolta SRT100',
       film: 'Lomography 800 35mm',
       shot: '1600 / +1',
@@ -437,7 +437,7 @@ const imageData = [
     description: {
       title: 'Arlene Schnitzer',
       location: 'Portland, OR',
-      date: 'April 8, 2024',
+      date: 'Apr. 8, 2024',
       camera: '"Mina" Minolta SRT100',
       film: 'Cinestill 400D 35mm',
       shot: 'Box',
@@ -523,7 +523,7 @@ const imageData = [
     description: {
       title: 'Spring Light',
       location: 'Yaquina Head, OR',
-      date: 'April 13, 2023',
+      date: 'Apr. 13, 2023',
       camera: '"Ike" Fujica AX3',
       film: 'Fomapan 100 35mm',
       shot: '200 / +1',
