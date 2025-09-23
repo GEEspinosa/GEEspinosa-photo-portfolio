@@ -381,7 +381,7 @@ const imageData = [
     description: {
       title: 'Suburban Parking',
       location: 'Lake Oswego, OR',
-      date: '11-11-11',
+      date: 'June 25, 2022',
       camera: '"Mina" Minolta SRT100',
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
@@ -493,7 +493,7 @@ const imageData = [
     description: {
       title: 'Tessa Beach',
       location: 'Lincoln City, OR',
-      date: 'Nov 30, 2023',
+      date: 'Nov. 30, 2023',
       camera: '"Mina" Minolta SRT100',
       film: 'Kodak Delta 3200 35mm',
       shot: '800 / Box',
@@ -631,7 +631,7 @@ const imageData = [
     description: {
       title: 'Broken House',
       location: 'Columbia Gorge, OR',
-      date: 'Jan 29, 2025',
+      date: 'Jan. 29, 2025',
       camera: '"Mina" Minolta SRT100',
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
@@ -645,7 +645,7 @@ const imageData = [
     description: {
       title: 'Bryan Bathes',
       location: 'Thousand Acres, Portland, OR',
-      date: 'Jan 27, 2025',
+      date: 'Jan. 27, 2025',
       camera: '"Mina" Minolta SRT100',
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
@@ -659,7 +659,7 @@ const imageData = [
     description: {
       title: 'Last Hurrah',
       location: 'Portland, OR',
-      date: 'Aug 10, 2023',
+      date: 'Aug. 10, 2023',
       camera: '"Mina" Minolta SRT100',
       film: 'Ilford HP5+ 35mm',
       shot: '800 / +1',
@@ -673,7 +673,7 @@ const imageData = [
     description: {
       title: 'Gwap Recording',
       location: 'Bodecker Foundation, Portland, OR',
-      date: 'Mar 11, 2023',
+      date: 'Mar. 11, 2023',
       camera: '"Mina" Minolta SRT100',
       film: 'Cinestill 800t 35mm',
       shot: '1600 / +1',
@@ -687,7 +687,7 @@ const imageData = [
     description: {
       title: 'Savior',
       location: 'Portland, OR',
-      date: 'Mar 15, 2024',
+      date: 'Mar. 15, 2024',
       camera: '"Mina" Minolta SRT100',
       film: 'Ilford HP5+ 35mm',
       shot: '1600 / Box',
@@ -715,7 +715,7 @@ const imageData = [
     description: {
       title: 'PDX Butoh Festival: Paige 1',
       location: 'Portland Arts Collective, Portland, OR',
-      date: 'Apr 5, 2024',
+      date: 'Apr. 5, 2024',
       camera: '"Mina" Minolta SRT100',
       film: 'Kodak TMax P3200 35mm',
       shot: '3200 / box',
@@ -729,7 +729,7 @@ const imageData = [
     description: {
       title: 'PDX Butoh Festival: Paige 2',
       location: 'Portland Arts Collective, Portland, OR',
-      date: 'Apr 5, 2024',
+      date: 'Apr. 5, 2024',
       camera: '"Mina" Minolta SRT100',
       film: 'Kodak TMax P3200 35mm',
       shot: '3200 / Box',
@@ -743,7 +743,7 @@ const imageData = [
     description: {
       title: 'PDX Butoh Festival: Alex',
       location: 'Portland Arts Collective, Portland, OR',
-      date: 'Apr 5, 2024',
+      date: 'Apr. 5, 2024',
       camera: '"Mina" Minolta SRT100',
       film: 'Kodak TMax P3200 35mm',
       shot: '3200 / Box',
@@ -771,7 +771,7 @@ const imageData = [
     description: {
       title: 'Summer Afternoon, Kitchen',
       location: 'Portland, OR',
-      date: 'Mar 15, 2024',
+      date: 'Mar. 15, 2024',
       camera: '"Mina" Minolta SRT100',
       film: 'Ilford HP5+ 35mm',
       shot: '1600 / +2',
@@ -799,7 +799,7 @@ const imageData = [
     description: {
       title: 'Her Shades',
       location: 'Lincoln City, OR',
-      date: 'Dec 5, 2023',
+      date: 'Dec. 5, 2023',
       camera: '"Mina" Minolta SRT100',
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
@@ -813,7 +813,7 @@ const imageData = [
     description: {
       title: 'Vista House: Puddle',
       location: 'Columbia Gorge, OR',
-      date: 'Jan 27, 2025',
+      date: 'Jan. 27, 2025',
       camera: '"Mina" Minolta SRT100',
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
@@ -827,7 +827,7 @@ const imageData = [
     description: {
       title: 'Vista House',
       location: 'Columbia Gorge, OR',
-      date: 'Jan 27, 2025',
+      date: 'Jan. 27, 2025',
       camera: '"Mina" Minolta SRT100',
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
@@ -841,7 +841,7 @@ const imageData = [
     description: {
       title: 'Portland Butoh Festival 2025: Hallowed Gramma 1',
       location: 'Portland Arts Collective, Portland, OR',
-      date: 'Jan 27, 2025',
+      date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
@@ -855,7 +855,7 @@ const imageData = [
     description: {
       title: 'Portland Butoh Festival 2025: Hank Logan Breathe',
       location: 'Portland Arts Collective, Portland, OR',
-      date: 'Jan 27, 2025',
+      date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
@@ -883,7 +883,7 @@ const imageData = [
     description: {
       title: 'Portland Butoh Festival 2025: Hallowed Gramma 2',
       location: 'Portland Arts Collective, Portland, OR',
-      date: 'Jan 27, 2025',
+      date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
@@ -897,7 +897,7 @@ const imageData = [
     description: {
       title: 'Portland Butoh Festival 2025: Helen Thorsen 1',
       location: 'Portland Arts Collective, Portland, OR',
-      date: 'Jan 27, 2025',
+      date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
@@ -911,7 +911,7 @@ const imageData = [
     description: {
       title: 'Portland Butoh Festival 2025: Paula Helen',
       location: 'Portland Arts Collective, Portland, OR',
-      date: 'Jan 27, 2025',
+      date: 'Jan. 27, 2025',
       camera: '"Mina" Minolta SRT100',
       film: 'Kodak TMax P3200 35mm',
       shot: '3200 / box',
@@ -925,7 +925,7 @@ const imageData = [
     description: {
       title: 'Portland Butoh Festival 2025: Helen Thorsen 2',
       location: 'Portland Arts Collective, Portland, OR',
-      date: 'Jan 27, 2025',
+      date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
@@ -939,7 +939,7 @@ const imageData = [
     description: {
       title: 'Portland Butoh Festival 2025: Hank Logan Silouette',
       location: 'Portland Arts Collective, Portland, OR',
-      date: 'Jan 27, 2025',
+      date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
