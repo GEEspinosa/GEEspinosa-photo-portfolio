@@ -31,16 +31,22 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
     const mainArray = Array.from({ length: smGalleryColNum }, () => []);
     let count = 0;
 
-    for (let i = 0; i < galleryAlbum.length; i++) {
-      if (count < smGalleryColNum - 1) {
-        mainArray[count].push(galleryAlbum[i]);
-        count++;
-        continue;
-      } else if (count === smGalleryColNum - 1) {
-        mainArray[count].push(galleryAlbum[i]);
-        count = 0;
-      }
+    // for (let i = 0; i < galleryAlbum.length; i++) {
+    //   if (count < smGalleryColNum - 1) {
+    //     mainArray[count].push(galleryAlbum[i]);
+    //     count++;
+    //     continue;
+    //   } else if (count === smGalleryColNum - 1) {
+    //     mainArray[count].push(galleryAlbum[i]);
+    //     count = 0;
+    //   }
+    // }
+
+for (let i = 0; i < galleryAlbum.length; i++) {
+      mainArray[count].push({ ...galleryAlbum[i], absoluteIndex: i });
+      count = (count + 1) % smGalleryColNum;
     }
+
     setSmallGalleryArray(mainArray);
   }
 
@@ -81,12 +87,13 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
               return (
                 <div className="column" key={colIndex}>
                   {arr.map((img, index) => {
+                    //const absoluteIndex = galleryAlbum.findIndex(g => g.id === img.id)
                     return (
                       <img
                         key={`${img.id}-${index}`}
                         alt={img.text}
                         src={img.image}
-                        onClick={() => imageClickHandler(img.id)}
+                        onClick={() => imageClickHandler(img.absoluteIndex)}
                         style={{ width: '100%', cursor: 'pointer' }}
                         loading="lazy"
                       />
@@ -106,7 +113,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
                   <img
                     alt={img.text}
                     src={img.image}
-                    onClick={() => imageClickHandler(img.id)}
+                    onClick={() => imageClickHandler(index)}
                     loading="lazy"
                   />
                 </li>
