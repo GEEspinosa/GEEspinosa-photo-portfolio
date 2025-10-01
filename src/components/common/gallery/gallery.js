@@ -32,7 +32,7 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
     let count = 0;
 
     for (let i = 0; i < galleryAlbum.length; i++) {
-      const imageWithIndex = { ...galleryAlbum[i], absoluteIndex: i}
+      const imageWithIndex = { ...galleryAlbum[i], absoluteIndex: i };
       if (count < smGalleryColNum - 1) {
         mainArray[count].push(imageWithIndex);
         count++;
@@ -42,11 +42,6 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
         count = 0;
       }
     }
-
-    // for (let i = 0; i < galleryAlbum.length; i++) {
-    //   mainArray[count].push({ ...galleryAlbum[i], absoluteIndex: i });
-    //   count = (count + 1) % smGalleryColNum;
-    // }
 
     setSmallGalleryArray(mainArray);
   }
