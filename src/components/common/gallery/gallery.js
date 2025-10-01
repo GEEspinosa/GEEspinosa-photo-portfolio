@@ -27,7 +27,6 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
 
   function fillingColumns(smGalleryColNum, galleryAlbum) {
     if (!galleryAlbum.length || smGalleryColNum <= 0) return; 
-    // let mainArray = new Array(smGalleryColNum).fill(null).map(() => []);
     
     const mainArray = Array.from({ length: smGalleryColNum }, () => []);
     let count = 0;
@@ -61,7 +60,6 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   //This allows for the smaller gallery to stay responsive to further resizing.
 
   useEffect(() => {
-    // fillingColumns(smGalleryColNum, galleryAlbum);
     if (smGalleryColNum > 0 && galleryAlbum.length > 0) {
     fillingColumns(smGalleryColNum, galleryAlbum);
   }
