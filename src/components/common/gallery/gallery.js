@@ -26,26 +26,27 @@ function GalleryPage({ imageClickHandler, pageAlbum, page }) {
   //mainArray is set in state for jsx mapping below.
 
   function fillingColumns(smGalleryColNum, galleryAlbum) {
-    if (!galleryAlbum.length || smGalleryColNum <= 0) return; 
-    
+    if (!galleryAlbum.length || smGalleryColNum <= 0) return;
+
     const mainArray = Array.from({ length: smGalleryColNum }, () => []);
     let count = 0;
 
-    // for (let i = 0; i < galleryAlbum.length; i++) {
-    //   if (count < smGalleryColNum - 1) {
-    //     mainArray[count].push(galleryAlbum[i]);
-    //     count++;
-    //     continue;
-    //   } else if (count === smGalleryColNum - 1) {
-    //     mainArray[count].push(galleryAlbum[i]);
-    //     count = 0;
-    //   }
-    // }
-
-for (let i = 0; i < galleryAlbum.length; i++) {
-      mainArray[count].push({ ...galleryAlbum[i], absoluteIndex: i });
-      count = (count + 1) % smGalleryColNum;
+    for (let i = 0; i < galleryAlbum.length; i++) {
+      const imageWithIndex = { ...galleryAlbum[i], absoluteIndex: i}
+      if (count < smGalleryColNum - 1) {
+        mainArray[count].push(imageWithIndex);
+        count++;
+        continue;
+      } else if (count === smGalleryColNum - 1) {
+        mainArray[count].push(imageWithIndex);
+        count = 0;
+      }
     }
+
+    // for (let i = 0; i < galleryAlbum.length; i++) {
+    //   mainArray[count].push({ ...galleryAlbum[i], absoluteIndex: i });
+    //   count = (count + 1) % smGalleryColNum;
+    // }
 
     setSmallGalleryArray(mainArray);
   }
@@ -67,8 +68,8 @@ for (let i = 0; i < galleryAlbum.length; i++) {
 
   useEffect(() => {
     if (smGalleryColNum > 0 && galleryAlbum.length > 0) {
-    fillingColumns(smGalleryColNum, galleryAlbum);
-  }
+      fillingColumns(smGalleryColNum, galleryAlbum);
+    }
   }, [smGalleryColNum, galleryAlbum]);
 
   // dev note: JSX below uses a ternary to render either "Gallery" or "GallerySmall" based on browser width (1376px).
@@ -87,7 +88,6 @@ for (let i = 0; i < galleryAlbum.length; i++) {
               return (
                 <div className="column" key={colIndex}>
                   {arr.map((img, index) => {
-                    //const absoluteIndex = galleryAlbum.findIndex(g => g.id === img.id)
                     return (
                       <img
                         key={`${img.id}-${index}`}
