@@ -1017,7 +1017,7 @@ const imageData = [
     album: { impression: 12 },
   },
     {
-    image: '/images/Ilwaco Windows.webp',
+    image: '/images/ilwaco_windows.webp',
     orientation: 'horizontal',
     text: "Ilwaco Windows",
     description: {
