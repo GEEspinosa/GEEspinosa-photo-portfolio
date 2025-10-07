@@ -1098,7 +1098,7 @@ const imageData = [
       film: 'Fuji Superia Xtra 35mm',
       shot: '3200 / +3',
     },
-    album: { impression: 6 },
+    album: { impression: 7 },
   },
   {
     image: '/images/Columbia Farm.webp',
