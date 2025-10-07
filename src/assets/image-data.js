@@ -1073,7 +1073,7 @@ const imageData = [
     album: { impression: 13 },
   },
   {
-    image: '/images/Bandon Towel.webp',
+    image: '/images/bandon_towel.webp',
     orientation: 'vertical',
     text: "Bandon Towel",
     description: {
@@ -1087,7 +1087,7 @@ const imageData = [
     album: { impression: 6 },
   },
   {
-    image: '/images/Yuppie Vineyard.webp',
+    image: '/images/yuppie_vineyard.webp',
     orientation: 'vertical',
     text: "Yuppie Vineyard",
     description: {
