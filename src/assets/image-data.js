@@ -1028,7 +1028,7 @@ const imageData = [
       film: 'Kodak Gold 35mm',
       shot: 'Box',
     },
-    album: { impression: 10 },
+    album: { impression: 13 },
   },
    {
     image: '/images/After The Party.webp',
