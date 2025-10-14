@@ -19,6 +19,7 @@ function Header({ open, setOpen, showModal, setPage, navClickHander }) {
                 to={link.params}
                 className="navbar-link"
                 onClick={() => navClickHander(link.pageString)}
+                aria-label={link.name}
               >
                 {link.name}
               </StyledLink>
