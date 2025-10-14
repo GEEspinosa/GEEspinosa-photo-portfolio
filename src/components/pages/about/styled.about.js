@@ -54,7 +54,7 @@ const ContentContainer = styled.div`
 
 const BioText = styled.div`
   padding: 20px 80px 20px 20px;
-  color: grey;
+  color: dimgray;
 
   @media (max-width: 1385px) {
     padding: 10px 20px 20px 20px;
