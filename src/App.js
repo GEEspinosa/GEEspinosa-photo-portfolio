@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 
 //dev note: importing head which floats in all gallery viewing modes no matter the page unless
 //resized where a hamburger menu replaces it
@@ -34,17 +34,27 @@ function App() {
     impression: [],
     performance: [],
   });
-  const [page, setPage] = useState('landing');
+  const location = useLocation();
+  const pathMap = {
+    '/': 'landing',
+    '/location': 'location',
+    '/people': 'people',
+    '/impression': 'impression',
+    '/performance': 'performance',
+  };
+  const [page, setPage] = useState(pathMap[location.pathname] ||'landing');
   const [modalSelect, setModalSelect] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
+  
   //const [isLoaded, setIsLoaded] = useState(false);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   // dev note: destructuring `width` from custom hook `useWindowSize` to get current window width.
   const { width } = useWindowSize();
 
-  let album = pageAlbum[page][0] || [];
+  const currentPage = pathMap[location.pathname] || null;
+  let album = currentPage && pageAlbum[currentPage] ? pageAlbum[currentPage][0] : [];
 
   // dev note: click handler that sets the clicked image's id to state
   // and triggers modal mode, bypassing gallery view to display the image in modal.
@@ -125,9 +135,9 @@ function App() {
   });
 
   //dev note: first render always navigates to the landing page
-  useEffect(() => {
-    navigate('/');
-  }, []);
+  // useEffect(() => {
+  //   navigate('/');
+  // }, []);
 
   // dev note: useEffect runs when `page` state changes.
   //
@@ -190,16 +200,16 @@ function App() {
           navClickHander={navClickHandler}
         />
         <Routes>
-            <Route
-              path="/"
-              element={
-                <Landing
-                  imageClickHandler={imageClickHandler}
-                  pageAlbum={pageAlbum}
-                  page={page}
-                />
-              }
-            />
+          <Route
+            path="/"
+            element={
+              <Landing
+                imageClickHandler={imageClickHandler}
+                pageAlbum={pageAlbum}
+                page={page}
+              />
+            }
+          />
           <Route
             path="/location"
             element={
