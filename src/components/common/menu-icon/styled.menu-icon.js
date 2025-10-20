@@ -5,7 +5,7 @@ const MenuIconStyled = styled.div`
   opacity: ${({ open }) => (open ? '1' : '0.7')};
   flex-direction: column;
   position: absolute;
-  right: 40px;
+  right: 20px;
   top: 40px;
   z-index: 1001;
 
@@ -20,6 +20,14 @@ const MenuIconStyled = styled.div`
   :nth-child(3) {
     transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0deg)')};
   }
+
+  // @media (max-width: 800px) {
+  //     right: 20px;
+  //   }
+
+  //  @media (max-width: 430px) {
+  //     right: 20px;
+  //   }
 
   div {
     display: none;
