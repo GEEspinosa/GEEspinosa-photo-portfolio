@@ -2,15 +2,20 @@ import { Head, Navbar, Title, StyledLink } from './styled.header';
 import { MenuIcon } from '../menu-icon/menu-icon';
 import { OpenMenu } from '../open-menu/open-menu';
 import { linkArray } from '../../../constants/linkArray';
+import useWindowSize from '../../../hooks/useWindowSize';
 
 function Header({ open, setOpen, showModal, setPage, navClickHander }) {
+    const { width } = useWindowSize();
   return (
     <Head>
       <Navbar>
+        {width >= 300 ? 
         <Title>
           G A B R I E L &nbsp; E S P I N O S A
           <br />P h o t o g r a p h y
-        </Title>
+        </Title> : <Title>
+          GABRIEL ESPINOSA <br />Photography 
+        </Title>}
         <div className="link-container">
           {linkArray.map(link => {
             return (

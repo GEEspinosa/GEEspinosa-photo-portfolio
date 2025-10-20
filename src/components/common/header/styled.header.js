@@ -59,7 +59,10 @@ const Title = styled.div`
   }
 
   @media (max-width: 370px) {
-    visibility: hidden;
+    // visibility: hidden;
+    position: relative;
+    left: -15px;
+    font-size: 14px;
   }
 `;
 
