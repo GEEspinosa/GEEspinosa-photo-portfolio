@@ -152,7 +152,7 @@ function App() {
   // simple and efficient.
 
   useEffect(() => {
-    if (pageAlbum[page].length > 0) return;
+    if (!pageAlbum[page] || pageAlbum[page].length > 0) return;
     const filteredImages = imageData.filter(img => page in img.album);
     filteredImages.sort((a, b) => (a.album[page] < b.album[page] ? -1 : 0));
     filteredImages.map((img, key) => (img.id = key));
@@ -199,9 +199,10 @@ function App() {
             path="/"
             element={
               <Landing
-                imageClickHandler={imageClickHandler}
-                pageAlbum={pageAlbum}
+                // imageClickHandler={imageClickHandler}
+                // pageAlbum={pageAlbum}
                 page={page}
+                setPage={setPage}
               />
             }
           />
