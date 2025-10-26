@@ -1,12 +1,15 @@
-import GalleryPage from '../../common/gallery/gallery';
+import { LandingGrid, StyledImage } from './styled.landing';
 
 function Landing({ imageClickHandler, pageAlbum, page }) {
   return (
-    <GalleryPage
-      imageClickHandler={imageClickHandler}
-      pageAlbum={pageAlbum}
-      page={page}
-    />
+    <>
+      <LandingGrid>
+        <StyledImage alt="test" src={'/images/gabi_instax_bryan2.webp'} />
+        <StyledImage alt="test" src={'/images/gabi_instax_bryan2.webp'} />
+        <StyledImage alt="test" src={'/images/gabi_instax_bryan2.webp'} />
+        <StyledImage alt="test" src={'/images/gabi_instax_bryan2.webp'} />
+      </LandingGrid>
+    </>
   );
 }
 
