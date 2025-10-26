@@ -18,17 +18,22 @@ const StyledImage = styled.img`
   height: auto;
   object-fit: cover;
   border-radius: 8px; // optional styling
+  transition: filter 0.3s ease; // smooth transition
+
+  &:hover {
+    filter: invert(1) brightness(0.7); // invert + slightly dim
+  }
 `;
 
 const Label = styled.div`
-  position: absolute;       // position relative to parent Link
+  position: absolute; // position relative to parent Link
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); // perfectly center
-  color: white;             // text color
+  color: white; // text color
   font-size: 1rem;
   font-weight: bold;
-  pointer-events: none;     // so clicks go through to the Link
+  pointer-events: none; // so clicks go through to the Link
   text-align: center;
 `;
 
