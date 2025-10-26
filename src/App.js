@@ -42,19 +42,17 @@ function App() {
     '/impression': 'impression',
     '/performance': 'performance',
   };
-  const [page, setPage] = useState(pathMap[location.pathname] ||'landing');
+  const [page, setPage] = useState(pathMap[location.pathname] || 'landing');
   const [modalSelect, setModalSelect] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [fadeIn, setFadeIn] = useState(false);
-  
-  //const [isLoaded, setIsLoaded] = useState(false);
-  //const navigate = useNavigate();
 
   // dev note: destructuring `width` from custom hook `useWindowSize` to get current window width.
   const { width } = useWindowSize();
 
   const currentPage = pathMap[location.pathname] || null;
-  let album = currentPage && pageAlbum[currentPage] ? pageAlbum[currentPage][0] : [];
+  let album =
+    currentPage && pageAlbum[currentPage] ? pageAlbum[currentPage][0] : [];
 
   // dev note: click handler that sets the clicked image's id to state
   // and triggers modal mode, bypassing gallery view to display the image in modal.
@@ -134,11 +132,6 @@ function App() {
     return () => document.removeEventListener('keydown', keyDownHandler);
   });
 
-  //dev note: first render always navigates to the landing page
-  // useEffect(() => {
-  //   navigate('/');
-  // }, []);
-
   // dev note: useEffect runs when `page` state changes.
   //
   // first thing it does is check if `pageAlbum[page]` already has images.
@@ -157,6 +150,7 @@ function App() {
   // what’s nice here is the early return: if that page’s images are already cached in state,
   // we skip all the sorting and mapping work. just reuse what’s already stored.
   // simple and efficient.
+
   useEffect(() => {
     if (pageAlbum[page].length > 0) return;
     const filteredImages = imageData.filter(img => page in img.album);
@@ -196,6 +190,7 @@ function App() {
           open={open}
           setOpen={setOpen}
           showModal={showModal}
+          page={page}
           setPage={setPage}
           navClickHander={navClickHandler}
         />

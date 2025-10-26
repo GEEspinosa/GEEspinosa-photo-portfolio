@@ -4,7 +4,7 @@ import { OpenMenu } from '../open-menu/open-menu';
 import { linkArray } from '../../../constants/linkArray';
 import useWindowSize from '../../../hooks/useWindowSize';
 
-function Header({ open, setOpen, showModal, setPage, navClickHander }) {
+function Header({ open, setOpen, showModal, page, setPage, navClickHander }) {
     const { width } = useWindowSize();
   return (
     <Head>
@@ -16,6 +16,7 @@ function Header({ open, setOpen, showModal, setPage, navClickHander }) {
         </Title> : <Title>
           GABRIEL ESPINOSA <br />Photography 
         </Title>}
+        {page !== 'landing' &&
         <div className="link-container">
           {linkArray.map(link => {
             return (
@@ -33,10 +34,10 @@ function Header({ open, setOpen, showModal, setPage, navClickHander }) {
           <StyledLink to="/about" className="navbar-link">
             About
           </StyledLink>
-        </div>
+        </div>}
       </Navbar>
       {!showModal && (
-        <MenuIcon open={open} setOpen={setOpen} showModal={showModal} />
+        <MenuIcon page={page} open={open} setOpen={setOpen} showModal={showModal} />
       )}
       <OpenMenu open={open} setOpen={setOpen} setPage={setPage} />
     </Head>

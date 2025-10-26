@@ -30,7 +30,7 @@ const MenuIconStyled = styled.div`
   //   }
 
   div {
-    display: none;
+    display: ${({ page }) => (page !== 'landing' ? 'none' : '')};
     width: 35px;
     height: 5px;
     background-color: ${({ open }) => (open ? 'white' : 'black')};

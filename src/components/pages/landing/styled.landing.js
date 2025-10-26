@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const LandingGrid = styled.div`
  display: grid;
   grid-template-columns: repeat(2, 1fr); // start as 2 columns
-  gap: 16px; // flexible spacing between images
+  gap: 30px; // flexible spacing between images
   max-width: 800px; // optional max width
   margin: 0 auto; // center grid horizontally
   padding: 16px;
