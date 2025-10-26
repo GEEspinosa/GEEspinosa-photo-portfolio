@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const LandingGrid = styled.div`
- display: grid;
+  display: grid;
   grid-template-columns: repeat(2, 1fr); // start as 2 columns
   gap: 30px; // flexible spacing between images
   max-width: 800px; // optional max width
@@ -14,10 +14,22 @@ const LandingGrid = styled.div`
 `;
 
 const StyledImage = styled.img`
-width: 100%;
+  width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 8px; // optional styling
 `;
 
-export { LandingGrid, StyledImage };
+const Label = styled.div`
+  position: absolute;       // position relative to parent Link
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); // perfectly center
+  color: white;             // text color
+  font-size: 1rem;
+  font-weight: bold;
+  pointer-events: none;     // so clicks go through to the Link
+  text-align: center;
+`;
+
+export { LandingGrid, StyledImage, Label };
