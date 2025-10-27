@@ -513,7 +513,7 @@ const imageData = [
       shot: '1600 / +1',
     },
     album: {
-      people: 12,
+      // people: 12,
     },
   },
   {

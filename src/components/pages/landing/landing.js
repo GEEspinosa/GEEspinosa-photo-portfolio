@@ -1,32 +1,37 @@
 import { Link } from 'react-router-dom';
-import { LandingGrid, StyledImage, Label } from './styled.landing';
+import {
+  LandingGrid,
+  StyledImage,
+  ImageWrapper,
+  Label,
+} from './styled.landing';
 
 function Landing({ setPage }) {
   const landingLinks = [
     {
-      src: '/images/gabi_instax_bryan2.webp',
+      src: '/images/bonsai.webp',
       alt: 'test',
       to: '/location',
       pageKey: 'location',
       label: 'LOCATION',
     },
     {
-      src: '/images/gabi_instax_bryan2.webp',
+      src: '/images/tessa_beach.webp',
       alt: 'people',
       to: '/people',
       pageKey: 'people',
       label: 'PEOPLE',
     },
     {
-      src: '/images/gabi_instax_bryan2.webp',
+      src: '/images/faded_mural.webp',
       alt: 'impression',
       to: '/impression',
       pageKey: 'impression',
       label: 'IMPRESSION',
     },
     {
-      src: '/images/gabi_instax_bryan2.webp',
-      alt: 'impression',
+      src: '/images/sean_guitar.webp',
+      alt: 'performance',
       to: '/performance',
       pageKey: 'performance',
       label: 'PERFORMANCE',
@@ -44,10 +49,12 @@ function Landing({ setPage }) {
             }}
             style={{ position: 'relative', display: 'block' }} // relative parent for Label
           >
-            <StyledImage src={image.src} alt={image.alt} />
-            <Label>
-              <h1>{image.label}</h1>
-            </Label>
+            <ImageWrapper>
+              <StyledImage src={image.src} alt={image.alt} />
+              <Label>
+                <h1>{image.label}</h1>
+              </Label>
+            </ImageWrapper>
           </Link>
         ))}
       </LandingGrid>

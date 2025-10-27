@@ -13,11 +13,20 @@ const LandingGrid = styled.div`
   }
 `;
 
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* ensures square shape */
+  overflow: hidden; /* hides overflow outside the square */
+   //border-radius: 8px; /* optional */
+   border: 5px solid #000000ff;
+`;
+
 const StyledImage = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px; // optional styling
+  // border-radius: 8px; // optional styling
   transition: filter 0.3s ease; // smooth transition
 
   &:hover {
@@ -26,15 +35,18 @@ const StyledImage = styled.img`
 `;
 
 const Label = styled.div`
-  position: absolute; // position relative to parent Link
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); // perfectly center
-  color: white; // text color
+  transform: translate(-50%, -50%);
+  color: #E0E0E0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   font-size: 1rem;
-  font-weight: bold;
-  pointer-events: none; // so clicks go through to the Link
   text-align: center;
+  pointer-events: none;
+  text-transform: uppercase;
 `;
 
-export { LandingGrid, StyledImage, Label };
+export { LandingGrid, StyledImage, ImageWrapper, Label };
