@@ -28,7 +28,7 @@ const StyledImage = styled.img`
   object-fit: cover;
   // border-radius: 8px; // optional styling
   transition: filter 0.3s ease; // smooth transition
-
+ //border: 5px solid #000000ff;
   &:hover {
     filter: invert(1) brightness(0.7); // invert + slightly dim
   }
