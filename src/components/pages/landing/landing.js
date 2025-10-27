@@ -27,7 +27,7 @@ function Landing({ setPage }) {
       alt: 'impression',
       to: '/impression',
       pageKey: 'impression',
-      label: 'IMPRESSION',
+      label: 'IMPRESSIONS',
     },
     {
       src: '/images/sean_guitar.webp',

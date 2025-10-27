@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 //dev note: importing head which floats in all gallery viewing modes no matter the page unless
 //resized where a hamburger menu replaces it
