@@ -106,7 +106,7 @@ function Landing({ setPage }) {
         alt: randomImage.alt || key,
         to: `/${key}`,
         pageKey: key,
-        label: key.toUpperCase(),
+        label: key === 'impression' ? key.toUpperCase() + 's' : key.toUpperCase(),
         color: randomColor,
       };
     });

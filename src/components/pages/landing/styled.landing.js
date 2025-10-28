@@ -19,6 +19,8 @@ const ImageWrapper = styled.div`
   aspect-ratio: 1 / 1; /* ensures square shape */
   overflow: hidden; /* hides overflow outside the square */
   border: 5px solid #000000ff;
+
+  
 `;
 
 const StyledImage = styled.img`
@@ -26,6 +28,7 @@ const StyledImage = styled.img`
   height: 100%;
   object-fit: cover;
   transition: filter 0.3s ease; // smooth transition
+  
 
   opacity: 0;
   animation: fadeIn 1s ease forwards;
@@ -55,14 +58,15 @@ const Label = styled.div`
   pointer-events: none;
   text-transform: uppercase;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* 👈 key line */
+   /* default desktop: hidden */
   opacity: 0;
 
-  /* Show label when hovering on desktop */
+  /* show on hover (desktop) */
   ${ImageWrapper}:hover & {
     opacity: 1;
   }
 
-  /* Always visible on mobile/touch devices */
+  /* always visible on mobile/touch devices */
   @media (hover: none) and (pointer: coarse) {
     opacity: 1;
   }
