@@ -11,7 +11,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 0, people: 0 },
+    album: { people: 0 },
   },
   {
     image: '/images/antonio_longbeach.webp',
@@ -26,7 +26,6 @@ const imageData = [
       shot: '800 / +1',
     },
     album: {
-      landing: 1,
       location: 0,
     },
   },
@@ -58,7 +57,7 @@ const imageData = [
       film: 'Kodak Portra 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 2, location: 2 },
+    album: { location: 2 },
   },
   {
     image: '/images/astoria_bridge_red_boat.webp',
@@ -86,7 +85,7 @@ const imageData = [
       film: 'Kodak Gold 200 35mm',
       shot: 'Box',
     },
-    album: { landing: 3, location: 4 },
+    album: { location: 4 },
   },
   {
     image: '/images/black_butte_tree.webp',
@@ -100,7 +99,7 @@ const imageData = [
       film: 'Ilford SFX 200 35mm',
       shot: 'Red Filter / Box',
     },
-    album: { landing: 4, impression: 5 },
+    album: { impression: 5 },
   },
   {
     image: '/images/boats.webp',
@@ -114,7 +113,7 @@ const imageData = [
       film: 'Fuji Superia Xtra 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 5, impression: 6 },
+    album: { impression: 6 },
   },
   {
     image: '/images/bonsai.webp',
@@ -128,7 +127,7 @@ const imageData = [
       film: 'Kodak Gold 200 35mm',
       shot: '400 / + 1',
     },
-    album: { landing: 6, location: 7 },
+    album: { location: 7 },
   },
   {
     image: '/images/carl_butoh.webp',
@@ -142,7 +141,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '800 / +1',
     },
-    album: { landing: 7, performance: 0 },
+    album: { performance: 0 },
   },
   {
     image: '/images/christian.webp',
@@ -156,7 +155,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 8, people: 1 },
+    album: { people: 1 },
   },
   {
     image: '/images/danny_bass_feedback.webp',
@@ -170,22 +169,22 @@ const imageData = [
       film: 'Ilford Delta 3200 35mm',
       shot: '1600 / +0',
     },
-    album: { landing: 9, people: 2 },
+    album: { people: 2 },
   },
-  // {
-  //   image: '/images/eagle_crest_sunset.webp',
-  //   orientation: 'horizontal',
-  //   text: 'Eagle Crest Sunset',
-  //   description: {
-  //     title: 'Eagle Crest Sunset: Juniper',
-  //     location: 'Redmond, OR',
-  //     date: 'July 10, 2023',
-  //     camera: '"Mina" Minolta SRT100',
-  //     film: 'Kodak Portra 800 35mm',
-  //     shot: 'Box',
-  //   },
-  //   album: { landing: 10, location: 8 },
-  // },
+  {
+    image: '/images/eagle_crest_sunset.webp',
+    orientation: 'horizontal',
+    text: 'Eagle Crest Sunset',
+    description: {
+      title: 'Eagle Crest Sunset: Juniper',
+      location: 'Redmond, OR',
+      date: 'July 10, 2023',
+      camera: '"Mina" Minolta SRT100',
+      film: 'Kodak Portra 800 35mm',
+      shot: 'Box',
+    },
+    album: { impression: 8 },
+  },
   // {
   //   image: '/images/eagle_crest_sunset2.webp',
   //   orientation: 'horizontal',
@@ -212,7 +211,7 @@ const imageData = [
       film: 'Expired Kodak TriX 35mm',
       shot: '200 / +1',
     },
-    album: { landing: 11, people: 3 },
+    album: { people: 3 },
   },
   {
     image: '/images/estella_brother_rollei.webp',
@@ -226,7 +225,7 @@ const imageData = [
       film: 'Kodak Portra 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 12, people: 4 },
+    album: { people: 4 },
   },
   {
     image: '/images/faded_graffiti.webp',
@@ -240,7 +239,7 @@ const imageData = [
       film: 'Expired Kroger 400 35mm (UltraMax)',
       shot: '400 / +2',
     },
-    album: { landing: 13, impression: 1 },
+    album: { impression: 1 },
   },
   {
     image: '/images/faded_mural.webp',
@@ -254,7 +253,7 @@ const imageData = [
       film: 'Expired Kroger 400 35mm (UltraMax)',
       shot: '400 / +2',
     },
-    album: { landing: 14, impression: 10 },
+    album: { impression: 10 },
   },
   {
     image: '/images/grey_trunk.webp',
@@ -268,7 +267,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '1600 / +2',
     },
-    album: { landing: 15, impression: 11 },
+    album: { impression: 11 },
   },
   {
     image: '/images/kaycie.webp',
@@ -282,7 +281,7 @@ const imageData = [
       film: 'Expired Kodak TriX 35mm',
       shot: 'Box',
     },
-    album: { landing: 16, people: 5 },
+    album: { people: 5 },
   },
   {
     image: '/images/longbeach_kid.webp',
@@ -297,7 +296,6 @@ const imageData = [
       shot: '800 / +1',
     },
     album: {
-      landing: 17,
       location: 12,
     },
   },
@@ -313,7 +311,7 @@ const imageData = [
       film: 'Fomapan 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 18, people: 6 },
+    album: { people: 6 },
   },
   {
     image: '/images/nikki_synth.webp',
@@ -328,7 +326,6 @@ const imageData = [
       shot: '1600 / +1',
     },
     album: {
-      landing: 19,
       performance: 5,
     },
   },
@@ -344,7 +341,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '800 / +1',
     },
-    album: { landing: 20, performance: 1 },
+    album: { performance: 1 },
   },
   {
     image: '/images/otd_halloween1.webp',
@@ -372,7 +369,7 @@ const imageData = [
       film: 'Expired TriX 35mm',
       shot: '3200 / +3',
     },
-    album: {},
+    album: { performance: 12 },
   },
   {
     image: '/images/parking_lot.webp',
@@ -400,7 +397,7 @@ const imageData = [
       film: 'Kodak Delta 3200 35mm',
       shot: '800 / Box',
     },
-    album: { landing: 21, location: 14 },
+    album: { location: 14 },
   },
   {
     image: '/images/proposal_rock.webp',
@@ -414,7 +411,7 @@ const imageData = [
       film: 'Fomapan 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 22, location: 15 },
+    album: { location: 15 },
   },
   {
     image: '/images/ripley_guitar.webp',
@@ -428,7 +425,7 @@ const imageData = [
       film: 'Kodak Delta 3200 35mm',
       shot: '1600 / Box',
     },
-    album: { landing: 23, people: 8 },
+    album: { people: 8 },
   },
   {
     image: '/images/schnitzer.webp',
@@ -442,7 +439,7 @@ const imageData = [
       film: 'Cinestill 400D 35mm',
       shot: 'Box',
     },
-    album: { landing: 24, location: 16 },
+    album: { location: 16 },
   },
   {
     image: '/images/sean_costume.webp',
@@ -456,7 +453,7 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
     },
-    album: { landing: 25, people: 9 },
+    album: { people: 9 },
   },
   {
     image: '/images/sean_guitar.webp',
@@ -470,7 +467,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '1600 / +2',
     },
-    album: { landing: 26, performance: 3 },
+    album: { performance: 3 },
   },
   {
     image: '/images/swim_buddies.webp',
@@ -484,7 +481,7 @@ const imageData = [
       film: 'Kodak Portra 400 35mm',
       shot: 'Box',
     },
-    album: { landing: 27, people: 10 },
+    album: { people: 10 },
   },
   {
     image: '/images/tessa_beach.webp',
@@ -498,7 +495,7 @@ const imageData = [
       film: 'Kodak Delta 3200 35mm',
       shot: '800 / Box',
     },
-    album: { landing: 28, people: 11 },
+    album: { people: 11 },
   },
   {
     image: '/images/tessa_flowers.webp',
@@ -528,7 +525,7 @@ const imageData = [
       film: 'Fomapan 100 35mm',
       shot: '200 / +1',
     },
-    album: { landing: 29, location: 17 },
+    album: { location: 17 },
   },
   {
     image: '/images/zoran_pat_swim.webp',
@@ -558,7 +555,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 30, people: 14 },
+    album: { people: 14 },
   },
   {
     image: '/images/longbeach_distanthouse.webp',
@@ -636,7 +633,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 31, location: 22 },
+    album: { location: 22 },
   },
   {
     image: '/images/Bryan_Shakes_1K.webp',
@@ -650,7 +647,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 32, people: 15 },
+    album: { people: 15 },
   },
   {
     image: '/images/Daniel_Smoking.webp',
@@ -664,7 +661,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: '800 / +1',
     },
-    album: { landing: 33, people: 16 },
+    album: { people: 16 },
   },
   {
     image: '/images/Gwap_Bodecker.webp',
@@ -720,7 +717,7 @@ const imageData = [
       film: 'Kodak TMax P3200 35mm',
       shot: '3200 / box',
     },
-    album: { landing: 34, performance: 4 },
+    album: { performance: 4 },
   },
   {
     image: '/images/PDX_ButohFest2024_2.webp',
@@ -748,7 +745,7 @@ const imageData = [
       film: 'Kodak TMax P3200 35mm',
       shot: '3200 / Box',
     },
-    album: { landing: 35, performance: 6 },
+    album: { performance: 6 },
   },
   {
     image: '/images/Port_Blakey_Mill_BainBridge.webp',
@@ -804,7 +801,7 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
     },
-    album: { landing: 36, people: 21 },
+    album: { people: 21 },
   },
   {
     image: '/images/VistaHouse_Puddle.webp',
@@ -832,7 +829,7 @@ const imageData = [
       film: 'Ilford HP5+ 35mm',
       shot: 'Box',
     },
-    album: { landing: 37, location: 25 },
+    album: { location: 25 },
   },
   {
     image: '/images/clarehallowedgramma_PIBF2025.webp',
@@ -846,7 +843,7 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
     },
-    album: { landing: 38, performance: 7 },
+    album: { performance: 7 },
   },
   {
     image: '/images/hankLogan_PIBF2025.webp',
@@ -860,7 +857,7 @@ const imageData = [
       film: 'Kodak Portra 800 35mm',
       shot: '1600 / +1',
     },
-    album: { landing: 40, performance: 8 },
+    album: { performance: 8 },
   },
   {
     image: '/images/bk_notnauts_live.webp',
@@ -991,9 +988,9 @@ const imageData = [
   {
     image: '/images/Autumn Shadow Puppets.webp',
     orientation: 'horizontal',
-    text: "Autumn Shadow Puppets",
+    text: 'Autumn Shadow Puppets',
     description: {
-      title: "Autumn Shadow Puppets",
+      title: 'Autumn Shadow Puppets',
       location: 'Portland, OR',
       date: 'Nov. 24, 2022',
       camera: '"Mina" Minolta SRT100',
@@ -1005,9 +1002,9 @@ const imageData = [
   {
     image: '/images/Smokey Roses.webp',
     orientation: 'horizontal',
-    text: "Smokey Roses",
+    text: 'Smokey Roses',
     description: {
-      title: "Smokey Roses",
+      title: 'Smokey Roses',
       location: 'Portland, OR',
       date: 'Sept. 23, 2022',
       camera: '"Mina" Minolta SRT100',
@@ -1016,26 +1013,26 @@ const imageData = [
     },
     album: { impression: 12 },
   },
-    {
+  {
     image: '/images/ilwaco_windows.webp',
     orientation: 'horizontal',
-    text: "Ilwaco Windows",
+    text: 'Ilwaco Windows',
     description: {
-      title: "Ilwaco Windows",
+      title: 'Ilwaco Windows',
       location: 'Ilwaco, WA',
       date: 'Oct. 2, 2022',
       camera: '"Mina" Minolta SRT100',
       film: 'Kodak Gold 35mm',
       shot: 'Box',
     },
-    album: { impression: 14},
+    album: { impression: 14 },
   },
-   {
+  {
     image: '/images/After The Party.webp',
     orientation: 'horizontal',
-    text: "After The Party",
+    text: 'After The Party',
     description: {
-      title: "After The Party",
+      title: 'After The Party',
       location: 'Lincoln City, OR',
       date: 'June 28, 2023',
       camera: 'Canon FTb',
@@ -1047,9 +1044,9 @@ const imageData = [
   {
     image: '/images/Tabor Rust.webp',
     orientation: 'vertical',
-    text: "Tabor Rust",
+    text: 'Tabor Rust',
     description: {
-      title: "Tabor Rust",
+      title: 'Tabor Rust',
       location: 'Portland, OR',
       date: 'June 2, 2023',
       camera: '"Mina" Minolta SRT100',
@@ -1058,12 +1055,12 @@ const imageData = [
     },
     album: { impression: 9 },
   },
-   {
+  {
     image: '/images/Gulch Kitty.webp',
     orientation: 'horizontal',
-    text: "Gulch Kitty",
+    text: 'Gulch Kitty',
     description: {
-      title: "Gulch Kitty",
+      title: 'Gulch Kitty',
       location: 'Portland, OR',
       date: 'Nov. 12, 2024',
       camera: '"Mina" Minolta SRT100',
@@ -1075,9 +1072,9 @@ const imageData = [
   {
     image: '/images/bandon_towel.webp',
     orientation: 'vertical',
-    text: "Bandon Towel",
+    text: 'Bandon Towel',
     description: {
-      title: "Bandon Towel",
+      title: 'Bandon Towel',
       location: 'Bandon, OR',
       date: 'Sept. 20, 2025',
       camera: 'Nikon FM2',
@@ -1089,9 +1086,9 @@ const imageData = [
   {
     image: '/images/yuppie_vineyard.webp',
     orientation: 'vertical',
-    text: "Yuppie Vineyard",
+    text: 'Yuppie Vineyard',
     description: {
-      title: "Yuppie Vineyard",
+      title: 'Yuppie Vineyard',
       location: 'Portland, OR',
       date: 'Dec. 21, 2022',
       camera: 'Nikon FM2',
@@ -1103,9 +1100,9 @@ const imageData = [
   {
     image: '/images/Columbia Farm.webp',
     orientation: 'horizontal',
-    text: "Columbia Farm",
+    text: 'Columbia Farm',
     description: {
-      title: "Columbia Farm",
+      title: 'Columbia Farm',
       location: 'Sauvie Island, Portland, OR',
       date: 'Oct. 21, 2023',
       camera: '"Ike" Fujica AX3',
