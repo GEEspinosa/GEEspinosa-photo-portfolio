@@ -27,6 +27,15 @@ const StyledImage = styled.img`
   object-fit: cover;
   transition: filter 0.3s ease; // smooth transition
 
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
   &:hover {
     filter: invert(1) brightness(0.7); // invert + slightly dim
   }
@@ -38,8 +47,6 @@ const Label = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   color: #e0e0e0;
-  // color: #e89292ff;
-  // color: #c6d3e0ff;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -47,6 +54,18 @@ const Label = styled.div`
   text-align: center;
   pointer-events: none;
   text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* 👈 key line */
+  opacity: 0;
+
+  /* Show label when hovering on desktop */
+  ${ImageWrapper}:hover & {
+    opacity: 1;
+  }
+
+  /* Always visible on mobile/touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    opacity: 1;
+  }
 `;
 
 export { LandingGrid, StyledImage, ImageWrapper, Label };
