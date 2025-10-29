@@ -355,22 +355,9 @@ const imageData = [
       film: 'Expired TriX 35mm',
       shot: '3200 / +3',
     },
-    album: { performance: 2 },
+    album: { performance: 15 },
   },
-  {
-    image: '/images/otd_halloween2.webp',
-    orientation: 'horizontal',
-    text: 'Old Town Diamonds: Halloween',
-    description: {
-      title: 'Old Town Diamonds: Halloween 2',
-      location: 'Portland, OR',
-      date: 'Oct. 27, 2022',
-      camera: '"Mina" Minolta SRT100',
-      film: 'Expired TriX 35mm',
-      shot: '3200 / +3',
-    },
-    album: { performance: 12 },
-  },
+ 
   {
     image: '/images/parking_lot.webp',
     orientation: 'horizontal',
