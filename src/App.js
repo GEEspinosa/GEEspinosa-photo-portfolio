@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 //dev note: importing head which floats in all gallery viewing modes no matter the page unless
 //resized where a hamburger menu replaces it
 import Header from './components/common/header/header';
-
+import Footer from './components/common/footer/footer';
 //dev note: importing modal component that bypasses gallery viewing mode and nav bar
 import ModalComponent from './components/common/modal/modal';
 
@@ -173,7 +173,7 @@ function App() {
 
   return (
     <>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         {showModal && (
           <ModalComponent
             showModal={showModal}
@@ -194,7 +194,8 @@ function App() {
           setPage={setPage}
           navClickHander={navClickHandler}
         />
-        <Routes>
+        <div style={{ flexGrow: 1 }}>
+ <Routes>
           <Route
             path="/"
             element={
@@ -248,6 +249,9 @@ function App() {
           />
           <Route path="/about" element={<About />} />
         </Routes>
+        </div>
+       
+        <Footer />
       </div>
     </>
   );

@@ -38,6 +38,7 @@ function ModalComponent({
                 currentImage.orientation
               }`}
             />
+            
             <div className={currentImage.orientation}>
               <h2>{currentImage.description.title}</h2>
               <p>
@@ -49,6 +50,20 @@ function ModalComponent({
                 {currentImage.description.shot}
               </p>
             </div>
+
+{/* <div className={`metaContainer ${currentImage.orientation}`}>
+  <h2>{currentImage.description.title}</h2>
+  <p>
+    {currentImage.description.location} <br />
+    {currentImage.description.date} <br />
+    <br />
+    {currentImage.description.camera} <br />
+    {currentImage.description.film} <br />
+    {currentImage.description.shot}
+  </p>
+</div> */}
+
+
           </div>
           <RightArrowButton
             showModal={showModal}

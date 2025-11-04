@@ -54,7 +54,6 @@ const Modal = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;     
-  }
  
   .middleColumn {
     display: flex;
@@ -259,3 +258,4 @@ const Modal = styled.div`
 `;
 
 export { Modal, ModalIcon };
+
