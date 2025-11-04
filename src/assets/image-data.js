@@ -29,22 +29,22 @@ const imageData = [
       location: 0,
     },
   },
-  {
-    image: '/images/astoria_bridge_docks.webp',
-    orientation: 'horizontal',
-    text: 'View From Above',
-    description: {
-      title: 'View From Above',
-      location: 'Astoria, OR',
-      date: 'Oct. 19th, 2024',
-      camera: '"Mina" Minolta SRT100',
-      film: 'Kodak ColorPlus 200 35mm',
-      shot: 'Box',
-    },
-    album: {
-      location: 1,
-    },
-  },
+  // {
+  //   image: '/images/astoria_bridge_docks.webp',
+  //   orientation: 'horizontal',
+  //   text: 'View From Above',
+  //   description: {
+  //     title: 'View From Above',
+  //     location: 'Astoria, OR',
+  //     date: 'Oct. 19th, 2024',
+  //     camera: '"Mina" Minolta SRT100',
+  //     film: 'Kodak ColorPlus 200 35mm',
+  //     shot: 'Box',
+  //   },
+  //   album: {
+  //     location: 1,
+  //   },
+  // },
   {
     image: '/images/astoria_bridge_empty.webp',
     orientation: 'horizontal',
@@ -59,20 +59,20 @@ const imageData = [
     },
     album: { location: 2 },
   },
-  {
-    image: '/images/astoria_bridge_red_boat.webp',
-    orientation: 'horizontal',
-    text: 'Astoria-Megler Bridge',
-    description: {
-      title: 'Astoria-Megler Bridge',
-      location: 'Astoria, OR',
-      date: 'Oct. 19, 2024',
-      camera: '"Mina" Minolta SRT100',
-      film: 'Kodak ColorPlus 200 35mm',
-      shot: 'Box',
-    },
-    album: { location: 3 },
-  },
+  // {
+  //   image: '/images/astoria_bridge_red_boat.webp',
+  //   orientation: 'horizontal',
+  //   text: 'Astoria-Megler Bridge',
+  //   description: {
+  //     title: 'Astoria-Megler Bridge',
+  //     location: 'Astoria, OR',
+  //     date: 'Oct. 19, 2024',
+  //     camera: '"Mina" Minolta SRT100',
+  //     film: 'Kodak ColorPlus 200 35mm',
+  //     shot: 'Box',
+  //   },
+  //   album: { location: 3 },
+  // },
   {
     image: '/images/bagdad_theater.webp',
     orientation: 'horizontal',
@@ -132,9 +132,9 @@ const imageData = [
   {
     image: '/images/carl_butoh.webp',
     orientation: 'vertical',
-    text: 'Ghostly Performance',
+    text: 'Ghostly: Carl',
     description: {
-      title: 'Ghostly Performance',
+      title: 'Ghostly: Carl',
       location: "Mother Foucault's, Portland, OR",
       date: 'Aug. 7, 2023',
       camera: '"Mina" Minolta SRT100',
@@ -269,22 +269,22 @@ const imageData = [
     },
     album: { people: 5 },
   },
-  {
-    image: '/images/longbeach_kid.webp',
-    orientation: 'horizontal',
-    text: 'Sea Kid',
-    description: {
-      title: 'Sea Kid',
-      location: 'Longbeach, WA',
-      date: 'Oct. 18, 2024',
-      camera: '"Mina" Minolta SRT100',
-      film: 'Ilford HP5+ 35mm',
-      shot: '800 / +1',
-    },
-    album: {
-      location: 12,
-    },
-  },
+  // {
+  //   image: '/images/longbeach_kid.webp',
+  //   orientation: 'horizontal',
+  //   text: 'Sea Kid',
+  //   description: {
+  //     title: 'Sea Kid',
+  //     location: 'Longbeach, WA',
+  //     date: 'Oct. 18, 2024',
+  //     camera: '"Mina" Minolta SRT100',
+  //     film: 'Ilford HP5+ 35mm',
+  //     shot: '800 / +1',
+  //   },
+  //   album: {
+  //     location: 12,
+  //   },
+  // },
   {
     image: '/images/mom_antonio_beach.webp',
     orientation: 'horizontal',
@@ -546,17 +546,33 @@ const imageData = [
       location: 18,
     },
   },
+  // {
+  //   image: '/images/longbeach_nohorizon.webp',
+  //   orientation: 'horizontal',
+  //   text: 'No Horizon',
+  //   description: {
+  //     title: 'No Horizon',
+  //     location: 'Longbeach, WA',
+  //     date: 'Oct. 10, 2022',
+  //     camera: '"Mina" Minolta SRT100',
+  //     film: 'Expired Kodak TriX 35mm',
+  //     shot: '200 / -1',
+  //   },
+  //   album: {
+  //     location: 19,
+  //   },
+  // },
   {
-    image: '/images/longbeach_nohorizon.webp',
+    image: '/images/No Fence, Really.webp',
     orientation: 'horizontal',
-    text: 'No Horizon',
+    text: 'No Fence, Really',
     description: {
-      title: 'No Horizon',
-      location: 'Longbeach, WA',
-      date: 'Oct. 10, 2022',
-      camera: '"Mina" Minolta SRT100',
-      film: 'Expired Kodak TriX 35mm',
-      shot: '200 / -1',
+      title: 'No Fence, Really',
+      location: 'Lincoln City, OR',
+      date: 'May 31, 2025',
+      camera: 'Nikon FM2',
+      film: 'Kodak Gold 35mm',
+      shot: 'Box',
     },
     album: {
       location: 19,
@@ -695,9 +711,9 @@ const imageData = [
   {
     image: '/images/PDX_ButohFest2024_1.webp',
     orientation: 'horizontal',
-    text: 'PDX Butoh Festival: Paige 1',
+    text: 'PDX Butoh Festival 2024: Paige 1',
     description: {
-      title: 'PDX Butoh Festival: Paige 1',
+      title: 'PDX Butoh Festival 2024: Paige 1',
       location: 'Portland Arts Collective, Portland, OR',
       date: 'Apr. 5, 2024',
       camera: '"Mina" Minolta SRT100',
@@ -709,9 +725,9 @@ const imageData = [
   {
     image: '/images/PDX_ButohFest2024_2.webp',
     orientation: 'vertical',
-    text: 'PDX Butoh Festival: Paige 2',
+    text: 'PDX Butoh Festival 2024: Paige 2',
     description: {
-      title: 'PDX Butoh Festival: Paige 2',
+      title: 'PDX Butoh Festival 2024: Paige 2',
       location: 'Portland Arts Collective, Portland, OR',
       date: 'Apr. 5, 2024',
       camera: '"Mina" Minolta SRT100',
@@ -723,7 +739,7 @@ const imageData = [
   {
     image: '/images/PDX_ButohFest2024_3.webp',
     orientation: 'horizontal',
-    text: 'PDX Butoh Festival: Alex',
+    text: 'PDX Butoh Festival 2024: Alex',
     description: {
       title: 'PDX Butoh Festival: Alex',
       location: 'Portland Arts Collective, Portland, OR',
@@ -823,8 +839,8 @@ const imageData = [
     orientation: 'horizontal',
     text: 'Hallowed Gramma',
     description: {
-      title: 'Portland Butoh Festival 2025: Hallowed Gramma 1',
-      location: 'Portland Arts Collective, Portland, OR',
+      title: 'PDX Butoh Festival 2025: Hallowed Gramma 1',
+      location: 'PDX Arts Collective, Portland, OR',
       date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
       film: 'Kodak Portra 800 35mm',
@@ -835,9 +851,9 @@ const imageData = [
   {
     image: '/images/hankLogan_PIBF2025.webp',
     orientation: 'vertical',
-    text: 'Portland Butoh Festival 2025: Hank Logan Breathe',
+    text: 'PDX Butoh Festival 2025: Hank Logan Breathe',
     description: {
-      title: 'Portland Butoh Festival 2025: Hank Logan Breathe',
+      title: 'PDX Butoh Festival 2025: Hank Logan Breathe',
       location: 'Portland Arts Collective, Portland, OR',
       date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
@@ -863,10 +879,10 @@ const imageData = [
   {
     image: '/images/clareHallowGramma_2_PIBF2025.webp',
     orientation: 'horizontal',
-    text: 'Portland Butoh Festival 2025: Hallowed Gramma 2',
+    text: 'PDX Butoh Festival 2025: Hallowed Gramma 2',
     description: {
-      title: 'Portland Butoh Festival 2025: Hallowed Gramma 2',
-      location: 'Portland Arts Collective, Portland, OR',
+      title: 'PDX Butoh Festival 2025: Hallowed Gramma 2',
+      location: 'PDX Arts Collective, Portland, OR',
       date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
       film: 'Kodak Portra 800 35mm',
@@ -877,9 +893,9 @@ const imageData = [
   {
     image: '/images/helenThorsen_1_PIBF2025.webp',
     orientation: 'horizontal',
-    text: 'Portland Butoh Festival 2025: Helen Thorsen 1',
+    text: 'PDX Butoh Festival 2025: Helen Thorsen 1',
     description: {
-      title: 'Portland Butoh Festival 2025: Helen Thorsen 1',
+      title: 'PDX Butoh Festival 2025: Helen Thorsen 1',
       location: 'Portland Arts Collective, Portland, OR',
       date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
@@ -905,9 +921,9 @@ const imageData = [
   {
     image: '/images/helenThorsen_2_PIBF2025.webp',
     orientation: 'horizontal',
-    text: 'Portland Butoh Festival 2025: Helen Thorsen 2',
+    text: 'PDX Butoh Festival 2025: Helen Thorsen 2',
     description: {
-      title: 'Portland Butoh Festival 2025: Helen Thorsen 2',
+      title: 'PDX Butoh Festival 2025: Helen Thorsen 2',
       location: 'Portland Arts Collective, Portland, OR',
       date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
@@ -919,9 +935,9 @@ const imageData = [
   {
     image: '/images/hankLogan_2_PIBF2025.webp',
     orientation: 'vertical',
-    text: 'Portland Butoh Festival 2025: Hank Logan Silouette',
+    text: 'PDX Butoh Festival 2025: Hank Logan Silouette',
     description: {
-      title: 'Portland Butoh Festival 2025: Hank Logan Silouette',
+      title: 'PDX Butoh Festival 2025: Hank Logan Silouette',
       location: 'Portland Arts Collective, Portland, OR',
       date: 'Jan. 27, 2025',
       camera: '"Ike" Fujica AX3',
@@ -933,9 +949,9 @@ const imageData = [
   {
     image: '/images/carl_chalk.webp',
     orientation: 'horizontal',
-    text: 'Chalk',
+    text: 'PDX Butoh Festival 2025: Carl Chalk',
     description: {
-      title: 'Chalk',
+      title: 'PDX Butoh Festival 2025: Carl Chalk',
       location: 'Portland Arts Collective, Portland, OR',
       date: 'Jan. 27, 2025',
       camera: '"Mina" Minolta SRT100',
@@ -961,9 +977,9 @@ const imageData = [
   {
     image: '/images/Lacephale Solo.webp',
     orientation: 'vertical',
-    text: "L'Acephale: Ritual",
+    text: "Ritual: L'Acephale",
     description: {
-      title: "L'Acephale: Ritual",
+      title: "Ritual: L'Acephale",
       location: 'High Water Mark, Portland, OR',
       date: 'June 30th, 2025',
       camera: '"Mina" Minolta SRT100',
