@@ -11,10 +11,11 @@ import { labelColors } from '../../../constants/labelColors';
 
 function Landing({ setPage }) {
   const [randomImages, setRandomImages] = useState([]);
-  const randomColor =
-    labelColors[Math.floor(Math.random() * labelColors.length)];
+  
 
   useEffect(() => {
+    const randomColor =
+    labelColors[Math.floor(Math.random() * labelColors.length)];
     const pageKeys = ['location', 'people', 'impression', 'performance'];
 
     const selected = pageKeys.map(key => {
