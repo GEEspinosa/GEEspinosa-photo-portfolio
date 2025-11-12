@@ -57,24 +57,32 @@ Make sure you have the following installed on your machine:
 
 1. Clone the repository from GitHub:
 
-    git clone https://github.com/GEEspinosa/GEEspinosa-photo-portfolio.git  
+    ```bash
+    git clone https://github.com/GEEspinosa/GEEspinosa-photo-portfolio.git
     cd GEEspinosa-photo-portfolio
+    ```
 
 2. Install dependencies:
 
-    npm install  
-    # or, if you prefer yarn  
+    ```bash
+    npm install
+    # or, if you prefer yarn
     yarn install
+    ```
 
 3. Start the development server:
 
-    npm run start  
-    # or  
-    yarn run start
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
 
 4. Open your browser and navigate to:
 
+    ```
     http://localhost:3000
+    ```
 
     to view the site running locally.
 
