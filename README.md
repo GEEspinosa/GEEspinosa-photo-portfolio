@@ -68,9 +68,9 @@ Make sure you have the following installed on your machine:
 
 3. Start the development server:
 
-    npm start  
+    npm run start  
     # or  
-    yarn start
+    yarn run start
 
 4. Open your browser and navigate to:
 
@@ -106,16 +106,7 @@ Check out the live site here: [https://ge-espinosa-photo-portfolio.vercel.app](h
 
 Feel free to reach out for booking inquiries or collaborations:
 
-- Email: geespinosa@example.com  
-- LinkedIn: [linkedin.com/in/geespinosa](https://linkedin.com/in/geespinosa)  
-
----
-
-## Acknowledgements
-
-- Inspiration from photographers like [Insert Names]  
-- Thanks to the React and Styled-Components communities  
-- Built with support from BloomTech’s Full Stack Web Development program  
+- LinkedIn: [linkedin.com/in/geespinosa](https://www.linkedin.com/in/geespinosa)  
 
 ---
 
