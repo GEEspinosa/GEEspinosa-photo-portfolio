@@ -1,4 +1,4 @@
-# GEE’s Film Photography Portfolio
+# GEEspinosa’s Film Photography Portfolio
 
 Welcome to my personal portfolio website where I showcase my passion for film photography. This site features a curated gallery of my favorite film photos, background information about me, and a way to get in touch.
 
@@ -25,11 +25,28 @@ This portfolio site was created to share my journey and work in film photography
 
 ## Features
 
-- Responsive gallery showcasing film photographs  
-- About Me section sharing my story and creative approach  
-- Contact form for booking inquiries or collaboration requests  
-- Clean, minimalist design focused on photography  
-- Mobile-friendly and accessible layout  
+- **Custom Portfolio Site** showcasing 35mm film photography with a simple, elegant design that lets the photos shine.  
+- **Fully Responsive Layout** with two distinct gallery modes:  
+  - Horizontal-priority flexbox layout for desktops.  
+  - Vertical-priority multi-column layout for smaller screens.  
+- **Navigation & Routing:**  
+  - Built with `react-router-dom` for clean, flat navigation representing photography genres.  
+  - Responsive navigation menu that switches between a floating desktop menu and a custom-built hamburger slide-out drawer on mobile.  
+- **Slide-Out Menu:**  
+  - Created from scratch using React state and Styled-Components with animated transitions.  
+- **Modal Viewing Mode:**  
+  - Clicking an image opens a modal with zoom, metadata (location, camera, film stock, etc.), and keyboard-accessible navigation.  
+  - Responsive modal design that adapts layout and controls based on screen size and image orientation.  
+  - Smooth fade-in/fade-out transitions implemented with React state and CSS animations.  
+- **Dynamic Responsive Behavior:**  
+  - Custom React hooks track window size to conditionally render layouts and UI components.  
+- **Built with Styled-Components** to reinforce CSS fundamentals without utility frameworks like Tailwind.  
+- **Dynamic Landing Page:**  
+  - Randomly selects square preview images from each photo gallery category.  
+  - Each image acts as a link to its respective gallery page.  
+  - On hover, the image inverts to a negative effect and displays a colored label with the gallery name.  
+  - Built with React hooks and Styled-Components for smooth interaction and responsive design.
+
 
 ---
 
